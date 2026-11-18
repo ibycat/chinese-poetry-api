@@ -1,0 +1,13 @@
+{
+  "name": "chinese-poetry-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python ../tools/build_cf.py",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.34.0"
+  }
+}

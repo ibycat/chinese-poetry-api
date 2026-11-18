@@ -1,0 +1,8 @@
+node_modules/
+.dry/
+.wrangler/
+# 生成物，构建时产出，不进版本库
+public/data/
+public/index.html
+public/browse/
+src/manifest.js

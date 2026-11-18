@@ -1,4 +1,27 @@
-.idea
-.pyenv
-__pycache__
-.pytest_cache
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local screenshots and runtime caches
+.shot/
+.wrangler/
+node_modules/
+
+# Temporary evaluation outputs
+data/_*.json
+data/llm_b*.json
+data/llm_b*.jsonl
+data/llm_v2.json

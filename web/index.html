@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诗词分类浏览 · 全唐诗 / 全宋词</title>
+<style>
+  :root{
+    --paper:#f7f4ee; --card:#fffdfa; --ink:#26221e; --ink-2:#5b544c;
+    --ink-3:#8c8378; --line:#e3dcd0; --accent:#8a4b32; --accent-soft:#f3e6dd;
+    --sel:#33544f;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    display:flex; flex-direction:column; height:100vh; overflow:hidden;
+  }
+  header{
+    padding:13px 22px 11px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#fffdfa,#f9f6f0); flex:0 0 auto;
+  }
+  .hrow{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  h1{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:20px; font-weight:600;
+    margin:0; letter-spacing:.06em;
+  }
+  h1 em{font-style:normal; color:var(--accent)}
+  .sub{font-size:12px; color:var(--ink-3); letter-spacing:.02em}
+  .sub code{background:#efe9df; padding:1px 5px; border-radius:3px; font-size:11px;
+    color:#7a6f61; margin-left:6px}
+  .search{margin-left:auto; position:relative}
+  .search input{
+    width:230px; padding:7px 12px 7px 30px; border:1px solid var(--line);
+    border-radius:16px; background:#fff; font-size:13px; color:var(--ink); outline:none;
+    transition:.18s;
+  }
+  .search input:focus{border-color:var(--accent); width:270px; box-shadow:0 0 0 3px rgba(138,75,50,.08)}
+  .search svg{position:absolute; left:10px; top:9px; opacity:.45}
+  main{display:flex; flex:1 1 auto; min-height:0}
+  aside{
+    width:246px; flex:0 0 246px; border-right:1px solid var(--line);
+    overflow-y:auto; padding:12px 10px 40px; background:#fbf8f3;
+  }
+  aside::-webkit-scrollbar,section::-webkit-scrollbar{width:8px}
+  aside::-webkit-scrollbar-thumb,section::-webkit-scrollbar-thumb{background:#ded6c8; border-radius:4px}
+  .dim{margin-bottom:15px}
+  .dim h3{
+    font-size:11px; font-weight:600; color:var(--ink-3); letter-spacing:.18em;
+    margin:0 0 7px 6px;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:5px}
+  .chip{
+    font-size:12px; padding:3px 9px; border-radius:12px; cursor:pointer;
+    border:1px solid transparent; background:#efe9df; color:var(--ink-2);
+    transition:.15s; user-select:none; white-space:nowrap;
+  }
+  .chip:hover{background:#e6ddd0}
+  .chip .n{font-size:10px; color:var(--ink-3); margin-left:4px}
+  .chip.on{background:var(--sel); color:#fff; border-color:var(--sel)}
+  .chip.on .n{color:rgba(255,255,255,.7)}
+  .chip.lv1{background:#e9e2d4; font-weight:600}
+  .chip.lv1.on{background:var(--accent)}
+  .subwrap{
+    margin:7px 0 0 6px; padding-left:9px; border-left:2px solid #e6ddcd;
+  }
+  .subwrap .chip{background:#f4efe6; font-size:11.5px; padding:2px 8px}
+  .subwrap .chip.on{background:var(--sel)}
+  section{flex:1 1 auto; overflow-y:auto; padding:14px 22px 60px; min-width:0}
+  .bar{
+    display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;
+    font-size:12px; color:var(--ink-3); position:sticky; top:0; z-index:5;
+    background:linear-gradient(180deg,var(--paper) 72%,rgba(247,244,238,0));
+    padding:4px 0 10px;
+  }
+  .bar b{color:var(--ink); font-size:14px; font-weight:600}
+  .ghost{
+    font-size:12px; padding:4px 11px; border-radius:12px;
+    border:1px solid var(--line); background:#fff; color:var(--ink-2); cursor:pointer;
+  }
+  .ghost:hover{border-color:var(--accent); color:var(--accent)}
+  .ghost.r{margin-left:auto}
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:11px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:13px 15px 12px; cursor:pointer; transition:.16s; position:relative;
+    overflow:hidden;
+  }
+  .card:hover{border-color:#cfc4b3; transform:translateY(-1px); box-shadow:0 3px 12px rgba(90,70,50,.07)}
+  .card .t{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:15.5px; font-weight:600;
+    letter-spacing:.04em; margin-bottom:2px;
+  }
+  .card .a{font-size:11.5px; color:var(--ink-3); margin-bottom:8px; letter-spacing:.04em}
+  .card .p{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:13px; line-height:1.85;
+    color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .card .tags{margin-top:9px; display:flex; flex-wrap:wrap; gap:4px}
+  .tg{font-size:10.5px; padding:2px 7px; border-radius:3px; background:#f2ece2; color:#7a6f61}
+  .tg.ct{background:var(--accent-soft); color:var(--accent)}
+  .tg.st{background:#e8eef0; color:#3f5f68}
+  .tg.mo{background:#efe9f2; color:#5e4a6b}
+  .tg.sc{background:#eaf0e6; color:#4e6340}
+  .mask{
+    position:fixed; inset:0; background:rgba(38,32,26,.42); display:none;
+    align-items:center; justify-content:center; padding:24px; z-index:50;
+    backdrop-filter:blur(2px);
+  }
+  .mask.on{display:flex}
+  .modal{
+    background:#fffdf8; border-radius:8px; max-width:660px; width:100%;
+    max-height:86vh; overflow-y:auto; padding:26px 30px 24px; position:relative;
+    box-shadow:0 18px 50px rgba(40,30,20,.22);
+  }
+  .modal .x{
+    position:absolute; right:14px; top:10px; font-size:22px; color:var(--ink-3);
+    cursor:pointer; line-height:1; padding:4px 8px;
+  }
+  .modal .x:hover{color:var(--accent)}
+  .modal h2{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:21px; margin:0 0 4px;
+    letter-spacing:.06em; font-weight:600;
+  }
+  .modal .meta{font-size:12px; color:var(--ink-3); margin-bottom:16px; letter-spacing:.05em}
+  .modal .poem{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:15.5px; line-height:2.15;
+    color:var(--ink); margin:0 0 20px; padding-left:2px;
+  }
+  .modal .poem p{margin:0 0 2px}
+  .tbl{width:100%; border-collapse:collapse; font-size:12.5px}
+  .tbl th{
+    text-align:left; font-weight:500; color:var(--ink-3); font-size:11px;
+    letter-spacing:.14em; padding:0 0 6px; border-bottom:1px solid var(--line);
+  }
+  .tbl td{padding:7px 0; border-bottom:1px dashed #ece5da; vertical-align:top}
+  .tbl td:first-child{color:var(--ink-3); width:74px; font-size:11.5px; letter-spacing:.1em}
+  .tbl .val{font-weight:600; color:var(--ink)}
+  .why{font-size:11.5px; color:var(--ink-3); margin-top:3px; line-height:1.6}
+  .why code{
+    background:#f3ede3; padding:1px 5px; border-radius:3px; margin-right:3px;
+    font-size:11px; color:#7a6f61;
+  }
+  .api{font-family:Consolas,monospace; font-size:11.5px; background:#f3ede3;
+    padding:1px 6px; border-radius:3px; color:#7a6f61}
+  .empty{text-align:center; color:var(--ink-3); padding:70px 0; font-size:13px}
+  @media (max-width:820px){
+    aside{display:none} section{padding:12px}
+    .search input{width:150px} .search input:focus{width:170px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <h1>诗词<em>分类</em>浏览</h1>
+    <span class="sub" id="sub"></span>
+    <div class="search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" placeholder="搜诗题、作者、诗句、分类" autocomplete="off">
+    </div>
+  </div>
+</header>
+<main>
+  <aside id="side"></aside>
+  <section>
+    <div class="bar">
+      <b id="cnt">0</b><span id="cntHint">首</span>
+      <button class="ghost r" id="rand">随机一首</button>
+      <button class="ghost" id="clr">清空条件</button>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="empty" id="empty" style="display:none">没有符合条件的诗词</div>
+  </section>
+</main>
+<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
+<script src="data.js"></script>
+<script>
+const D = window.CP_DATA;
+const CATS = D.categories;
+const TOP = Object.keys(CATS);
+const state = {top:null, sub:null, style:null, mood:null, form:null, q:""};
+
+/* 抽样库内的真实条数（侧栏显示的是本页可选条数，不是全库） */
+const topN = {}, subN = {};
+for (const p of D.poems) {
+  for (const [t, ss] of Object.entries(p.cats || {})) {
+    topN[t] = (topN[t] || 0) + 1;
+    for (const s of ss) subN[t + "/" + s] = (subN[t + "/" + s] || 0) + 1;
+  }
+}
+
+/* ---------- 侧栏 ---------- */
+function chip(label, n, on, cls, fn) {
+  const c = document.createElement("span");
+  c.className = "chip" + (cls ? " " + cls : "") + (on ? " on" : "");
+  c.innerHTML = label + (n != null ? `<span class="n">${n}</span>` : "");
+  c.onclick = fn;
+  return c;
+}
+
+function buildSide() {
+  const side = document.getElementById("side");
+  side.innerHTML = "";
+
+  // 分类（与 v1.jinrishici.com 一致的两级结构）
+  const box = document.createElement("div");
+  box.className = "dim";
+  box.innerHTML = "<h3>分类 · 11 大类</h3>";
+  const wrap = document.createElement("div");
+  wrap.className = "chips";
+  TOP.forEach(t => {
+    wrap.appendChild(chip(t, topN[t] || 0, state.top === t && !state.sub, "lv1", () => {
+      if (state.top === t) { state.top = null; state.sub = null; }
+      else { state.top = t; state.sub = null; }
+      buildSide(); render();
+    }));
+  });
+  box.appendChild(wrap);
+
+  // 选中一级后展开其二级
+  if (state.top) {
+    const subs = Object.keys(CATS[state.top].subs);
+    const sw = document.createElement("div");
+    sw.className = "subwrap chips";
+    const allBtn = chip("全部" + state.top, topN[state.top] || 0, !state.sub, "", () => {
+      state.sub = null; buildSide(); render();
+    });
+    sw.appendChild(allBtn);
+    subs.forEach(s => {
+      const n = subN[state.top + "/" + s] || 0;
+      if (!n) return;
+      sw.appendChild(chip(s, n, state.sub === s, "", () => {
+        state.sub = state.sub === s ? null : s;
+        buildSide(); render();
+      }));
+    });
+    box.appendChild(sw);
+  }
+  side.appendChild(box);
+
+  // 其余维度
+  const EXTRA = [["style", "风格"], ["mood", "情绪"], ["form", "体裁"]];
+  EXTRA.forEach(([dim, name]) => {
+    const cnt = {};
+    for (const p of D.poems) {
+      const add = v => { if (v) cnt[v] = (cnt[v] || 0) + 1; };
+      if (dim === "style") { add(p.style); (p.style2 || []).forEach(add); }
+      else if (dim === "mood") { add(p.mood); (p.mood2 || []).forEach(add); }
+      else add(p.form);
+    }
+    const tags = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]);
+    if (!tags.length) return;
+    const b = document.createElement("div");
+    b.className = "dim";
+    b.innerHTML = `<h3>${name}</h3>`;
+    const w = document.createElement("div");
+    w.className = "chips";
+    tags.forEach(t => w.appendChild(chip(t, cnt[t], state[dim] === t, "", () => {
+      state[dim] = state[dim] === t ? null : t;
+      buildSide(); render();
+    })));
+    b.appendChild(w);
+    side.appendChild(b);
+  });
+}
+
+/* ---------- 匹配 ---------- */
+function match(p) {
+  if (state.top) {
+    const subs = p.cats && p.cats[state.top];
+    if (!subs) return false;
+    if (state.sub && !subs.includes(state.sub)) return false;
+  }
+  if (state.style && p.style !== state.style && !(p.style2 || []).includes(state.style)) return false;
+  if (state.mood && p.mood !== state.mood && !(p.mood2 || []).includes(state.mood)) return false;
+  if (state.form && p.form !== state.form) return false;
+  const q = state.q.trim().toLowerCase();
+  if (!q) return true;
+  const hay = [p.title, p.author, p.paragraphs.join(""), p.form, p.theme, p.style, p.mood,
+    p.scene.join(""), Object.entries(p.cats || {}).flat().join(" ")].join(" ").toLowerCase();
+  return hay.includes(q);
+}
+
+/* ---------- 列表 ---------- */
+function tag(text, cls) {
+  const s = document.createElement("span");
+  s.className = "tg " + cls;
+  s.textContent = text;
+  return s;
+}
+
+function render() {
+  const list = D.poems.filter(match);
+  document.getElementById("cnt").textContent = list.length;
+  const act = [];
+  if (state.top) act.push("分类：" + (state.sub ? state.top + "·" + state.sub : state.top));
+  if (state.style) act.push("风格：" + state.style);
+  if (state.mood) act.push("情绪：" + state.mood);
+  if (state.form) act.push("体裁：" + state.form);
+  document.getElementById("cntHint").textContent =
+    act.length ? "首 · " + act.join("  ") : "首";
+
+  const box = document.getElementById("cards");
+  box.innerHTML = "";
+  document.getElementById("empty").style.display = list.length ? "none" : "block";
+  const frag = document.createDocumentFragment();
+  for (const p of list) {
+    const el = document.createElement("div");
+    el.className = "card";
+    el.onclick = () => openModal(p);
+    el.innerHTML = `<div class="t">${esc(p.title)}</div>
+      <div class="a">${esc(p.author)} · ${p.dynasty} · ${p.form}</div>
+      <div class="p">${esc(p.paragraphs[0] || "")}</div>`;
+    const tw = document.createElement("div");
+    tw.className = "tags";
+    const tops = Object.keys(p.cats || {});
+    if (tops.length) tw.appendChild(tag(tops[0], "ct"));
+    if (p.style) tw.appendChild(tag(p.style, "st"));
+    if (p.mood) tw.appendChild(tag(p.mood, "mo"));
+    (p.scene || []).slice(0, 2).forEach(s => tw.appendChild(tag(s, "sc")));
+    el.appendChild(tw);
+    frag.appendChild(el);
+  }
+  box.appendChild(frag);
+}
+
+/* ---------- 详情 ---------- */
+function openModal(p) {
+  const catPaths = [];
+  for (const [t, ss] of Object.entries(p.cats || {})) for (const s of ss) catPaths.push(`${t}·${s}`);
+  const rows = [
+    ["分类", catPaths.length ? catPaths.map(esc).join("、") : "—"],
+    ["题材", [p.theme].concat(p.theme2 || []).map(esc).join("、")],
+    ["风格", [p.style].concat(p.style2 || []).map(esc).join("、")],
+    ["情绪", [p.mood].concat(p.mood2 || []).map(esc).join("、")],
+    ["场景", (p.scene || []).join("、") || "—"],
+    ["体裁", esc(p.form)],
+  ];
+  const body = p.paragraphs.map(l => `<p>${esc(l)}</p>`).join("");
+  const tr = rows.map(r => `<tr><td>${r[0]}</td><td class="val">${r[1]}</td></tr>`).join("");
+  const slugTop = CATS[Object.keys(p.cats || {})[0]];
+  const api = slugTop ? `<span class="api">/${slugTop.slug}.json</span>` : "";
+  document.getElementById("modal").innerHTML = `
+    <span class="x" id="mx">&times;</span>
+    <h2>${esc(p.title)}</h2>
+    <div class="meta">${esc(p.author)} · ${p.dynasty} · ${p.section} · ${esc(p.form)} ${api}</div>
+    <div class="poem">${body}</div>
+    <table class="tbl"><tr><th>维度</th><th>归属</th></tr>${tr}</table>`;
+  document.getElementById("mask").classList.add("on");
+  document.getElementById("mx").onclick = close;
+}
+function close() { document.getElementById("mask").classList.remove("on"); }
+document.getElementById("mask").onclick = e => { if (e.target.id === "mask") close(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"]/g,
+    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+/* ---------- 事件 ---------- */
+document.getElementById("sub").innerHTML =
+  `全库 ${D.stats.total.toLocaleString()} 首 · 本页抽样 ${D.poems.length.toLocaleString()} 首 · 11 大类 69 小类` +
+  `<code>/{大类}/{小类}.json</code>`;
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+document.getElementById("clr").onclick = () => {
+  Object.assign(state, { top: null, sub: null, style: null, mood: null, form: null, q: "" });
+  document.getElementById("q").value = "";
+  buildSide(); render();
+};
+document.getElementById("rand").onclick = () => {
+  const list = D.poems.filter(match);
+  if (list.length) openModal(list[Math.floor(Math.random() * list.length)]);
+};
+
+buildSide(); render();
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诗词分类接口 · 调用文档</title>
+<style>
+  :root{
+    --paper:#f7f4ee; --card:#fffdfa; --ink:#26221e; --ink-2:#5b544c;
+    --ink-3:#8c8378; --line:#e3dcd0; --accent:#8a4b32; --accent-soft:#f3e6dd;
+    --code-bg:#f2ece2; --green:#3f6b4a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.75;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,.mono{font-family:Consolas,"SF Mono",Menlo,monospace; font-size:12.5px}
+  code{background:var(--code-bg); padding:1px 5px; border-radius:3px; color:#6f4a36}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+  header{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#fffdfa,#f9f6f0);
+  }
+  .hero{padding:36px 0 28px}
+  .hero h1{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:29px; font-weight:600;
+    margin:0 0 10px; letter-spacing:.05em;
+  }
+  .hero h1 em{font-style:normal; color:var(--accent)}
+  .lead{color:var(--ink-2); max-width:760px; margin:0 0 18px}
+  .kpis{display:flex; gap:26px; flex-wrap:wrap; margin-top:18px}
+  .kpi b{
+    display:block; font-family:"Songti SC","STSong",SimSun,serif; font-size:21px;
+    font-weight:600; letter-spacing:.02em;
+  }
+  .kpi span{font-size:11.5px; color:var(--ink-3); letter-spacing:.1em}
+  .urlbar{
+    display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
+    border-radius:6px; padding:9px 13px; margin-top:20px; max-width:640px;
+  }
+  .urlbar .mono{flex:1; color:var(--ink); word-break:break-all}
+  .urlbar .tag{font-size:10.5px; color:var(--ink-3); letter-spacing:.12em; white-space:nowrap}
+  .urlbar .copy{
+    font-size:11px; padding:3px 10px; border-radius:11px; cursor:pointer;
+    border:1px solid var(--line); background:#fff; color:var(--ink-2); white-space:nowrap;
+  }
+  .urlbar .copy:hover{border-color:var(--accent); color:var(--accent)}
+  main{display:flex; gap:36px; padding:30px 0 80px; align-items:flex-start}
+  nav{
+    position:sticky; top:20px; width:172px; flex:0 0 172px; font-size:12.5px;
+    border-left:2px solid var(--line); padding-left:14px;
+  }
+  nav a{display:block; color:var(--ink-2); padding:4px 0}
+  nav a:hover{color:var(--accent); text-decoration:none}
+  nav b{display:block; font-size:11px; color:var(--ink-3); letter-spacing:.16em;
+    margin:14px 0 6px; font-weight:600}
+  nav b:first-child{margin-top:0}
+  .content{flex:1; min-width:0}
+  section{margin-bottom:46px}
+  h2{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:19px; font-weight:600;
+    margin:0 0 4px; letter-spacing:.04em; scroll-margin-top:20px;
+  }
+  h2 .no{color:var(--ink-3); font-size:13px; margin-right:8px; font-family:Consolas,monospace}
+  .h2sub{color:var(--ink-3); font-size:12.5px; margin:0 0 16px}
+  h3{font-size:13.5px; margin:22px 0 8px; font-weight:600; letter-spacing:.03em}
+  p{margin:0 0 12px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:16px 18px; margin:0 0 14px;
+  }
+  pre{
+    background:#2b2724; color:#ece5d9; padding:14px 16px; border-radius:6px;
+    overflow-x:auto; margin:0 0 14px; line-height:1.7;
+  }
+  pre .c{color:#9c9184}
+  pre .k{color:#e3b98a}
+  pre .s{color:#b6c9a8}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin:0 0 14px}
+  th{
+    text-align:left; font-weight:600; font-size:11px; color:var(--ink-3);
+    letter-spacing:.14em; padding:0 10px 8px 0; border-bottom:1px solid var(--line);
+  }
+  td{padding:7px 10px 7px 0; border-bottom:1px dashed #ece5da; vertical-align:middle}
+  tr.grp td{background:#f3ede3; padding:9px 10px; border-bottom:1px solid var(--line)}
+  tr.grp .gt{font-family:"Songti SC","STSong",SimSun,serif; font-size:14.5px;
+    font-weight:600; margin-right:8px}
+  tr.grp .gc{font-size:11px; color:var(--ink-3); margin-right:12px}
+  td.l2{padding-left:14px; color:var(--ink-2); width:96px}
+  td.num{width:82px; color:var(--ink-3); font-size:12px; text-align:right; padding-right:14px}
+  td code{background:none; padding:0; color:#7a5a44}
+  .try{
+    font-size:11px; padding:3px 10px; border-radius:11px; cursor:pointer;
+    border:1px solid var(--line); background:#fff; color:var(--ink-2);
+  }
+  .try:hover{border-color:var(--accent); color:var(--accent)}
+  .badge{
+    display:inline-block; font-size:10.5px; letter-spacing:.08em; padding:1px 7px;
+    border-radius:3px; background:var(--accent-soft); color:var(--accent); margin-left:6px;
+  }
+  .badge.g{background:#e6efe6; color:var(--green)}
+  #out{
+    position:fixed; right:0; bottom:0; width:min(560px,100%); max-height:60vh;
+    background:#2b2724; color:#ece5d9; border-top-left-radius:8px;
+    box-shadow:-6px -6px 28px rgba(40,30,20,.18); transform:translateY(110%);
+    transition:.28s; z-index:60; display:flex; flex-direction:column;
+  }
+  #out.on{transform:translateY(0)}
+  #out .hd{
+    display:flex; align-items:center; gap:10px; padding:9px 14px;
+    border-bottom:1px solid #464039; font-size:12px; color:#b6ada0;
+  }
+  #out .hd .mono{flex:1; color:#e3b98a; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap}
+  #out .hd button{
+    background:none; border:1px solid #5c554c; color:#cfc6b8; border-radius:4px;
+    padding:2px 9px; font-size:11px; cursor:pointer;
+  }
+  #out pre{margin:0; border-radius:0; background:none; max-height:52vh}
+  footer{
+    border-top:1px solid var(--line); padding:22px 0 40px; color:var(--ink-3);
+    font-size:12px;
+  }
+  @media (max-width:860px){
+    nav{display:none} main{padding:22px 0 60px}
+    .hero h1{font-size:24px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <h1>诗词<em>分类</em>接口 · 调用文档</h1>
+    <p class="lead">
+      按分类随机返回古诗词，分类体系与 <a href="https://v1.jinrishici.com" target="_blank" rel="noopener">今日诗词 v1</a>
+      完全一致（11 大类 / 69 小类），路径与 slug 也保持一致，换掉域名即可迁移。全文为简体。
+    </p>
+    <div class="urlbar">
+      <span class="tag">BASE</span>
+      <span class="mono" id="base">/</span>
+      <button class="copy" id="copy" data-copy="1">复制</button>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>{{TOTAL}}</b><span>收 录 诗 词</span></div>
+      <div class="kpi"><b>11 / 69</b><span>大 类 / 小 类</span></div>
+      <div class="kpi"><b>3</b><span>返 回 格 式</span></div>
+      <div class="kpi"><b>{{BUILT}}</b><span>数 据 版 本</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding:0">
+<main>
+  <nav>
+    <b>开始</b>
+    <a href="#quick">快速开始</a>
+    <a href="#route">路由规则</a>
+    <b>参考</b>
+    <a href="#themes">题材分类 21 类</a>
+    <a href="#params">参数与格式</a>
+    <a href="#resp">返回结构</a>
+    <a href="#acc">精度与可信度</a>
+    <a href="#err">错误码</a>
+    <b>分类</b>
+    <a href="#cats">全部 69 个小类</a>
+    <b>其他</b>
+    <a href="#notes">判定说明</a>
+    <a href="/browse/">分类浏览页</a>
+  </nav>
+
+  <div class="content">
+
+    <section id="quick">
+      <h2><span class="no">01</span>快速开始</h2>
+      <p class="h2sub">无需注册、无需 Token，直接 GET。</p>
+      <pre><span class="c"># 山水 · 庐山</span>
+curl <span class="s">"BASE/shanshui/lushan.json"</span>
+
+<span class="c"># 抒情 · 爱情，纯文本</span>
+curl <span class="s">"BASE/shuqing/aiqing.txt"</span>
+
+<span class="c"># 植物 · 梅花，一次取 3 条</span>
+curl <span class="s">"BASE/zhiwu/meihua.json?n=3"</span>
+
+<span class="c"># 中文名直接访问</span>
+curl <span class="s">"BASE/抒情/爱情.json"</span></pre>
+      <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
+    </section>
+
+    <section id="route">
+      <h2><span class="no">02</span>路由规则</h2>
+      <p class="h2sub">路径为 <code>/{大类 slug}[/{小类 slug}]</code>，省略小类时在该大类下随机。</p>
+      <table>
+        <tr><th style="width:34%">路由</th><th>说明</th></tr>
+        <tr><td><code>/all</code></td><td>全部 {{TOTAL}} 首随机一首</td></tr>
+        <tr><td><code>/{大类}</code></td><td>如 <code>/shanshui</code>，在该大类全部诗词中随机</td></tr>
+        <tr><td><code>/{大类}/{小类}</code></td><td>如 <code>/shanshui/lushan</code></td></tr>
+        <tr><td><code>/t/{题材}</code></td><td>按主旨取诗，如 <code>/t/songbie</code>、<code>/t/bianzai</code>，见第 03 节</td></tr>
+        <tr><td><code>/api</code></td><td>分类总表 JSON（含每类的调用地址）</td></tr>
+        <tr><td><code>/doc</code></td><td>本页</td></tr>
+        <tr><td><code>/browse/</code></td><td>可视化分类浏览页（抽样数据）</td></tr>
+      </table>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        注：今日诗词 v1 的 <code>/</code> 返回分类总表 JSON，本服务把 <code>/</code> 让给文档页，总表移到 <code>/api</code>，
+        其余路径完全兼容。
+      </p>
+    </section>
+
+    <section id="themes">
+      <h2><span class="no">03</span>题材分类 · {{NT}} 类</h2>
+      <p class="h2sub">按诗的<strong>主旨</strong>划分，路径为 <code>/t/{slug}</code>。题材回答"这首诗在写什么事"，
+        与第 08 节的意象分类（写雨、梅花、庐山）互补：后者回答"诗里写到什么"。</p>
+      <table>
+        <tr><th style="width:110px">题材</th><th>接口路径</th>
+          <th style="width:82px;text-align:right;padding-right:14px">条数</th><th style="width:72px"></th></tr>
+        {{THEMEROWS}}
+      </table>
+    </section>
+
+    <section id="params">
+      <h2><span class="no">04</span>参数与格式</h2>
+      <table>
+        <tr><th style="width:130px">格式</th><th>说明</th></tr>
+        <tr><td><code>.json</code><span class="badge g">默认</span></td><td>结构化返回，含全文与标签</td></tr>
+        <tr><td><code>.txt</code></td><td>仅返回诗句正文，适合做一言/签名</td></tr>
+        <tr><td><code>.svg</code></td><td>图片，可直接 <code>&lt;img src&gt;</code></td></tr>
+      </table>
+      <table>
+        <tr><th style="width:130px">参数</th><th>说明</th></tr>
+        <tr><td><code>n</code></td><td>返回条数，1–50，大于 1 时返回数组。默认 1</td></tr>
+      </table>
+      <h3>示例：直接嵌入网页</h3>
+      <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
+&lt;script&gt;
+fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
+  .then(r =&gt; r.json())
+  .then(d =&gt; {
+    document.getElementById(<span class="s">"poem"</span>).textContent =
+      d.content + <span class="s">" —— " </span>+ d.author + <span class="s">"《"</span> + d.origin + <span class="s">"》"</span>;
+  });
+&lt;/script&gt;</pre>
+    </section>
+
+    <section id="resp">
+      <h2><span class="no">05</span>返回结构</h2>
+      <p class="h2sub">前四个字段与今日诗词 v1 完全一致，其后为扩展字段；v1 的解析器只读前四个，可直接替换。</p>
+      <pre>{
+  <span class="k">"content"</span>: <span class="s">"庐山小隐。"</span>,          <span class="c">// 首句，对齐 v1 的"一句"语义</span>
+  <span class="k">"origin"</span>: <span class="s">"尾犯"</span>,               <span class="c">// 诗题 / 词牌</span>
+  <span class="k">"author"</span>: <span class="s">"晁补之"</span>,
+  <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,   <span class="c">// 命中的分类（多命中时随机取一）</span>
+
+  <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>,
+  <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
+  <span class="k">"section"</span>: <span class="s">"宋词"</span>,
+  <span class="k">"form"</span>: <span class="s">"词"</span>,
+  <span class="k">"paragraphs"</span>: [<span class="s">"庐山小隐。"</span>, <span class="s">"..."</span>],  <span class="c">// 全文</span>
+  <span class="k">"tags"</span>: {                          <span class="c">// 五维内容标签</span>
+    <span class="k">"theme"</span>: <span class="s">"山水田园"</span>, <span class="k">"style"</span>: <span class="s">"冲淡"</span>,
+    <span class="k">"mood"</span>: <span class="s">"恬淡"</span>, <span class="k">"scene"</span>: [<span class="s">"山"</span>],
+    <span class="k">"theme_conf"</span>: 0.62,            <span class="c">// 题材置信度</span>
+    <span class="k">"theme_alt"</span>: [<span class="s">"咏怀抒感"</span>]     <span class="c">// 次优题材</span>
+  },
+  <span class="k">"categories"</span>: [<span class="s">"山水/庐山"</span>, <span class="s">"生活/田园"</span>]  <span class="c">// 全部命中的分类</span>
+}</pre>
+      <p>一首诗可以同时属于多个小类，因此 <code>categories</code> 是数组，<code>category</code> 只在其中取一个用于展示。</p>
+    </section>
+
+    <section id="acc">
+      <h2><span class="no">06</span>精度与可信度</h2>
+      <p class="h2sub">题材由「意象词典 + 阈值」判定，不是模型生成。不同置信度下的准确率经过人工标注集实测：</p>
+      <table>
+        <tr><th style="width:150px">theme_conf</th><th style="width:110px">准确率</th><th>说明</th></tr>
+        <tr><td>≥ 0.6</td><td><b>95.7%</b></td><td>可直接采信。约六成诗词落在这一档</td></tr>
+        <tr><td>0.45 – 0.6</td><td>75.9%</td><td>建议展示时标注"仅供参考"</td></tr>
+        <tr><td>&lt; 0.45</td><td>58.3%</td><td>题材边界模糊，宜配合 <code>theme_alt</code> 一起看</td></tr>
+      </table>
+      <p>测法：以《唐诗三百首》《宋词三百首》的人工标签为金标准，取题旨无歧义的 195 首，
+        比较 top-1 命中率。样本不大，但标签可信、结果可复现（<code>tools/eval_theme.py</code>）。</p>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        <code>theme_conf</code> 仅作参考信息返回，不影响取数：接口不提供按置信度过滤的参数，
+        每类始终返回全部符合条件的诗词。需要自行筛时读 <code>tags.theme_conf</code> 即可。
+      </p>
+    </section>
+
+    <section id="err">
+      <h2><span class="no">07</span>错误码</h2>
+      <table>
+        <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
+        <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
+        <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
+        <tr><td>500</td><td>1001</td><td>读取语料失败</td></tr>
+      </table>
+      <pre>{
+  <span class="k">"status"</span>: <span class="s">"error"</span>,
+  <span class="k">"errCode"</span>: 2001,
+  <span class="k">"errMessage"</span>: <span class="s">"No matching category. See /doc for the full list."</span>
+}</pre>
+    </section>
+
+    <section id="cats">
+      <h2><span class="no">08</span>意象分类 · 11 大类 69 小类</h2>
+      <p class="h2sub">共 11 大类 / 69 小类。点击「试一下」可直接查看该分类的返回。</p>
+      <table>
+        <tr><th style="width:96px">小类</th><th>接口路径</th><th style="width:82px;text-align:right;padding-right:14px">条数</th><th style="width:72px"></th></tr>
+        {{ROUTES}}
+      </table>
+    </section>
+
+    <section id="notes">
+      <h2><span class="no">09</span>判定说明</h2>
+      <p>分类由「意象词典 + 阈值」判定，不是模型生成，规则可在仓库 <code>tagger/categories.py</code> 中逐条查看与修改。</p>
+      <table>
+        <tr><th style="width:150px">规则</th><th>说明</th></tr>
+        <tr><td>关键词权重</td><td>越宽泛的词权重越低（如「风」0.5、「月」0.7），需组合达到阈值才算命中，否则「写风」会命中六成以上的诗</td></tr>
+        <tr><td>标题加权</td><td>标题命中权重 ×2，因为标题的题材指向远比正文可靠</td></tr>
+        <tr><td>标题强制</td><td>植物 / 动物 / 食物类要求关键词出现在标题：唐诗里梅、柳、桃多为随手取景，正文命中会把咏物淹掉</td></tr>
+        <tr><td>多分类</td><td>一首诗可属多个小类，接口不强行单归属</td></tr>
+      </table>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        已知局限：关键词法存在同形歧义（如「芙蓉」兼指荷与木芙蓉），个别长诗因正文偶现某词而被归入该分类。若发现明显错判，可在规则表里调整该词权重。
+      </p>
+    </section>
+
+  </div>
+</main>
+</div>
+
+<footer>
+  <div class="wrap">
+    数据源 <a href="https://github.com/ibycat/chinese-poetry" target="_blank" rel="noopener">ibycat/chinese-poetry</a>
+    · 分类体系参考 <a href="https://v1.jinrishici.com" target="_blank" rel="noopener">今日诗词 v1</a>
+    · 本服务为独立部署，与今日诗词官方无关
+  </div>
+</footer>
+
+<div id="out">
+  <div class="hd"><span class="mono" id="outPath"></span>
+    <button onclick="document.getElementById('out').classList.remove('on')">关闭</button></div>
+  <pre id="outBody"></pre>
+</div>
+
+<script>
+  // 直接双击打开 html 时 origin 为 null，给个占位而不是显示 "null"
+  const origin = /^https?:/.test(location.origin) ? location.origin : "https://<部署后的域名>";
+  document.getElementById("base").textContent = origin;
+
+  // 示例里的 BASE 换成真实域名，让代码块可以直接复制运行
+  document.querySelectorAll("pre").forEach(pre => {
+    const walker = document.createTreeWalker(pre, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const n of nodes) {
+      if (n.nodeValue.includes("BASE")) n.nodeValue = n.nodeValue.split("BASE").join(origin);
+    }
+  });
+
+  document.getElementById("copy").addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    try {
+      await navigator.clipboard.writeText(origin);
+      btn.textContent = "已复制";
+    } catch (_) {
+      btn.textContent = "请手动复制";
+    }
+    setTimeout(() => { btn.textContent = "复制"; }, 1400);
+  });
+
+  function show(path) {
+    const box = document.getElementById("out");
+    const body = document.getElementById("outBody");
+    document.getElementById("outPath").textContent = path;
+    body.textContent = "请求中…";
+    box.classList.add("on");
+    fetch(path, { cache: "no-store" })
+      .then(r => r.text().then(t => ({ ok: r.ok, status: r.status, t })))
+      .then(({ ok, status, t }) => {
+        let out = t;
+        try { out = JSON.stringify(JSON.parse(t), null, 2); } catch (e) {}
+        body.textContent = (ok ? "" : "HTTP " + status + "\n") + out;
+      })
+      .catch(e => { body.textContent = "请求失败：" + e.message; });
+  }
+
+  document.addEventListener("click", e => {
+    const btn = e.target.closest(".try");
+    if (btn) { e.preventDefault(); show(btn.dataset.p); }
+  });
+</script>
+</body>
+</html>

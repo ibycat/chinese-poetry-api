@@ -1,0 +1,14381 @@
+[
+ {
+  "uid": "cp841ff9b4d78bde",
+  "title": "湘春夜月",
+  "author": "黄孝迈",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "悲怆",
+   "相思"
+  ],
+  "scene": [
+   "夜",
+   "春",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.477,
+   "style": 0.357,
+   "mood": 0.375,
+   "scene": 0.275
+  },
+  "evidence": [
+   "乡",
+   "旅",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9a38d953d1f347",
+  "title": "瑞鹤仙",
+  "author": "陆叡",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思",
+   "游仙梦幻"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "伤感"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.437,
+   "style": 0.698,
+   "mood": 0.475,
+   "scene": 1.0
+  },
+  "evidence": [
+   "离",
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7622937b715c55",
+  "title": "渡江云三犯・渡江云",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "天气": [
+    "写云"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.522,
+   "style": 0.37,
+   "mood": 0.507,
+   "scene": 0.36
+  },
+  "evidence": [
+   "鸥",
+   "云",
+   "雨",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6ed8f2981cfc67",
+  "title": "霜叶飞",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "咏史怀古"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "节日": [
+    "重阳节"
+   ],
+   "植物": [
+    "叶子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.606,
+   "style": 0.378,
+   "mood": 1.0,
+   "scene": 0.39
+  },
+  "evidence": [
+   "醉",
+   "东篱"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp897e2c6cf08579",
+  "title": "瑞鹤仙",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "鸟",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "伤感"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.503,
+   "style": 0.629,
+   "mood": 0.472,
+   "scene": 0.244
+  },
+  "evidence": [
+   "蓬莱",
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9665af6a84dad4",
+  "title": "宴清都",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "爱情相思",
+   "咏史怀古"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "花",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "闺怨",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.4,
+   "style": 0.417,
+   "mood": 0.716,
+   "scene": 0.307
+  },
+  "evidence": [
+   "绣",
+   "屏",
+   "钗"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6c9ac421dd02c8",
+  "title": "齐天乐",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "相思",
+   "孤寂"
+  ],
+  "scene": [
+   "江",
+   "雪",
+   "冬"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.505,
+   "style": 0.506,
+   "mood": 0.348,
+   "scene": 0.258
+  },
+  "evidence": [
+   "别",
+   "送"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7c35167f827ea7",
+  "title": "风入松",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "惆怅",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "清明",
+   "楼",
+   "花",
+   "酒",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ],
+   "天气": [
+    "写风"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.446,
+   "style": 0.492,
+   "mood": 0.52,
+   "scene": 0.175
+  },
+  "evidence": [
+   "雨",
+   "林",
+   "苔",
+   "松"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp60a401fbbbc431",
+  "title": "莺啼序",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽",
+   "婉约"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "江南",
+   "鸟",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思念",
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "节日": [
+    "清明节"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.238,
+   "style": 0.305,
+   "mood": 0.516,
+   "scene": 0.201
+  },
+  "evidence": [
+   "羁",
+   "梦",
+   "乡",
+   "旅",
+   "归",
+   "雁"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpfefb3d1fd306d5",
+  "title": "惜黄花慢",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "植物": [
+    "菊花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.497,
+   "style": 0.378,
+   "mood": 0.735,
+   "scene": 0.319
+  },
+  "evidence": [
+   "送",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6fe48a6dc4fefb",
+  "title": "瑞鹤仙",
+  "author": "袁去华",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "游仙梦幻",
+   "闺情宫怨"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "山",
+   "楼",
+   "鸟",
+   "花",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.282,
+   "style": 0.589,
+   "mood": 0.636,
+   "scene": 0.248
+  },
+  "evidence": [
+   "雨",
+   "山",
+   "溪",
+   "水"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa67f4336a27ef4",
+  "title": "剑器近",
+  "author": "袁去华",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "江",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.637,
+   "style": 0.429,
+   "mood": 0.556,
+   "scene": 0.329
+  },
+  "evidence": [
+   "寄",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpf018dd823a543a",
+  "title": "安公子",
+  "author": "袁去华",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "闺情宫怨",
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "恬淡",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "雨",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.335,
+   "style": 0.419,
+   "mood": 0.41,
+   "scene": 0.284
+  },
+  "evidence": [
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6df3966a4d64dc",
+  "title": "卜算子",
+  "author": "陆游",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "旷达",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "夜",
+   "花",
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.538,
+   "mood": 0.578,
+   "scene": 0.302
+  },
+  "evidence": [
+   "驿"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpcecdecaab6d888",
+  "title": "凤箫吟・芳草",
+  "author": "韩缜",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "孤独"
+   ],
+   "人生": [
+    "青春"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.813,
+   "style": 0.261,
+   "mood": 0.438,
+   "scene": 0.532
+  },
+  "evidence": [
+   "离",
+   "送",
+   "别",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa35401f760960a",
+  "title": "桂枝香",
+  "author": "王安石",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "悲慨",
+   "绮丽"
+  ],
+  "mood": "悲怆",
+  "mood_2": [
+   "愁怨",
+   "恬淡"
+  ],
+  "scene": [
+   "舟",
+   "秋",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "天气": [
+    "星星"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.578,
+   "style": 0.297,
+   "mood": 0.387,
+   "scene": 0.311
+  },
+  "evidence": [
+   "故国",
+   "六朝"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3bd845ddb69bec",
+  "title": "清平乐",
+  "author": "王安石",
+  "form": "词",
+  "form_note": null,
+  "theme": "题画咏艺",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.522,
+   "style": 0.507,
+   "mood": 1.0,
+   "scene": 0.307
+  },
+  "evidence": [
+   "琵琶"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1e3fc70b8b96e6",
+  "title": "千秋岁引",
+  "author": "王安石",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "送别",
+   "羁旅思乡"
+  ],
+  "style": "豪放",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [
+   "相思",
+   "愁怨"
+  ],
+  "scene": [
+   "秋",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.377,
+   "style": 0.538,
+   "mood": 0.312,
+   "scene": 0.373
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp288417377f7e07",
+  "title": "清平乐",
+  "author": "王安国",
+  "form": "词",
+  "form_note": null,
+  "theme": "题画咏艺",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.522,
+   "style": 0.507,
+   "mood": 1.0,
+   "scene": 0.307
+  },
+  "evidence": [
+   "琵琶"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd4e5b07119f773",
+  "title": "临江仙",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "游仙梦幻",
+   "题画咏艺",
+   "闺情宫怨"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "月",
+   "江",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "闺怨"
+   ],
+   "天气": [
+    "写云",
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.292,
+   "style": 0.612,
+   "mood": 0.556,
+   "scene": 0.243
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5e04ed09cfc2d1",
+  "title": "蝶恋花",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "花",
+   "春",
+   "酒"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.5,
+   "mood": 0.526,
+   "scene": 0.298
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8d50fc0d263aa9",
+  "title": "蝶恋花",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "酒",
+   "花",
+   "春",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.612,
+   "style": 0.353,
+   "mood": 0.486,
+   "scene": 0.187
+  },
+  "evidence": [
+   "醉",
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe9c7ec8184a6ba",
+  "title": "蝶恋花",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "惆怅",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "江南",
+   "花",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.52,
+   "scene": 0.368
+  },
+  "evidence": [
+   "离",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp387273cafb9464",
+  "title": "鹧鸪天",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "楼",
+   "月",
+   "酒",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思念"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.527,
+   "mood": 1.0,
+   "scene": 0.227
+  },
+  "evidence": [
+   "别",
+   "君"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp756f53532104c7",
+  "title": "生查子",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡",
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "塞外",
+   "山",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "离别",
+    "思念",
+    "思乡"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.393,
+   "style": 0.26,
+   "mood": 1.0,
+   "scene": 0.36
+  },
+  "evidence": [
+   "别",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpeeef053c28850a",
+  "title": "清平乐",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "舟",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.672,
+   "mood": 1.0,
+   "scene": 0.306
+  },
+  "evidence": [
+   "离",
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp266b10b82b6e56",
+  "title": "木兰花・玉楼春",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "花",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.565,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.32
+  },
+  "evidence": [
+   "帘",
+   "绣"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpafa07065b7ceb3",
+  "title": "菩萨蛮",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "春",
+   "江",
+   "鸟",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.571,
+   "mood": 0.688,
+   "scene": 0.227
+  },
+  "evidence": [
+   "眉",
+   "黛"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp98584bc72c679c",
+  "title": "玉楼春",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.393,
+   "mood": 1.0,
+   "scene": 0.449
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8210257040c68d",
+  "title": "阮郎归",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "秋",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.509,
+   "style": 1.0,
+   "mood": 0.688,
+   "scene": 0.333
+  },
+  "evidence": [
+   "衾"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4100786b85f97e",
+  "title": "阮郎归",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "清新",
+   "绮丽"
+  ],
+  "mood": "悲怆",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "重阳",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "节日": [
+    "重阳节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.601,
+   "style": 0.242,
+   "mood": 0.5,
+   "scene": 0.478
+  },
+  "evidence": [
+   "雁",
+   "乡",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6e6da637da2b65",
+  "title": "六么令",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸",
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "花",
+   "春",
+   "夜",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.342,
+   "style": 0.364,
+   "mood": 0.525,
+   "scene": 0.349
+  },
+  "evidence": [
+   "山",
+   "云",
+   "闲云"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa5a53502587e8e",
+  "title": "御街行",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春",
+   "花",
+   "清明",
+   "雪",
+   "雨"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.659,
+   "mood": 1.0,
+   "scene": 0.218
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp37eda4b1261602",
+  "title": "虞美人",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "送别",
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.375,
+   "style": 0.684,
+   "mood": 0.679,
+   "scene": 0.523
+  },
+  "evidence": [
+   "佳期"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpaa437139d36803",
+  "title": "留春令",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.64,
+   "mood": 1.0,
+   "scene": 0.421
+  },
+  "evidence": [
+   "寄",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe6aa7e90204417",
+  "title": "思远人",
+  "author": "晏几道",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "花",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.598,
+   "style": 0.5,
+   "mood": 0.631,
+   "scene": 0.52
+  },
+  "evidence": [
+   "寄",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8d127e60c3623a",
+  "title": "生查子",
+  "author": "王观",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡",
+   "边塞征战",
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "塞外"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "离别",
+    "思念",
+    "思乡"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.311,
+   "style": 0.26,
+   "mood": 1.0,
+   "scene": 0.457
+  },
+  "evidence": [
+   "别",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp176f1307749f99",
+  "title": "水龙吟",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "豪放",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "春",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.371,
+   "mood": 0.487,
+   "scene": 0.397
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp92f27b08a6a25e",
+  "title": "水调歌头",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "豪放",
+   "清新"
+  ],
+  "mood": "悲怆",
+  "mood_2": [
+   "愁怨",
+   "欢愉"
+  ],
+  "scene": [
+   "月",
+   "楼",
+   "中秋"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.296,
+   "mood": 0.375,
+   "scene": 0.349
+  },
+  "evidence": [
+   "别",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4a62a14d478e1a",
+  "title": "临江仙",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [
+   "哲理悟道",
+   "送别",
+   "悼亡挽歌"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "豪放",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "夜",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "悼亡"
+   ],
+   "山水": [
+    "江河"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.281,
+   "style": 0.394,
+   "mood": 0.526,
+   "scene": 0.376
+  },
+  "evidence": [
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4411ce7078f356",
+  "title": "定风波",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "旷达",
+  "style_2": [
+   "幽峭",
+   "婉约"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "春",
+   "酒"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "写风"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.358,
+   "mood": 0.3,
+   "scene": 0.472
+  },
+  "evidence": [
+   "林",
+   "竹",
+   "雨",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0805512b714616",
+  "title": "卜算子",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "冲淡",
+   "幽峭"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "月",
+   "江南",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.381,
+   "mood": 0.642,
+   "scene": 0.36
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp10a01a3a4ee47f",
+  "title": "贺新郎",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "游仙梦幻"
+  ],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "闺怨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.465,
+   "style": 0.333,
+   "mood": 1.0,
+   "scene": 0.558
+  },
+  "evidence": [
+   "帘",
+   "绣",
+   "团扇"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe17f558a5aa701",
+  "title": "洞仙歌",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "游仙梦幻"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡",
+   "婉约"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.623,
+   "style": 0.401,
+   "mood": 1.0,
+   "scene": 0.577
+  },
+  "evidence": [
+   "绣",
+   "帘",
+   "钗"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1263481f8f5d84",
+  "title": "江神子・江城子",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "悼亡挽歌",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "月",
+   "江",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "悼亡"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.659,
+   "style": 0.529,
+   "mood": 0.5,
+   "scene": 0.394
+  },
+  "evidence": [
+   "坟",
+   "孤坟"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpeb9e1e9caece13",
+  "title": "永遇乐",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "月",
+   "楼",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.763,
+   "style": 0.648,
+   "mood": 0.362,
+   "scene": 0.369
+  },
+  "evidence": [
+   "梦",
+   "客",
+   "归",
+   "天涯",
+   "故园"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp64b47d95c7e13e",
+  "title": "青玉案",
+  "author": "苏轼",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "江南",
+   "江",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.526,
+   "mood": 0.3,
+   "scene": 0.357
+  },
+  "evidence": [
+   "松",
+   "鸥",
+   "雨"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp73f107efe4e3f6",
+  "title": "谢池春",
+  "author": "李之仪",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "清新",
+   "幽峭"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "相思",
+   "愁怨"
+  ],
+  "scene": [
+   "园林",
+   "春",
+   "清明"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "感恩"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.318,
+   "mood": 0.395,
+   "scene": 0.264
+  },
+  "evidence": [
+   "清明"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp39e5bcd45f57af",
+  "title": "卜算子",
+  "author": "李之仪",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "山水": [
+    "长江"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.739,
+   "scene": 1.0
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "长江"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa13dd8628ea1d7",
+  "title": "虞美人",
+  "author": "舒亶",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "江南",
+   "冬",
+   "雪",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.217
+  },
+  "evidence": [
+   "赠",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa4d238ecabd1f0",
+  "title": "高阳台",
+  "author": "韩",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "绮丽",
+   "沉郁"
+  ],
+  "mood": "惆怅",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "青春",
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.386,
+   "mood": 0.3,
+   "scene": 0.292
+  },
+  "evidence": [
+   "饯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7d9065abd6353a",
+  "title": "玉楼春",
+  "author": "严仁",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.577,
+   "style": 0.524,
+   "mood": 0.488,
+   "scene": 0.327
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe4c67777a1971b",
+  "title": "生查子",
+  "author": "刘克庄",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.5
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp870b6030df582d",
+  "title": "高阳台",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "春",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.552,
+   "style": 1.0,
+   "mood": 0.525,
+   "scene": 0.422
+  },
+  "evidence": [
+   "醉",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp412e673eb67571",
+  "title": "贺新郎",
+  "author": "刘克庄",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "清新",
+  "style_2": [
+   "旷达"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "夏"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "四季": [
+    "夏天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.531,
+   "style": 0.612,
+   "mood": 0.3,
+   "scene": 1.0
+  },
+  "evidence": [
+   "帘",
+   "钗"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9ea58780dad3ab",
+  "title": "贺新郎",
+  "author": "刘克庄",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.358,
+   "mood": 0.586,
+   "scene": 0.388
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpee91838ef68a70",
+  "title": "玉楼春",
+  "author": "刘克庄",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.535,
+   "style": 0.656,
+   "mood": 1.0,
+   "scene": 0.292
+  },
+  "evidence": [
+   "客",
+   "家",
+   "客舍"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp88d6b57d000cbe",
+  "title": "好事近",
+  "author": "韩元吉",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "园林",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.34,
+   "mood": 1.0,
+   "scene": 0.6
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpead5ea21c5d00e",
+  "title": "六州歌头",
+  "author": "韩元吉",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "爱情相思",
+   "山水田园",
+   "咏史怀古"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.288,
+   "style": 0.267,
+   "mood": 0.574,
+   "scene": 0.543
+  },
+  "evidence": [
+   "妆",
+   "眉",
+   "绣"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb4d17b6c2877aa",
+  "title": "烛影摇红",
+  "author": "张抡",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "应制干谒"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "惆怅",
+   "悲怆"
+  ],
+  "scene": [
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.52,
+   "style": 0.486,
+   "mood": 0.256,
+   "scene": 0.548
+  },
+  "evidence": [
+   "远",
+   "梦",
+   "归",
+   "雁"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4cbe1f231c0a58",
+  "title": "永遇乐",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "咏史怀古"
+  ],
+  "style": "豪放",
+  "style_2": [],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "怀古"
+   ],
+   "人生": [
+    "战争"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.351,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 1.0
+  },
+  "evidence": [
+   "戈",
+   "马",
+   "烽"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9d526676093b5f",
+  "title": "绿意・疏影",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉",
+   "恬淡"
+  ],
+  "scene": [
+   "江",
+   "秋",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "植物": [
+    "梅花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.513,
+   "mood": 0.387,
+   "scene": 0.21
+  },
+  "evidence": [
+   "鸳鸯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe122a2a80234ea",
+  "title": "绿头鸭・多丽",
+  "author": "晁端礼",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思",
+   "游仙梦幻"
+  ],
+  "style": "清新",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.351,
+   "style": 0.381,
+   "mood": 0.43,
+   "scene": 1.0
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp55185352520840",
+  "title": "洞仙歌",
+  "author": "李元膺",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "游仙梦幻"
+  ],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "旷达"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "清明",
+   "园林",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "青春"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.546,
+   "style": 0.364,
+   "mood": 1.0,
+   "scene": 0.248
+  },
+  "evidence": [
+   "清明"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpaf5595daded2dc",
+  "title": "渔家傲",
+  "author": "朱服",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "送别",
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "豪放",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.345,
+   "style": 0.423,
+   "mood": 0.7,
+   "scene": 0.486
+  },
+  "evidence": [
+   "雨",
+   "水",
+   "渔"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp719d06da7d4311",
+  "title": "青门饮",
+  "author": "时彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨",
+   "欢愉"
+  ],
+  "scene": [
+   "秋",
+   "酒",
+   "夜",
+   "冬",
+   "雪",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.511,
+   "style": 0.551,
+   "mood": 0.379,
+   "scene": 0.183
+  },
+  "evidence": [
+   "胡",
+   "马"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc0190dda004580",
+  "title": "望海潮",
+  "author": "秦观",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [
+   "豪放",
+   "婉约"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "恬淡",
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "江",
+   "夜",
+   "冬",
+   "花",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.333,
+   "mood": 0.43,
+   "scene": 0.17
+  },
+  "evidence": [
+   "家",
+   "归",
+   "归心",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp50c9f63d1cfe61",
+  "title": "满庭芳",
+  "author": "秦观",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "园林",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.603,
+   "style": 1.0,
+   "mood": 0.68,
+   "scene": 0.258
+  },
+  "evidence": [
+   "魂",
+   "蓬莱"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe97ad2c03bea2e",
+  "title": "浣溪沙",
+  "author": "秦观",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "塞外",
+   "秋",
+   "楼",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.446,
+   "style": 0.717,
+   "mood": 0.6,
+   "scene": 0.322
+  },
+  "evidence": [
+   "水",
+   "雨",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7f574585af50e9",
+  "title": "阮郎归",
+  "author": "秦观",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "雄浑"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "园林",
+   "鸟",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.725,
+   "style": 0.5,
+   "mood": 1.0,
+   "scene": 0.316
+  },
+  "evidence": [
+   "乡",
+   "梦",
+   "旅",
+   "雁",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp79ac7bfce7f15c",
+  "title": "满庭芳",
+  "author": "秦观",
+  "form": "词",
+  "form_note": null,
+  "theme": "讽喻刺世",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡",
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "写雨"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.394,
+   "mood": 0.378,
+   "scene": 0.316
+  },
+  "evidence": [
+   "朱门"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp23ced89521c2e8",
+  "title": "帝台春",
+  "author": "李甲",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "寒食节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.556,
+   "style": 0.408,
+   "mood": 0.723,
+   "scene": 0.454
+  },
+  "evidence": [
+   "客",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdddf03096ffc13",
+  "title": "蝶恋花",
+  "author": "赵令",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "清明"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.515,
+   "style": 0.432,
+   "mood": 1.0,
+   "scene": 0.332
+  },
+  "evidence": [
+   "帘",
+   "屏",
+   "罗衣"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3f65becd99269c",
+  "title": "醉中真・浣溪沙",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "山水田园",
+   "送别"
+  ],
+  "style": "豪放",
+  "style_2": [],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "酒"
+  ],
+  "cats": {
+   "食物": [
+    "写酒"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.369,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.568
+  },
+  "evidence": [
+   "酒",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5899272921fc77",
+  "title": "人南渡・感皇恩",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.3,
+   "scene": 0.387
+  },
+  "evidence": [
+   "黛",
+   "帘"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8c89ce7125f188",
+  "title": "薄幸",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "清明",
+   "夜",
+   "花",
+   "春",
+   "酒",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.557,
+   "mood": 0.514,
+   "scene": 0.19
+  },
+  "evidence": [
+   "琴",
+   "酒",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8bb678591e441b",
+  "title": "伴云来・天香",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "民生疾苦",
+   "送别"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "婉约",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思",
+   "孤寂"
+  ],
+  "scene": [
+   "月",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思乡",
+    "孤独"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "天气": [
+    "写云",
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.286,
+   "style": 0.334,
+   "mood": 0.447,
+   "scene": 0.295
+  },
+  "evidence": [
+   "远",
+   "客",
+   "梦",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2a47b894761820",
+  "title": "青玉案",
+  "author": "无名氏",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.571,
+   "style": 0.636,
+   "mood": 0.735,
+   "scene": 0.39
+  },
+  "evidence": [
+   "家",
+   "客",
+   "梦",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5992981c866722",
+  "title": "高阳台",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.451,
+   "mood": 1.0,
+   "scene": 0.236
+  },
+  "evidence": [
+   "送"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8a42437795a11b",
+  "title": "高阳台",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "游仙梦幻"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "楼",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.378,
+   "style": 0.319,
+   "mood": 0.53,
+   "scene": 0.326
+  },
+  "evidence": [
+   "云",
+   "水",
+   "山",
+   "雨",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc4da66c71f7c81",
+  "title": "三姝媚",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "豪放",
+  "style_2": [
+   "绮丽",
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.41,
+   "mood": 1.0,
+   "scene": 0.367
+  },
+  "evidence": [
+   "客",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpfe0eee546aea6b",
+  "title": "八声甘州",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸",
+   "送别",
+   "闺情宫怨"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "江",
+   "楼",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.262,
+   "style": 0.52,
+   "mood": 1.0,
+   "scene": 0.31
+  },
+  "evidence": [
+   "云",
+   "水",
+   "钓",
+   "山",
+   "渔"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp66426d06db2e64",
+  "title": "夜合花",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "清新",
+  "style_2": [
+   "雄浑",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "酒",
+   "夜",
+   "鸟",
+   "江南",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.558,
+   "style": 0.279,
+   "mood": 1.0,
+   "scene": 0.171
+  },
+  "evidence": [
+   "乡",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp94530274ebe2ec",
+  "title": "蹋莎行・踏莎行",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "秋",
+   "雨",
+   "山",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.596,
+   "mood": 1.0,
+   "scene": 0.237
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9b56c892fca6f8",
+  "title": "夜游宫",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "秋"
+  ],
+  "cats": {
+   "四季": [
+    "秋天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.312
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc94d671a952717",
+  "title": "鹧鸪天",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "恬淡",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.649,
+   "style": 0.581,
+   "mood": 0.613,
+   "scene": 0.352
+  },
+  "evidence": [
+   "乡",
+   "梦",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0421a4bd503827",
+  "title": "唐多令",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.551,
+   "style": 0.26,
+   "mood": 1.0,
+   "scene": 0.333
+  },
+  "evidence": [
+   "离",
+   "归客"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc49fd093c74c1b",
+  "title": "金缕歌・贺新郎",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [
+   "送别",
+   "闲适隐逸",
+   "羁旅思乡"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "清新",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.224,
+   "style": 0.33,
+   "mood": 1.0,
+   "scene": 0.548
+  },
+  "evidence": [
+   "英雄",
+   "吴宫",
+   "当时"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp13b869f630a89b",
+  "title": "大有",
+  "author": "潘希白",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "山水田园",
+   "咏史怀古"
+  ],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "怀古"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.404,
+   "style": 0.329,
+   "mood": 1.0,
+   "scene": 0.338
+  },
+  "evidence": [
+   "归",
+   "雁",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp49b50543fc106f",
+  "title": "兰陵王",
+  "author": "刘辰翁",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "咏史怀古"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思念",
+    "伤感",
+    "闺怨",
+    "怀古"
+   ],
+   "山水": [
+    "西湖"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.452,
+   "style": 0.707,
+   "mood": 0.717,
+   "scene": 0.326
+  },
+  "evidence": [
+   "送",
+   "别",
+   "南浦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp03094b5525f32e",
+  "title": "宝鼎现",
+  "author": "刘辰翁",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "山水田园",
+   "民生疾苦"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "花",
+   "楼",
+   "春",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人物": [
+    "儿童"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.405,
+   "style": 0.456,
+   "mood": 0.618,
+   "scene": 0.288
+  },
+  "evidence": [
+   "妆",
+   "帘",
+   "髻"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc64129b47127a7",
+  "title": "永遇乐",
+  "author": "刘辰翁",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉",
+   "恬淡"
+  ],
+  "scene": [
+   "夜",
+   "雨",
+   "江",
+   "江南",
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.596,
+   "style": 0.468,
+   "mood": 0.322,
+   "scene": 0.184
+  },
+  "evidence": [
+   "离",
+   "携手"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3132bc43c19b92",
+  "title": "摸鱼儿",
+  "author": "刘辰翁",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "旷达",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "雨",
+   "酒",
+   "夜",
+   "江南"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "写雨"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.408,
+   "mood": 1.0,
+   "scene": 0.235
+  },
+  "evidence": [
+   "归",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0ebe2ac2d276d9",
+  "title": "绣鸾凤花犯・花犯",
+  "author": "周密",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "花",
+   "春",
+   "月",
+   "冬"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "春天",
+    "冬天"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.588,
+   "style": 0.216,
+   "mood": 0.429,
+   "scene": 0.26
+  },
+  "evidence": [
+   "绣"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8daaa9d387a076",
+  "title": "瑶花慢",
+  "author": "周密",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "雪",
+   "月"
+  ],
+  "cats": {
+   "天气": [
+    "月亮"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.287
+  },
+  "evidence": [
+   "别",
+   "送"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp38c04a5cbde778",
+  "title": "玉京秋",
+  "author": "周密",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋"
+  ],
+  "cats": {
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.581,
+   "style": 0.35,
+   "mood": 0.648,
+   "scene": 0.457
+  },
+  "evidence": [
+   "幽",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7857964ab0bf7a",
+  "title": "曲游春",
+  "author": "周密",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "寒食节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.533,
+   "style": 0.433,
+   "mood": 0.401,
+   "scene": 0.351
+  },
+  "evidence": [
+   "寒食"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp414766c933671c",
+  "title": "高阳台",
+  "author": "周密",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "爱情相思",
+   "民生疾苦",
+   "送别"
+  ],
+  "style": "清新",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "江南",
+   "冬",
+   "鸟",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "山水": [
+    "西湖"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.33,
+   "style": 0.443,
+   "mood": 1.0,
+   "scene": 0.223
+  },
+  "evidence": [
+   "马",
+   "关",
+   "旌旗"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc4cd8e0d3c721d",
+  "title": "摸鱼儿",
+  "author": "朱嗣发",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "写风"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.733,
+   "style": 0.343,
+   "mood": 0.447,
+   "scene": 0.524
+  },
+  "evidence": [
+   "钗",
+   "簪",
+   "长门"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7755e2bdab1251",
+  "title": "解佩环・疏影",
+  "author": "彭元逊",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "人物": [
+    "女子"
+   ],
+   "人生": [
+    "时光"
+   ],
+   "植物": [
+    "梅花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.5,
+   "style": 0.382,
+   "mood": 0.489,
+   "scene": 0.318
+  },
+  "evidence": [
+   "雨",
+   "山",
+   "鸥"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp29e160902dce30",
+  "title": "六丑",
+  "author": "彭元逊",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "送别",
+   "山水田园"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.415,
+   "style": 0.516,
+   "mood": 1.0,
+   "scene": 0.301
+  },
+  "evidence": [
+   "家",
+   "驿",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp16bdb8f3299f70",
+  "title": "瑞鹤仙",
+  "author": "陆淞",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "爱情相思",
+   "游仙梦幻",
+   "山水田园"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约",
+   "沉郁"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "伤感",
+    "闺怨"
+   ],
+   "人生": [
+    "青春"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.274,
+   "style": 0.32,
+   "mood": 0.397,
+   "scene": 0.348
+  },
+  "evidence": [
+   "屏",
+   "眉",
+   "帘"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0b76ca9b6da18a",
+  "title": "减字浣溪沙・浣溪沙",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "夜",
+   "花",
+   "楼",
+   "月"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.5,
+   "scene": 0.326
+  },
+  "evidence": [
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdb72a46d948baf",
+  "title": "天门谣",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "塞外",
+   "月"
+  ],
+  "cats": {
+   "山水": [
+    "泰山"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.565,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.417
+  },
+  "evidence": [
+   "塞"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpfccab6cdeebb35",
+  "title": "石州引・石州慢",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "清新",
+  "style_2": [
+   "沉郁",
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼",
+   "花",
+   "雪",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.509,
+   "style": 0.319,
+   "mood": 0.677,
+   "scene": 0.198
+  },
+  "evidence": [
+   "别",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7169fdcc1834b8",
+  "title": "望湘人",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "江",
+   "鸟",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.556,
+   "style": 0.329,
+   "mood": 0.608,
+   "scene": 0.248
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp94c2c04f335931",
+  "title": "蝶恋花",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.522,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.314
+  },
+  "evidence": [
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdfe6d2cd46549c",
+  "title": "夏云峰",
+  "author": "仲殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁",
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "夏",
+   "花",
+   "清明",
+   "春",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "夏天"
+   ],
+   "天气": [
+    "写云"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.34,
+   "style": 0.417,
+   "mood": 0.631,
+   "scene": 0.26
+  },
+  "evidence": [
+   "云",
+   "溪",
+   "水",
+   "峰"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp08c891d1a73231",
+  "title": "汉宫春",
+  "author": "李邴",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "咏史怀古"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "婉约",
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.346,
+   "style": 0.392,
+   "mood": 0.526,
+   "scene": 0.269
+  },
+  "evidence": [
+   "竹",
+   "溪",
+   "篱",
+   "云"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa974e62170ee26",
+  "title": "贺新郎",
+  "author": "潘汾",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "江南"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.511,
+   "mood": 1.0,
+   "scene": 0.288
+  },
+  "evidence": [
+   "归",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp67be02e6541d36",
+  "title": "忆王孙",
+  "author": "李重元",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "楼",
+   "雨",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思念"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.3,
+   "mood": 1.0,
+   "scene": 0.316
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp99def41bf30afc",
+  "title": "贺新郎",
+  "author": "李玉",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "花",
+   "江南",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.401,
+   "mood": 0.3,
+   "scene": 0.3
+  },
+  "evidence": [
+   "归",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8faa60807b632f",
+  "title": "临江仙",
+  "author": "陈与义",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "游仙梦幻",
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "酒",
+   "江",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.366,
+   "style": 1.0,
+   "mood": 0.526,
+   "scene": 0.417
+  },
+  "evidence": [
+   "酬"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp70325eab0d962a",
+  "title": "临江仙",
+  "author": "陈与义",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "江",
+   "夜",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思念"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.571,
+   "style": 1.0,
+   "mood": 0.591,
+   "scene": 0.322
+  },
+  "evidence": [
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6c37ef5b5bb72d",
+  "title": "兰陵王",
+  "author": "张元干",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "送别",
+   "羁旅思乡",
+   "咏史怀古"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "豪放",
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "酒",
+   "花",
+   "春",
+   "楼",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡",
+    "孤独",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.317,
+   "style": 0.307,
+   "mood": 0.465,
+   "scene": 0.268
+  },
+  "evidence": [
+   "携手",
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpcd87e66c3b994c",
+  "title": "石州慢",
+  "author": "张元干",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "幽峭",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼",
+   "冬",
+   "花",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.529,
+   "style": 0.558,
+   "mood": 1.0,
+   "scene": 0.205
+  },
+  "evidence": [
+   "离",
+   "别",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe95478f7a37a64",
+  "title": "薄幸",
+  "author": "吕渭老",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "鸟",
+   "春",
+   "月",
+   "酒",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.577,
+   "mood": 0.581,
+   "scene": 0.196
+  },
+  "evidence": [
+   "酒",
+   "醉",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3bf43d6100f34f",
+  "title": "满江红",
+  "author": "岳飞",
+  "form": "词",
+  "form_note": null,
+  "theme": "民生疾苦",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "沉郁",
+   "悲慨"
+  ],
+  "mood": "慷慨",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "江",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "爱国"
+   ],
+   "山水": [
+    "江河"
+   ],
+   "人生": [
+    "励志",
+    "梦想"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.542,
+   "style": 0.443,
+   "mood": 0.429,
+   "scene": 0.286
+  },
+  "evidence": [
+   "饥"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1ce03fa666b8b8",
+  "title": "水龙吟",
+  "author": "陈亮",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "冲淡",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "鸟",
+   "楼",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.534,
+   "style": 0.366,
+   "mood": 0.613,
+   "scene": 0.3
+  },
+  "evidence": [
+   "帘",
+   "钗"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpeee94b3a49dd8c",
+  "title": "宴山亭・燕山亭",
+  "author": "张",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [
+   "孤寂",
+   "欢愉"
+  ],
+  "scene": [
+   "山",
+   "园林",
+   "楼",
+   "鸟",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思念",
+    "孤独"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.579,
+   "style": 0.56,
+   "mood": 0.374,
+   "scene": 0.201
+  },
+  "evidence": [
+   "雨",
+   "竹",
+   "苔",
+   "云",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa94a5ad72e936a",
+  "title": "唐多令",
+  "author": "刘过",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "雄浑",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "中秋"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "生活": [
+    "边塞"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.552,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.235
+  },
+  "evidence": [
+   "中秋"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd9253d8e5dea2b",
+  "title": "点绛唇",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "清新",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "鸟",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "怀古"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.582,
+   "style": 0.571,
+   "mood": 1.0,
+   "scene": 0.375
+  },
+  "evidence": [
+   "怀古"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "太湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2f1b9514a94dec",
+  "title": "鹧鸪天",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "题画咏艺",
+   "送别"
+  ],
+  "style": "清新",
+  "style_2": [
+   "悲慨"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "夜",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.349,
+   "style": 0.524,
+   "mood": 0.676,
+   "scene": 0.37
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp94cd64be296fe2",
+  "title": "杏花天",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春",
+   "江",
+   "鸟",
+   "舟"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.684,
+   "style": 0.576,
+   "mood": 1.0,
+   "scene": 0.234
+  },
+  "evidence": [
+   "陵",
+   "当时",
+   "金陵"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1061a9efb70635",
+  "title": "踏莎行",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "离别",
+    "思念"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.631,
+   "style": 0.536,
+   "mood": 0.667,
+   "scene": 0.301
+  },
+  "evidence": [
+   "别",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpcce1be494d9630",
+  "title": "霓裳中序第一",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "闲适隐逸",
+   "哲理悟道"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂",
+   "相思"
+  ],
+  "scene": [
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.389,
+   "style": 0.24,
+   "mood": 0.286,
+   "scene": 0.5
+  },
+  "evidence": [
+   "归",
+   "客",
+   "关山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp7aadfb4f837b8a",
+  "title": "庆宫春・高阳台",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "闺情宫怨",
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "楼",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.328,
+   "style": 0.415,
+   "mood": 0.625,
+   "scene": 0.286
+  },
+  "evidence": [
+   "松",
+   "雨",
+   "鸥",
+   "云",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp501aea08a51a86",
+  "title": "齐天乐",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "民生疾苦",
+   "山水田园"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "夜",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.404,
+   "style": 1.0,
+   "mood": 0.393,
+   "scene": 0.382
+  },
+  "evidence": [
+   "离",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8624116fb22c05",
+  "title": "一萼红",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [
+   "恬淡",
+   "欢愉"
+  ],
+  "scene": [
+   "花"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.594,
+   "style": 1.0,
+   "mood": 0.379,
+   "scene": 0.388
+  },
+  "evidence": [
+   "云",
+   "竹",
+   "林",
+   "泉",
+   "水"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp18f1742f4cfcc4",
+  "title": "念奴娇",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁",
+   "豪放"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨",
+   "孤寂"
+  ],
+  "scene": [
+   "花",
+   "酒",
+   "舟",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "离别",
+    "思念",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.538,
+   "style": 0.299,
+   "mood": 0.41,
+   "scene": 0.349
+  },
+  "evidence": [
+   "南浦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp68f66c294d5089",
+  "title": "琵琶仙・自度曲",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "题画咏艺"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "江",
+   "花",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.378,
+   "style": 0.5,
+   "mood": 1.0,
+   "scene": 0.309
+  },
+  "evidence": [
+   "别",
+   "阳关",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc3d19d89e4eef8",
+  "title": "八归",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "舟",
+   "园林",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.545,
+   "style": 0.321,
+   "mood": 0.64,
+   "scene": 0.38
+  },
+  "evidence": [
+   "送",
+   "离",
+   "别",
+   "君"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp416a83451dd8fb",
+  "title": "扬州慢",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "幽峭",
+  "style_2": [
+   "清新",
+   "悲慨"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "春",
+   "楼",
+   "月"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.618,
+   "style": 0.375,
+   "mood": 0.526,
+   "scene": 0.357
+  },
+  "evidence": [
+   "胡",
+   "马",
+   "兵"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp87b3bcef15e86b",
+  "title": "长亭怨慢",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽",
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "楼",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.399,
+   "mood": 0.521,
+   "scene": 0.401
+  },
+  "evidence": [
+   "离",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp749e871e4d03de",
+  "title": "淡黄柳",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "清明",
+   "江南",
+   "酒",
+   "秋",
+   "春",
+   "月"
+  ],
+  "cats": {
+   "四季": [
+    "春天",
+    "秋天"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "节日": [
+    "寒食节",
+    "清明节"
+   ],
+   "植物": [
+    "柳树"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.587,
+   "mood": 0.628,
+   "scene": 0.207
+  },
+  "evidence": [
+   "寒食"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa864df177f8250",
+  "title": "暗香",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "幽峭",
+  "style_2": [
+   "绮丽",
+   "婉约"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "悲怆"
+  ],
+  "scene": [
+   "花",
+   "月"
+  ],
+  "cats": {
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "植物": [
+    "梅花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.604,
+   "style": 0.265,
+   "mood": 0.622,
+   "scene": 0.27
+  },
+  "evidence": [
+   "玉人",
+   "相忆",
+   "携手"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp44b029899def35",
+  "title": "疏影",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "山水田园",
+   "羁旅思乡"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂",
+   "悲怆"
+  ],
+  "scene": [
+   "夜",
+   "江南",
+   "花",
+   "春",
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "植物": [
+    "梅花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.373,
+   "style": 0.368,
+   "mood": 0.375,
+   "scene": 0.241
+  },
+  "evidence": [
+   "环",
+   "金屋"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpf88cc04013710d",
+  "title": "翠楼吟",
+  "author": "姜夔",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "楼",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.5,
+   "style": 0.366,
+   "mood": 0.545,
+   "scene": 0.307
+  },
+  "evidence": [
+   "胡"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp37b4cd523401b5",
+  "title": "木兰花・玉楼春",
+  "author": "钱惟演",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.424,
+   "mood": 1.0,
+   "scene": 0.442
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp34c072b90f0fae",
+  "title": "苏幕遮",
+  "author": "范仲淹",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "月",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡",
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.639,
+   "style": 0.515,
+   "mood": 0.429,
+   "scene": 0.297
+  },
+  "evidence": [
+   "乡",
+   "旅",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp593585bc170a9b",
+  "title": "御街行",
+  "author": "范仲淹",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨",
+   "恬淡"
+  ],
+  "scene": [
+   "酒",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.253,
+   "mood": 0.443,
+   "scene": 0.34
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp82dcf0536e0b8f",
+  "title": "曲玉管",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.376,
+   "mood": 0.524,
+   "scene": 0.533
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbf70c4f59e5765",
+  "title": "雨霖铃",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.3,
+   "mood": 1.0,
+   "scene": 0.382
+  },
+  "evidence": [
+   "离",
+   "别",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1ab8bda1f065cf",
+  "title": "采莲令",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "舟",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "植物": [
+    "荷花"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.622,
+   "style": 0.69,
+   "mood": 0.809,
+   "scene": 0.526
+  },
+  "evidence": [
+   "送",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp85b181265e88c8",
+  "title": "凤栖梧・蝶恋花",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "酒",
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.416,
+   "mood": 0.571,
+   "scene": 0.372
+  },
+  "evidence": [
+   "醉",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9c6ef11cc870d5",
+  "title": "浪淘沙",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "思乡",
+    "伤感"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.765,
+   "style": 0.592,
+   "mood": 0.338,
+   "scene": 0.581
+  },
+  "evidence": [
+   "梦",
+   "客",
+   "家",
+   "乡",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe8a61267f2054a",
+  "title": "定风波",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.425,
+   "mood": 0.71,
+   "scene": 0.553
+  },
+  "evidence": [
+   "衾"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbf1334f01df25f",
+  "title": "少年游",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "惆怅",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "酒"
+  ],
+  "cats": {
+   "四季": [
+    "秋天"
+   ],
+   "人生": [
+    "青春"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "derived",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.28,
+   "mood": 0.3,
+   "scene": 0.583
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8ce1e669f23042",
+  "title": "戚氏",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "咏史怀古",
+   "送别"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂",
+   "相思"
+  ],
+  "scene": [
+   "夜",
+   "园林",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独",
+    "怀古"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.349,
+   "style": 0.22,
+   "mood": 0.208,
+   "scene": 0.283
+  },
+  "evidence": [
+   "酒",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9847b8d59c45f5",
+  "title": "夜半乐",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "舟",
+   "夜",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思乡",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.365,
+   "style": 0.462,
+   "mood": 0.621,
+   "scene": 0.311
+  },
+  "evidence": [
+   "云",
+   "溪",
+   "樵",
+   "村",
+   "渔",
+   "荷"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp910bd0baa4338d",
+  "title": "玉蝴蝶",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "哲理悟道"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁",
+   "冲淡"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "悲怆",
+   "相思"
+  ],
+  "scene": [
+   "秋",
+   "月",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.524,
+   "style": 0.224,
+   "mood": 0.434,
+   "scene": 0.363
+  },
+  "evidence": [
+   "送",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd4852635a024cd",
+  "title": "八声甘州",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "山水": [
+    "长江"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.426,
+   "mood": 0.721,
+   "scene": 0.311
+  },
+  "evidence": [
+   "远",
+   "乡",
+   "归"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "长江"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0ddc73d1a3910a",
+  "title": "竹马子・竹马儿",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "山水田园"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂",
+   "欢愉"
+  ],
+  "scene": [
+   "雨",
+   "楼",
+   "江",
+   "秋",
+   "夏"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "夏天",
+    "秋天"
+   ],
+   "动物": [
+    "写马"
+   ],
+   "植物": [
+    "竹子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.639,
+   "style": 0.669,
+   "mood": 0.293,
+   "scene": 0.236
+  },
+  "evidence": [
+   "送",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp194ecb5ec04420",
+  "title": "迷神引",
+  "author": "柳永",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "舟"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.601,
+   "style": 0.505,
+   "mood": 0.545,
+   "scene": 0.558
+  },
+  "evidence": [
+   "雁",
+   "客",
+   "乡",
+   "旅",
+   "远",
+   "扁舟"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2d3f94e5589c06",
+  "title": "醉垂鞭",
+  "author": "张先",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "豪放",
+   "冲淡"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "食物": [
+    "写酒"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.416,
+   "mood": 0.713,
+   "scene": 0.458
+  },
+  "evidence": [
+   "闲",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpda8c9554409830",
+  "title": "一丛花令・一丛花",
+  "author": "张先",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "夜",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.531,
+   "mood": 1.0,
+   "scene": 0.385
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp9857ad2d560dc5",
+  "title": "天仙子",
+  "author": "张先",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "游仙梦幻",
+   "闲适隐逸"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "春",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.387,
+   "style": 0.529,
+   "mood": 0.571,
+   "scene": 0.34
+  },
+  "evidence": [
+   "送"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2a6d34fd6883dd",
+  "title": "千秋岁",
+  "author": "张先",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "豪放",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "春",
+   "秋",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.544,
+   "mood": 0.545,
+   "scene": 0.226
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpec064f31d7955a",
+  "title": "青门引・青门饮",
+  "author": "张先",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "月",
+   "雨",
+   "清明",
+   "楼",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.516,
+   "style": 0.5,
+   "mood": 0.55,
+   "scene": 0.176
+  },
+  "evidence": [
+   "清明"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp11e47044ff9794",
+  "title": "浣溪沙",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "悲慨"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "惆怅"
+  ],
+  "scene": [
+   "酒",
+   "楼",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.41,
+   "mood": 0.526,
+   "scene": 0.367
+  },
+  "evidence": [
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp40369a60024392",
+  "title": "浣溪沙",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "山水田园",
+   "闲适隐逸"
+  ],
+  "style": "冲淡",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "酒",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "离别"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.38,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.364
+  },
+  "evidence": [
+   "离",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdc23ee819933a5",
+  "title": "清平乐",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "酒"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.44,
+   "mood": 1.0,
+   "scene": 0.667
+  },
+  "evidence": [
+   "酒",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp33c15fc374db64",
+  "title": "清平乐",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "惆怅",
+   "孤寂"
+  ],
+  "scene": [
+   "楼",
+   "鸟",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.568,
+   "mood": 0.426,
+   "scene": 0.36
+  },
+  "evidence": [
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp78f6c4790e7145",
+  "title": "木兰花・玉楼春",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "悼亡挽歌",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "悼亡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.519,
+   "style": 0.53,
+   "mood": 1.0,
+   "scene": 0.351
+  },
+  "evidence": [
+   "挽"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5ea5006670f462",
+  "title": "木兰花・玉楼春",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "惆怅",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.527,
+   "mood": 0.3,
+   "scene": 0.374
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpeebd84aa2d951a",
+  "title": "踏莎行",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.806,
+   "style": 1.0,
+   "mood": 0.6,
+   "scene": 0.719
+  },
+  "evidence": [
+   "离",
+   "别",
+   "送",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc9a9fcc97975fa",
+  "title": "踏莎行",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "花",
+   "春",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.422,
+   "mood": 0.571,
+   "scene": 0.3
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp839304eb1db0bb",
+  "title": "玉楼春",
+  "author": "晏殊",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思",
+   "羁旅思乡"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "离别",
+    "思念",
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.378,
+   "style": 0.506,
+   "mood": 1.0,
+   "scene": 0.396
+  },
+  "evidence": [
+   "离",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp85dbd81cca3846",
+  "title": "玉楼春",
+  "author": "宋祁",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.413,
+   "mood": 0.655,
+   "scene": 0.386
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6c3b8276f269f5",
+  "title": "采桑子",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "江南"
+  ],
+  "cats": {
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.3,
+   "scene": 0.373
+  },
+  "evidence": [
+   "雨",
+   "桑"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpcab7120f362511",
+  "title": "诉衷情",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.5,
+   "style": 0.609,
+   "mood": 0.526,
+   "scene": 1.0
+  },
+  "evidence": [
+   "帘",
+   "妆"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpace79dfe6e198c",
+  "title": "踏莎行",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "山",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.6,
+   "style": 0.685,
+   "mood": 1.0,
+   "scene": 0.416
+  },
+  "evidence": [
+   "溪",
+   "水",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1b1ed20bd542e5",
+  "title": "蝶恋花",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "酒",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.512,
+   "style": 0.434,
+   "mood": 0.625,
+   "scene": 0.388
+  },
+  "evidence": [
+   "醉",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp16f2fbd6a8b323",
+  "title": "玉楼春",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "惆怅",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.473,
+   "mood": 0.3,
+   "scene": 0.415
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2e207b10727120",
+  "title": "玉楼春",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "悼亡挽歌",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "悼亡"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.519,
+   "style": 0.53,
+   "mood": 1.0,
+   "scene": 0.553
+  },
+  "evidence": [
+   "挽"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa6a6db6d794ba1",
+  "title": "玉楼春",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "楼",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.596,
+   "mood": 1.0,
+   "scene": 0.311
+  },
+  "evidence": [
+   "别",
+   "君"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd2272b4407e7e5",
+  "title": "浪淘沙",
+  "author": "欧阳修",
+  "form": "词",
+  "form_note": null,
+  "theme": "民生疾苦",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.633
+  },
+  "evidence": [
+   "苦",
+   "穷"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp63eba452c87667",
+  "title": "风入松",
+  "author": "俞国宝",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别",
+   "闲适隐逸"
+  ],
+  "style": "豪放",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "花",
+   "春",
+   "江南"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "写风"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.393,
+   "style": 0.551,
+   "mood": 0.3,
+   "scene": 0.22
+  },
+  "evidence": [
+   "云",
+   "水",
+   "松"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1dbe46a9ca1ac2",
+  "title": "绮罗香",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春",
+   "江",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.336,
+   "mood": 0.701,
+   "scene": 0.293
+  },
+  "evidence": [
+   "南浦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa356df56563a47",
+  "title": "双双燕",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独",
+    "闺怨"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.556,
+   "style": 0.42,
+   "mood": 0.545,
+   "scene": 0.371
+  },
+  "evidence": [
+   "归",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1acc2f34cdbd10",
+  "title": "东风第一枝",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "写风"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.584,
+   "mood": 0.3,
+   "scene": 1.0
+  },
+  "evidence": [
+   "归",
+   "故园"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4d7a1643bbbda8",
+  "title": "喜迁莺",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "豪放",
+   "绮丽"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "春",
+   "冬"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.305,
+   "mood": 0.613,
+   "scene": 0.254
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp97068e7a4cc0ab",
+  "title": "三姝媚",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "爱情相思",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "夜",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.577,
+   "style": 0.514,
+   "mood": 0.414,
+   "scene": 0.625
+  },
+  "evidence": [
+   "相思"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5f02926940644e",
+  "title": "夜合花",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "夜",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.571,
+   "style": 0.432,
+   "mood": 0.564,
+   "scene": 0.327
+  },
+  "evidence": [
+   "醉",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp02ba33d83b7028",
+  "title": "八归",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨",
+   "孤寂"
+  ],
+  "scene": [
+   "秋",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.491,
+   "style": 0.351,
+   "mood": 0.373,
+   "scene": 0.5
+  },
+  "evidence": [
+   "雨",
+   "水",
+   "鸥",
+   "云",
+   "渔",
+   "樵"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp72c5d65e1c6c79",
+  "title": "玉胡蝶・玉蝴蝶",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "闲适隐逸",
+   "边塞征战",
+   "哲理悟道"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "园林",
+   "楼",
+   "夜",
+   "中秋",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.288,
+   "style": 0.415,
+   "mood": 0.494,
+   "scene": 0.141
+  },
+  "evidence": [
+   "归",
+   "梦",
+   "雁",
+   "远",
+   "故园"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp49f286ee613c2d",
+  "title": "秋霁",
+  "author": "史达祖",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "清新",
+  "style_2": [
+   "幽峭",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.643,
+   "style": 0.205,
+   "mood": 0.448,
+   "scene": 0.558
+  },
+  "evidence": [
+   "雁",
+   "归",
+   "客",
+   "驿",
+   "故园"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp62f4acdb0a97af",
+  "title": "宴清都",
+  "author": "卢祖皋",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新",
+   "婉约"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "愁怨",
+   "恬淡"
+  ],
+  "scene": [
+   "园林",
+   "雨",
+   "鸟",
+   "冬"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.509,
+   "style": 0.306,
+   "mood": 0.329,
+   "scene": 0.223
+  },
+  "evidence": [
+   "涧",
+   "云",
+   "雨"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp765b99eb53f9ec",
+  "title": "江城子",
+  "author": "卢祖皋",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "清新",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂",
+   "恬淡"
+  ],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.284,
+   "mood": 0.387,
+   "scene": 0.357
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp54e36648068dd1",
+  "title": "小重山",
+  "author": "章良能",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "旷达",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "山",
+   "花",
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.344
+  },
+  "evidence": [
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4b7a180d719428",
+  "title": "满庭芳",
+  "author": "张",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "旷达"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "悲怆",
+   "恬淡"
+  ],
+  "scene": [
+   "楼",
+   "花",
+   "园林",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独",
+    "闺怨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.242,
+   "mood": 0.318,
+   "scene": 0.234
+  },
+  "evidence": [
+   "钗",
+   "妆"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpff8f3941b767f4",
+  "title": "花犯",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "民生疾苦",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "清新",
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "园林"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.565,
+   "style": 0.364,
+   "mood": 1.0,
+   "scene": 0.283
+  },
+  "evidence": [
+   "苦",
+   "寒",
+   "冻"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp697ac30ad36f6a",
+  "title": "浣溪沙",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "花",
+   "秋"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.509,
+   "mood": 1.0,
+   "scene": 0.304
+  },
+  "evidence": [
+   "云",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp142d2375f122c7",
+  "title": "浣溪沙",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "花",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.698,
+   "style": 0.6,
+   "mood": 1.0,
+   "scene": 0.246
+  },
+  "evidence": [
+   "钓",
+   "水",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp67c25003eb1fda",
+  "title": "点绛唇",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "佛道禅颂",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "春",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.3,
+   "mood": 1.0,
+   "scene": 0.441
+  },
+  "evidence": [
+   "佛"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3852710fce4ca5",
+  "title": "祝英台近",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "闲适隐逸",
+   "节令风俗",
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春",
+   "清明"
+  ],
+  "cats": {
+   "抒情": [
+    "离别"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "寒食节",
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.304,
+   "style": 0.59,
+   "mood": 1.0,
+   "scene": 0.315
+  },
+  "evidence": [
+   "竹",
+   "溪",
+   "云",
+   "山",
+   "雨"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpf19c04dfb7e362",
+  "title": "祝英台近",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "春",
+   "楼",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "春节"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.404,
+   "mood": 1.0,
+   "scene": 0.304
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbf297a8f400d71",
+  "title": "澡兰香",
+  "author": "吴文英",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "清新",
+   "绮丽"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "江",
+   "花",
+   "江南"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ],
+   "天气": [
+    "写云"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.397,
+   "mood": 0.52,
+   "scene": 0.254
+  },
+  "evidence": [
+   "往事",
+   "当时"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp47edac7a31dd39",
+  "title": "燕山亭",
+  "author": "赵佶",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "清新",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "山",
+   "鸟",
+   "雨",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.537,
+   "style": 0.403,
+   "mood": 0.558,
+   "scene": 0.243
+  },
+  "evidence": [
+   "寄",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpa683c993407ae0",
+  "title": "烛影摇红",
+  "author": "廖世美",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [
+   "爱情相思",
+   "山水田园",
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思",
+   "孤寂"
+  ],
+  "scene": [
+   "江",
+   "花",
+   "塞外",
+   "春",
+   "舟",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.234,
+   "style": 0.69,
+   "mood": 0.329,
+   "scene": 0.191
+  },
+  "evidence": [
+   "关",
+   "塞"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp168ce1c08d4007",
+  "title": "凤凰台上忆吹箫",
+  "author": "李清照",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "伤感"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.525,
+   "style": 0.305,
+   "mood": 0.363,
+   "scene": 0.363
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp28fb75b07e0336",
+  "title": "醉花阴",
+  "author": "李清照",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "夜",
+   "重阳",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "节日": [
+    "重阳节"
+   ],
+   "食物": [
+    "写酒"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.614,
+   "style": 0.379,
+   "mood": 1.0,
+   "scene": 0.285
+  },
+  "evidence": [
+   "东篱",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp148022419cf353",
+  "title": "念奴娇",
+  "author": "李清照",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "节令风俗",
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "清新",
+   "幽峭"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "慷慨",
+   "愁怨"
+  ],
+  "scene": [
+   "雨",
+   "园林",
+   "楼",
+   "清明",
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "写雨"
+   ],
+   "节日": [
+    "寒食节",
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.45,
+   "style": 0.345,
+   "mood": 0.276,
+   "scene": 0.19
+  },
+  "evidence": [
+   "别",
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp00f32cca7838bf",
+  "title": "永遇乐",
+  "author": "李清照",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "雨",
+   "元宵",
+   "冬",
+   "雪",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "元宵节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.515,
+   "style": 0.583,
+   "mood": 0.685,
+   "scene": 0.187
+  },
+  "evidence": [
+   "闺",
+   "帘"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1ed0c38b00fc04",
+  "title": "声声慢",
+  "author": "李清照",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "雨",
+   "酒",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "天气": [
+    "写雨"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.377,
+   "mood": 0.588,
+   "scene": 0.38
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpcf88bc5d6261e8",
+  "title": "苏武慢",
+  "author": "蔡伸",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "闲适隐逸"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "鸟",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.51,
+   "style": 0.395,
+   "mood": 0.658,
+   "scene": 0.283
+  },
+  "evidence": [
+   "雁",
+   "归",
+   "梦",
+   "远"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp71965685b8581b",
+  "title": "柳梢青",
+  "author": "蔡伸",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "悲怆"
+  ],
+  "scene": [
+   "春",
+   "花",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "植物": [
+    "柳树"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 1.0,
+   "mood": 0.522,
+   "scene": 0.304
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb86a6b393ed9cd",
+  "title": "摸鱼儿",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "雨",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.473,
+   "style": 0.33,
+   "mood": 1.0,
+   "scene": 0.398
+  },
+  "evidence": [
+   "眉",
+   "环",
+   "长门"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1eb7d5610773cc",
+  "title": "水龙吟",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "亲情"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江南",
+   "秋",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.588,
+   "style": 0.312,
+   "mood": 0.81,
+   "scene": 0.328
+  },
+  "evidence": [
+   "簪",
+   "髻",
+   "翠袖"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0f289616020e5f",
+  "title": "念奴娇",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "清新",
+   "沉郁"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨",
+   "孤寂"
+  ],
+  "scene": [
+   "春",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "山水": [
+    "江河"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.531,
+   "style": 0.305,
+   "mood": 0.363,
+   "scene": 0.315
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp570507115690bc",
+  "title": "鹧鸪天",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "豪放",
+   "旷达"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "山",
+   "楼",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.385,
+   "mood": 1.0,
+   "scene": 0.278
+  },
+  "evidence": [
+   "溪",
+   "云",
+   "水"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6327af1ef41d9d",
+  "title": "菩萨蛮",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "山"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "山水": [
+    "江河"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.727,
+   "mood": 0.677,
+   "scene": 0.5
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdef5aab5815c88",
+  "title": "木兰花慢",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "豪放",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "酒",
+   "夜",
+   "中秋"
+  ],
+  "cats": {
+   "抒情": [
+    "友情"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "人生": [
+    "时光"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.568,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.205
+  },
+  "evidence": [
+   "别",
+   "送",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp30a4d20b32a6da",
+  "title": "祝英台令",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "春",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.533,
+   "style": 0.554,
+   "mood": 0.726,
+   "scene": 0.312
+  },
+  "evidence": [
+   "钗",
+   "簪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4f0a3f6add96c6",
+  "title": "青玉案",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "花"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.596,
+   "mood": 1.0,
+   "scene": 0.406
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbeb305cfba39a6",
+  "title": "贺新郎",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "边塞征战",
+   "闺情宫怨"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "塞外",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.392,
+   "style": 0.397,
+   "mood": 0.613,
+   "scene": 0.522
+  },
+  "evidence": [
+   "客",
+   "驿"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpfeda664cad7f2d",
+  "title": "贺新郎",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "边塞征战",
+   "闺情宫怨"
+  ],
+  "style": "清新",
+  "style_2": [
+   "悲慨",
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "鸟",
+   "春",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "离别",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "人生": [
+    "战争"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.357,
+   "style": 0.253,
+   "mood": 0.561,
+   "scene": 0.278
+  },
+  "evidence": [
+   "离",
+   "别",
+   "送",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp99f30691ef4ed8",
+  "title": "汉宫春",
+  "author": "辛弃疾",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [
+   "闲适隐逸",
+   "边塞征战"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡",
+   "欢愉"
+  ],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人物": [
+    "女子"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.34,
+   "style": 1.0,
+   "mood": 0.294,
+   "scene": 0.362
+  },
+  "evidence": [
+   "汉宫"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp53c4b5744ef91d",
+  "title": "水龙吟",
+  "author": "程垓",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "雨",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.552,
+   "style": 0.573,
+   "mood": 0.583,
+   "scene": 0.243
+  },
+  "evidence": [
+   "闲",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpfed98815648c9e",
+  "title": "绿头鸭・多丽",
+  "author": "贺铸",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "夜",
+   "酒",
+   "舟",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.436,
+   "style": 0.27,
+   "mood": 1.0,
+   "scene": 0.227
+  },
+  "evidence": [
+   "离",
+   "寄",
+   "君",
+   "南浦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpddc2e4d939be63",
+  "title": "水龙吟",
+  "author": "晁补之",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "豪放",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "酒",
+   "春",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.454,
+   "mood": 0.636,
+   "scene": 0.286
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp54f371b40dff60",
+  "title": "忆少年",
+  "author": "晁补之",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "冲淡",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "舟",
+   "山",
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "思念"
+   ],
+   "人生": [
+    "青春"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.538,
+   "style": 0.3,
+   "mood": 1.0,
+   "scene": 0.36
+  },
+  "evidence": [
+   "山",
+   "林",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp535eb913df2263",
+  "title": "洞仙歌",
+  "author": "晁补之",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [
+   "边塞征战"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "秋",
+   "楼"
+  ],
+  "cats": {
+   "四季": [
+    "秋天"
+   ],
+   "人物": [
+    "女子"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.547,
+   "style": 0.325,
+   "mood": 1.0,
+   "scene": 0.424
+  },
+  "evidence": [
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5370a8e94c9e33",
+  "title": "瑞龙吟",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "园林"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.68,
+   "mood": 0.545,
+   "scene": 0.535
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp5be9581b63edc2",
+  "title": "锁窗寒・琐寒窗",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "园林",
+   "春",
+   "夜",
+   "酒",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "读书"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.541,
+   "mood": 0.514,
+   "scene": 0.242
+  },
+  "evidence": [
+   "羁",
+   "旅",
+   "归",
+   "客"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8eb6476175d018",
+  "title": "风流子",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "旷达",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "天气": [
+    "写风"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.733,
+   "style": 0.363,
+   "mood": 1.0,
+   "scene": 0.472
+  },
+  "evidence": [
+   "帘",
+   "绣",
+   "妆",
+   "金屋"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8d4d1ee0e7ab9c",
+  "title": "应天长",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "羁旅思乡",
+   "咏史怀古"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "清新",
+   "冲淡"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨",
+   "欢愉"
+  ],
+  "scene": [
+   "清明",
+   "园林",
+   "花",
+   "春",
+   "酒",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "节日": [
+    "寒食节",
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.376,
+   "style": 0.359,
+   "mood": 0.417,
+   "scene": 0.2
+  },
+  "evidence": [
+   "寒食"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd888ab4928836e",
+  "title": "解连环",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "闺情宫怨",
+   "送别"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "江",
+   "花",
+   "江南"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.385,
+   "style": 1.0,
+   "mood": 0.659,
+   "scene": 0.223
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp17149d5a941159",
+  "title": "瑞鹤仙",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "鸟",
+   "酒",
+   "楼",
+   "塞外"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.669,
+   "style": 0.575,
+   "mood": 0.655,
+   "scene": 0.241
+  },
+  "evidence": [
+   "洞天",
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4fe328e8e81bc3",
+  "title": "浪涛沙・浪淘沙",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "闺情宫怨"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁",
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "雪",
+   "花",
+   "夜",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "孤独",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.59,
+   "style": 0.252,
+   "mood": 0.608,
+   "scene": 0.31
+  },
+  "evidence": [
+   "离",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpc063f64461105d",
+  "title": "满庭芳",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "园林",
+   "鸟",
+   "江南",
+   "花",
+   "江",
+   "雨"
+  ],
+  "cats": {
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.533,
+   "mood": 0.625,
+   "scene": 0.185
+  },
+  "evidence": [
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp70b2c0df9b4d47",
+  "title": "过秦楼",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡",
+   "清新"
+  ],
+  "mood": "恬淡",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "楼",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.288,
+   "mood": 0.462,
+   "scene": 0.426
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp157df1f3a98fb8",
+  "title": "夜游宫",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ],
+   "人生": [
+    "读书"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "derived",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.34,
+   "mood": 1.0,
+   "scene": 1.0
+  },
+  "evidence": [
+   "衾"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp84bbf9c40ef0a2",
+  "title": "解语花",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡",
+   "旷达"
+  ],
+  "mood": "恬淡",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "花",
+   "夜"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.281,
+   "mood": 0.5,
+   "scene": 0.599
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpdd43fbb3a55e5f",
+  "title": "大",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "羁旅思乡"
+  ],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨",
+   "恬淡"
+  ],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.617,
+   "style": 0.429,
+   "mood": 0.329,
+   "scene": 1.0
+  },
+  "evidence": [
+   "琴",
+   "幽",
+   "闲"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpaefa9012fad8e9",
+  "title": "花犯",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "欢愉",
+  "mood_2": [
+   "愁怨",
+   "孤寂"
+  ],
+  "scene": [
+   "花",
+   "冬",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.414,
+   "mood": 0.347,
+   "scene": 0.29
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp1018b391d4cfee",
+  "title": "六丑",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [
+   "爱情相思",
+   "羁旅思乡",
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "冲淡",
+   "婉约"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "雨",
+   "花",
+   "春",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "人生": [
+    "时光"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.246,
+   "style": 0.349,
+   "mood": 0.417,
+   "scene": 0.301
+  },
+  "evidence": [
+   "钗",
+   "簪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp23f78a4e960805",
+  "title": "兰陵王",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "清明",
+   "酒",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感",
+    "怀古"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "节日": [
+    "寒食节",
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.427,
+   "style": 0.648,
+   "mood": 0.472,
+   "scene": 0.444
+  },
+  "evidence": [
+   "送",
+   "离",
+   "别",
+   "长亭",
+   "携手"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb21db1402576f8",
+  "title": "西河",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [],
+  "style": "冲淡",
+  "style_2": [
+   "沉郁",
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "夜",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "怀古"
+   ],
+   "山水": [
+    "江河"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.741,
+   "style": 0.357,
+   "mood": 0.529,
+   "scene": 0.357
+  },
+  "evidence": [
+   "故国",
+   "王谢",
+   "兴亡"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp11ee418fbd99cc",
+  "title": "绮寮怨",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏史怀古",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "怀古"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.4,
+   "mood": 0.736,
+   "scene": 1.0
+  },
+  "evidence": [
+   "陵",
+   "当时"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3a5031bf7e3981",
+  "title": "拜星月・拜星月慢",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "爱情相思",
+   "游仙梦幻"
+  ],
+  "style": "清新",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "月",
+   "园林",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "孤独"
+   ],
+   "天气": [
+    "月亮",
+    "星星"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.359,
+   "style": 1.0,
+   "mood": 0.511,
+   "scene": 0.286
+  },
+  "evidence": [
+   "竹",
+   "水",
+   "雨",
+   "云",
+   "溪",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbe9192b90bad20",
+  "title": "尉迟杯",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "送别",
+   "山水田园"
+  ],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉",
+   "孤寂"
+  ],
+  "scene": [
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思乡",
+    "孤独"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "食物": [
+    "写酒"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.361,
+   "style": 0.531,
+   "mood": 0.205,
+   "scene": 0.392
+  },
+  "evidence": [
+   "归",
+   "客",
+   "驿",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp77a0b46973734a",
+  "title": "蝶恋花",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.352,
+   "mood": 1.0,
+   "scene": 0.373
+  },
+  "evidence": [
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8aaa92b7ad5aae",
+  "title": "夜飞鹊・夜飞鹊慢",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "生活": [
+    "写桥"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.451,
+   "mood": 0.656,
+   "scene": 0.375
+  },
+  "evidence": [
+   "送",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp84a23fdf1d631b",
+  "title": "关河令・清商怨",
+  "author": "周邦彦",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "冲淡",
+   "幽峭"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.405,
+   "mood": 0.483,
+   "scene": 0.357
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpbba50c920e98dd",
+  "title": "南浦",
+  "author": "孔夷",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [
+   "沉郁"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思",
+   "孤寂"
+  ],
+  "scene": [
+   "雪",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "思念",
+    "伤感",
+    "孤独",
+    "怀古"
+   ],
+   "天气": [
+    "写雪"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.316,
+   "style": 0.388,
+   "mood": 0.317,
+   "scene": 0.295
+  },
+  "evidence": [
+   "送",
+   "离",
+   "南浦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0be6d5514dd406",
+  "title": "临江仙",
+  "author": "晁冲之",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念"
+   ],
+   "山水": [
+    "江河"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.469,
+   "style": 1.0,
+   "mood": 0.767,
+   "scene": 0.453
+  },
+  "evidence": [
+   "别",
+   "寄"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp42c1fa6f030916",
+  "title": "惜分飞",
+  "author": "毛滂",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "山",
+   "夜",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.508,
+   "mood": 0.646,
+   "scene": 0.34
+  },
+  "evidence": [
+   "峰",
+   "雨",
+   "云",
+   "山"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp54b638987d48b5",
+  "title": "天香",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "婉约",
+   "豪放"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "雪",
+   "夜",
+   "花",
+   "酒"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "天气": [
+    "写雪"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.228,
+   "mood": 1.0,
+   "scene": 0.233
+  },
+  "evidence": [
+   "水",
+   "云",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe102976402d5d6",
+  "title": "眉妩",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "秋",
+   "山",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.406,
+   "mood": 0.655,
+   "scene": 0.299
+  },
+  "evidence": [
+   "眉",
+   "帘"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp29ac8990470de5",
+  "title": "齐天乐",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "游仙梦幻",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "夏",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.505,
+   "mood": 0.587,
+   "scene": 0.345
+  },
+  "evidence": [
+   "魂",
+   "仙"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4f2dbc5ba59cc9",
+  "title": "高阳台",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "爱情相思"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁",
+   "绮丽"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "爱情",
+    "思念",
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.639,
+   "style": 0.417,
+   "mood": 0.533,
+   "scene": 0.253
+  },
+  "evidence": [
+   "家",
+   "梦",
+   "归",
+   "雁",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpffa9ae8e43982f",
+  "title": "法曲献仙音",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "游仙梦幻"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春",
+   "月",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.516,
+   "style": 0.348,
+   "mood": 1.0,
+   "scene": 0.276
+  },
+  "evidence": [
+   "幽",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp446e35536f563d",
+  "title": "长亭怨・长亭怨慢",
+  "author": "王沂孙",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "园林",
+   "楼",
+   "酒",
+   "秋",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "离别"
+   ],
+   "四季": [
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.739,
+   "style": 0.598,
+   "mood": 0.49,
+   "scene": 0.255
+  },
+  "evidence": [
+   "别",
+   "长亭"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp001b676231ad9c",
+  "title": "紫萸香慢",
+  "author": "姚云文",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "边塞征战",
+   "咏史怀古",
+   "节令风俗"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "沉郁",
+   "豪放"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "相思"
+  ],
+  "scene": [
+   "花",
+   "酒",
+   "雨",
+   "重阳"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "思乡",
+    "伤感",
+    "怀古"
+   ],
+   "节日": [
+    "重阳节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.341,
+   "style": 0.388,
+   "mood": 0.618,
+   "scene": 0.255
+  },
+  "evidence": [
+   "客",
+   "羁",
+   "梦",
+   "家"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp560d1055ca7272",
+  "title": "贺新郎",
+  "author": "蒋捷",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "清新",
+   "幽峭"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "楼",
+   "雪",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独",
+    "闺怨"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.249,
+   "mood": 0.623,
+   "scene": 0.405
+  },
+  "evidence": [
+   "钗",
+   "眉",
+   "妆",
+   "金屋"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4bccf303b04386",
+  "title": "女冠子",
+  "author": "蒋捷",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "恬淡",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "夜",
+   "月",
+   "花",
+   "雪"
+  ],
+  "cats": {
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.5,
+   "mood": 0.5,
+   "scene": 0.238
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp4189bec3f75298",
+  "title": "瑞鹤仙",
+  "author": "蒋捷",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "闲适隐逸",
+   "游仙梦幻"
+  ],
+  "style": "旷达",
+  "style_2": [
+   "清新"
+  ],
+  "mood": "悲怆",
+  "mood_2": [
+   "欢愉",
+   "相思"
+  ],
+  "scene": [
+   "鸟"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.457,
+   "style": 0.524,
+   "mood": 0.367,
+   "scene": 0.303
+  },
+  "evidence": [
+   "雁",
+   "乡",
+   "归",
+   "梦"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp3e738af0f919e6",
+  "title": "甘州・八声甘州",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "羁旅思乡",
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "秋",
+   "江",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感"
+   ],
+   "四季": [
+    "秋天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.358,
+   "style": 0.676,
+   "mood": 0.677,
+   "scene": 0.327
+  },
+  "evidence": [
+   "林",
+   "云",
+   "水",
+   "鸥"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp0c23cd9569bd5c",
+  "title": "渡江云",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "冲淡",
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "江"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ],
+   "山水": [
+    "西湖"
+   ]
+  },
+  "source": {
+   "theme": "weak",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.65,
+   "style": 0.298,
+   "mood": 0.365,
+   "scene": 0.422
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首",
+   "西湖"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb246e412bb8a91",
+  "title": "解连环",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [
+   "闺情宫怨",
+   "羁旅思乡"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "绮丽",
+   "豪放"
+  ],
+  "mood": "相思",
+  "mood_2": [
+   "愁怨",
+   "孤寂"
+  ],
+  "scene": [
+   "雪",
+   "春",
+   "夜",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "友情",
+    "思念",
+    "思乡",
+    "伤感",
+    "闺怨"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.328,
+   "style": 0.336,
+   "mood": 0.381,
+   "scene": 0.282
+  },
+  "evidence": [
+   "离",
+   "寄",
+   "故人"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp334c6d9b3adb62",
+  "title": "月下笛",
+  "author": "张炎",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "咏史怀古"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "伤感",
+    "怀古"
+   ],
+   "山水": [
+    "西湖"
+   ],
+   "天气": [
+    "月亮"
+   ],
+   "人生": [
+    "读书"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.416,
+   "style": 0.441,
+   "mood": 0.651,
+   "scene": 0.487
+  },
+  "evidence": [
+   "远",
+   "梦",
+   "归",
+   "旅",
+   "家",
+   "天涯"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpaffdeec0267ac3",
+  "title": "点绛唇",
+  "author": "苏过",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "幽峭",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "酒"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.346
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpda401b77a73d37",
+  "title": "贺新郎",
+  "author": "叶梦得",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "清新",
+   "豪放"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "月",
+   "舟",
+   "江",
+   "江南",
+   "花",
+   "夏"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "四季": [
+    "夏天"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.659,
+   "style": 0.328,
+   "mood": 0.722,
+   "scene": 0.209
+  },
+  "evidence": [
+   "寄",
+   "送"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6c060097980e4f",
+  "title": "虞美人",
+  "author": "叶梦得",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "园林",
+   "夜",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.29
+  },
+  "evidence": [
+   "送",
+   "携手"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2e2a1c2fd58b4f",
+  "title": "喜迁莺",
+  "author": "刘一止",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [
+   "送别"
+  ],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "欢愉"
+  ],
+  "scene": [
+   "鸟",
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "动物": [
+    "写鸟"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.5,
+   "style": 0.477,
+   "mood": 0.478,
+   "scene": 0.269
+  },
+  "evidence": [
+   "村",
+   "林"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp8fbe8b65d304b5",
+  "title": "点绛唇",
+  "author": "汪藻",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [],
+  "style": "幽峭",
+  "style_2": [],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "酒"
+  ],
+  "cats": {},
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.346
+  },
+  "evidence": [
+   "闲",
+   "酒"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd98ebb7b2c6b91",
+  "title": "蓦山溪",
+  "author": "曹组",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "幽峭"
+  ],
+  "mood": "孤寂",
+  "mood_2": [
+   "愁怨"
+  ],
+  "scene": [
+   "雨",
+   "花",
+   "山",
+   "雪"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感",
+    "孤独"
+   ],
+   "天气": [
+    "写雨"
+   ],
+   "人物": [
+    "女子"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.407,
+   "mood": 0.538,
+   "scene": 0.267
+  },
+  "evidence": [
+   "竹",
+   "雨",
+   "山",
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp2a56a9bb8978f0",
+  "title": "三台",
+  "author": "万俟咏",
+  "form": "词",
+  "form_note": null,
+  "theme": "闲适隐逸",
+  "theme_2": [
+   "节令风俗",
+   "送别"
+  ],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "欢愉",
+  "mood_2": [],
+  "scene": [
+   "清明",
+   "春",
+   "夜",
+   "酒",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "离别"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "节日": [
+    "清明节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.355,
+   "style": 0.318,
+   "mood": 1.0,
+   "scene": 0.195
+  },
+  "evidence": [
+   "野",
+   "酒",
+   "醉"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpccfe7c60eda043",
+  "title": "江神子慢・江城子慢",
+  "author": "田为",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [
+   "孤寂"
+  ],
+  "scene": [
+   "冬",
+   "江",
+   "花",
+   "月",
+   "雪",
+   "楼"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.676,
+   "style": 0.447,
+   "mood": 0.547,
+   "scene": 0.131
+  },
+  "evidence": [
+   "寄",
+   "别"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp953a252ee8aa8a",
+  "title": "菩萨蛮",
+  "author": "陈克",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "婉约",
+  "style_2": [],
+  "mood": "惆怅",
+  "mood_2": [],
+  "scene": [
+   "花",
+   "楼"
+  ],
+  "cats": {
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "derived",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.65,
+   "mood": 0.3,
+   "scene": 0.485
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp13a2153a368f00",
+  "title": "菩萨蛮",
+  "author": "陈克",
+  "form": "词",
+  "form_note": null,
+  "theme": "哲理悟道",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "恬淡",
+  "mood_2": [],
+  "scene": [
+   "园林",
+   "春"
+  ],
+  "cats": {
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.508,
+   "mood": 1.0,
+   "scene": 0.615
+  },
+  "evidence": [
+   "蝴蝶"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpe5560caa644013",
+  "title": "鹧鸪天",
+  "author": "周紫芝",
+  "form": "词",
+  "form_note": null,
+  "theme": "送别",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约",
+   "绮丽"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "夜",
+   "雨"
+  ],
+  "cats": {
+   "抒情": [
+    "离别",
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.357,
+   "mood": 1.0,
+   "scene": 0.394
+  },
+  "evidence": [
+   "别",
+   "离"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp6dec3580cb37e7",
+  "title": "踏莎行",
+  "author": "周紫芝",
+  "form": "词",
+  "form_note": null,
+  "theme": "山水田园",
+  "theme_2": [],
+  "style": "沉郁",
+  "style_2": [
+   "婉约"
+  ],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "舟",
+   "楼",
+   "鸟",
+   "夜"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 0.34,
+   "mood": 1.0,
+   "scene": 0.294
+  },
+  "evidence": [
+   "溪"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpd2765c5b36f5e9",
+  "title": "青玉案",
+  "author": "无名氏",
+  "form": "词",
+  "form_note": null,
+  "theme": "节令风俗",
+  "theme_2": [
+   "山水田园",
+   "闲适隐逸"
+  ],
+  "style": "婉约",
+  "style_2": [
+   "绮丽",
+   "清新"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "酒",
+   "春",
+   "花"
+  ],
+  "cats": {
+   "抒情": [
+    "孤独"
+   ],
+   "四季": [
+    "春天"
+   ],
+   "生活": [
+    "写桥"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.378,
+   "style": 0.292,
+   "mood": 0.73,
+   "scene": 0.428
+  },
+  "evidence": [
+   "社日"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp645ccc138fd1c2",
+  "title": "秦楼月・忆秦娥",
+  "author": "范成大",
+  "form": "词",
+  "form_note": null,
+  "theme": "闺情宫怨",
+  "theme_2": [],
+  "style": "绮丽",
+  "style_2": [],
+  "mood": "相思",
+  "mood_2": [],
+  "scene": [
+   "楼",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "思念",
+    "闺怨"
+   ],
+   "天气": [
+    "月亮"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 1.0,
+   "style": 1.0,
+   "mood": 0.692,
+   "scene": 0.263
+  },
+  "evidence": [
+   "罗帏"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb8b268d47cec35",
+  "title": "霜天晓角",
+  "author": "范成大",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "清新",
+  "style_2": [
+   "婉约",
+   "冲淡"
+  ],
+  "mood": "愁怨",
+  "mood_2": [
+   "恬淡"
+  ],
+  "scene": [
+   "秋",
+   "雪",
+   "春",
+   "夜",
+   "楼",
+   "月"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天",
+    "秋天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 0.374,
+   "mood": 0.571,
+   "scene": 0.192
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cpb9b329c4341483",
+  "title": "眼儿媚",
+  "author": "范成大",
+  "form": "词",
+  "form_note": null,
+  "theme": "咏怀抒感",
+  "theme_2": [],
+  "style": "豪放",
+  "style_2": [],
+  "mood": "愁怨",
+  "mood_2": [],
+  "scene": [
+   "春"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "四季": [
+    "春天"
+   ]
+  },
+  "source": {
+   "theme": "fallback",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.2,
+   "style": 1.0,
+   "mood": 1.0,
+   "scene": 0.705
+  },
+  "evidence": [],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp21c68dc72e21cb",
+  "title": "六州歌头",
+  "author": "张孝祥",
+  "form": "词",
+  "form_note": null,
+  "theme": "边塞征战",
+  "theme_2": [],
+  "style": "悲慨",
+  "style_2": [
+   "豪放",
+   "冲淡"
+  ],
+  "mood": "慷慨",
+  "mood_2": [
+   "悲怆"
+  ],
+  "scene": [
+   "塞外"
+  ],
+  "cats": {
+   "抒情": [
+    "伤感"
+   ],
+   "生活": [
+    "边塞"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.75,
+   "style": 0.276,
+   "mood": 0.636,
+   "scene": 1.0
+  },
+  "evidence": [
+   "关",
+   "塞",
+   "剑",
+   "烽",
+   "兵"
+  ],
+  "legacy": [
+   "宋词三百首"
+  ],
+  "dataset": "宋词三百首"
+ },
+ {
+  "uid": "cp63c0eb274856fe",
+  "title": "念奴娇",
+  "author": "张孝祥",
+  "form": "词",
+  "form_note": null,
+  "theme": "羁旅思乡",
+  "theme_2": [
+   "节令风俗"
+  ],
+  "style": "冲淡",
+  "style_2": [
+   "豪放"
+  ],
+  "mood": "孤寂",
+  "mood_2": [],
+  "scene": [
+   "雪",
+   "江",
+   "舟",
+   "中秋",
+   "冬"
+  ],
+  "cats": {
+   "抒情": [
+    "思乡",
+    "孤独"
+   ],
+   "天气": [
+    "写雪"
+   ],
+   "节日": [
+    "中秋节"
+   ]
+  },
+  "source": {
+   "theme": "text",
+   "style": "text",
+   "mood": "text",
+   "scene": "text"
+  },
+  "conf": {
+   "theme": 0.529,
+   "style": 0.615,
+   "mood": 0.451,
+   "scene": 0.203
+  },
+  "evidence": [
+   "客",
+   "扁舟"
+  ],
+  "legacy": [
+   "宋词三百首",
+   "洞庭湖"
+  ],
+  "dataset": "宋词三百首"
+ }
+]

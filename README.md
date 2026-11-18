@@ -1,133 +1,253 @@
-<p align="center">
-  <a href="https://github.com/chinese-poetry/chinese-poetry">
-      <img src="https://avatars3.githubusercontent.com/u/30764933?s=200&v=4" alt="chinese-poetry">
-  </a>
-</p>
+# 诗词分类与接口（chinese-poetry 扩展）
 
-<h2 align="center">chinese-poetry: 最全中文诗歌古典文集数据库</h2>
+把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：分类体系完整复刻 [jinrishici v1](https://v1.jinrishici.com)（11 大类 / 69 小类），全文转为简体，路径与 v1 一致，换掉域名即可直接调用。
 
-<p align="center">
-  <a href="https://travis-ci.com/chinese-poetry/chinese-poetry" rel="nofollow">
-    <img height="28px" alt="Build Status" src="https://img.shields.io/travis/chinese-poetry/chinese-poetry?style=for-the-badge" style="max-width:100%;">
-  </a>
-  <a href="https://github.com/chinese-poetry/chinese-poetry/blob/master/LICENSE">
-    <img height="28px" alt="License" src="http://img.shields.io/badge/license-mit-blue.svg?style=for-the-badge" style="max-width:100%;">
-  </a>
-  <a href="https://github.com/chinese-poetry/chinese-poetry/graphs/contributors">
-    <img height="28px" alt="Contributors" src="https://img.shields.io/github/contributors/chinese-poetry/chinese-poetry.svg?style=for-the-badge" style="max-width:100%;">
-  </a>
-  <a href="https://www.patreon.com/jackeygao" rel="nofollow">
-    <img height="28px" alt="Patreon" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djackeygao%26type%3Dpledges&style=for-the-badge" style="max-width:100%;">
-  </a>
-</p>
+**当前规模：76,180 首**（全唐诗 55,071 + 全宋词 20,463 + 两个三百首选集），69 个小类无一为空。
 
+---
 
-最全的中华古典文集数据库，包含 5.5 万首唐诗、26 万首宋诗、2.1 万首宋词和其他古典文集。诗人包括唐宋两朝近 1.4 万古诗人，和两宋时期 1.5 千古词人。数据来源于互联网。
+## 一、快速开始
 
-**为什么要做这个仓库?** 古诗是中华民族乃至全世界的瑰宝，我们应该传承下去，虽然有古典文集，但大多数人并没有拥有这些书籍。从某种意义上来说，这些庞大的文集离我们是有一定距离的。而电子版方便拷贝，所以此开源数据库诞生了。此数据库通过 JSON 格式分发，可以让你很方便的开始你的项目。
+```bash
+python -m tagger.build          # 构建语料（约 35 秒）
+cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码）
+```
 
-古诗采集没有记录过程，因为古诗数据庞大，目标网站有限制，采集过程经常中断超过了一个星期。2017 年新加入全宋词，[全宋词爬取过程及数据分析](https://jackeygao.github.io/r/words/crawl-ci.html)。
+生产部署见下方「部署到 Cloudflare」。`server.py` 是早期的本地参考实现，
+只覆盖 v1 意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
 
-## 高频词分析图
+```bash
+curl http://127.0.0.1:8080/shanshui/lushan.json
+curl http://127.0.0.1:8080/shuqing/aiqing.txt
+curl http://127.0.0.1:8080/zhiwu/meihua.json?n=3
+```
 
-<details open>
-  <summary><b>宋词受欢迎的词牌名</b></summary>
+浏览器打开 `web/index.html` 可按分类浏览（本页为分层抽样，全库走接口）。
 
-<div align="center">
-<img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_rhythmic_topK.png" alt="两宋喜欢的词牌名">
-</div>
-</details>
+### 部署到 Cloudflare
 
-<details>
-  <summary><b>宋词高频词</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_words_topK.png" alt="宋词高频词" style="max-width:100%;">
-</details>
+接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（30 MB / 525 文件），
+Worker 只做路由与随机抽取（打包 15.5 KiB），因此不受 1 秒冷启动限制。
 
-<details>
-  <summary><b>宋词作者作品榜</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/ci_author_topK.png" alt="宋词作者作品榜" style="max-width:100%;">
-</details>
+```bash
+cd cloudflare
+npm install
+python ../tools/build_cf.py     # 生成分片与文档页
+npx wrangler login
+npx wrangler deploy
+```
 
-<details>
-  <summary><b>唐诗高频词</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/tang_text_topK.png" alt="唐诗高频词" style="max-width:100%;">
-</details>
+部署后：`/` 是调用文档，`/api` 是分类总表，`/shanshui/lushan.json` 等路径照常可用。
+详见 [cloudflare/README.md](cloudflare/README.md)。
 
-<details>
-  <summary><b>唐诗作者作品榜</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/tang_author_topK.png" alt="唐诗作者作品榜" style="max-width:100%;">
-</details>
+---
 
-<details>
-  <summary><b>宋诗高频词</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/song_text_topK.png" alt="宋诗高频词" style="max-width:100%;">
-</details>
+## 二、接口
 
-<details>
-  <summary><b>宋诗作者作品榜</b></summary>
-  <img src="https://raw.githubusercontent.com/jackeygao/chinese-poetry/master/images/song_author_topK.png" alt="宋诗作者作品榜" style="max-width:100%;">
-</details>
+### 路由（与 v1.jinrishici.com 完全一致）
 
-## 数据集
+| 路由 | 说明 |
+|---|---|
+| `/` | 分类总表，含每一类的调用地址 |
+| `/all` | 全部分类随机一首 |
+| `/shanshui` | 一级分类随机一首 |
+| `/shanshui/lushan` | 二级分类随机一首 |
+| `/t/{题材}` | 21 个题材随机一首，如 `/t/songbie`、`/t/fodao` |
+| `/抒情/爱情` | 也可直接用中文名访问 |
 
-- [唐诗宋诗](./全唐诗)
-- [全宋词](./宋词)
-- [五代·花间集](./五代诗词/huajianji)
-- [五代·南唐二主词](./五代诗词/nantang)
-- [论语](./论语)
-- [诗经](./诗经)
-- [幽梦影](./幽梦影)
-- [四书五经](./四书五经)
-- [蒙学](./蒙学)
-- [纳兰性德诗集](./纳兰性德)
-- [御定全唐詩](./御定全唐詩)
+后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条（上限 50）。
 
+### 返回体
 
-## 贡献
+v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只读前四个，因此可直接替换：
 
-本项目目的是借助技术来生成格式化(JSON)数据，让开发者更方便快速的构建诗词类应用程序。身单力薄，欢迎更多人来维护，你可以通过以下方法来参与贡献：
+```json
+{
+  "content": "庐山小隐。",
+  "origin": "尾犯",
+  "author": "晁补之",
+  "category": "古诗文-山水-庐山",
+  "id": "cp1a2b3c4d5e6f",
+  "dynasty": "宋",
+  "section": "宋词",
+  "form": "词",
+  "paragraphs": ["庐山小隐。", "..."],
+  "tags": { "theme": "山水田园", "style": "冲淡", "mood": "恬淡", "scene": ["山"] },
+  "categories": ["山水/庐山", "生活/田园"]
+}
+```
 
-- 直接提交 PR 或者通过 issue 讨论来优化完善此数据库，理论上古诗歌体非宗教类都欢迎加入，部分有争议性的数据需要社区投票讨论决定是否加入。关于诗句的纠错在创建 PR 时请标明出处。更多规范请[参考贡献规范文档](https://github.com/chinese-poetry/chinese-poetry/wiki/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE%E8%A7%84%E8%8C%83)。
+`content` 是首句（对齐 v1 的“一句”语义），全文在 `paragraphs`。
 
-- 如果你没有办法直接参与完善的过程，你也可以通过 「[爱发电赞助](https://afdian.net/a/chinese-poetry)」  「[Patreon 周期性赞助](https://www.patreon.com/jackeygao)」 的形式来持续帮助并激励我去优化完善此数据库。如果您不喜欢周期性赞助，你也可以通过「[支付宝](https://github.com/jackeyGao/JackeyGao.github.io/blob/master/static/images/alipay.png)」或者「[微信赞赏码](https://github.com/jackeyGao/JackeyGao.github.io/blob/master/static/images/wechat.jpg)」进行一次性赞助(备注留下邮箱)。
+---
 
-- 如有建议或吐槽，欢迎联系我的邮箱 gaojunqi@outlook.com。
+## 三、分类体系
 
-无论通过哪种形式贡献最终都会使之变得更好！
+两套并存，回答不同问题：**意象分类**（诗里写到什么）与**题材分类**（这首诗在写什么事）。
 
-### 赞助者
+### 3.1 题材（21 类，`/t/` 命名空间）
 
-无
+按语料实际构成重定的主旨分类，不迁就 v1。相对原 19 类做了三处调整：
+送别赠答拆成「送别」与「寄赠酬答」（前者场景是离别，后者是往还唱和）、
+哲理悟道拆出「佛道禅颂」（全唐诗佛偈量大且判法不同）、应制酬和更名「应制干谒」（收进贺官与干谒求荐）。
 
-### 贡献者
+| 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
+|---|---|---|---|---|---|
+| 山水田园 | `/t/shanshui` | 13,806 | 应制干谒 | `/t/yingzhi` | 2,170 |
+| 送别 | `/t/songbie` | 10,377 | 佛道禅颂 | `/t/fodao` | 2,062 |
+| 咏怀抒感 | `/t/yonghuai` | 7,025 | 哲理悟道 | `/t/zheli` | 1,714 |
+| 寄赠酬答 | `/t/jizeng` | 6,129 | 节令风俗 | `/t/jieling` | 1,707 |
+| 羁旅思乡 | `/t/jilv` | 5,775 | 悼亡挽歌 | `/t/daowang` | 1,501 |
+| 闲适隐逸 | `/t/xianshi` | 4,316 | 爱情相思 | `/t/aiqing` | 1,205 |
+| 边塞征战 | `/t/bianzai` | 4,173 | 民生疾苦 | `/t/minsheng` | 703 |
+| 闺情宫怨 | `/t/guiqing` | 3,433 | 题画咏艺 | `/t/tihua` | 596 |
+| 咏物 | `/t/yongwu` | 3,051 | 亲情 | `/t/qinqing` | 395 |
+| 游仙梦幻 | `/t/youxian` | 3,003 | 讽喻刺世 | `/t/fengyu` | 259 |
+| 咏史怀古 | `/t/yongshi` | 2,780 | | | |
 
-<p align="center">
-<img src="https://opencollective.com/chinese-poetry/contributors.svg?width=890&button=false" alt="Contributors">
-</p>
+用 `/t/` 前缀是因为 `aiqing` 既是意象小类又是题材 slug，扁平命名会撞车。
 
-## 案例展示
+### 3.2 意象分类（11 大类 / 69 小类）
 
-<details>
-  <summary>案例展示</summary>
-  
-- [中文诗歌主页](https://chinese-poetry.github.io)是一个基于浏览器的诗词网站，包含唐诗三百首、宋词三百首等文集。
-- [animalize](https://github.com/animalize) **/** [QuanTangshi](https://github.com/animalize/QuanTangshi)  *离线全唐诗 Android*
-- [justdark](https://github.com/justdark) **/** [pytorch-poetry-gen](https://github.com/justdark/pytorch-poetry-gen)  *a char-RNN based on pytorch*
-- [Clover27](https://github.com/Clover27) **/** [ancient-Chinese-poem-generator](https://github.com/Clover27/ancient-Chinese-poem-generator)  *Ancient-Chinese-Poem-Generator*
-- [chinese-poetry](https://github.com/chinese-poetry) **/** [poetry-calendar](http://chinese-poetry.github.io/poetry-calendar/)  *诗词周历*
-- [chenyuntc](https://github.com/chenyuntc) **/** [pytorch-book](https://github.com/chenyuntc/pytorch-book/blob/master/chapter9-神经网络写诗(CharRNN)/) *简体唐诗生成(char-RNN)，可生成藏头诗，自定义诗歌意境，前缀等。*
-- [okcy1016](https://github.com/okcy1016) **/** [poetry-desktop](https://github.com/okcy1016/poetry-desktop/) *诗词桌面*
-- [huangjianke](https://github.com/huangjianke) **/** [weapp-poem](https://github.com/huangjianke/weapp-poem/) *诗词墨客 小程序版*
-- [汉字之美](https://hz.xusenlin.com/) *汉字之美是一个方便查询的诗词网站，简洁干净，方便使用。*
-- [PaddlePaddle](https://github.com/PaddlePaddle) **/** [PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP#%E4%BA%A4%E4%BA%92%E5%BC%8Fnotebook%E6%95%99%E7%A8%8B) *基于ERNIE-GEN(Transformer)的深度学习诗词生成，可自行修改逻辑来生成多种诗词风格。*
-- [Harold-y](https://github.com/Harold-y) **/** [chinese-poetry-db-web](https://github.com/Harold-y/chinese-poetry-db-web) *基于本仓库的MySQL DB整合 + 诗词Web端展示与检索*
-  
-</details>
+完整复用 v1 的层级与 slug，路径在根下：
 
-## Star History
+| 大类 | 小类 |
+|---|---|
+| 抒情 | 爱情 友情 离别 思念 思乡 伤感 孤独 闺怨 悼亡 怀古 爱国 感恩 |
+| 四季 | 春天 夏天 秋天 冬天 |
+| 山水 | 庐山 泰山 江河 长江 黄河 西湖 瀑布 |
+| 天气 | 写风 写云 写雨 写雪 彩虹 太阳 月亮 星星 |
+| 人物 | 女子 父亲 母亲 老师 儿童 |
+| 人生 | 励志 哲理 青春 时光 梦想 读书 战争 |
+| 生活 | 乡村 田园 边塞 写桥 |
+| 节日 | 春节 元宵节 寒食节 清明节 端午节 七夕节 中秋节 重阳节 |
+| 动物 | 写鸟 写马 写猫 |
+| 植物 | 梅花 梨花 桃花 荷花 菊花 柳树 叶子 竹子 |
+| 食物 | 写酒 写茶 荔枝 |
 
-[![Star History Chart](https://api.star-history.com/svg?repos=chinese-poetry/chinese-poetry&type=Date)](https://star-history.com/#chinese-poetry/chinese-poetry&Date)
+一首诗可以同时属于多个小类（如《庐山得元侍御书》同时属 `山水/庐山`、`抒情/友情`），接口的 `category` 字段在命中的小类中随机取一个，全部命中的在 `categories`。
 
-## License
+---
 
-[MIT](https://github.com/chinese-poetry/chinese-poetry/blob/master/LICENSE) 许可证。
+## 四、两层标签的分工
+
+分类体系之外，另有一套按内容属性划分的五维标签（19 题材 / 10 风格 / 8 情绪 / 24 场景 / 13 体裁），两者用途不同：
+
+| | 分类体系（v1） | 五维标签 |
+|---|---|---|
+| 回答的问题 | 用户**想找什么**（写雨、庐山、荔枝） | 这首诗**是什么**（边塞、豪放、慷慨） |
+| 颗粒度 | 检索维度，可重叠 | 题材/风格/情绪单归属，一主多副 |
+| 用途 | 随机推荐、按类浏览 | 结构化分析、个性化分组 |
+
+接口返回同时带两者，页面侧栏以分类为主导航，详情里展示五维归属。
+
+---
+
+## 五、判定口径
+
+分类不是靠模型，而是规则 + 阈值的可解释判定，全部代码在 `tagger/categories.py`，每条规则形如：
+
+```python
+"庐山": {"kw": {"庐山": 1.5, "匡庐": 1.5, "香炉峰": 1.5}, "min": 1.0}
+```
+
+- **kw** 关键词权重，标题命中 ×2；**theme/scene/mood** 可复用五维标签；**min** 触发阈值
+- 越宽泛的词权重越低（风 0.5、月 0.7），必须组合才够分，否则「写风」会命中六成以上的诗
+- **title_required**：植物/动物/食物共 13 条规则要求关键词出现在标题。因为「梅」「柳」「桃」在唐诗里绝大多数是随手取景，正文命中会把咏物类淹掉（梅花从 4,349 条降到 384 条，才是真正的咏梅诗）
+
+### 已修掉的典型误判
+
+| 现象 | 根因 | 处理 |
+|---|---|---|
+| 《芍药》被判「荔枝」 | 「薜**荔**」含单字荔 | 删单字「荔」 |
+| 《日东病僧》被判「端午节」 | 「**艾**」既是艾草也触发端午 | 改为「艾草」，场景同步改 |
+| 《题王母庙》被判「母亲」 | 「王**母**」是神祇 | 删单字「母」 |
+| 《题**禅师**兰若》被判「老师」 | 「禅**师**」不是教师 | 删单字「师」 |
+| 《汴河》被判「端午节」 | 隋炀帝「**龙舟**」非竞渡 | 龙舟降权至 1.0 |
+| 友情与离别返回同一批诗 | 都取「送别赠答」整个题材 | 题材降为弱先验（0.3），靠各自专属词区分 |
+| 田园占全库 28% | 等同「山水田园」题材 | 题材降为 0.35，必须有农事词 |
+
+---
+
+## 六、繁转简
+
+全文（标题、作者、正文）转为简体，使用 opencc 词级转换，能正确处理「髮/發」「乾/干」这类语境歧义：
+
+- 转换发生在**构建期**，产物已固化简体，运行时不依赖 opencc
+- 无 opencc 时自动退回内置 3,751 字单字映射表
+- 原始繁体保留在 `raw/` 中，未被修改
+
+---
+
+## 七、目录
+
+```
+cp-tags/
+├─ server.py            接口服务（零第三方依赖，Python 3.8+）
+├─ tagger/
+│  ├─ categories.py     69 个意象小类的规则表 + v1 slug 对照
+│  ├─ themes21.py       21 题材定义与 19→21 映射
+│  ├─ classify.py       分类匹配（关键词分桶扫描 + 阈值判定）
+│  ├─ taxonomy.py       五维受控词表
+│  ├─ lexicon.py        714 条意象词典
+│  ├─ legacy.py         旧标签迁移表
+│  ├─ engine.py         五维打标引擎
+│  ├─ simp.py           繁转简
+│  ├─ build.py          构建入口
+│  └─ t2s.json          内置繁简单字映射
+├─ cloudflare/          Workers 部署（生产环境）
+│  ├─ src/index.js      路由与随机抽取
+│  ├─ template/doc.html 调用文档页模板
+│  └─ public/           生成的静态资源（31 MB / 626 文件）
+├─ tools/
+│  ├─ fetch_full.py     全量语料下载（走 jsDelivr 镜像）
+│  ├─ build_cf.py       生成 Cloudflare 分片与文档页
+│  ├─ llm_tag.py        大模型标注管线（实验用）
+│  ├─ eval_theme.py     题材精度基准
+│  └─ eval_llm.py       LLM 与引擎的对比评估
+├─ data/
+│  ├─ poems.jsonl       全量简体语料，一行一首（接口唯一数据源）
+│  └─ index.json        分类计数 + 词表 + 统计
+├─ tags/                三百首选集的标签层，与源数组同下标一一对应
+├─ web/                 浏览页
+└─ raw/                 原始数据（繁体）
+```
+
+---
+
+## 八、构建与扩展
+
+```bash
+python tools/fetch_full.py all      # 下载全量（约 31 MB，80 个分片）
+python -m tagger.build              # 构建，实测 34 秒
+python -m tagger.build --only tang300   # 只构建某一部
+python -m tagger.build --sample 100     # 调整浏览页每类抽样条数
+```
+
+接入新数据集只需在 `tagger/build.py` 的 `DATASETS` 登记：
+
+```python
+{"key": "songshi", "kind": "dir", "path": "raw/full/songshi",
+ "name": "全宋诗", "section": "宋诗", "dynasty": "宋"}
+```
+
+全宋诗（约 26 万首）尚未纳入，因其体量大且与唐诗高度重复，按需开启即可——引擎吞吐约 8,500 首/秒，26 万首约 1 分钟。
+
+---
+
+## 九、已知局限
+
+1. **关键词法必然有噪声**。除已修的同形歧义外，「芙蓉」（水芙蓉/木芙蓉）、「雪」（可指白发、洁白）等仍有误判。每首诗都在 `cats` 里给出命中来源，便于核查。
+2. **部分分类天然偏宽**。「春天」占 20%、「抒情」占 55%，因为唐诗本身「春」「愁」高频，不是规则错误；若要更严格，"写春天"需改为标题驱动。
+3. **分类是检索维度，不是文学断代**。一首诗可同时属于「山水/庐山」和「抒情/友情」，这不矛盾，因为回答的是"能不能被这样找到"。
+4. **全宋诗未纳入**，宋诗中的写猫、写茶、荔枝类样本会偏少（写猫仅 5 首）。
+5. **词牌不是标题**：宋词的"标题"是曲调名，早期版本让《水调歌头》《临江仙》因「水」「仙」
+   被判成山水、游仙，影响 37.6% 的宋词（7,789 首）。现已对词一律停用标题规则，词牌只经
+   `RHYTHMIC_PRIOR` 影响声情。
+6. 五维标签中「排律」判定不精确：五古十六句与五排十六句字数句数相同，差别在对仗，需平仄数据（仓库 `strains/` 有）。
+
+---
+
+## 十、许可
+
+分类规则、标签层与接口代码为新增内容，沿用原仓库 MIT 许可。诗词文本版权与来源遵循原仓库说明。
