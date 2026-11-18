@@ -188,7 +188,13 @@ curl <span class="s">"BASE/shuqing/aiqing.txt"</span>
 curl <span class="s">"BASE/zhiwu/meihua.json?n=3"</span>
 
 <span class="c"># 中文名直接访问</span>
-curl <span class="s">"BASE/抒情/爱情.json"</span></pre>
+curl <span class="s">"BASE/抒情/爱情.json"</span>
+
+<span class="c"># 只要连续两句，全库随机</span>
+curl <span class="s">"BASE/line.txt"</span>
+
+<span class="c"># 在指定分类中随机摘两句</span>
+curl <span class="s">"BASE/t/songbie.json?mode=line"</span></pre>
       <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
     </section>
 
@@ -198,6 +204,7 @@ curl <span class="s">"BASE/抒情/爱情.json"</span></pre>
       <table>
         <tr><th style="width:34%">路由</th><th>说明</th></tr>
         <tr><td><code>/all</code></td><td>全部 {{TOTAL}} 首随机一首</td></tr>
+        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong>，长诗长词会切成多个句对</td></tr>
         <tr><td><code>/{大类}</code></td><td>如 <code>/shanshui</code>，在该大类全部诗词中随机</td></tr>
         <tr><td><code>/{大类}/{小类}</code></td><td>如 <code>/shanshui/lushan</code></td></tr>
         <tr><td><code>/t/{题材}</code></td><td>按主旨取诗，如 <code>/t/songbie</code>、<code>/t/bianzai</code>，见第 03 节</td></tr>
@@ -233,7 +240,11 @@ curl <span class="s">"BASE/抒情/爱情.json"</span></pre>
       <table>
         <tr><th style="width:130px">参数</th><th>说明</th></tr>
         <tr><td><code>n</code></td><td>返回条数，1–50，大于 1 时返回数组。默认 1</td></tr>
+        <tr><td><code>mode=line</code></td><td>摘句模式：<code>content</code> 改为随机连续两句；可与任意分类路径组合</td></tr>
       </table>
+      <p><code>mode=line</code> 不会改变分类、全文和标签。每首先按标点切成小句，再顺序两两成组；
+        长诗、长词因此有多个句对参与随机，不会永远只看开头两句。整首作品先被等概率选中，
+        再从句对中等概率取一联，长诗不会挤占短诗的出现机会。</p>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -250,11 +261,15 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
       <h2><span class="no">05</span>返回结构</h2>
       <p class="h2sub">前四个字段与今日诗词 v1 完全一致，其后为扩展字段；v1 的解析器只读前四个，可直接替换。</p>
       <pre>{
-  <span class="k">"content"</span>: <span class="s">"庐山小隐。"</span>,          <span class="c">// 首句，对齐 v1 的"一句"语义</span>
+  <span class="k">"content"</span>: <span class="s">"庐山小隐。"</span>,          <span class="c">// 首句；摘句模式下为连续两句</span>
   <span class="k">"origin"</span>: <span class="s">"尾犯"</span>,               <span class="c">// 诗题 / 词牌</span>
   <span class="k">"author"</span>: <span class="s">"晁补之"</span>,
   <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,   <span class="c">// 命中的分类（多命中时随机取一）</span>
 
+  <span class="k">"mode"</span>: <span class="s">"line"</span>,                  <span class="c">// 仅摘句模式出现</span>
+  <span class="k">"lines"</span>: [<span class="s">"庐山小隐。"</span>, <span class="s">"..."</span>],     <span class="c">// 组成该联的两句</span>
+  <span class="k">"line_index"</span>: 3,                    <span class="c">// 第几个句对（从 1 开始）</span>
+  <span class="k">"line_total"</span>: 12,                   <span class="c">// 本首共有多少个句对</span>
   <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>,
   <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
   <span class="k">"section"</span>: <span class="s">"宋词"</span>,

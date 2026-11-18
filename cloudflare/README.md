@@ -107,6 +107,7 @@ cloudflare/
 | `/doc` | 同上 |
 | `/api` | 分类总表 JSON |
 | `/all` | 全库随机一首 |
+| `/line` | 全库随机连续两句 |
 | `/shanshui` | 一级分类随机 |
 | `/shanshui/lushan.json` | 二级分类随机 |
 | `/t/{题材}` | 21 个题材，如 `/t/songbie`、`/t/bianzai` |
@@ -115,6 +116,9 @@ cloudflare/
 
 与今日诗词 v1 的差异只有一处：v1 的 `/` 返回分类总表 JSON，本服务把 `/` 让给文档页，总表移到 `/api`。
 其余路径、slug、返回体前四个字段完全一致。
+
+任意分类加 `?mode=line` 返回随机连续两句；长诗长词按自然句序切成多个句对，
+先等概率选整首、再等概率选句对。分类、全文与标签保持不变。
 
 ---
 
@@ -126,7 +130,8 @@ python tools/build_cf.py          # 重新分片（约 20 秒）
 cd cloudflare && npx wrangler deploy
 ```
 
-`build_cf.py` 会先清空 `public/data`，所以调整分片大小不会残留旧文件。
+`build_cf.py` 采用确定性覆盖写入，不做批量删除；调整分片大小后旧文件可能留在磁盘，
+但不会被新的 `manifest.js` 引用，因此不影响线上。最终以构建末尾的分片数自检为准。
 修改 `POEM_CHUNK_BYTES`（默认 120 KB）或 `IDX_SHARD`（默认 1000）后重新构建即可，
 `manifest.js` 与 Worker 逻辑都会自动适配。
 

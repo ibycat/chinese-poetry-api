@@ -66,6 +66,47 @@ function text(s, status = 200) {
 const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+/* ---------------- 摘句模式：按自然句序切成连续两句 ---------------- */
+const NOTE_RE = /（[^）]{0,300}）/g;
+const CLAUSE_RE = /[^，。！？；：,.!?;:]+[，。！？；：,.!?;:]*/g;
+
+/** 每首按标点切成小句，再顺序两两成组；奇数末句与上一句组成最后一组，
+ *  因此任何一句都不会被丢掉，也不会只显示开头两句。 */
+function twoLineUnits(paragraphs) {
+  const clauses = [];
+  for (const para of paragraphs || []) {
+    const s = String(para).replace(NOTE_RE, "").trim();
+    if (!s) continue;
+    for (const part of s.match(CLAUSE_RE) || []) {
+      const c = part.trim();
+      if (c) clauses.push(c);
+    }
+  }
+  if (!clauses.length) return [];
+  if (clauses.length === 1) return [[clauses[0]]];
+  const units = [];
+  for (let i = 0; i + 1 < clauses.length; i += 2) {
+    units.push([clauses[i], clauses[i + 1]]);
+  }
+  if (clauses.length % 2) {
+    units.push([clauses[clauses.length - 2], clauses[clauses.length - 1]]);
+  }
+  return units;
+}
+
+/** 随机取一个两句片段；分类、全文和其他标签均保持不变。 */
+function applyLine(item, r) {
+  const units = twoLineUnits(r[6]);
+  if (!units.length) return false;
+  const i = Math.floor(Math.random() * units.length);
+  item.content = units[i].join("");
+  item.lines = units[i];
+  item.line_index = i + 1;
+  item.line_total = units.length;
+  item.mode = "line";
+  return true;
+}
+
 function svgOf(content, author, title) {
   const lines = [];
   for (let i = 0; i < content.length; i += 14) lines.push(content.slice(i, i + 14));
@@ -173,6 +214,7 @@ function catalog(url) {
   return {
     welcome: "欢迎使用诗词分类接口（分类体系兼容今日诗词 v1）",
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
+    "line-mode": `${base}/line　随机返回连续两句；任意分类路径加 ?mode=line 可在该分类内摘句`,
     help: "数据源 ibycat/chinese-poetry，全文简体；分类体系与 v1.jinrishici.com 一致",
     count: TOTAL,
     built_at: BUILT_AT,
@@ -215,7 +257,11 @@ export default {
     let n = parseInt(q.get("n") || "1", 10);
     if (!Number.isFinite(n)) n = 1;
     n = Math.max(1, Math.min(n, 50));
-
+    const lineRoute = path === "line";
+    const rawMode = String(q.get("mode") || "").toLowerCase();
+    const lineMode = lineRoute ||
+      ["line", "pair", "two", "couplet"].includes(rawMode);
+    if (lineRoute) path = "all";
 
     // 解析分类
     let node = null;
@@ -259,14 +305,30 @@ export default {
     try {
       const cache = new Map();
       if (node.type === "all") {
-        // 全库随机：直接用诗库下标，无需分类索引
-        const g = Math.floor(Math.random() * TOTAL);
-        const c = chunkOf(g);
-        const arr = await assetJSON(env, `/data/p/${c}.json`, cache);
-        const one = expand(arr[g - POEM_CHUNKS[c]], null, null);
-        if (fmt === "txt") return text(one.content);
-        if (fmt === "svg") return svg(one);
-        return json(one);
+        // 全库随机：直接用诗库下标，无需分类索引。
+        // 摘句模式先随机整首，再在整首的句对中等概率取一联，
+        // 避免长诗因为句数多而挤占其他作品的曝光。
+        const picks = Math.min(n, TOTAL);
+        const seen = new Set();
+        const items = [];
+        for (let attempt = 0; attempt < picks * 5 && items.length < picks; attempt++) {
+          const g = Math.floor(Math.random() * TOTAL);
+          const c = chunkOf(g);
+          const arr = await assetJSON(env, `/data/p/${c}.json`, cache);
+          const r = arr[g - POEM_CHUNKS[c]];
+          if (seen.has(r[0])) continue;
+          const one = expand(r, null, null);
+          if (lineMode && !applyLine(one, r)) continue;
+          seen.add(r[0]);
+          items.push(one);
+        }
+        if (!items.length) {
+          return json({ status: "error", errCode: 1001,
+            errMessage: "No readable lines in corpus" }, 500);
+        }
+        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
+        if (fmt === "svg") return svg(items[0]);
+        return json(n > 1 ? items : items[0]);
       }
 
       const picks = Math.min(n, node.count);
@@ -279,6 +341,7 @@ export default {
           node.type === "sub" ? node.sub : null);
         // 按题材请求时，category 直接回题材名，不再用意象分类
         if (node.type === "theme") it.category = `古诗文-${node.themeName}`;
+        if (lineMode && !applyLine(it, r)) continue;
         seen.add(r[0]);
         items.push(it);
       }
@@ -293,6 +356,8 @@ export default {
     }
   },
 };
+
+export { twoLineUnits };
 
 function svg(one) {
   return new Response(svgOf(one.content, one.author, one.origin), {

@@ -27,3 +27,8 @@ data/_*.json
 data/llm_b*.json
 data/llm_b*.jsonl
 data/llm_v2.json
+data/theme_labels_bench*.jsonl
+data/theme_labels_review_bench*.jsonl
+data/theme_labels_audit*.jsonl
+data/theme_labels_kimi_partial.jsonl
+data/theme_labels_deepseek_pro_partial.jsonl

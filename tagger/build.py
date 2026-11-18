@@ -21,7 +21,7 @@ import hashlib
 import random
 
 from . import engine, legacy, taxonomy, simp, classify
-from .themes21 import to21, DIRECT
+from .themes21 import to21, DIRECT, TO19, THEMES
 from .categories import CATS, SLUG
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,39 @@ DATASETS = [
 ]
 
 DIMS = ["theme", "style", "mood", "scene"]
+
+# 经人工基准与全量高风险类抽查验证，这些规则弱类使用模型语义标签。
+LLM_OVERRIDE_THEMES = {
+    "寄赠酬答", "节令风俗", "闲适隐逸", "应制干谒",
+    "佛道禅颂", "悼亡挽歌", "咏怀抒感",
+}
+LOW_CONF_REVIEW = 0.35
+
+
+def load_labels(filename):
+    path = os.path.join(ROOT, "data", filename)
+    labels = {}
+    if not os.path.exists(path):
+        return labels
+    for line in open(path, encoding="utf-8"):
+        try:
+            row = json.loads(line)
+            if row.get("theme") in THEMES:
+                labels[row["uid"]] = row
+        except Exception:
+            pass
+    return labels
+
+
+def choose_theme(uid, rule_theme, rule_conf, initial, reviews):
+    first = initial.get(uid)
+    if first and rule_theme in LLM_OVERRIDE_THEMES:
+        return first["theme"], first.get("conf") or 0, "llm"
+    reviewed = reviews.get(uid)
+    if (rule_conf < LOW_CONF_REVIEW and first and reviewed
+            and first["theme"] != rule_theme):
+        return reviewed["theme"], reviewed.get("conf") or 0, "llm_review"
+    return rule_theme, rule_conf, "rules"
 
 
 def load_dataset(ds):
@@ -71,8 +104,10 @@ def make_uid(poem, section):
     return "cp" + hashlib.sha1(key.encode("utf-8")).hexdigest()[:14]
 
 
-def process(ds, raw, seen, sample_pool):
-    """逐首：转简 -> 五维打标 -> v1 分类匹配 -> 首句去重。"""
+def process(ds, raw, seen, sample_pool, initial=None, reviews=None):
+    """逐首：转简 -> 五维打标 -> 语义复核 -> v1 分类匹配 -> 首句去重。"""
+    initial = initial or {}
+    reviews = reviews or {}
     recs, layer = [], []
     kept = dup = 0
     for poem in raw:
@@ -98,17 +133,21 @@ def process(ds, raw, seen, sample_pool):
         tg = rec["tags"]
 
         scene = [t for t in [tg["scene"]["primary"]] + tg["scene"]["secondary"] if t]
+        uid = make_uid(poem, ds["section"])
+        rule_theme = to21(tg["theme"]["primary"], engine.norm(title),
+                          engine.norm("".join(paras)))
+        rule_conf = tg["theme"].get("conf") or 0.0
+        theme21, theme_conf, theme_source = choose_theme(
+            uid, rule_theme, rule_conf, initial, reviews)
         cats = classify.classify(
             engine.norm("".join(paras)), engine.norm(title),
-            {"theme": [tg["theme"]["primary"]] + tg["theme"]["secondary"],
+            {"theme": [TO19.get(theme21, theme21)] + tg["theme"]["secondary"],
              "mood": [tg["mood"]["primary"]] + tg["mood"]["secondary"],
              "scene": scene})
 
-        # 对外统一用 21 题材（19 类是引擎内部口径，不暴露）
-        theme21 = to21(tg["theme"]["primary"], engine.norm(title),
-                       engine.norm("".join(paras)))
+        # 对外统一用 21 题材；只有验证过的弱类和低置信分歧使用模型标签。
         item = {
-            "uid": make_uid(poem, ds["section"]), "title": title, "author": author,
+            "uid": uid, "title": title, "author": author,
             "dynasty": ds["dynasty"], "section": ds["section"], "form": rec["form"],
             "paragraphs": paras,
             "theme": theme21,
@@ -116,13 +155,14 @@ def process(ds, raw, seen, sample_pool):
             "style": tg["style"]["primary"], "style2": tg["style"]["secondary"],
             "mood": tg["mood"]["primary"], "mood2": tg["mood"]["secondary"],
             "scene": scene, "cats": cats,
-            # 置信度与备选：调用方据此决定是否采信（实测 >=0.6 时准确率 95.7%）
-            "theme_conf": round(tg["theme"].get("conf") or 0.0, 3),
+            "theme_conf": round(theme_conf, 3),
         }
         recs.append(item)
 
         if ds.get("tags_layer"):
             note = legacy.form_override(old)
+            sources = {d: tg[d].get("source") for d in DIMS if tg.get(d)}
+            sources["theme"] = theme_source
             layer.append({
                 "uid": item["uid"], "title": title, "author": author,
                 "form": rec["form"],
@@ -131,7 +171,7 @@ def process(ds, raw, seen, sample_pool):
                 "style": item["style"], "style_2": item["style2"],
                 "mood": item["mood"], "mood_2": item["mood2"],
                 "scene": scene, "cats": cats,
-                "source": {d: tg[d].get("source") for d in DIMS if tg.get(d)},
+                "source": sources,
                 "conf": {d: tg[d].get("conf") for d in DIMS if tg.get(d)},
                 "evidence": rec["evidence"].get("theme", []),
                 "legacy": old, "dataset": ds["name"],
@@ -152,7 +192,13 @@ def main():
     ap.add_argument("--only", default=None)
     ap.add_argument("--sample", type=int, default=60,
                     help="每个二级分类进入浏览页的条数上限")
+    ap.add_argument("--no-llm", action="store_true", help="只使用规则，便于回归对照")
     args = ap.parse_args()
+
+    initial = {} if args.no_llm else load_labels("theme_labels.jsonl")
+    reviews = {} if args.no_llm else load_labels("theme_labels_review.jsonl")
+    if initial:
+        print(f"载入模型初判 {len(initial)} 条、分歧终审 {len(reviews)} 条", flush=True)
 
     datasets = [d for d in DATASETS if not args.only or d["key"] == args.only]
     seen = set()
@@ -165,7 +211,7 @@ def main():
         except FileNotFoundError:
             print(f"[{ds['key']}] 找不到 {ds['path']}，跳过")
             continue
-        recs, layer, kept, dup = process(ds, raw, seen, sample_pool)
+        recs, layer, kept, dup = process(ds, raw, seen, sample_pool, initial, reviews)
         all_recs += recs
         report.append((ds["key"], ds["name"], len(raw), kept, dup))
         if layer:

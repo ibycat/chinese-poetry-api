@@ -50,12 +50,17 @@ npx wrangler deploy
 |---|---|
 | `/` | 分类总表，含每一类的调用地址 |
 | `/all` | 全部分类随机一首 |
+| `/line` | 全库随机返回连续两句 |
 | `/shanshui` | 一级分类随机一首 |
 | `/shanshui/lushan` | 二级分类随机一首 |
 | `/t/{题材}` | 21 个题材随机一首，如 `/t/songbie`、`/t/fodao` |
 | `/抒情/爱情` | 也可直接用中文名访问 |
 
 后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条（上限 50）。
+
+任意分类路径加 `?mode=line` 即进入摘句模式：`content` 改为随机连续两句，分类和其他字段不变。
+长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。
+例如 `/t/songbie.json?mode=line`、`/shanshui/lushan.txt?mode=line`。
 
 ### 返回体
 
@@ -77,7 +82,8 @@ v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只�
 }
 ```
 
-`content` 是首句（对齐 v1 的“一句”语义），全文在 `paragraphs`。
+`content` 默认为首句（对齐 v1 的“一句”语义），全文在 `paragraphs`。
+摘句模式另返回 `mode: "line"`、`lines`（组成该联的两句）、`line_index`、`line_total`。
 
 ---
 

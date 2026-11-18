@@ -5,6 +5,7 @@
 "送别"与"寄赠酬答"，因此按"可接受集合"判对错，不强行单选。
 """
 
+import argparse
 import json
 import os
 import sys
@@ -15,6 +16,7 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from tagger import engine, legacy, simp  # noqa: E402
+from tagger.build import make_uid, choose_theme  # noqa: E402
 import eval_theme as ev  # noqa: E402
 
 # 旧体系标签 -> 新体系可接受集合（按具体标签细分，而非按旧主题名）
@@ -53,17 +55,42 @@ def gold_sets(raw):
     return out
 
 
+def gold_uid_sets():
+    """按源记录 UID 对齐，避免同作者同标题的不同作品互相污染。"""
+    out = {}
+    for key, section in (("tang300", "唐诗"), ("song300", "宋词")):
+        raw = json.load(open(os.path.join(ROOT, "raw", f"{key}.json"), encoding="utf-8"))
+        for row in raw:
+            accepted = set()
+            for tag in row.get("tags") or []:
+                accepted |= OLD2NEW.get(tag, set())
+            if accepted:
+                out[make_uid(row, section)] = accepted
+    return out
+
+
 def main():
-    raw = []
-    for k in ("tang300", "song300"):
-        raw += json.load(open(os.path.join(ROOT, "raw", f"{k}.json"), encoding="utf-8"))
-    gold = gold_sets(raw)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--file", default=os.path.join(ROOT, "data", "llm_theme.jsonl"))
+    ap.add_argument("--review-file", default=None)
+    ap.add_argument("-v", "--verbose", action="store_true")
+    args = ap.parse_args()
+
+    gold = gold_uid_sets()
 
     llm = {}
-    for line in open(os.path.join(ROOT, "data", "llm_theme.jsonl"), encoding="utf-8"):
+    details = {}
+    for line in open(args.file, encoding="utf-8"):
         r = json.loads(line)
         if r.get("theme"):
             llm[r["uid"]] = r["theme"]
+            details[r["uid"]] = r
+    reviews = {}
+    if args.review_file:
+        for line in open(args.review_file, encoding="utf-8"):
+            r = json.loads(line)
+            if r.get("theme"):
+                reviews[r["uid"]] = r
 
     poems = [json.loads(x) for x in open(os.path.join(ROOT, "data", "poems.jsonl"),
                                         encoding="utf-8")]
@@ -77,12 +104,16 @@ def main():
         "民生疾苦": {"民生疾苦"}, "题画咏艺": {"题画咏艺"},
         "游仙梦幻": {"游仙梦幻", "佛道禅颂"}, "亲情": {"亲情"},
         "节令风俗": {"节令风俗"}, "咏怀抒感": {"咏怀抒感"}, "应制酬和": {"应制干谒"},
+        # 构建后的 poems.jsonl 已使用 21 类，补充恒等映射才能公平比较。
+        "送别": {"送别"}, "寄赠酬答": {"寄赠酬答"}, "咏物": {"咏物"},
+        "闺情宫怨": {"闺情宫怨"}, "悼亡挽歌": {"悼亡挽歌"},
+        "佛道禅颂": {"佛道禅颂"}, "应制干谒": {"应制干谒"},
     }
 
-    n = ok_llm = ok_eng = 0
+    n = ok_llm = ok_eng = ok_hybrid = 0
     conf = collections.Counter()
     for p in poems:
-        g = gold.get((p["author"], p["title"]))
+        g = gold.get(p["uid"])
         if not g:
             continue
         lab = llm.get(p["uid"])
@@ -93,13 +124,22 @@ def main():
             ok_llm += 1
         elif lab:
             conf[(tuple(sorted(g)), lab)] += 1
+            if args.verbose:
+                row = details.get(p["uid"], {})
+                print(f"  错例 {p['author']}《{p['title']}》 应为 {'/'.join(sorted(g))}，"
+                      f"判为 {lab}；证据={row.get('evidence', '')}；conf={row.get('conf', '')}")
         eng = ENGINE_MAP.get(p["theme"], set())
         if eng & g:
             ok_eng += 1
+        hybrid, _, _ = choose_theme(p["uid"], p["theme"], p.get("theme_conf", 0),
+                                    details, reviews)
+        if hybrid in g:
+            ok_hybrid += 1
 
     print(f"样本 {n} 首（人工标签可映射且已获 LLM 标注）")
     print(f"  LLM       {ok_llm}/{n} = {ok_llm / n:.1%}")
     print(f"  关键词引擎 {ok_eng}/{n} = {ok_eng / n:.1%}")
+    print(f"  混合策略   {ok_hybrid}/{n} = {ok_hybrid / n:.1%}")
     print("\nLLM 主要误判：")
     for (g, lab), c in conf.most_common(10):
         print(f"  应为 {'/'.join(g)} → 判为 {lab}: {c} 次")
