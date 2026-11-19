@@ -288,18 +288,20 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
 
     <section id="acc">
       <h2><span class="no">06</span>精度与可信度</h2>
-      <p class="h2sub">题材由「意象词典 + 阈值」判定，不是模型生成。不同置信度下的准确率经过人工标注集实测：</p>
+      <p class="h2sub">题材采用「规则 + 语义模型」混合判定：高置信规则保留，已验证的弱类由 DeepSeek 重判，
+        低置信分歧再由 v4-pro 终审。</p>
       <table>
-        <tr><th style="width:150px">theme_conf</th><th style="width:110px">准确率</th><th>说明</th></tr>
-        <tr><td>≥ 0.6</td><td><b>95.7%</b></td><td>可直接采信。约六成诗词落在这一档</td></tr>
-        <tr><td>0.45 – 0.6</td><td>75.9%</td><td>建议展示时标注"仅供参考"</td></tr>
-        <tr><td>&lt; 0.45</td><td>58.3%</td><td>题材边界模糊，宜配合 <code>theme_alt</code> 一起看</td></tr>
+        <tr><th style="width:210px">方案</th><th style="width:110px">top-1 准确率</th><th>说明</th></tr>
+        <tr><td>关键词规则</td><td>83.6%</td><td>稳定、可解释，但弱类边界较粗</td></tr>
+        <tr><td>DeepSeek 单模型</td><td>76.4%–76.9%</td><td>语义理解较好，但常见题材不如规则稳定</td></tr>
+        <tr><td><b>混合策略</b></td><td><b>87.2%</b></td><td>规则保底 + 弱类语义重判 + 低置信终审</td></tr>
       </table>
-      <p>测法：以《唐诗三百首》《宋词三百首》的人工标签为金标准，取题旨无歧义的 195 首，
-        比较 top-1 命中率。样本不大，但标签可信、结果可复现（<code>tools/eval_theme.py</code>）。</p>
+      <p>测法：以《唐诗三百首》《宋词三百首》的人工标签为金标准，按 UID 精确对齐 195 首，
+        比较 top-1 命中率。样本不大，但可复现（<code>tools/eval_llm.py</code>），
+        排序与相对提升比绝对数值更值得参考。</p>
       <p style="color:var(--ink-3);font-size:12.5px">
-        <code>theme_conf</code> 仅作参考信息返回，不影响取数：接口不提供按置信度过滤的参数，
-        每类始终返回全部符合条件的诗词。需要自行筛时读 <code>tags.theme_conf</code> 即可。
+        <code>theme_conf</code> 是最终采用来源的置信度，规则与模型来源不同，数值不宜直接横向比较；
+        接口不提供按置信度过滤的参数，每类始终返回全部符合条件的诗词。
       </p>
     </section>
 
@@ -329,16 +331,18 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
 
     <section id="notes">
       <h2><span class="no">09</span>判定说明</h2>
-      <p>分类由「意象词典 + 阈值」判定，不是模型生成，规则可在仓库 <code>tagger/categories.py</code> 中逐条查看与修改。</p>
+      <p>21 题材与 v1 意象分类采用两套方法，互不混淆。</p>
       <table>
-        <tr><th style="width:150px">规则</th><th>说明</th></tr>
-        <tr><td>关键词权重</td><td>越宽泛的词权重越低（如「风」0.5、「月」0.7），需组合达到阈值才算命中，否则「写风」会命中六成以上的诗</td></tr>
-        <tr><td>标题加权</td><td>标题命中权重 ×2，因为标题的题材指向远比正文可靠</td></tr>
-        <tr><td>标题强制</td><td>植物 / 动物 / 食物类要求关键词出现在标题：唐诗里梅、柳、桃多为随手取景，正文命中会把咏物淹掉</td></tr>
-        <tr><td>多分类</td><td>一首诗可属多个小类，接口不强行单归属</td></tr>
+        <tr><th style="width:150px">分类</th><th>判定方式</th></tr>
+        <tr><td>21 题材</td><td>高置信规则 + DeepSeek 弱类重判 + 低置信 v4-pro 终审；送别/寄赠、哲理/佛道、应制与咏怀等边界均按标题事由和全篇主旨判定</td></tr>
+        <tr><td>v1 意象分类</td><td>「意象词典 + 阈值」，规则见 <code>tagger/categories.py</code></td></tr>
+        <tr><td>关键词权重</td><td>越宽泛的词权重越低（如「风」0.5、「月」0.7），需组合达到阈值才算命中</td></tr>
+        <tr><td>标题加权与强制</td><td>标题命中权重更高；植物 / 动物 / 食物类要求标题命中，避免正文随手取景造成误判</td></tr>
+        <tr><td>宋词词牌</td><td>词牌只表示曲调，不作为事由标题，也不参与标题题材规则</td></tr>
       </table>
       <p style="color:var(--ink-3);font-size:12.5px">
-        已知局限：关键词法存在同形歧义（如「芙蓉」兼指荷与木芙蓉），个别长诗因正文偶现某词而被归入该分类。若发现明显错判，可在规则表里调整该词权重。
+        已知局限：意象分类仍有同形歧义（如「芙蓉」兼指荷与木芙蓉）；题材分类在长诗和高度程式化文本上仍有边界误差。
+        若发现明显错判，可在规则表调整权重或复查对应模型的标注。
       </p>
     </section>
 

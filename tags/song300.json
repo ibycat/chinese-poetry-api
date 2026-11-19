@@ -40,7 +40,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -92,7 +92,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -140,7 +140,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -168,7 +168,7 @@
   "author": "吴文英",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "节令风俗",
   "theme_2": [
    "咏史怀古"
   ],
@@ -197,7 +197,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -250,7 +250,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -303,7 +303,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -356,7 +356,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -416,7 +416,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -444,7 +444,7 @@
   "author": "吴文英",
   "form": "词",
   "form_note": null,
-  "theme": "羁旅思乡",
+  "theme": "悼亡挽歌",
   "theme_2": [
    "送别"
   ],
@@ -466,8 +466,8 @@
    "抒情": [
     "离别",
     "思念",
-    "思乡",
-    "伤感"
+    "伤感",
+    "悼亡"
    ],
    "四季": [
     "春天"
@@ -486,7 +486,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -544,7 +544,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -570,7 +570,7 @@
   "author": "袁去华",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "爱情相思",
   "theme_2": [
    "羁旅思乡",
    "游仙梦幻",
@@ -600,7 +600,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -652,7 +652,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -678,7 +678,7 @@
   "author": "袁去华",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "闺情宫怨",
    "送别"
@@ -709,7 +709,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -767,7 +767,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -817,7 +817,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -875,7 +875,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -924,7 +924,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -949,7 +949,7 @@
   "author": "王安石",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [
    "送别",
    "羁旅思乡"
@@ -976,7 +976,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1025,7 +1025,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1077,7 +1077,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1102,7 +1102,7 @@
   "author": "晏几道",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "婉约",
   "style_2": [
@@ -1123,7 +1123,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1146,7 +1146,7 @@
   "author": "晏几道",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "送别"
   ],
@@ -1175,7 +1175,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1222,7 +1222,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1269,7 +1269,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1318,7 +1318,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -1360,7 +1360,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1411,7 +1411,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1461,7 +1461,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1509,7 +1509,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1557,7 +1557,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1609,7 +1609,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1636,7 +1636,7 @@
   "author": "晏几道",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "爱情相思",
   "theme_2": [
    "闲适隐逸",
    "送别"
@@ -1665,7 +1665,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1692,7 +1692,7 @@
   "author": "晏几道",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "婉约",
   "style_2": [],
@@ -1715,7 +1715,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1762,7 +1762,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1807,7 +1807,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1859,7 +1859,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -1885,7 +1885,7 @@
   "author": "王观",
   "form": "词",
   "form_note": null,
-  "theme": "送别",
+  "theme": "爱情相思",
   "theme_2": [
    "羁旅思乡",
    "边塞征战",
@@ -1910,7 +1910,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -1960,7 +1960,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2013,7 +2013,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2039,7 +2039,7 @@
   "author": "苏轼",
   "form": "词",
   "form_note": null,
-  "theme": "游仙梦幻",
+  "theme": "闲适隐逸",
   "theme_2": [
    "哲理悟道",
    "送别",
@@ -2067,7 +2067,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2115,7 +2115,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -2143,7 +2143,7 @@
   "author": "苏轼",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏物",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -2163,7 +2163,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2207,7 +2207,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2261,7 +2261,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2311,7 +2311,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2363,7 +2363,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2417,7 +2417,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -2445,7 +2445,7 @@
   "author": "李之仪",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -2475,7 +2475,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2519,7 +2519,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2571,7 +2571,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2620,7 +2620,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -2673,7 +2673,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2714,7 +2714,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2739,7 +2739,7 @@
   "author": "张炎",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏史怀古",
   "theme_2": [
    "山水田园"
   ],
@@ -2755,7 +2755,8 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "怀古"
    ],
    "四季": [
     "春天"
@@ -2768,7 +2769,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2816,7 +2817,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -2866,7 +2867,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2915,7 +2916,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -2962,7 +2963,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -2985,7 +2986,7 @@
   "author": "韩元吉",
   "form": "词",
   "form_note": null,
-  "theme": "闺情宫怨",
+  "theme": "咏物",
   "theme_2": [
    "爱情相思",
    "山水田园",
@@ -3005,7 +3006,6 @@
   "cats": {
    "抒情": [
     "伤感",
-    "闺怨",
     "怀古"
    ],
    "四季": [
@@ -3016,7 +3016,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3069,7 +3069,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3117,7 +3117,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3175,7 +3175,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3226,7 +3226,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3251,7 +3251,7 @@
   "author": "李元膺",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "咏怀抒感",
   "theme_2": [
    "游仙梦幻"
   ],
@@ -3280,7 +3280,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3305,7 +3305,7 @@
   "author": "朱服",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "咏怀抒感",
   "theme_2": [
    "羁旅思乡",
    "送别",
@@ -3335,7 +3335,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3392,7 +3392,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3448,7 +3448,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3495,7 +3495,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3546,7 +3546,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3594,7 +3594,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3653,7 +3653,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3704,7 +3704,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3753,7 +3753,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3780,7 +3780,7 @@
   "author": "贺铸",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [
    "山水田园",
    "送别"
@@ -3798,7 +3798,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3844,7 +3844,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -3870,7 +3870,7 @@
   "author": "贺铸",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -3898,7 +3898,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -3959,7 +3959,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4012,7 +4012,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4066,7 +4066,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4124,7 +4124,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4180,7 +4180,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4206,7 +4206,7 @@
   "author": "吴文英",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "咏史怀古",
   "theme_2": [
    "闲适隐逸",
    "送别",
@@ -4227,14 +4227,15 @@
   "cats": {
    "抒情": [
     "孤独",
-    "闺怨"
+    "闺怨",
+    "怀古"
    ],
    "四季": [
     "秋天"
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4298,7 +4299,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4350,7 +4351,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4392,7 +4393,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4440,7 +4441,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4488,7 +4489,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -4542,7 +4543,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4592,7 +4593,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4643,7 +4644,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4702,7 +4703,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4759,7 +4760,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4819,7 +4820,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4880,7 +4881,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4925,7 +4926,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -4951,7 +4952,7 @@
   "author": "周密",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "羁旅思乡",
   "theme_2": [
    "送别"
   ],
@@ -4965,12 +4966,15 @@
    "秋"
   ],
   "cats": {
+   "抒情": [
+    "思乡"
+   ],
    "四季": [
     "秋天"
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5021,7 +5025,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5046,7 +5050,7 @@
   "author": "周密",
   "form": "词",
   "form_note": null,
-  "theme": "边塞征战",
+  "theme": "送别",
   "theme_2": [
    "爱情相思",
    "民生疾苦",
@@ -5074,7 +5078,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5130,7 +5134,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5186,7 +5190,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5239,7 +5243,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5299,7 +5303,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5342,7 +5346,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5389,7 +5393,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5443,7 +5447,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5499,7 +5503,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5542,7 +5546,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5567,7 +5571,7 @@
   "author": "仲殊",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "闺情宫怨",
   "theme_2": [
    "闲适隐逸"
   ],
@@ -5589,7 +5593,8 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "闺怨"
    ],
    "四季": [
     "春天",
@@ -5603,7 +5608,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5631,7 +5636,7 @@
   "author": "李邴",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "咏物",
   "theme_2": [
    "咏史怀古"
   ],
@@ -5656,7 +5661,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5700,7 +5705,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5744,7 +5749,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -5788,7 +5793,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -5840,7 +5845,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5889,7 +5894,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -5949,7 +5954,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6000,7 +6005,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6027,7 +6032,7 @@
   "author": "吕渭老",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "闺情宫怨",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [],
@@ -6042,7 +6047,8 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "闺怨"
    ],
    "四季": [
     "春天"
@@ -6052,7 +6058,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6108,7 +6114,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6162,7 +6168,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6217,7 +6223,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6246,7 +6252,7 @@
   "author": "刘过",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "咏史怀古",
   "theme_2": [
    "边塞征战"
   ],
@@ -6260,7 +6266,8 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "怀古"
    ],
    "生活": [
     "边塞"
@@ -6270,7 +6277,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6318,7 +6325,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6370,7 +6377,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6420,7 +6427,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6472,7 +6479,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6523,7 +6530,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6550,7 +6557,7 @@
   "author": "姜夔",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "爱情相思",
   "theme_2": [
    "羁旅思乡",
    "闺情宫怨",
@@ -6582,7 +6589,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6636,7 +6643,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6678,7 +6685,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6736,7 +6743,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6785,7 +6792,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6835,7 +6842,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6890,7 +6897,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6940,7 +6947,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -6966,7 +6973,7 @@
   "author": "姜夔",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "冲淡",
   "style_2": [
@@ -6985,6 +6992,9 @@
    "月"
   ],
   "cats": {
+   "抒情": [
+    "思乡"
+   ],
    "四季": [
     "春天",
     "秋天"
@@ -7001,7 +7011,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7055,7 +7065,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7119,7 +7129,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7169,7 +7179,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7212,7 +7222,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7263,7 +7273,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7290,7 +7300,7 @@
   "author": "范仲淹",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "冲淡",
   "style_2": [
@@ -7316,7 +7326,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7356,7 +7366,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7403,7 +7413,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7454,7 +7464,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7480,7 +7490,7 @@
   "author": "柳永",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "婉约",
   "style_2": [
@@ -7504,7 +7514,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7554,7 +7564,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7609,7 +7619,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7634,7 +7644,7 @@
   "author": "柳永",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [],
@@ -7645,6 +7655,9 @@
    "酒"
   ],
   "cats": {
+   "抒情": [
+    "思乡"
+   ],
    "四季": [
     "秋天"
    ],
@@ -7653,7 +7666,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "derived",
    "mood": "derived",
    "scene": "text"
@@ -7676,7 +7689,7 @@
   "author": "柳永",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "羁旅思乡",
   "theme_2": [
    "咏史怀古",
    "送别"
@@ -7698,6 +7711,7 @@
   ],
   "cats": {
    "抒情": [
+    "思乡",
     "伤感",
     "孤独",
     "怀古"
@@ -7710,7 +7724,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7762,7 +7776,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7822,7 +7836,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7876,7 +7890,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7940,7 +7954,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -7990,7 +8004,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8020,7 +8034,7 @@
   "author": "张先",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -8042,7 +8056,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8087,7 +8101,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8136,7 +8150,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8161,7 +8175,7 @@
   "author": "张先",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "豪放",
   "style_2": [
@@ -8186,7 +8200,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8209,7 +8223,7 @@
   "author": "张先",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "闺情宫怨",
   "theme_2": [
    "送别"
   ],
@@ -8230,7 +8244,8 @@
   ],
   "cats": {
    "抒情": [
-    "孤独"
+    "孤独",
+    "闺怨"
    ],
    "天气": [
     "月亮"
@@ -8240,7 +8255,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8287,7 +8302,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8335,7 +8350,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8361,7 +8376,7 @@
   "author": "晏殊",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "闺情宫怨",
   "theme_2": [],
   "style": "清新",
   "style_2": [
@@ -8372,9 +8387,13 @@
   "scene": [
    "酒"
   ],
-  "cats": {},
+  "cats": {
+   "抒情": [
+    "闺怨"
+   ]
+  },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8422,7 +8441,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8447,7 +8466,7 @@
   "author": "晏殊",
   "form": "词",
   "form_note": null,
-  "theme": "悼亡挽歌",
+  "theme": "哲理悟道",
   "theme_2": [
    "闲适隐逸"
   ],
@@ -8462,15 +8481,14 @@
   ],
   "cats": {
    "抒情": [
-    "孤独",
-    "悼亡"
+    "孤独"
    ],
    "四季": [
     "春天"
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8495,7 +8513,7 @@
   "author": "晏殊",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "哲理悟道",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [],
@@ -8512,7 +8530,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -8553,7 +8571,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8581,7 +8599,7 @@
   "author": "晏殊",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "闺情宫怨",
   "theme_2": [],
   "style": "婉约",
   "style_2": [
@@ -8599,14 +8617,15 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "闺怨"
    ],
    "四季": [
     "春天"
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8656,7 +8675,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8703,7 +8722,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8745,7 +8764,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -8794,7 +8813,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8845,7 +8864,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8872,7 +8891,7 @@
   "author": "欧阳修",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "送别"
   ],
@@ -8895,7 +8914,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -8939,7 +8958,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -8962,7 +8981,7 @@
   "author": "欧阳修",
   "form": "词",
   "form_note": null,
-  "theme": "悼亡挽歌",
+  "theme": "哲理悟道",
   "theme_2": [
    "闲适隐逸"
   ],
@@ -8978,15 +8997,14 @@
   ],
   "cats": {
    "抒情": [
-    "孤独",
-    "悼亡"
+    "孤独"
    ],
    "四季": [
     "春天"
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9033,7 +9051,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9075,7 +9093,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9133,7 +9151,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -9186,7 +9204,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9238,7 +9256,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9291,7 +9309,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -9345,7 +9363,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9393,7 +9411,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9418,7 +9436,7 @@
   "author": "史达祖",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "爱情相思"
   ],
@@ -9443,7 +9461,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9496,7 +9514,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9526,7 +9544,7 @@
   "author": "史达祖",
   "form": "词",
   "form_note": null,
-  "theme": "羁旅思乡",
+  "theme": "爱情相思",
   "theme_2": [
    "闲适隐逸",
    "边塞征战",
@@ -9564,7 +9582,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9620,7 +9638,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9679,7 +9697,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9706,7 +9724,7 @@
   "author": "卢祖皋",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [],
   "style": "婉约",
   "style_2": [
@@ -9727,7 +9745,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9753,7 +9771,7 @@
   "author": "章良能",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [],
   "style": "旷达",
   "style_2": [],
@@ -9771,7 +9789,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9822,7 +9840,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9865,7 +9883,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9915,7 +9933,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9964,7 +9982,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -9991,7 +10009,7 @@
   "author": "吴文英",
   "form": "词",
   "form_note": null,
-  "theme": "佛道禅颂",
+  "theme": "节令风俗",
   "theme_2": [],
   "style": "冲淡",
   "style_2": [],
@@ -10011,7 +10029,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -10036,7 +10054,7 @@
   "author": "吴文英",
   "form": "词",
   "form_note": null,
-  "theme": "山水田园",
+  "theme": "羁旅思乡",
   "theme_2": [
    "闲适隐逸",
    "节令风俗",
@@ -10053,7 +10071,8 @@
   ],
   "cats": {
    "抒情": [
-    "离别"
+    "离别",
+    "思乡"
    ],
    "四季": [
     "春天"
@@ -10064,7 +10083,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10120,7 +10139,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10172,7 +10191,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10224,7 +10243,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10250,7 +10269,7 @@
   "author": "廖世美",
   "form": "词",
   "form_note": null,
-  "theme": "边塞征战",
+  "theme": "爱情相思",
   "theme_2": [
    "爱情相思",
    "山水田园",
@@ -10280,13 +10299,10 @@
    ],
    "四季": [
     "春天"
-   ],
-   "生活": [
-    "边塞"
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10312,7 +10328,7 @@
   "author": "李清照",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "送别",
   "theme_2": [
    "边塞征战"
   ],
@@ -10337,7 +10353,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10363,7 +10379,7 @@
   "author": "李清照",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "节令风俗"
   ],
@@ -10391,7 +10407,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10456,7 +10472,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10512,7 +10528,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10538,7 +10554,7 @@
   "author": "李清照",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "闺情宫怨",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -10554,14 +10570,15 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "闺怨"
    ],
    "天气": [
     "写雨"
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10609,7 +10626,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10663,7 +10680,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10712,7 +10729,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10768,7 +10785,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10825,7 +10842,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10874,7 +10891,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10901,7 +10918,7 @@
   "author": "辛弃疾",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "咏史怀古",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [],
@@ -10913,14 +10930,15 @@
   ],
   "cats": {
    "抒情": [
-    "伤感"
+    "伤感",
+    "怀古"
    ],
    "山水": [
     "江河"
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -10970,7 +10988,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11023,7 +11041,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11049,7 +11067,7 @@
   "author": "辛弃疾",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "节令风俗",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -11063,7 +11081,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11112,7 +11130,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11176,7 +11194,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11204,7 +11222,7 @@
   "author": "辛弃疾",
   "form": "词",
   "form_note": null,
-  "theme": "咏史怀古",
+  "theme": "节令风俗",
   "theme_2": [
    "闲适隐逸",
    "边塞征战"
@@ -11221,8 +11239,7 @@
   ],
   "cats": {
    "抒情": [
-    "伤感",
-    "怀古"
+    "伤感"
    ],
    "四季": [
     "春天"
@@ -11235,7 +11252,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11260,7 +11277,7 @@
   "author": "程垓",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [
    "羁旅思乡"
   ],
@@ -11280,7 +11297,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11335,7 +11352,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11363,7 +11380,7 @@
   "author": "晁补之",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -11387,7 +11404,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11432,7 +11449,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -11487,7 +11504,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11531,7 +11548,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11579,7 +11596,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11630,7 +11647,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11699,7 +11716,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11724,7 +11741,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [
    "闺情宫怨",
    "送别"
@@ -11745,7 +11762,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11795,7 +11812,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11852,7 +11869,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11900,7 +11917,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11925,7 +11942,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "爱情相思",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -11946,7 +11963,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -11990,7 +12007,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "derived",
    "mood": "text",
    "scene": "text"
@@ -12015,7 +12032,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "节令风俗",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -12032,7 +12049,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12055,7 +12072,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "羁旅思乡",
   "theme_2": [
    "羁旅思乡"
   ],
@@ -12080,7 +12097,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12107,7 +12124,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "咏物",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -12131,7 +12148,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12154,7 +12171,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "闺情宫怨",
+  "theme": "咏物",
   "theme_2": [
    "爱情相思",
    "羁旅思乡",
@@ -12179,8 +12196,7 @@
    "抒情": [
     "爱情",
     "思念",
-    "思乡",
-    "闺怨"
+    "思乡"
    ],
    "四季": [
     "春天"
@@ -12190,7 +12206,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12245,7 +12261,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12298,7 +12314,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12343,7 +12359,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12397,7 +12413,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12458,7 +12474,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12504,7 +12520,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12553,7 +12569,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12579,7 +12595,7 @@
   "author": "周邦彦",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "清新",
   "style_2": [
@@ -12595,11 +12611,12 @@
   ],
   "cats": {
    "抒情": [
+    "思乡",
     "孤独"
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12622,7 +12639,7 @@
   "author": "孔夷",
   "form": "词",
   "form_note": null,
-  "theme": "送别",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "婉约",
   "style_2": [
@@ -12641,6 +12658,7 @@
    "抒情": [
     "离别",
     "思念",
+    "思乡",
     "伤感",
     "孤独",
     "怀古"
@@ -12650,7 +12668,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12698,7 +12716,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12744,7 +12762,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12796,7 +12814,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12845,7 +12863,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12891,7 +12909,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12946,7 +12964,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -12975,7 +12993,7 @@
   "author": "王沂孙",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏物",
   "theme_2": [
    "游仙梦幻"
   ],
@@ -13002,7 +13020,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13052,7 +13070,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13078,7 +13096,7 @@
   "author": "姚云文",
   "form": "词",
   "form_note": null,
-  "theme": "羁旅思乡",
+  "theme": "咏史怀古",
   "theme_2": [
    "边塞征战",
    "咏史怀古",
@@ -13102,7 +13120,6 @@
   "cats": {
    "抒情": [
     "思念",
-    "思乡",
     "伤感",
     "怀古"
    ],
@@ -13111,7 +13128,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13162,7 +13179,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13190,7 +13207,7 @@
   "author": "蒋捷",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "节令风俗",
   "theme_2": [],
   "style": "绮丽",
   "style_2": [
@@ -13212,7 +13229,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13261,7 +13278,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13316,7 +13333,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13344,7 +13361,7 @@
   "author": "张炎",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "沉郁",
   "style_2": [
@@ -13360,6 +13377,7 @@
   ],
   "cats": {
    "抒情": [
+    "思乡",
     "伤感",
     "孤独"
    ],
@@ -13368,7 +13386,7 @@
    ]
   },
   "source": {
-   "theme": "weak",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13392,7 +13410,7 @@
   "author": "张炎",
   "form": "词",
   "form_note": null,
-  "theme": "送别",
+  "theme": "咏物",
   "theme_2": [
    "闺情宫怨",
    "羁旅思乡"
@@ -13415,7 +13433,6 @@
   ],
   "cats": {
    "抒情": [
-    "友情",
     "思念",
     "思乡",
     "伤感",
@@ -13426,7 +13443,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm_review",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13486,7 +13503,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13516,7 +13533,7 @@
   "author": "苏过",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "咏怀抒感",
   "theme_2": [],
   "style": "幽峭",
   "style_2": [],
@@ -13527,7 +13544,7 @@
   ],
   "cats": {},
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13582,7 +13599,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13629,7 +13646,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13683,7 +13700,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13709,7 +13726,7 @@
   "author": "汪藻",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "羁旅思乡",
   "theme_2": [],
   "style": "幽峭",
   "style_2": [],
@@ -13718,9 +13735,13 @@
   "scene": [
    "酒"
   ],
-  "cats": {},
+  "cats": {
+   "抒情": [
+    "思乡"
+   ]
+  },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13776,7 +13797,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13804,7 +13825,7 @@
   "author": "万俟咏",
   "form": "词",
   "form_note": null,
-  "theme": "闲适隐逸",
+  "theme": "节令风俗",
   "theme_2": [
    "节令风俗",
    "送别"
@@ -13835,7 +13856,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13884,7 +13905,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -13926,7 +13947,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "derived",
    "scene": "text"
@@ -13967,7 +13988,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14012,7 +14033,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14058,7 +14079,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14083,7 +14104,7 @@
   "author": "无名氏",
   "form": "词",
   "form_note": null,
-  "theme": "节令风俗",
+  "theme": "羁旅思乡",
   "theme_2": [
    "山水田园",
    "闲适隐逸"
@@ -14102,6 +14123,7 @@
   ],
   "cats": {
    "抒情": [
+    "思乡",
     "孤独"
    ],
    "四季": [
@@ -14112,7 +14134,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14157,7 +14179,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14182,7 +14204,7 @@
   "author": "范成大",
   "form": "词",
   "form_note": null,
-  "theme": "咏怀抒感",
+  "theme": "咏物",
   "theme_2": [],
   "style": "清新",
   "style_2": [
@@ -14211,7 +14233,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14252,7 +14274,7 @@
    ]
   },
   "source": {
-   "theme": "fallback",
+   "theme": "llm",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14298,7 +14320,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
@@ -14357,7 +14379,7 @@
    ]
   },
   "source": {
-   "theme": "text",
+   "theme": "rules",
    "style": "text",
    "mood": "text",
    "scene": "text"
