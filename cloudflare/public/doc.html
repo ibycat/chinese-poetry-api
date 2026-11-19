@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诗词分类接口 · 调用文档</title>
+<style>
+  :root{
+    --paper:#f7f4ee; --card:#fffdfa; --ink:#26221e; --ink-2:#5b544c;
+    --ink-3:#8c8378; --line:#e3dcd0; --accent:#8a4b32; --accent-soft:#f3e6dd;
+    --code-bg:#f2ece2; --green:#3f6b4a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.75;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,.mono{font-family:Consolas,"SF Mono",Menlo,monospace; font-size:12.5px}
+  code{background:var(--code-bg); padding:1px 5px; border-radius:3px; color:#6f4a36}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+  header{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#fffdfa,#f9f6f0);
+  }
+  .hero{padding:36px 0 28px}
+  .hero h1{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:29px; font-weight:600;
+    margin:0 0 10px; letter-spacing:.05em;
+  }
+  .hero h1 em{font-style:normal; color:var(--accent)}
+  .lead{color:var(--ink-2); max-width:760px; margin:0 0 18px}
+  .kpis{display:flex; gap:26px; flex-wrap:wrap; margin-top:18px}
+  .kpi b{
+    display:block; font-family:"Songti SC","STSong",SimSun,serif; font-size:21px;
+    font-weight:600; letter-spacing:.02em;
+  }
+  .kpi span{font-size:11.5px; color:var(--ink-3); letter-spacing:.1em}
+  .urlbar{
+    display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
+    border-radius:6px; padding:9px 13px; margin-top:20px; max-width:640px;
+  }
+  .urlbar .mono{flex:1; color:var(--ink); word-break:break-all}
+  .urlbar .tag{font-size:10.5px; color:var(--ink-3); letter-spacing:.12em; white-space:nowrap}
+  .urlbar .copy{
+    font-size:11px; padding:3px 10px; border-radius:11px; cursor:pointer;
+    border:1px solid var(--line); background:#fff; color:var(--ink-2); white-space:nowrap;
+  }
+  .urlbar .copy:hover{border-color:var(--accent); color:var(--accent)}
+  main{display:flex; gap:36px; padding:30px 0 80px; align-items:flex-start}
+  nav{
+    position:sticky; top:20px; width:172px; flex:0 0 172px; font-size:12.5px;
+    border-left:2px solid var(--line); padding-left:14px;
+  }
+  nav a{display:block; color:var(--ink-2); padding:4px 0}
+  nav a:hover{color:var(--accent); text-decoration:none}
+  nav b{display:block; font-size:11px; color:var(--ink-3); letter-spacing:.16em;
+    margin:14px 0 6px; font-weight:600}
+  nav b:first-child{margin-top:0}
+  .content{flex:1; min-width:0}
+  section{margin-bottom:46px}
+  h2{
+    font-family:"Songti SC","STSong",SimSun,serif; font-size:19px; font-weight:600;
+    margin:0 0 4px; letter-spacing:.04em; scroll-margin-top:20px;
+  }
+  h2 .no{color:var(--ink-3); font-size:13px; margin-right:8px; font-family:Consolas,monospace}
+  .h2sub{color:var(--ink-3); font-size:12.5px; margin:0 0 16px}
+  h3{font-size:13.5px; margin:22px 0 8px; font-weight:600; letter-spacing:.03em}
+  p{margin:0 0 12px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:16px 18px; margin:0 0 14px;
+  }
+  pre{
+    background:#2b2724; color:#ece5d9; padding:14px 16px; border-radius:6px;
+    overflow-x:auto; margin:0 0 14px; line-height:1.7;
+  }
+  pre .c{color:#9c9184}
+  pre .k{color:#e3b98a}
+  pre .s{color:#b6c9a8}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin:0 0 14px}
+  th{
+    text-align:left; font-weight:600; font-size:11px; color:var(--ink-3);
+    letter-spacing:.14em; padding:0 10px 8px 0; border-bottom:1px solid var(--line);
+  }
+  td{padding:7px 10px 7px 0; border-bottom:1px dashed #ece5da; vertical-align:middle}
+  tr.grp td{background:#f3ede3; padding:9px 10px; border-bottom:1px solid var(--line)}
+  tr.grp .gt{font-family:"Songti SC","STSong",SimSun,serif; font-size:14.5px;
+    font-weight:600; margin-right:8px}
+  tr.grp .gc{font-size:11px; color:var(--ink-3); margin-right:12px}
+  td.l2{padding-left:14px; color:var(--ink-2); width:96px}
+  td.num{width:82px; color:var(--ink-3); font-size:12px; text-align:right; padding-right:14px}
+  td code{background:none; padding:0; color:#7a5a44}
+  .try{
+    font-size:11px; padding:3px 10px; border-radius:11px; cursor:pointer;
+    border:1px solid var(--line); background:#fff; color:var(--ink-2);
+  }
+  .try:hover{border-color:var(--accent); color:var(--accent)}
+  .badge{
+    display:inline-block; font-size:10.5px; letter-spacing:.08em; padding:1px 7px;
+    border-radius:3px; background:var(--accent-soft); color:var(--accent); margin-left:6px;
+  }
+  .badge.g{background:#e6efe6; color:var(--green)}
+  #out{
+    position:fixed; right:0; bottom:0; width:min(560px,100%); max-height:60vh;
+    background:#2b2724; color:#ece5d9; border-top-left-radius:8px;
+    box-shadow:-6px -6px 28px rgba(40,30,20,.18); transform:translateY(110%);
+    transition:.28s; z-index:60; display:flex; flex-direction:column;
+  }
+  #out.on{transform:translateY(0)}
+  #out .hd{
+    display:flex; align-items:center; gap:10px; padding:9px 14px;
+    border-bottom:1px solid #464039; font-size:12px; color:#b6ada0;
+  }
+  #out .hd .mono{flex:1; color:#e3b98a; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap}
+  #out .hd button{
+    background:none; border:1px solid #5c554c; color:#cfc6b8; border-radius:4px;
+    padding:2px 9px; font-size:11px; cursor:pointer;
+  }
+  #out pre{margin:0; border-radius:0; background:none; max-height:52vh}
+  footer{
+    border-top:1px solid var(--line); padding:22px 0 40px; color:var(--ink-3);
+    font-size:12px;
+  }
+  @media (max-width:860px){
+    nav{display:none} main{padding:22px 0 60px}
+    .hero h1{font-size:24px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <h1>诗词<em>分类</em>接口 · 调用文档</h1>
+    <p class="lead">
+      按分类随机返回古诗词，分类体系与 <a href="https://v1.jinrishici.com" target="_blank" rel="noopener">今日诗词 v1</a>
+      完全一致（11 大类 / 69 小类），路径与 slug 也保持一致，换掉域名即可迁移。全文为简体。
+    </p>
+    <div class="urlbar">
+      <span class="tag">BASE</span>
+      <span class="mono" id="base">/</span>
+      <button class="copy" id="copy" data-copy="1">复制</button>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>76,003</b><span>收 录 诗 词</span></div>
+      <div class="kpi"><b>11 / 69</b><span>大 类 / 小 类</span></div>
+      <div class="kpi"><b>3</b><span>返 回 格 式</span></div>
+      <div class="kpi"><b>2026-11-19</b><span>数 据 版 本</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding:0">
+<main>
+  <nav>
+    <b>开始</b>
+    <a href="#quick">快速开始</a>
+    <a href="#route">路由规则</a>
+    <b>参考</b>
+    <a href="#themes">题材分类 21 类</a>
+    <a href="#params">参数与格式</a>
+    <a href="#resp">返回结构</a>
+    <a href="#acc">精度与可信度</a>
+    <a href="#err">错误码</a>
+    <b>分类</b>
+    <a href="#cats">全部 69 个小类</a>
+    <b>其他</b>
+    <a href="#notes">判定说明</a>
+    <a href="/browse/">分类浏览页</a>
+  </nav>
+
+  <div class="content">
+
+    <section id="quick">
+      <h2><span class="no">01</span>快速开始</h2>
+      <p class="h2sub">无需注册、无需 Token，直接 GET。</p>
+      <pre><span class="c"># 山水 · 庐山</span>
+curl <span class="s">"BASE/shanshui/lushan.json"</span>
+
+<span class="c"># 抒情 · 爱情，纯文本</span>
+curl <span class="s">"BASE/shuqing/aiqing.txt"</span>
+
+<span class="c"># 植物 · 梅花，一次取 3 条</span>
+curl <span class="s">"BASE/zhiwu/meihua.json?n=3"</span>
+
+<span class="c"># 中文名直接访问</span>
+curl <span class="s">"BASE/抒情/爱情.json"</span>
+
+<span class="c"># 连续两句，全库随机（默认 JSON）</span>
+curl <span class="s">"BASE/line"</span>
+
+<span class="c"># 在指定多个分类中随机摘两句</span>
+curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng"</span>
+
+<span class="c"># 多个分类随机摘句</span>
+curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp;n=3"</span></pre>
+      <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
+    </section>
+
+    <section id="route">
+      <h2><span class="no">02</span>路由规则</h2>
+      <p class="h2sub">路径为 <code>/{大类 slug}[/{小类 slug}]</code>，省略小类时在该大类下随机。</p>
+      <table>
+        <tr><th style="width:34%">路由</th><th>说明</th></tr>
+        <tr><td><code>/all</code></td><td>全部 76,003 首随机一首</td></tr>
+        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong>；可加 <code>?cats=</code> 合并多个分类</td></tr>
+        <tr><td><code>/{大类}</code></td><td>如 <code>/shanshui</code>，在该大类全部诗词中随机</td></tr>
+        <tr><td><code>/{大类}/{小类}</code></td><td>如 <code>/shanshui/lushan</code></td></tr>
+        <tr><td><code>/t/{题材}</code></td><td>按主旨取诗，如 <code>/t/songbie</code>、<code>/t/bianzai</code>，见第 03 节</td></tr>
+        <tr><td><code>/api</code></td><td>分类总表 JSON（含每类的调用地址）</td></tr>
+        <tr><td><code>/doc</code></td><td>本页</td></tr>
+        <tr><td><code>/browse/</code></td><td>可视化分类浏览页（抽样数据）</td></tr>
+      </table>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        注：今日诗词 v1 的 <code>/</code> 返回分类总表 JSON，本服务把 <code>/</code> 让给文档页，总表移到 <code>/api</code>，
+        其余路径完全兼容。
+      </p>
+    </section>
+
+    <section id="themes">
+      <h2><span class="no">03</span>题材分类 · 21 类</h2>
+      <p class="h2sub">按诗的<strong>主旨</strong>划分，路径为 <code>/t/{slug}</code>。题材回答"这首诗在写什么事"，
+        与第 08 节的意象分类（写雨、梅花、庐山）互补：后者回答"诗里写到什么"。</p>
+      <table>
+        <tr><th style="width:110px">题材</th><th>接口路径</th>
+          <th style="width:82px;text-align:right;padding-right:14px">条数</th><th style="width:72px"></th></tr>
+        <tr><td>山水田园</td><td><code>/t/shanshui</code></td><td class="num">13,714</td><td><button class="try" data-p="/t/shanshui.json">试一下</button></td></tr><tr><td>送别</td><td><code>/t/songbie</code></td><td class="num">10,797</td><td><button class="try" data-p="/t/songbie.json">试一下</button></td></tr><tr><td>寄赠酬答</td><td><code>/t/jizeng</code></td><td class="num">6,490</td><td><button class="try" data-p="/t/jizeng.json">试一下</button></td></tr><tr><td>羁旅思乡</td><td><code>/t/jilv</code></td><td class="num">6,474</td><td><button class="try" data-p="/t/jilv.json">试一下</button></td></tr><tr><td>咏物</td><td><code>/t/yongwu</code></td><td class="num">5,140</td><td><button class="try" data-p="/t/yongwu.json">试一下</button></td></tr><tr><td>边塞征战</td><td><code>/t/bianzai</code></td><td class="num">4,221</td><td><button class="try" data-p="/t/bianzai.json">试一下</button></td></tr><tr><td>闺情宫怨</td><td><code>/t/guiqing</code></td><td class="num">4,096</td><td><button class="try" data-p="/t/guiqing.json">试一下</button></td></tr><tr><td>咏史怀古</td><td><code>/t/yongshi</code></td><td class="num">3,712</td><td><button class="try" data-p="/t/yongshi.json">试一下</button></td></tr><tr><td>应制干谒</td><td><code>/t/yingzhi</code></td><td class="num">2,853</td><td><button class="try" data-p="/t/yingzhi.json">试一下</button></td></tr><tr><td>游仙梦幻</td><td><code>/t/youxian</code></td><td class="num">2,821</td><td><button class="try" data-p="/t/youxian.json">试一下</button></td></tr><tr><td>爱情相思</td><td><code>/t/aiqing</code></td><td class="num">2,428</td><td><button class="try" data-p="/t/aiqing.json">试一下</button></td></tr><tr><td>佛道禅颂</td><td><code>/t/fodao</code></td><td class="num">2,195</td><td><button class="try" data-p="/t/fodao.json">试一下</button></td></tr><tr><td>哲理悟道</td><td><code>/t/zheli</code></td><td class="num">2,114</td><td><button class="try" data-p="/t/zheli.json">试一下</button></td></tr><tr><td>闲适隐逸</td><td><code>/t/xianshi</code></td><td class="num">1,770</td><td><button class="try" data-p="/t/xianshi.json">试一下</button></td></tr><tr><td>咏怀抒感</td><td><code>/t/yonghuai</code></td><td class="num">1,715</td><td><button class="try" data-p="/t/yonghuai.json">试一下</button></td></tr><tr><td>节令风俗</td><td><code>/t/jieling</code></td><td class="num">1,234</td><td><button class="try" data-p="/t/jieling.json">试一下</button></td></tr><tr><td>悼亡挽歌</td><td><code>/t/daowang</code></td><td class="num">968</td><td><button class="try" data-p="/t/daowang.json">试一下</button></td></tr><tr><td>题画咏艺</td><td><code>/t/tihua</code></td><td class="num">964</td><td><button class="try" data-p="/t/tihua.json">试一下</button></td></tr><tr><td>讽喻刺世</td><td><code>/t/fengyu</code></td><td class="num">852</td><td><button class="try" data-p="/t/fengyu.json">试一下</button></td></tr><tr><td>民生疾苦</td><td><code>/t/minsheng</code></td><td class="num">802</td><td><button class="try" data-p="/t/minsheng.json">试一下</button></td></tr><tr><td>亲情</td><td><code>/t/qinqing</code></td><td class="num">643</td><td><button class="try" data-p="/t/qinqing.json">试一下</button></td></tr>
+      </table>
+    </section>
+
+    <section id="params">
+      <h2><span class="no">04</span>参数与格式</h2>
+      <table>
+        <tr><th style="width:130px">格式</th><th>说明</th></tr>
+        <tr><td><code>.json</code><span class="badge g">默认</span></td><td>结构化返回，含全文与标签</td></tr>
+        <tr><td><code>.txt</code></td><td>普通模式仅返回正文；摘句模式统一返回 JSON，<code>.txt</code> 后缀也被忽略</td></tr>
+        <tr><td><code>.svg</code></td><td>图片，可直接 <code>&lt;img src&gt;</code></td></tr>
+      </table>
+      <table>
+        <tr><th style="width:130px">参数</th><th>说明</th></tr>
+        <tr><td><code>n</code></td><td>返回条数，大于 1 时返回数组。全库 1–50；分类、题材、<code>cats</code> 最多 20</td></tr>
+        <tr><td><code>mode=line</code></td><td>摘句模式：<code>content</code> 改为随机连续两句；可与任意分类路径组合</td></tr>
+        <tr><td><code>cats</code></td><td>仅用于 <code>/line</code>：逗号分隔多个分类，如 <code>t/songbie,t/jizeng,shanshui/lushan</code>，最多 20 个</td></tr>
+      </table>
+      <p><code>mode=line</code> 不会改变分类、全文和标签。每首先按标点切成小句，再顺序两两成组；
+        长诗、长词因此有多个句对参与随机，不会永远只看开头两句。整首作品先被等概率选中，
+        再从句对中等概率取一联，长诗不会挤占短诗的出现机会。</p>
+      <p><code>cats</code> 支持题材、大类、小类，slug 与中文名均可。多个分类先等概率选一个，
+        再在该分类内选作品和句对，因此不会因为某个分类语料更多而挤占其他分类。
+        例：<code>/line.txt?cats=t/songbie,t/jizeng</code>、
+        <code>/line.json?cats=shanshui/lushan,zhiwu/meihua&amp;n=5</code>。</p>
+      <p>摘句统一返回 JSON，正文、句对位置和 <code>poem</code> 基本信息都在同一个对象中。
+        为了保证结构不丢失，摘句模式下即使 URL 写成 <code>.txt</code> 也返回 <code>application/json</code>；
+        普通分类的 <code>.txt</code> 仍只返回正文。</p>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        动态接口返回 <code>Cache-Control: no-store</code>，连续调用不会复用旧随机结果；
+        <code>/data/*</code> 静态分片仍使用长缓存。本页与分类浏览页本身就是静态文件，
+        由 CDN 直接返回、不执行后端函数，因此打开文档页不占用任何调用额度。
+      </p>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        接口按客户端 IP 限流：同一 IP 每 60 秒最多 60 次请求，平均约每秒 1 次，允许短时突发。
+        这是 Cloudflare 原生近似限流，按机房分别计数。超限返回 <code>429</code>，
+        <code>Retry-After: 60</code> 秒；CORS 预检请求不计数。
+      </p>
+      <h3>示例：直接嵌入网页</h3>
+      <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
+&lt;script&gt;
+fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
+  .then(r =&gt; r.json())
+  .then(d =&gt; {
+    document.getElementById(<span class="s">"poem"</span>).textContent =
+      d.content + <span class="s">" —— " </span>+ d.author + <span class="s">"《"</span> + d.origin + <span class="s">"》"</span>;
+  });
+&lt;/script&gt;</pre>
+    </section>
+
+    <section id="resp">
+      <h2><span class="no">05</span>返回结构</h2>
+      <p class="h2sub">前四个字段与今日诗词 v1 完全一致，其后为扩展字段；v1 的解析器只读前四个，可直接替换。</p>
+      <pre>{
+  <span class="k">"content"</span>: <span class="s">"庐山小隐。"</span>,          <span class="c">// 首句；摘句模式下为连续两句</span>
+  <span class="k">"origin"</span>: <span class="s">"尾犯"</span>,               <span class="c">// 诗题 / 词牌</span>
+  <span class="k">"author"</span>: <span class="s">"晁补之"</span>,
+  <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,   <span class="c">// 命中的分类（多命中时随机取一）</span>
+
+  <span class="k">"mode"</span>: <span class="s">"line"</span>,                  <span class="c">// 仅摘句模式出现</span>
+  <span class="k">"title"</span>: <span class="s">"尾犯"</span>,                  <span class="c">// 诗题；与 origin 相同</span>
+  <span class="k">"lines"</span>: [<span class="s">"庐山小隐。"</span>, <span class="s">"..."</span>],     <span class="c">// 组成该联的两句</span>
+  <span class="k">"line_index"</span>: 3,                    <span class="c">// 第几个句对（从 1 开始）</span>
+  <span class="k">"line_total"</span>: 12,                   <span class="c">// 本首共有多少个句对</span>
+  <span class="k">"poem"</span>: {                           <span class="c">// 摘句出处的基本信息</span>
+    <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>, <span class="k">"title"</span>: <span class="s">"尾犯"</span>,
+    <span class="k">"author"</span>: <span class="s">"晁补之"</span>, <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
+    <span class="k">"section"</span>: <span class="s">"宋词"</span>, <span class="k">"form"</span>: <span class="s">"词"</span>,
+    <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,
+    <span class="k">"categories"</span>: [<span class="s">"山水/庐山"</span>],
+    <span class="k">"theme"</span>: <span class="s">"山水田园"</span>, <span class="k">"style"</span>: <span class="s">"冲淡"</span>,
+    <span class="k">"mood"</span>: <span class="s">"恬淡"</span>, <span class="k">"scene"</span>: [<span class="s">"山"</span>], <span class="k">"tags"</span>: { <span class="s">"..."</span> }
+  },
+  <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>,
+  <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
+  <span class="k">"section"</span>: <span class="s">"宋词"</span>,
+  <span class="k">"form"</span>: <span class="s">"词"</span>,
+  <span class="k">"paragraphs"</span>: [<span class="s">"庐山小隐。"</span>, <span class="s">"..."</span>],  <span class="c">// 全文</span>
+  <span class="k">"tags"</span>: {                          <span class="c">// 五维内容标签</span>
+    <span class="k">"theme"</span>: <span class="s">"山水田园"</span>, <span class="k">"style"</span>: <span class="s">"冲淡"</span>,
+    <span class="k">"mood"</span>: <span class="s">"恬淡"</span>, <span class="k">"scene"</span>: [<span class="s">"山"</span>],
+    <span class="k">"theme_conf"</span>: 0.62,            <span class="c">// 题材置信度</span>
+    <span class="k">"theme_alt"</span>: [<span class="s">"咏怀抒感"</span>]     <span class="c">// 次优题材</span>
+  },
+  <span class="k">"categories"</span>: [<span class="s">"山水/庐山"</span>, <span class="s">"生活/田园"</span>]  <span class="c">// 全部命中的分类</span>
+}</pre>
+      <p>一首诗可以同时属于多个小类，因此 <code>categories</code> 是数组，<code>category</code> 只在其中取一个用于展示。</p>
+    </section>
+
+    <section id="acc">
+      <h2><span class="no">06</span>精度与可信度</h2>
+      <p class="h2sub">题材采用「规则 + 语义模型」混合判定：高置信规则保留，已验证的弱类由 DeepSeek 重判，
+        低置信分歧再由 v4-pro 终审。</p>
+      <table>
+        <tr><th style="width:210px">方案</th><th style="width:110px">top-1 准确率</th><th>说明</th></tr>
+        <tr><td>关键词规则</td><td>83.6%</td><td>稳定、可解释，但弱类边界较粗</td></tr>
+        <tr><td>DeepSeek 单模型</td><td>76.4%–76.9%</td><td>语义理解较好，但常见题材不如规则稳定</td></tr>
+        <tr><td><b>混合策略</b></td><td><b>87.2%</b></td><td>规则保底 + 弱类语义重判 + 低置信终审</td></tr>
+      </table>
+      <p>测法：以《唐诗三百首》《宋词三百首》的人工标签为金标准，按 UID 精确对齐 195 首，
+        比较 top-1 命中率。样本不大，但可复现（<code>tools/eval_llm.py</code>），
+        排序与相对提升比绝对数值更值得参考。</p>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        <code>theme_conf</code> 是最终采用来源的置信度，规则与模型来源不同，数值不宜直接横向比较；
+        接口不提供按置信度过滤的参数，每类始终返回全部符合条件的诗词。
+      </p>
+    </section>
+
+    <section id="err">
+      <h2><span class="no">07</span>错误码</h2>
+      <table>
+        <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
+        <tr><td>400</td><td>1003</td><td>分类请求的 <code>n</code> 超过 20</td></tr>
+        <tr><td>400</td><td>2002</td><td><code>cats</code> 为空、超过 20 个或包含未知分类</td></tr>
+        <tr><td>429</td><td>1004</td><td>同一 IP 60 秒内超过 60 次；按 <code>Retry-After</code> 等待</td></tr>
+        <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
+        <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
+        <tr><td>500</td><td>1001</td><td>读取语料失败</td></tr>
+      </table>
+      <pre>{
+  <span class="k">"status"</span>: <span class="s">"error"</span>,
+  <span class="k">"errCode"</span>: 2001,
+  <span class="k">"errMessage"</span>: <span class="s">"No matching category. See /doc for the full list."</span>
+}</pre>
+    </section>
+
+    <section id="cats">
+      <h2><span class="no">08</span>意象分类 · 11 大类 69 小类</h2>
+      <p class="h2sub">共 11 大类 / 69 小类。点击「试一下」可直接查看该分类的返回。</p>
+      <table>
+        <tr><th style="width:96px">小类</th><th>接口路径</th><th style="width:82px;text-align:right;padding-right:14px">条数</th><th style="width:72px"></th></tr>
+        <tr class="grp"><td colspan="4"><span class="gt">抒情</span><span class="gc">40,267 首</span><code>/shuqing</code></td></tr><tr><td class="l2">爱情</td><td><code>/shuqing/aiqing</code></td><td class="num">1,618</td><td><button class="try" data-p="/shuqing/aiqing.json">试一下</button></td></tr><tr><td class="l2">友情</td><td><code>/shuqing/youqing</code></td><td class="num">2,595</td><td><button class="try" data-p="/shuqing/youqing.json">试一下</button></td></tr><tr><td class="l2">离别</td><td><code>/shuqing/libie</code></td><td class="num">3,916</td><td><button class="try" data-p="/shuqing/libie.json">试一下</button></td></tr><tr><td class="l2">思念</td><td><code>/shuqing/sinian</code></td><td class="num">5,168</td><td><button class="try" data-p="/shuqing/sinian.json">试一下</button></td></tr><tr><td class="l2">思乡</td><td><code>/shuqing/sixiang</code></td><td class="num">10,345</td><td><button class="try" data-p="/shuqing/sixiang.json">试一下</button></td></tr><tr><td class="l2">伤感</td><td><code>/shuqing/shanggan</code></td><td class="num">13,072</td><td><button class="try" data-p="/shuqing/shanggan.json">试一下</button></td></tr><tr><td class="l2">孤独</td><td><code>/shuqing/gudu</code></td><td class="num">10,641</td><td><button class="try" data-p="/shuqing/gudu.json">试一下</button></td></tr><tr><td class="l2">闺怨</td><td><code>/shuqing/guiyuan</code></td><td class="num">5,348</td><td><button class="try" data-p="/shuqing/guiyuan.json">试一下</button></td></tr><tr><td class="l2">悼亡</td><td><code>/shuqing/daowang</code></td><td class="num">1,440</td><td><button class="try" data-p="/shuqing/daowang.json">试一下</button></td></tr><tr><td class="l2">怀古</td><td><code>/shuqing/huaigu</code></td><td class="num">5,254</td><td><button class="try" data-p="/shuqing/huaigu.json">试一下</button></td></tr><tr><td class="l2">爱国</td><td><code>/shuqing/aiguo</code></td><td class="num">153</td><td><button class="try" data-p="/shuqing/aiguo.json">试一下</button></td></tr><tr><td class="l2">感恩</td><td><code>/shuqing/ganen</code></td><td class="num">582</td><td><button class="try" data-p="/shuqing/ganen.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">四季</span><span class="gc">26,218 首</span><code>/siji</code></td></tr><tr><td class="l2">春天</td><td><code>/siji/chuntian</code></td><td class="num">15,490</td><td><button class="try" data-p="/siji/chuntian.json">试一下</button></td></tr><tr><td class="l2">夏天</td><td><code>/siji/xiatian</code></td><td class="num">1,994</td><td><button class="try" data-p="/siji/xiatian.json">试一下</button></td></tr><tr><td class="l2">秋天</td><td><code>/siji/qiutian</code></td><td class="num">9,676</td><td><button class="try" data-p="/siji/qiutian.json">试一下</button></td></tr><tr><td class="l2">冬天</td><td><code>/siji/dongtian</code></td><td class="num">1,174</td><td><button class="try" data-p="/siji/dongtian.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">山水</span><span class="gc">4,105 首</span><code>/shanshui</code></td></tr><tr><td class="l2">庐山</td><td><code>/shanshui/lushan</code></td><td class="num">534</td><td><button class="try" data-p="/shanshui/lushan.json">试一下</button></td></tr><tr><td class="l2">泰山</td><td><code>/shanshui/taishan</code></td><td class="num">97</td><td><button class="try" data-p="/shanshui/taishan.json">试一下</button></td></tr><tr><td class="l2">江河</td><td><code>/shanshui/jianghe</code></td><td class="num">2,113</td><td><button class="try" data-p="/shanshui/jianghe.json">试一下</button></td></tr><tr><td class="l2">长江</td><td><code>/shanshui/changjiang</code></td><td class="num">445</td><td><button class="try" data-p="/shanshui/changjiang.json">试一下</button></td></tr><tr><td class="l2">黄河</td><td><code>/shanshui/huanghe</code></td><td class="num">356</td><td><button class="try" data-p="/shanshui/huanghe.json">试一下</button></td></tr><tr><td class="l2">西湖</td><td><code>/shanshui/xihu</code></td><td class="num">602</td><td><button class="try" data-p="/shanshui/xihu.json">试一下</button></td></tr><tr><td class="l2">瀑布</td><td><code>/shanshui/pubu</code></td><td class="num">213</td><td><button class="try" data-p="/shanshui/pubu.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">天气</span><span class="gc">8,344 首</span><code>/tianqi</code></td></tr><tr><td class="l2">写风</td><td><code>/tianqi/xiefeng</code></td><td class="num">714</td><td><button class="try" data-p="/tianqi/xiefeng.json">试一下</button></td></tr><tr><td class="l2">写云</td><td><code>/tianqi/xieyun</code></td><td class="num">766</td><td><button class="try" data-p="/tianqi/xieyun.json">试一下</button></td></tr><tr><td class="l2">写雨</td><td><code>/tianqi/xieyu</code></td><td class="num">943</td><td><button class="try" data-p="/tianqi/xieyu.json">试一下</button></td></tr><tr><td class="l2">写雪</td><td><code>/tianqi/xiexue</code></td><td class="num">882</td><td><button class="try" data-p="/tianqi/xiexue.json">试一下</button></td></tr><tr><td class="l2">彩虹</td><td><code>/tianqi/caihong</code></td><td class="num">104</td><td><button class="try" data-p="/tianqi/caihong.json">试一下</button></td></tr><tr><td class="l2">太阳</td><td><code>/tianqi/taiyang</code></td><td class="num">1,142</td><td><button class="try" data-p="/tianqi/taiyang.json">试一下</button></td></tr><tr><td class="l2">月亮</td><td><code>/tianqi/yueliang</code></td><td class="num">3,896</td><td><button class="try" data-p="/tianqi/yueliang.json">试一下</button></td></tr><tr><td class="l2">星星</td><td><code>/tianqi/xingxing</code></td><td class="num">411</td><td><button class="try" data-p="/tianqi/xingxing.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">人物</span><span class="gc">2,615 首</span><code>/renwu</code></td></tr><tr><td class="l2">女子</td><td><code>/renwu/nvzi</code></td><td class="num">1,442</td><td><button class="try" data-p="/renwu/nvzi.json">试一下</button></td></tr><tr><td class="l2">父亲</td><td><code>/renwu/fuqin</code></td><td class="num">277</td><td><button class="try" data-p="/renwu/fuqin.json">试一下</button></td></tr><tr><td class="l2">母亲</td><td><code>/renwu/muqin</code></td><td class="num">178</td><td><button class="try" data-p="/renwu/muqin.json">试一下</button></td></tr><tr><td class="l2">老师</td><td><code>/renwu/laoshi</code></td><td class="num">162</td><td><button class="try" data-p="/renwu/laoshi.json">试一下</button></td></tr><tr><td class="l2">儿童</td><td><code>/renwu/ertong</code></td><td class="num">589</td><td><button class="try" data-p="/renwu/ertong.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">人生</span><span class="gc">6,242 首</span><code>/rensheng</code></td></tr><tr><td class="l2">励志</td><td><code>/rensheng/lizhi</code></td><td class="num">119</td><td><button class="try" data-p="/rensheng/lizhi.json">试一下</button></td></tr><tr><td class="l2">哲理</td><td><code>/rensheng/zheli</code></td><td class="num">1,473</td><td><button class="try" data-p="/rensheng/zheli.json">试一下</button></td></tr><tr><td class="l2">青春</td><td><code>/rensheng/qingchun</code></td><td class="num">813</td><td><button class="try" data-p="/rensheng/qingchun.json">试一下</button></td></tr><tr><td class="l2">时光</td><td><code>/rensheng/shiguang</code></td><td class="num">623</td><td><button class="try" data-p="/rensheng/shiguang.json">试一下</button></td></tr><tr><td class="l2">梦想</td><td><code>/rensheng/mengxiang</code></td><td class="num">624</td><td><button class="try" data-p="/rensheng/mengxiang.json">试一下</button></td></tr><tr><td class="l2">读书</td><td><code>/rensheng/dushu</code></td><td class="num">905</td><td><button class="try" data-p="/rensheng/dushu.json">试一下</button></td></tr><tr><td class="l2">战争</td><td><code>/rensheng/zhanzheng</code></td><td class="num">1,987</td><td><button class="try" data-p="/rensheng/zhanzheng.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">生活</span><span class="gc">4,910 首</span><code>/shenghuo</code></td></tr><tr><td class="l2">乡村</td><td><code>/shenghuo/xiangcun</code></td><td class="num">344</td><td><button class="try" data-p="/shenghuo/xiangcun.json">试一下</button></td></tr><tr><td class="l2">田园</td><td><code>/shenghuo/tianyuan</code></td><td class="num">512</td><td><button class="try" data-p="/shenghuo/tianyuan.json">试一下</button></td></tr><tr><td class="l2">边塞</td><td><code>/shenghuo/biansai</code></td><td class="num">1,610</td><td><button class="try" data-p="/shenghuo/biansai.json">试一下</button></td></tr><tr><td class="l2">写桥</td><td><code>/shenghuo/xieqiao</code></td><td class="num">2,564</td><td><button class="try" data-p="/shenghuo/xieqiao.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">节日</span><span class="gc">4,176 首</span><code>/jieri</code></td></tr><tr><td class="l2">春节</td><td><code>/jieri/chunjie</code></td><td class="num">377</td><td><button class="try" data-p="/jieri/chunjie.json">试一下</button></td></tr><tr><td class="l2">元宵节</td><td><code>/jieri/yuanxiaojie</code></td><td class="num">436</td><td><button class="try" data-p="/jieri/yuanxiaojie.json">试一下</button></td></tr><tr><td class="l2">寒食节</td><td><code>/jieri/hanshijie</code></td><td class="num">565</td><td><button class="try" data-p="/jieri/hanshijie.json">试一下</button></td></tr><tr><td class="l2">清明节</td><td><code>/jieri/qingmingjie</code></td><td class="num">1,017</td><td><button class="try" data-p="/jieri/qingmingjie.json">试一下</button></td></tr><tr><td class="l2">端午节</td><td><code>/jieri/duanwujie</code></td><td class="num">165</td><td><button class="try" data-p="/jieri/duanwujie.json">试一下</button></td></tr><tr><td class="l2">七夕节</td><td><code>/jieri/qixijie</code></td><td class="num">519</td><td><button class="try" data-p="/jieri/qixijie.json">试一下</button></td></tr><tr><td class="l2">中秋节</td><td><code>/jieri/zhongqiujie</code></td><td class="num">761</td><td><button class="try" data-p="/jieri/zhongqiujie.json">试一下</button></td></tr><tr><td class="l2">重阳节</td><td><code>/jieri/chongyangjie</code></td><td class="num">950</td><td><button class="try" data-p="/jieri/chongyangjie.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">动物</span><span class="gc">1,851 首</span><code>/dongwu</code></td></tr><tr><td class="l2">写鸟</td><td><code>/dongwu/xieniao</code></td><td class="num">1,158</td><td><button class="try" data-p="/dongwu/xieniao.json">试一下</button></td></tr><tr><td class="l2">写马</td><td><code>/dongwu/xiema</code></td><td class="num">695</td><td><button class="try" data-p="/dongwu/xiema.json">试一下</button></td></tr><tr><td class="l2">写猫</td><td><code>/dongwu/xiemao</code></td><td class="num">5</td><td><button class="try" data-p="/dongwu/xiemao.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">植物</span><span class="gc">2,549 首</span><code>/zhiwu</code></td></tr><tr><td class="l2">梅花</td><td><code>/zhiwu/meihua</code></td><td class="num">384</td><td><button class="try" data-p="/zhiwu/meihua.json">试一下</button></td></tr><tr><td class="l2">梨花</td><td><code>/zhiwu/lihua</code></td><td class="num">31</td><td><button class="try" data-p="/zhiwu/lihua.json">试一下</button></td></tr><tr><td class="l2">桃花</td><td><code>/zhiwu/taohua</code></td><td class="num">404</td><td><button class="try" data-p="/zhiwu/taohua.json">试一下</button></td></tr><tr><td class="l2">荷花</td><td><code>/zhiwu/hehua</code></td><td class="num">329</td><td><button class="try" data-p="/zhiwu/hehua.json">试一下</button></td></tr><tr><td class="l2">菊花</td><td><code>/zhiwu/juhua</code></td><td class="num">137</td><td><button class="try" data-p="/zhiwu/juhua.json">试一下</button></td></tr><tr><td class="l2">柳树</td><td><code>/zhiwu/liushu</code></td><td class="num">792</td><td><button class="try" data-p="/zhiwu/liushu.json">试一下</button></td></tr><tr><td class="l2">叶子</td><td><code>/zhiwu/yezi</code></td><td class="num">163</td><td><button class="try" data-p="/zhiwu/yezi.json">试一下</button></td></tr><tr><td class="l2">竹子</td><td><code>/zhiwu/zhuzi</code></td><td class="num">367</td><td><button class="try" data-p="/zhiwu/zhuzi.json">试一下</button></td></tr><tr class="grp"><td colspan="4"><span class="gt">食物</span><span class="gc">1,601 首</span><code>/shiwu</code></td></tr><tr><td class="l2">写酒</td><td><code>/shiwu/xiejiu</code></td><td class="num">1,363</td><td><button class="try" data-p="/shiwu/xiejiu.json">试一下</button></td></tr><tr><td class="l2">写茶</td><td><code>/shiwu/xiecha</code></td><td class="num">139</td><td><button class="try" data-p="/shiwu/xiecha.json">试一下</button></td></tr><tr><td class="l2">荔枝</td><td><code>/shiwu/lizhi</code></td><td class="num">108</td><td><button class="try" data-p="/shiwu/lizhi.json">试一下</button></td></tr>
+      </table>
+    </section>
+
+    <section id="notes">
+      <h2><span class="no">09</span>判定说明</h2>
+      <p>21 题材与 v1 意象分类采用两套方法，互不混淆。</p>
+      <table>
+        <tr><th style="width:150px">分类</th><th>判定方式</th></tr>
+        <tr><td>21 题材</td><td>高置信规则 + DeepSeek 弱类重判 + 低置信 v4-pro 终审；送别/寄赠、哲理/佛道、应制与咏怀等边界均按标题事由和全篇主旨判定</td></tr>
+        <tr><td>v1 意象分类</td><td>「意象词典 + 阈值」，规则见 <code>tagger/categories.py</code></td></tr>
+        <tr><td>关键词权重</td><td>越宽泛的词权重越低（如「风」0.5、「月」0.7），需组合达到阈值才算命中</td></tr>
+        <tr><td>标题加权与强制</td><td>标题命中权重更高；植物 / 动物 / 食物类要求标题命中，避免正文随手取景造成误判</td></tr>
+        <tr><td>宋词词牌</td><td>词牌只表示曲调，不作为事由标题，也不参与标题题材规则</td></tr>
+      </table>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        已知局限：意象分类仍有同形歧义（如「芙蓉」兼指荷与木芙蓉）；题材分类在长诗和高度程式化文本上仍有边界误差。
+        若发现明显错判，可在规则表调整权重或复查对应模型的标注。
+      </p>
+    </section>
+
+  </div>
+</main>
+</div>
+
+<footer>
+  <div class="wrap">
+    数据源 <a href="https://github.com/ibycat/chinese-poetry" target="_blank" rel="noopener">ibycat/chinese-poetry</a>
+    · 分类体系参考 <a href="https://v1.jinrishici.com" target="_blank" rel="noopener">今日诗词 v1</a>
+    · 本服务为独立部署，与今日诗词官方无关
+  </div>
+</footer>
+
+<div id="out">
+  <div class="hd"><span class="mono" id="outPath"></span>
+    <button onclick="document.getElementById('out').classList.remove('on')">关闭</button></div>
+  <pre id="outBody"></pre>
+</div>
+
+<script>
+  // 直接双击打开 html 时 origin 为 null，给个占位而不是显示 "null"
+  const origin = /^https?:/.test(location.origin) ? location.origin : "https://<部署后的域名>";
+  document.getElementById("base").textContent = origin;
+
+  // 示例里的 BASE 换成真实域名，让代码块可以直接复制运行
+  document.querySelectorAll("pre").forEach(pre => {
+    const walker = document.createTreeWalker(pre, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const n of nodes) {
+      if (n.nodeValue.includes("BASE")) n.nodeValue = n.nodeValue.split("BASE").join(origin);
+    }
+  });
+
+  document.getElementById("copy").addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    try {
+      await navigator.clipboard.writeText(origin);
+      btn.textContent = "已复制";
+    } catch (_) {
+      btn.textContent = "请手动复制";
+    }
+    setTimeout(() => { btn.textContent = "复制"; }, 1400);
+  });
+
+  function show(path) {
+    const box = document.getElementById("out");
+    const body = document.getElementById("outBody");
+    document.getElementById("outPath").textContent = path;
+    body.textContent = "请求中…";
+    box.classList.add("on");
+    fetch(path, { cache: "no-store" })
+      .then(r => r.text().then(t => ({ ok: r.ok, status: r.status, t })))
+      .then(({ ok, status, t }) => {
+        let out = t;
+        try { out = JSON.stringify(JSON.parse(t), null, 2); } catch (e) {}
+        body.textContent = (ok ? "" : "HTTP " + status + "\n") + out;
+      })
+      .catch(e => { body.textContent = "请求失败：" + e.message; });
+  }
+
+  document.addEventListener("click", e => {
+    const btn = e.target.closest(".try");
+    if (btn) { e.preventDefault(); show(btn.dataset.p); }
+  });
+</script>
+</body>
+</html>

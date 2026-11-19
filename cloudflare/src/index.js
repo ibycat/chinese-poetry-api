@@ -314,9 +314,19 @@ export default {
       return json({ status: "error", errCode: 1002, errMessage: "Bad path" }, 400);
     }
 
-    // 文档页 / 浏览页（静态资源兜底）
-    if (path === "" || path === "doc" || path === "docs" || path === "index.html") {
-      return env.ASSETS.fetch(new Request(ASSET_ORIGIN + "/index.html"));
+    // 文档页由静态资源直接命中（public/index.html、public/doc/index.html），
+    // 请求不会进入 Worker，也就不占免费版每日请求额度。
+    // 下面这支分支只作为静态层异常时的兜底，返回时打标记便于排查。
+    if (path === "" || path === "doc" || path === "index.html") {
+      const file = path === "doc" ? "/doc.html" : "/index.html";
+      const r = await env.ASSETS.fetch(new Request(ASSET_ORIGIN + file));
+      const h = new Headers(r.headers);
+      h.set("x-doc-fallback", "worker");
+      return new Response(r.body, { status: r.status, headers: h });
+    }
+    // 旧文档链接
+    if (path === "docs" || path === "document") {
+      return Response.redirect(`${url.origin}/doc`, 301);
     }
     if (path === "favicon.ico") return new Response(null, { status: 204 });
 

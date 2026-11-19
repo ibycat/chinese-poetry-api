@@ -258,7 +258,8 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
         普通分类的 <code>.txt</code> 仍只返回正文。</p>
       <p style="color:var(--ink-3);font-size:12.5px">
         动态接口返回 <code>Cache-Control: no-store</code>，连续调用不会复用旧随机结果；
-        <code>/data/*</code> 静态分片仍使用长缓存。
+        <code>/data/*</code> 静态分片仍使用长缓存。本页与分类浏览页本身就是静态文件，
+        由 CDN 直接返回、不执行后端函数，因此打开文档页不占用任何调用额度。
       </p>
       <p style="color:var(--ink-3);font-size:12.5px">
         接口按客户端 IP 限流：同一 IP 每 60 秒最多 60 次请求，平均约每秒 1 次，允许短时突发。

@@ -17,6 +17,7 @@
 import json
 import os
 import sys
+import shutil
 import hashlib
 import datetime
 
@@ -201,10 +202,15 @@ def main():
                .replace("{{TOTAL}}", f"{n:,}")
                .replace("{{BUILT}}", datetime.date.today().isoformat()))
     open(os.path.join(PUB, "index.html"), "w", encoding="utf-8").write(html)
-    print(f"文档页 {len(html) / 1024:.1f} KB")
+    # 另存一份 doc.html：/doc 由静态资源直接命中，不经过 Worker，
+    # 因此不占用免费版每日 10 万次请求额度（直接命中，无重定向）。
+    open(os.path.join(PUB, "doc.html"), "w", encoding="utf-8").write(html)
+    stale = os.path.join(PUB, "doc")
+    if os.path.isdir(stale):
+        shutil.rmtree(stale)
+    print(f"文档页 {len(html) / 1024:.1f} KB（/ 与 /doc 均为静态）")
 
     # ---------- 5. 浏览页（复用 web/） ----------
-    import shutil
     bdst = os.path.join(PUB, "browse")
     os.makedirs(bdst, exist_ok=True)
     for f in ("index.html", "data.js"):
