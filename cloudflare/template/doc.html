@@ -237,7 +237,7 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pr
       <table>
         <tr><th style="width:130px">格式</th><th>说明</th></tr>
         <tr><td><code>.json</code><span class="badge g">默认</span></td><td>结构化返回，含全文与标签</td></tr>
-        <tr><td><code>.txt</code></td><td>仅返回诗句正文，适合做一言/签名</td></tr>
+        <tr><td><code>.txt</code></td><td>普通模式仅返回正文；摘句模式附带作者与诗题，适合做一言/签名</td></tr>
         <tr><td><code>.svg</code></td><td>图片，可直接 <code>&lt;img src&gt;</code></td></tr>
       </table>
       <table>
@@ -253,6 +253,9 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pr
         再在该分类内选作品和句对，因此不会因为某个分类语料更多而挤占其他分类。
         例：<code>/line.txt?cats=t/songbie,t/jizeng</code>、
         <code>/line.json?cats=shanshui/lushan,zhiwu/meihua&amp;n=5</code>。</p>
+      <p>摘句的纯文本会附朝代、作者、诗题、体裁与分类，多条之间空一行：</p>
+      <pre>举头望明月，低头思故乡。
+—— 唐·李白《静夜思》｜唐诗·五言绝句｜题材：羁旅思乡｜古诗文-抒情-思乡</pre>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -275,9 +278,19 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
   <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,   <span class="c">// 命中的分类（多命中时随机取一）</span>
 
   <span class="k">"mode"</span>: <span class="s">"line"</span>,                  <span class="c">// 仅摘句模式出现</span>
+  <span class="k">"title"</span>: <span class="s">"尾犯"</span>,                  <span class="c">// 诗题；与 origin 相同</span>
   <span class="k">"lines"</span>: [<span class="s">"庐山小隐。"</span>, <span class="s">"..."</span>],     <span class="c">// 组成该联的两句</span>
   <span class="k">"line_index"</span>: 3,                    <span class="c">// 第几个句对（从 1 开始）</span>
   <span class="k">"line_total"</span>: 12,                   <span class="c">// 本首共有多少个句对</span>
+  <span class="k">"poem"</span>: {                           <span class="c">// 摘句出处的基本信息</span>
+    <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>, <span class="k">"title"</span>: <span class="s">"尾犯"</span>,
+    <span class="k">"author"</span>: <span class="s">"晁补之"</span>, <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
+    <span class="k">"section"</span>: <span class="s">"宋词"</span>, <span class="k">"form"</span>: <span class="s">"词"</span>,
+    <span class="k">"category"</span>: <span class="s">"古诗文-山水-庐山"</span>,
+    <span class="k">"categories"</span>: [<span class="s">"山水/庐山"</span>],
+    <span class="k">"theme"</span>: <span class="s">"山水田园"</span>, <span class="k">"style"</span>: <span class="s">"冲淡"</span>,
+    <span class="k">"mood"</span>: <span class="s">"恬淡"</span>, <span class="k">"scene"</span>: [<span class="s">"山"</span>], <span class="k">"tags"</span>: { <span class="s">"..."</span> }
+  },
   <span class="k">"id"</span>: <span class="s">"9f2c1a7b3d40"</span>,
   <span class="k">"dynasty"</span>: <span class="s">"宋"</span>,
   <span class="k">"section"</span>: <span class="s">"宋词"</span>,

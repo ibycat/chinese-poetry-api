@@ -104,7 +104,40 @@ function applyLine(item, r) {
   item.line_index = i + 1;
   item.line_total = units.length;
   item.mode = "line";
+  // origin 是 v1 字段名；title 与 poem 提供更直观的摘句出处。
+  item.title = item.origin;
+  item.poem = {
+    id: item.id,
+    title: item.origin,
+    author: item.author,
+    dynasty: item.dynasty,
+    section: item.section,
+    form: item.form,
+    category: item.category,
+    categories: item.categories,
+    theme: item.tags.theme,
+    style: item.tags.style,
+    mood: item.tags.mood,
+    scene: item.tags.scene,
+    theme_conf: item.tags.theme_conf,
+    theme_alt: item.tags.theme_alt,
+    tags: item.tags,
+  };
   return true;
+}
+
+/** 摘句纯文本：正文下一行附朝代、作者、诗题、体裁与分类；多条之间空一行。 */
+function lineText(items) {
+  return items.map((x) => {
+    const p = x.poem || x;
+    const author = `${p.dynasty ? p.dynasty + "·" : ""}${p.author || ""}`;
+    const title = p.title ? `《${p.title}》` : "";
+    const meta = [p.section, p.form].filter(Boolean).join("·");
+    const theme = p.tags && p.tags.theme ? `题材：${p.tags.theme}` : "";
+    const detail = [meta, theme, p.category].filter(Boolean).join("｜");
+    const credit = `—— ${author}${title}` + (detail ? `｜${detail}` : "");
+    return x.content + "\n" + credit;
+  }).join("\n\n");
 }
 
 function svgOf(content, author, title) {
@@ -376,7 +409,7 @@ export default {
           return json({ status: "error", errCode: 1001,
             errMessage: "No readable lines in selected categories" }, 500);
         }
-        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
+        if (fmt === "txt") return text(lineText(items));
         if (fmt === "svg") return svg(items[0]);
         return json(n > 1 ? items : items[0]);
       }
@@ -403,7 +436,9 @@ export default {
           return json({ status: "error", errCode: 1001,
             errMessage: "No readable lines in corpus" }, 500);
         }
-        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
+        if (fmt === "txt") return text(lineMode
+          ? lineText(items)
+          : items.map((x) => x.content).join("\n"));
         if (fmt === "svg") return svg(items[0]);
         return json(n > 1 ? items : items[0]);
       }
@@ -423,7 +458,9 @@ export default {
         items.push(it);
       }
 
-      if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
+      if (fmt === "txt") return text(lineMode
+        ? lineText(items)
+        : items.map((x) => x.content).join("\n"));
       if (fmt === "svg") return svg(items[0]);
       return json(n > 1 ? items : items[0]);
     } catch (e) {

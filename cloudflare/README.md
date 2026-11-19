@@ -122,6 +122,8 @@ cloudflare/
 
 `/line?cats=t/songbie,t/jizeng,shanshui/lushan` 可合并多个分类（最多 20 个），
 先等概率选分类，再在分类内选作品和句对；非法分类返回 400 / errCode 2002。
+摘句 JSON 额外返回 `title` 和 `poem` 基本信息块（ID、诗题、作者、朝代、分部、体裁、分类、标签）；
+摘句 `.txt` 的出处行包含朝代、作者、诗题、体裁与分类。
 
 ---
 
