@@ -193,11 +193,11 @@ curl <span class="s">"BASE/抒情/爱情.json"</span>
 <span class="c"># 连续两句，全库随机（默认 JSON）</span>
 curl <span class="s">"BASE/line"</span>
 
-<span class="c"># 在指定分类中随机摘两句</span>
-curl <span class="s">"BASE/t/songbie.json?mode=line"</span>
+<span class="c"># 在指定多个分类中随机摘两句</span>
+curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng"</span>
 
-<span class="c"># 多个分类合并摘句</span>
-curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pre>
+<span class="c"># 多个分类随机摘句</span>
+curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp;n=3"</span></pre>
       <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
     </section>
 
