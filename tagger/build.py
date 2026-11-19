@@ -15,6 +15,7 @@
 
 import json
 import os
+import re
 import argparse
 import collections
 import hashlib
@@ -221,12 +222,22 @@ def main():
     # tags/ 必须与源数组严格同下标，因此重复诗仍保存在标签层；API 语料则按 UID
     # 去重，避免同一 id 出现两次导致客户端缓存、随机去重和引用出错。
     unique = {}
+    api_dups = api_invalid = 0
     for rec in all_recs:
-        unique.setdefault(rec["uid"], rec)
-    api_dups = len(all_recs) - len(unique)
+        body = "".join(rec["paragraphs"])
+        if not re.search(r"[\u3400-\u9fff]", body):
+            api_invalid += 1
+            continue
+        if rec["uid"] in unique:
+            api_dups += 1
+            continue
+        rec["title"] = rec["title"] or "无题"
+        unique[rec["uid"]] = rec
     all_recs = list(unique.values())
     if api_dups:
         print(f"API 语料按 UID 去重 {api_dups} 首", flush=True)
+    if api_invalid:
+        print(f"API 语料剔除无有效正文 {api_invalid} 首", flush=True)
 
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
     with open(os.path.join(ROOT, "data", "poems.jsonl"), "w", encoding="utf-8") as f:
@@ -254,6 +265,7 @@ def main():
                      for k, n, rd, kp, dp in report],
         "total": len(all_recs),
         "api_dedup": api_dups,
+        "api_invalid": api_invalid,
         "simplified_by": simp.BACKEND,
     }
     dump({"source": "ibycat/chinese-poetry",
@@ -269,7 +281,8 @@ def main():
             continue
         for it in bucket:
             pick[it["uid"]] = it
-    poems = list(pick.values())
+    # sample_pool 在清洗前生成；剔除无效正文/重复 UID，避免浏览页出现空卡片。
+    poems = [it for uid, it in pick.items() if uid in unique]
     random.Random(7).shuffle(poems)
 
     # 浏览页不再把全部抽样塞进 data.js，而是按大类拆成独立脚本按需加载。

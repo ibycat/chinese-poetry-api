@@ -321,9 +321,7 @@ export default {
     if (path === "favicon.ico") return new Response(null, { status: 204 });
 
     // 分类总表
-    if (path === "api") {
-      return json(catalog(url), 200, { "Cache-Control": "public, max-age=300" });
-    }
+    if (path === "api") return json(catalog(url));
     if (path.startsWith("api/")) path = path.slice(4);
 
     // 扩展名
