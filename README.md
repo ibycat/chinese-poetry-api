@@ -26,8 +26,8 @@ curl https://yiyan.952762.xyz/zhiwu/meihua.json?n=3
 
 ### 部署到 Cloudflare
 
-接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（31.4 MB / 633 文件），
-Worker 只做路由与随机抽取（约 26 KiB，gzip 8.7 KiB），因此不受 1 秒冷启动限制。
+接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（34 MB / 644 文件），
+Worker 只做路由、限流与随机抽取（约 27 KiB，gzip 9 KiB），因此不受 1 秒冷启动限制。
 
 ```bash
 cd cloudflare
@@ -59,6 +59,7 @@ npx wrangler deploy
 
 后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条：
 全库最多 50，分类、题材和多分类摘句最多 20。动态响应使用 `Cache-Control: no-store`。
+接口按客户端 IP 限流，同一 IP 每秒最多 1 次；超限返回 `429 / 1004` 和 `Retry-After: 1`。
 
 任意分类路径加 `?mode=line` 即进入摘句模式：`content` 改为随机连续两句，分类和其他字段不变。
 长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。

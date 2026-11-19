@@ -209,7 +209,13 @@ def main():
     os.makedirs(bdst, exist_ok=True)
     for f in ("index.html", "data.js"):
         shutil.copy(os.path.join(ROOT, "web", f), os.path.join(bdst, f))
-    print("浏览页 -> /browse/")
+    src_items = os.path.join(ROOT, "web", "items")
+    dst_items = os.path.join(bdst, "items")
+    os.makedirs(dst_items, exist_ok=True)
+    for f in os.listdir(src_items):
+        if f.endswith(".js"):
+            shutil.copy(os.path.join(src_items, f), os.path.join(dst_items, f))
+    print("浏览页 -> /browse/（按大类按需加载）")
 
     on_disk = len([f for f in os.listdir(os.path.join(PUB, "data", "p"))
                    if f.endswith(".json")])

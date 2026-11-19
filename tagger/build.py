@@ -271,11 +271,46 @@ def main():
             pick[it["uid"]] = it
     poems = list(pick.values())
     random.Random(7).shuffle(poems)
+
+    # 浏览页不再把全部抽样塞进 data.js，而是按大类拆成独立脚本按需加载。
+    by_top = collections.defaultdict(dict)
+    counts = {"top": collections.Counter(), "sub": collections.Counter(),
+              "style": collections.Counter(), "mood": collections.Counter(),
+              "form": collections.Counter()}
+    for it in poems:
+        for top, subs in it.get("cats", {}).items():
+            by_top[top][it["uid"]] = it
+            counts["top"][top] += 1
+            for sub in subs:
+                counts["sub"][f"{top}/{sub}"] += 1
+        for value in [it.get("style")] + list(it.get("style2") or []):
+            if value:
+                counts["style"][value] += 1
+        for value in [it.get("mood")] + list(it.get("mood2") or []):
+            if value:
+                counts["mood"][value] += 1
+        if it.get("form"):
+            counts["form"][it["form"]] += 1
+
+    items_dir = os.path.join(ROOT, "web", "items")
+    os.makedirs(items_dir, exist_ok=True)
+    for top, bucket in by_top.items():
+        path = os.path.join(items_dir, f"{SLUG[top]}.js")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("window.CP_ITEMS=window.CP_ITEMS||{};window.CP_ITEMS[")
+            f.write(json.dumps(top, ensure_ascii=False))
+            f.write("]=")
+            json.dump(list(bucket.values()), f, ensure_ascii=False, separators=(",", ":"))
+            f.write(";\n")
+
+    featured = [list(bucket.values())[0] for bucket in by_top.values() if bucket][:24]
     payload = {"taxonomy": {d: {"name": taxonomy.DIMENSIONS[d]["name"],
                                 "desc": taxonomy.DIMENSIONS[d]["desc"],
                                 "tags": taxonomy.DIMENSIONS[d]["tags"]}
                             for d in ["theme", "style", "mood", "scene", "form"]},
-               "categories": cat_index, "stats": stats, "poems": poems}
+               "categories": cat_index, "stats": stats,
+               "counts": {k: dict(v) for k, v in counts.items()},
+               "sample": len(poems), "featured": featured}
     p = os.path.join(ROOT, "web", "data.js")
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:
@@ -286,6 +321,7 @@ def main():
     zero = [f"{k}/{s}" for k, v in cat_index.items()
             for s, sv in v["subs"].items() if sv["count"] == 0]
     print(f"全量 {len(all_recs)} 首 -> data/poems.jsonl；浏览页抽样 {len(poems)} 首")
+    print(f"浏览页按大类拆分 {len(by_top)} 个文件，首屏精选 {len(featured)} 首")
     print(f"分类 {len(CATS)} 一级 / {sum(len(v['subs']) for v in CATS.values())} 二级；"
           f"空分类 {len(zero)} 个 {zero[:6]}")
 

@@ -10,6 +10,44 @@
 import { CATS, THEMES, POEM_CHUNKS, TOTAL, IDX_SHARD, BUILT_AT } from "./manifest.js";
 
 const ASSET_ORIGIN = "https://assets.local";
+const RATE_WINDOW_MS = 1000;
+
+/** 严格 1 秒窗口：同一 IP 的请求都路由到同一个 Durable Object。 */
+export class RateLimiter {
+  constructor(state) {
+    this.state = state;
+    this.last = 0;
+    state.blockConcurrencyWhile(async () => {
+      this.last = (await state.storage.get("last")) || 0;
+    });
+  }
+
+  async fetch() {
+    const now = Date.now();
+    if (now - this.last < RATE_WINDOW_MS) {
+      return new Response(null, {
+        status: 429,
+        headers: { "Retry-After": "1" },
+      });
+    }
+    this.last = now;
+    await this.state.storage.put("last", now);
+    return new Response(null, { status: 204 });
+  }
+}
+
+async function allowRequest(request, env) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  try {
+    const id = env.RATE_LIMITER.idFromName(ip);
+    const res = await env.RATE_LIMITER.get(id).fetch("https://rate-limit.internal/check");
+    return res.status !== 429;
+  } catch (e) {
+    // 限流设施异常时放行，避免整个 API 因限流组件不可用而中断。
+    console.error("rate limiter failed:", e && e.stack || e);
+    return true;
+  }
+}
 
 /* ---------------- 索引：slug / 中文名 -> 节点 ---------------- */
 const BY_SLUG = Object.create(null);
@@ -287,6 +325,11 @@ export default {
       return json({ status: "error", errCode: 1001,
         errMessage: "Only GET and HEAD are supported" }, 405,
         { Allow: "GET, HEAD, OPTIONS" });
+    }
+    if (!(await allowRequest(request, env))) {
+      return json({ status: "error", errCode: 1004,
+        errMessage: "Too many requests; max 1 request per second per IP" }, 429,
+        { "Retry-After": "1", "X-RateLimit-Limit": "1/s" });
     }
 
     let path;

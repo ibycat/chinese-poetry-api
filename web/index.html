@@ -182,14 +182,55 @@ const D = window.CP_DATA;
 const CATS = D.categories;
 const TOP = Object.keys(CATS);
 const state = {top:null, sub:null, style:null, mood:null, form:null, q:""};
+const RENDER_LIMIT = 240;
 
-/* 抽样库内的真实条数（侧栏显示的是本页可选条数，不是全库） */
-const topN = {}, subN = {};
-for (const p of D.poems) {
-  for (const [t, ss] of Object.entries(p.cats || {})) {
-    topN[t] = (topN[t] || 0) + 1;
-    for (const s of ss) subN[t + "/" + s] = (subN[t + "/" + s] || 0) + 1;
-  }
+/* 首屏只带每类一首精选；大类脚本按需加载，搜索/跨类筛选时才加载全量抽样。 */
+const ITEMS = new Map();
+for (const p of D.featured || []) ITEMS.set(p.uid, p);
+const loadedTops = new Set();
+const topLoads = {};
+let allLoaded = false;
+let allLoading = null;
+const topN = (D.counts && D.counts.top) || {};
+const subN = (D.counts && D.counts.sub) || {};
+
+function allPoems() { return [...ITEMS.values()]; }
+
+function loadTop(top) {
+  if (!top || loadedTops.has(top)) return Promise.resolve();
+  if (topLoads[top]) return topLoads[top];
+  topLoads[top] = new Promise(resolve => {
+    const s = document.createElement("script");
+    s.src = `items/${CATS[top].slug}.js`;
+    s.onload = () => {
+      for (const p of (window.CP_ITEMS && window.CP_ITEMS[top]) || []) {
+        ITEMS.set(p.uid, p);
+      }
+      loadedTops.add(top);
+      updateSub();
+      resolve();
+    };
+    s.onerror = () => { s.remove(); resolve(); };
+    document.head.appendChild(s);
+  });
+  return topLoads[top];
+}
+
+function loadAll() {
+  if (allLoaded) return Promise.resolve();
+  if (allLoading) return allLoading;
+  allLoading = Promise.all(TOP.map(loadTop)).then(() => {
+    allLoaded = true;
+    updateSub();
+  });
+  return allLoading;
+}
+
+function updateSub() {
+  document.getElementById("sub").innerHTML =
+    `全库 ${D.stats.total.toLocaleString()} 首 · 已加载 ${ITEMS.size.toLocaleString()}` +
+    ` / 抽样 ${D.sample.toLocaleString()} 首 · 11 大类 69 小类` +
+    `<code>/{大类}/{小类}.json</code>`;
 }
 
 /* ---------- 侧栏 ---------- */
@@ -212,10 +253,15 @@ function buildSide() {
   const wrap = document.createElement("div");
   wrap.className = "chips";
   TOP.forEach(t => {
-    wrap.appendChild(chip(t, topN[t] || 0, state.top === t && !state.sub, "lv1", () => {
+    wrap.appendChild(chip(t, topN[t] || 0, state.top === t && !state.sub, "lv1", async () => {
       if (state.top === t) { state.top = null; state.sub = null; }
       else { state.top = t; state.sub = null; }
-      buildSide(); render();
+      buildSide();
+      if (state.top && !loadedTops.has(t)) {
+        document.getElementById("cntHint").textContent = "加载中…";
+        await loadTop(t);
+      }
+      render();
     }));
   });
   box.appendChild(wrap);
@@ -244,13 +290,7 @@ function buildSide() {
   // 其余维度
   const EXTRA = [["style", "风格"], ["mood", "情绪"], ["form", "体裁"]];
   EXTRA.forEach(([dim, name]) => {
-    const cnt = {};
-    for (const p of D.poems) {
-      const add = v => { if (v) cnt[v] = (cnt[v] || 0) + 1; };
-      if (dim === "style") { add(p.style); (p.style2 || []).forEach(add); }
-      else if (dim === "mood") { add(p.mood); (p.mood2 || []).forEach(add); }
-      else add(p.form);
-    }
+    const cnt = (D.counts && D.counts[dim]) || {};
     const tags = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]);
     if (!tags.length) return;
     const b = document.createElement("div");
@@ -258,8 +298,12 @@ function buildSide() {
     b.innerHTML = `<h3>${name}</h3>`;
     const w = document.createElement("div");
     w.className = "chips";
-    tags.forEach(t => w.appendChild(chip(t, cnt[t], state[dim] === t, "", () => {
+    tags.forEach(t => w.appendChild(chip(t, cnt[t], state[dim] === t, "", async () => {
       state[dim] = state[dim] === t ? null : t;
+      if (!state.top && !allLoaded) {
+        document.getElementById("cntHint").textContent = "加载全库…";
+        await loadAll();
+      }
       buildSide(); render();
     })));
     b.appendChild(w);
@@ -293,13 +337,15 @@ function tag(text, cls) {
 }
 
 function render() {
-  const list = D.poems.filter(match);
+  const list = allPoems().filter(match);
+  const shown = list.slice(0, RENDER_LIMIT);
   document.getElementById("cnt").textContent = list.length;
   const act = [];
   if (state.top) act.push("分类：" + (state.sub ? state.top + "·" + state.sub : state.top));
   if (state.style) act.push("风格：" + state.style);
   if (state.mood) act.push("情绪：" + state.mood);
   if (state.form) act.push("体裁：" + state.form);
+  if (list.length > shown.length) act.push(`仅显示前 ${RENDER_LIMIT} 首`);
   document.getElementById("cntHint").textContent =
     act.length ? "首 · " + act.join("  ") : "首";
 
@@ -307,7 +353,7 @@ function render() {
   box.innerHTML = "";
   document.getElementById("empty").style.display = list.length ? "none" : "block";
   const frag = document.createDocumentFragment();
-  for (const p of list) {
+  for (const p of shown) {
     const el = document.createElement("div");
     el.className = "card";
     el.onclick = () => openModal(p);
@@ -362,21 +408,35 @@ function esc(s) {
 }
 
 /* ---------- 事件 ---------- */
-document.getElementById("sub").innerHTML =
-  `全库 ${D.stats.total.toLocaleString()} 首 · 本页抽样 ${D.poems.length.toLocaleString()} 首 · 11 大类 69 小类` +
-  `<code>/{大类}/{小类}.json</code>`;
-document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+let qTimer;
+document.getElementById("q").addEventListener("input", e => {
+  state.q = e.target.value;
+  clearTimeout(qTimer);
+  qTimer = setTimeout(async () => {
+    if (state.q.trim() && !state.top && !allLoaded) {
+      document.getElementById("cntHint").textContent = "加载全库搜索…";
+      await loadAll();
+    }
+    render();
+  }, 220);
+});
 document.getElementById("clr").onclick = () => {
   Object.assign(state, { top: null, sub: null, style: null, mood: null, form: null, q: "" });
   document.getElementById("q").value = "";
   buildSide(); render();
 };
-document.getElementById("rand").onclick = () => {
-  const list = D.poems.filter(match);
-  if (list.length) openModal(list[Math.floor(Math.random() * list.length)]);
+document.getElementById("rand").onclick = async () => {
+  try {
+    const r = await fetch("/all.json", { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    openModal(await r.json());
+  } catch (_) {
+    const list = allPoems().filter(match);
+    if (list.length) openModal(list[Math.floor(Math.random() * list.length)]);
+  }
 };
 
-buildSide(); render();
+updateSub(); buildSide(); render();
 </script>
 </body>
 </html>
