@@ -46,7 +46,8 @@ function json(obj, status = 200, extra = {}) {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=30",
+      // 动态随机响应不能被浏览器复用，否则连续调用会拿到同一条。
+      "Cache-Control": "no-store",
       ...extra,
     },
   });
@@ -58,7 +59,7 @@ function text(s, status = 200) {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=30",
+      "Cache-Control": "no-store",
     },
   });
 }
@@ -245,7 +246,7 @@ function expand(r, preferTop, preferSub) {
 
 /* ---------------- 分类总表 ---------------- */
 function catalog(url) {
-  const base = `//${url.host}`;
+  const base = `${url.protocol}//${url.host}`;
   const list = [{ 全部: `${base}/all` }];
   for (const [top, cfg] of Object.entries(CATS)) list.push({ [top]: `${base}/${cfg.slug}` });
   for (const [top, cfg] of Object.entries(CATS)) {
@@ -271,8 +272,21 @@ function catalog(url) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Max-Age": "86400",
+        },
+      });
+    }
     if (request.method !== "GET" && request.method !== "HEAD") {
-      return json({ status: "error", errCode: 1001, errMessage: "Only GET is supported" }, 405);
+      return json({ status: "error", errCode: 1001,
+        errMessage: "Only GET and HEAD are supported" }, 405,
+        { Allow: "GET, HEAD, OPTIONS" });
     }
 
     let path;
@@ -289,7 +303,9 @@ export default {
     if (path === "favicon.ico") return new Response(null, { status: 204 });
 
     // 分类总表
-    if (path === "api") return json(catalog(url));
+    if (path === "api") {
+      return json(catalog(url), 200, { "Cache-Control": "public, max-age=300" });
+    }
     if (path.startsWith("api/")) path = path.slice(4);
 
     // 扩展名
@@ -317,10 +333,6 @@ export default {
         return json({ status: "error", errCode: 2002,
           errMessage: "cats is empty. Use e.g. cats=t/songbie,t/jizeng" }, 400);
       }
-      if (tokens.length > 20) {
-        return json({ status: "error", errCode: 2002,
-          errMessage: "At most 20 categories are allowed" }, 400);
-      }
       const unique = new Map();
       for (const token of tokens) {
         const item = nodeForToken(token);
@@ -329,6 +341,10 @@ export default {
             errMessage: `Unknown category in cats: ${token}` }, 400);
         }
         unique.set(`${item.type}:${item.slug}`, item);
+      }
+      if (unique.size > 20) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "At most 20 unique categories are allowed" }, 400);
       }
       multiNodes = [...unique.values()];
     }
@@ -375,6 +391,13 @@ export default {
     }
     if (!node.count) {
       return json({ status: "error", errCode: 2001, errMessage: "Category is empty" }, 404);
+    }
+    // 分类请求每次抽样要读“下标 + 诗库”两个子请求；n=50 会超过 Cloudflare
+    // 单次调用 50 个子请求的上限。全库路径只需读诗库，因此仍支持 50。
+    const maxN = node.type === "all" ? 50 : 20;
+    if (n > maxN) {
+      return json({ status: "error", errCode: 1003,
+        errMessage: `n is too large for categorized requests; max ${maxN}` }, 400);
     }
 
     try {
@@ -463,7 +486,7 @@ function svg(one) {
     headers: {
       "Content-Type": "image/svg+xml; charset=utf-8",
       "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=30",
+      "Cache-Control": "no-store",
     },
   });
 }

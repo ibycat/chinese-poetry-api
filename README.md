@@ -2,7 +2,7 @@
 
 把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：分类体系完整复刻 [jinrishici v1](https://v1.jinrishici.com)（11 大类 / 69 小类），全文转为简体，路径与 v1 一致，换掉域名即可直接调用。
 
-**当前规模：76,180 首**（全唐诗 55,071 + 全宋词 20,463 + 两个三百首选集），69 个小类无一为空。
+**当前规模：76,179 首**（全唐诗 55,071 + 全宋词 20,463 + 两个三百首选集，API 层按 UID 去重 1 首），69 个小类无一为空。
 
 ---
 
@@ -17,17 +17,17 @@ cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码
 只覆盖 v1 意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
 
 ```bash
-curl http://127.0.0.1:8080/shanshui/lushan.json
-curl http://127.0.0.1:8080/shuqing/aiqing.txt
-curl http://127.0.0.1:8080/zhiwu/meihua.json?n=3
+curl https://yiyan.952762.xyz/shanshui/lushan.json
+curl https://yiyan.952762.xyz/shuqing/aiqing.txt
+curl https://yiyan.952762.xyz/zhiwu/meihua.json?n=3
 ```
 
 浏览器打开 `web/index.html` 可按分类浏览（本页为分层抽样，全库走接口）。
 
 ### 部署到 Cloudflare
 
-接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（30 MB / 525 文件），
-Worker 只做路由与随机抽取（打包 15.5 KiB），因此不受 1 秒冷启动限制。
+接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（31.4 MB / 633 文件），
+Worker 只做路由与随机抽取（约 26 KiB，gzip 8.7 KiB），因此不受 1 秒冷启动限制。
 
 ```bash
 cd cloudflare
@@ -44,11 +44,12 @@ npx wrangler deploy
 
 ## 二、接口
 
-### 路由（与 v1.jinrishici.com 完全一致）
+### 路由（兼容 v1.jinrishici.com）
 
 | 路由 | 说明 |
 |---|---|
-| `/` | 分类总表，含每一类的调用地址 |
+| `/` `/doc` | 调用文档页 |
+| `/api` | 分类总表，含每一类的调用地址 |
 | `/all` | 全部分类随机一首 |
 | `/line` | 全库随机返回连续两句 |
 | `/shanshui` | 一级分类随机一首 |
@@ -56,7 +57,8 @@ npx wrangler deploy
 | `/t/{题材}` | 21 个题材随机一首，如 `/t/songbie`、`/t/fodao` |
 | `/抒情/爱情` | 也可直接用中文名访问 |
 
-后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条（上限 50）。
+后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条：
+全库最多 50，分类、题材和多分类摘句最多 20。动态响应使用 `Cache-Control: no-store`。
 
 任意分类路径加 `?mode=line` 即进入摘句模式：`content` 改为随机连续两句，分类和其他字段不变。
 长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。
@@ -110,17 +112,17 @@ v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只�
 
 | 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
 |---|---|---|---|---|---|
-| 山水田园 | `/t/shanshui` | 13,806 | 应制干谒 | `/t/yingzhi` | 2,170 |
-| 送别 | `/t/songbie` | 10,377 | 佛道禅颂 | `/t/fodao` | 2,062 |
-| 咏怀抒感 | `/t/yonghuai` | 7,025 | 哲理悟道 | `/t/zheli` | 1,714 |
-| 寄赠酬答 | `/t/jizeng` | 6,129 | 节令风俗 | `/t/jieling` | 1,707 |
-| 羁旅思乡 | `/t/jilv` | 5,775 | 悼亡挽歌 | `/t/daowang` | 1,501 |
-| 闲适隐逸 | `/t/xianshi` | 4,316 | 爱情相思 | `/t/aiqing` | 1,205 |
-| 边塞征战 | `/t/bianzai` | 4,173 | 民生疾苦 | `/t/minsheng` | 703 |
-| 闺情宫怨 | `/t/guiqing` | 3,433 | 题画咏艺 | `/t/tihua` | 596 |
-| 咏物 | `/t/yongwu` | 3,051 | 亲情 | `/t/qinqing` | 395 |
-| 游仙梦幻 | `/t/youxian` | 3,003 | 讽喻刺世 | `/t/fengyu` | 259 |
-| 咏史怀古 | `/t/yongshi` | 2,780 | | | |
+| 山水田园 | `/t/shanshui` | 13,714 | 爱情相思 | `/t/aiqing` | 2,428 |
+| 送别 | `/t/songbie` | 10,800 | 佛道禅颂 | `/t/fodao` | 2,226 |
+| 寄赠酬答 | `/t/jizeng` | 6,490 | 哲理悟道 | `/t/zheli` | 2,117 |
+| 羁旅思乡 | `/t/jilv` | 6,476 | 咏怀抒感 | `/t/yonghuai` | 1,836 |
+| 咏物 | `/t/yongwu` | 5,144 | 闲适隐逸 | `/t/xianshi` | 1,772 |
+| 边塞征战 | `/t/bianzai` | 4,223 | 节令风俗 | `/t/jieling` | 1,234 |
+| 闺情宫怨 | `/t/guiqing` | 4,097 | 悼亡挽歌 | `/t/daowang` | 969 |
+| 咏史怀古 | `/t/yongshi` | 3,715 | 题画咏艺 | `/t/tihua` | 964 |
+| 应制干谒 | `/t/yingzhi` | 2,854 | 讽喻刺世 | `/t/fengyu` | 852 |
+| 游仙梦幻 | `/t/youxian` | 2,821 | 民生疾苦 | `/t/minsheng` | 805 |
+| | | | 亲情 | `/t/qinqing` | 643 |
 
 用 `/t/` 前缀是因为 `aiqing` 既是意象小类又是题材 slug，扁平命名会撞车。
 

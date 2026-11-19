@@ -493,7 +493,8 @@
     "dup": 587
    }
   ],
-  "total": 76180,
+  "total": 76179,
+  "api_dedup": 1,
   "simplified_by": "opencc"
  }
 }

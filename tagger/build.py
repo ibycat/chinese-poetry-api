@@ -218,6 +218,16 @@ def main():
             dump(layer, f"tags/{ds['key']}.json")
         print(f"[{ds['key']}] 读入 {len(raw)}，保留 {kept}，去重 {dup}", flush=True)
 
+    # tags/ 必须与源数组严格同下标，因此重复诗仍保存在标签层；API 语料则按 UID
+    # 去重，避免同一 id 出现两次导致客户端缓存、随机去重和引用出错。
+    unique = {}
+    for rec in all_recs:
+        unique.setdefault(rec["uid"], rec)
+    api_dups = len(all_recs) - len(unique)
+    all_recs = list(unique.values())
+    if api_dups:
+        print(f"API 语料按 UID 去重 {api_dups} 首", flush=True)
+
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
     with open(os.path.join(ROOT, "data", "poems.jsonl"), "w", encoding="utf-8") as f:
         for r in all_recs:
@@ -243,6 +253,7 @@ def main():
         "datasets": [{"key": k, "name": n, "read": rd, "kept": kp, "dup": dp}
                      for k, n, rd, kp, dp in report],
         "total": len(all_recs),
+        "api_dedup": api_dups,
         "simplified_by": simp.BACKEND,
     }
     dump({"source": "ibycat/chinese-poetry",

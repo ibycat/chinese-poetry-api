@@ -23,7 +23,6 @@ import datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from tagger.themes21 import THEMES as T21  # noqa: E402
-import sys  # noqa: E402
 CF = os.path.join(ROOT, "cloudflare")
 PUB = os.path.join(CF, "public")
 

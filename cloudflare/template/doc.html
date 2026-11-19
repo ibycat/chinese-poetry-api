@@ -242,7 +242,7 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
       </table>
       <table>
         <tr><th style="width:130px">参数</th><th>说明</th></tr>
-        <tr><td><code>n</code></td><td>返回条数，1–50，大于 1 时返回数组。默认 1</td></tr>
+        <tr><td><code>n</code></td><td>返回条数，大于 1 时返回数组。全库 1–50；分类、题材、<code>cats</code> 最多 20</td></tr>
         <tr><td><code>mode=line</code></td><td>摘句模式：<code>content</code> 改为随机连续两句；可与任意分类路径组合</td></tr>
         <tr><td><code>cats</code></td><td>仅用于 <code>/line</code>：逗号分隔多个分类，如 <code>t/songbie,t/jizeng,shanshui/lushan</code>，最多 20 个</td></tr>
       </table>
@@ -256,6 +256,10 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
       <p>摘句统一返回 JSON，正文、句对位置和 <code>poem</code> 基本信息都在同一个对象中。
         为了保证结构不丢失，摘句模式下即使 URL 写成 <code>.txt</code> 也返回 <code>application/json</code>；
         普通分类的 <code>.txt</code> 仍只返回正文。</p>
+      <p style="color:var(--ink-3);font-size:12.5px">
+        动态接口返回 <code>Cache-Control: no-store</code>，连续调用不会复用旧随机结果；
+        <code>/data/*</code> 静态分片仍使用长缓存。
+      </p>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -330,6 +334,7 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
       <h2><span class="no">07</span>错误码</h2>
       <table>
         <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
+        <tr><td>400</td><td>1003</td><td>分类请求的 <code>n</code> 超过 20</td></tr>
         <tr><td>400</td><td>2002</td><td><code>cats</code> 为空、超过 20 个或包含未知分类</td></tr>
         <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
         <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>

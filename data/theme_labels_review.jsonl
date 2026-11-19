@@ -8105,9 +8105,8 @@
 {"uid": "cp687a27af508c77", "theme": "佛道禅颂", "conf": 0.72, "evidence": "词牌非事由；“冥冥窈窕”为道家窈冥/丹道语，且与同组丹道词相类，宗教性主旨优先于泛泛咏怀", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp2d5ee992f02107", "theme": "佛道禅颂", "conf": 0.96, "evidence": "“澄神静虑”“昆仑水满池”“无中养”“凡胎”“鹤驾”皆道教内丹修炼语，主旨为丹道修炼而非一般感怀", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cpadfe95c1170984", "theme": "佛道禅颂", "conf": 0.97, "evidence": "全篇以“三关”“一黍光”“功满三千”“跨斑麟入紫烟”写道教丹道修炼功成飞升，宗教主旨明确。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
-{"uid": "cpbf7001140a2df3", "theme": "咏物", "conf": 0.82, "evidence": "‘长不老’‘广寒宫殿’等核心意象均围绕月展开，是咏月托意，并非丹道宗教文本。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
-{"uid": "cpb62def9c5664f7", "theme": "佛道禅颂", "conf": 0.9, "evidence": "全篇以“碧落”“宝珠如黍米”“花雨”“诸天”“妙旨流演”等宗教意象颂赞妙旨，属宗教性文本而非一般咏怀。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cpbf7001140a2df3", "theme": "佛道禅颂", "conf": 0.72, "evidence": "残句“露采”“飘然直”指向服气餐霞、登仙修道，主旨偏道教修炼而非泛泛咏怀", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
+{"uid": "cpb62def9c5664f7", "theme": "佛道禅颂", "conf": 0.9, "evidence": "全篇以“碧落”“宝珠如黍米”“花雨”“诸天”“妙旨流演”等宗教意象颂赞妙旨，属宗教性文本而非一般咏怀。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp0e05d9d6c5d343", "theme": "佛道禅颂", "conf": 0.62, "evidence": "词牌非事由；首句“不假”为宗教修持语，残缺语境近丹禅颂赞", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp8d18613e2d1986", "theme": "咏物", "conf": 0.96, "evidence": "全篇以孤村梅花与暗香为中心物象，属托物寄意，并非游仙梦幻。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp75af309a60bb20", "theme": "闲适隐逸", "conf": 0.78, "evidence": "全篇写秋日宴集赏景、觥船饮酒、五弦笛声与凭栏，非送行；山水仅为背景，主旨偏闲适自适。", "src": "llm_review", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}

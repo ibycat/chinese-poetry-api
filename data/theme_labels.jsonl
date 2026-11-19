@@ -25243,9 +25243,8 @@
 {"uid": "cp687a27af508c77", "theme": "佛道禅颂", "conf": 0.72, "evidence": "“冥冥窈窕”为道家窈冥语，且与同组丹道词相类", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp2d5ee992f02107", "theme": "佛道禅颂", "conf": 0.98, "evidence": "“澄神静虑”“昆仑水满池”“凡胎”“鹤驾”皆内丹修炼语", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cpadfe95c1170984", "theme": "佛道禅颂", "conf": 0.98, "evidence": "“三关”“一黍光”“功满三千”“跨斑麟入紫烟”为丹道功成飞升", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
-{"uid": "cpbf7001140a2df3", "theme": "佛道禅颂", "conf": 0.82, "evidence": "“长不老”“广寒宫殿”写长生仙境，属道教修炼/仙境赞", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
-{"uid": "cpb62def9c5664f7", "theme": "佛道禅颂", "conf": 0.95, "evidence": "“宝珠如黍米”“花雨”“诸天”“妙旨流演”为佛道宗教颂赞", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cpbf7001140a2df3", "theme": "佛道禅颂", "conf": 0.78, "evidence": "“露采”“飘然直”见服气餐霞、飘然登仙之意", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
+{"uid": "cpb62def9c5664f7", "theme": "佛道禅颂", "conf": 0.95, "evidence": "“宝珠如黍米”“花雨”“诸天”“妙旨流演”为佛道宗教颂赞", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp0e05d9d6c5d343", "theme": "佛道禅颂", "conf": 0.66, "evidence": "“不假”句为宗教修持语，组词语境属丹禅颂", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp47b36a63ecb613", "theme": "咏怀抒感", "conf": 0.78, "evidence": "通篇写落花、怨蝶愁蜂与“恨东风”的伤春之感，无具体事由", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
 {"uid": "cp085b76bd2ba4b6", "theme": "节令风俗", "conf": 0.86, "evidence": "‘古今但赏中秋月’点明中秋赏月，全篇围绕中秋月与月宫想象展开", "src": "llm", "model": "cn:deepseek-v4.1-flash", "prompt": "theme-v2-full-2026-11-18"}
