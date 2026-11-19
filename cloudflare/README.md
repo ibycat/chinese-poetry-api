@@ -107,7 +107,7 @@ cloudflare/
 | `/doc` | 同上 |
 | `/api` | 分类总表 JSON |
 | `/all` | 全库随机一首 |
-| `/line` | 全库随机连续两句 |
+| `/line` | 全库或指定多分类随机连续两句 |
 | `/shanshui` | 一级分类随机 |
 | `/shanshui/lushan.json` | 二级分类随机 |
 | `/t/{题材}` | 21 个题材，如 `/t/songbie`、`/t/bianzai` |
@@ -119,6 +119,9 @@ cloudflare/
 
 任意分类加 `?mode=line` 返回随机连续两句；长诗长词按自然句序切成多个句对，
 先等概率选整首、再等概率选句对。分类、全文与标签保持不变。
+
+`/line?cats=t/songbie,t/jizeng,shanshui/lushan` 可合并多个分类（最多 20 个），
+先等概率选分类，再在分类内选作品和句对；非法分类返回 400 / errCode 2002。
 
 ---
 

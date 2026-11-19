@@ -62,6 +62,14 @@ npx wrangler deploy
 长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。
 例如 `/t/songbie.json?mode=line`、`/shanshui/lushan.txt?mode=line`。
 
+`/line` 可用 `cats` 合并多个分类，逗号分隔，支持题材、大类、小类及中文名，最多 20 个：
+
+```text
+/line.txt?cats=t/songbie,t/jizeng,shanshui/lushan
+```
+
+多个分类先等概率选一个，再在该分类内选作品与句对。
+
 ### 返回体
 
 v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只读前四个，因此可直接替换：

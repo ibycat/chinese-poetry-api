@@ -129,6 +129,31 @@ function idxBase(node) {
   return node.type === "top" ? `${topSlug}/_all` : `${topSlug}/${node.slug}`;
 }
 
+/** 解析 cats 中的一个分类：t/{题材}、{大类}、{大类}/{小类}，支持 slug 与中文名。 */
+function nodeForToken(raw) {
+  const parts = String(raw || "").trim().split("/").filter(Boolean);
+  if (!parts.length) return null;
+  if (parts[0] === "t") {
+    if (parts.length !== 2) return null;
+    const key = THEME_BY_NAME[parts[1]] || parts[1];
+    const theme = BY_THEME[key];
+    return theme
+      ? { type: "theme", top: null, sub: null, slug: key,
+          count: theme.count, themeName: theme.name }
+      : null;
+  }
+  if (parts.length > 2) return null;
+  const base = BY_SLUG[parts[0]] || BY_NAME[parts[0]];
+  if (!base) return null;
+  if (!parts[1]) return base;
+  const cfg = CATS[base.top];
+  const hit = Object.entries(cfg.subs)
+    .find(([name, sc]) => sc.slug === parts[1] || name === parts[1]);
+  if (!hit) return null;
+  return { type: "sub", top: base.top, sub: hit[0],
+           slug: hit[1].slug, count: hit[1].count };
+}
+
 function chunkOf(g) {
   let lo = 0, hi = POEM_CHUNKS.length - 1;
   while (lo < hi) {
@@ -214,7 +239,7 @@ function catalog(url) {
   return {
     welcome: "欢迎使用诗词分类接口（分类体系兼容今日诗词 v1）",
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
-    "line-mode": `${base}/line　随机返回连续两句；任意分类路径加 ?mode=line 可在该分类内摘句`,
+    "line-mode": `${base}/line　随机连续两句；?cats=t/songbie,t/jizeng 可合并多个分类`,
     help: "数据源 ibycat/chinese-poetry，全文简体；分类体系与 v1.jinrishici.com 一致",
     count: TOTAL,
     built_at: BUILT_AT,
@@ -261,11 +286,38 @@ export default {
     const rawMode = String(q.get("mode") || "").toLowerCase();
     const lineMode = lineRoute ||
       ["line", "pair", "two", "couplet"].includes(rawMode);
+    let multiNodes = null;
+    if (lineRoute && q.has("cats")) {
+      const tokens = String(q.get("cats") || "").split(",")
+        .map((s) => s.trim()).filter(Boolean);
+      if (!tokens.length) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "cats is empty. Use e.g. cats=t/songbie,t/jizeng" }, 400);
+      }
+      if (tokens.length > 20) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "At most 20 categories are allowed" }, 400);
+      }
+      const unique = new Map();
+      for (const token of tokens) {
+        const item = nodeForToken(token);
+        if (!item) {
+          return json({ status: "error", errCode: 2002,
+            errMessage: `Unknown category in cats: ${token}` }, 400);
+        }
+        unique.set(`${item.type}:${item.slug}`, item);
+      }
+      multiNodes = [...unique.values()];
+    }
     if (lineRoute) path = "all";
 
     // 解析分类
     let node = null;
-    if (path === "" || path === "all") {
+    if (multiNodes) {
+      node = { type: "multi", top: null, sub: null, slug: null,
+               count: multiNodes.reduce((sum, n) => sum + n.count, 0),
+               nodes: multiNodes };
+    } else if (path === "" || path === "all") {
       node = { type: "all", top: null, sub: null, slug: null, count: TOTAL };
     } else {
       const segs = path.split("/").filter(Boolean);
@@ -304,6 +356,31 @@ export default {
 
     try {
       const cache = new Map();
+      if (node.type === "multi") {
+        const picks = Math.min(n, node.count);
+        const seen = new Set();
+        const items = [];
+        for (let attempt = 0; attempt < picks * 5 && items.length < picks; attempt++) {
+          const chosen = node.nodes[Math.floor(Math.random() * node.nodes.length)];
+          const r = await pickOne(env, chosen, cache);
+          if (seen.has(r[0])) continue;
+          const one = expand(r,
+            chosen.type === "theme" ? null : chosen.top,
+            chosen.type === "sub" ? chosen.sub : null);
+          if (chosen.type === "theme") one.category = `古诗文-${chosen.themeName}`;
+          if (!applyLine(one, r)) continue;
+          seen.add(r[0]);
+          items.push(one);
+        }
+        if (!items.length) {
+          return json({ status: "error", errCode: 1001,
+            errMessage: "No readable lines in selected categories" }, 500);
+        }
+        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
+        if (fmt === "svg") return svg(items[0]);
+        return json(n > 1 ? items : items[0]);
+      }
+
       if (node.type === "all") {
         // 全库随机：直接用诗库下标，无需分类索引。
         // 摘句模式先随机整首，再在整首的句对中等概率取一联，

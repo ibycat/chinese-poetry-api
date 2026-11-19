@@ -194,7 +194,10 @@ curl <span class="s">"BASE/抒情/爱情.json"</span>
 curl <span class="s">"BASE/line.txt"</span>
 
 <span class="c"># 在指定分类中随机摘两句</span>
-curl <span class="s">"BASE/t/songbie.json?mode=line"</span></pre>
+curl <span class="s">"BASE/t/songbie.json?mode=line"</span>
+
+<span class="c"># 多个分类合并摘句</span>
+curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pre>
       <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
     </section>
 
@@ -204,7 +207,7 @@ curl <span class="s">"BASE/t/songbie.json?mode=line"</span></pre>
       <table>
         <tr><th style="width:34%">路由</th><th>说明</th></tr>
         <tr><td><code>/all</code></td><td>全部 {{TOTAL}} 首随机一首</td></tr>
-        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong>，长诗长词会切成多个句对</td></tr>
+        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong>；可加 <code>?cats=</code> 合并多个分类</td></tr>
         <tr><td><code>/{大类}</code></td><td>如 <code>/shanshui</code>，在该大类全部诗词中随机</td></tr>
         <tr><td><code>/{大类}/{小类}</code></td><td>如 <code>/shanshui/lushan</code></td></tr>
         <tr><td><code>/t/{题材}</code></td><td>按主旨取诗，如 <code>/t/songbie</code>、<code>/t/bianzai</code>，见第 03 节</td></tr>
@@ -241,10 +244,15 @@ curl <span class="s">"BASE/t/songbie.json?mode=line"</span></pre>
         <tr><th style="width:130px">参数</th><th>说明</th></tr>
         <tr><td><code>n</code></td><td>返回条数，1–50，大于 1 时返回数组。默认 1</td></tr>
         <tr><td><code>mode=line</code></td><td>摘句模式：<code>content</code> 改为随机连续两句；可与任意分类路径组合</td></tr>
+        <tr><td><code>cats</code></td><td>仅用于 <code>/line</code>：逗号分隔多个分类，如 <code>t/songbie,t/jizeng,shanshui/lushan</code>，最多 20 个</td></tr>
       </table>
       <p><code>mode=line</code> 不会改变分类、全文和标签。每首先按标点切成小句，再顺序两两成组；
         长诗、长词因此有多个句对参与随机，不会永远只看开头两句。整首作品先被等概率选中，
         再从句对中等概率取一联，长诗不会挤占短诗的出现机会。</p>
+      <p><code>cats</code> 支持题材、大类、小类，slug 与中文名均可。多个分类先等概率选一个，
+        再在该分类内选作品和句对，因此不会因为某个分类语料更多而挤占其他分类。
+        例：<code>/line.txt?cats=t/songbie,t/jizeng</code>、
+        <code>/line.json?cats=shanshui/lushan,zhiwu/meihua&amp;n=5</code>。</p>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -309,6 +317,7 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
       <h2><span class="no">07</span>错误码</h2>
       <table>
         <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
+        <tr><td>400</td><td>2002</td><td><code>cats</code> 为空、超过 20 个或包含未知分类</td></tr>
         <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
         <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
         <tr><td>500</td><td>1001</td><td>读取语料失败</td></tr>
