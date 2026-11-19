@@ -190,8 +190,8 @@ curl <span class="s">"BASE/zhiwu/meihua.json?n=3"</span>
 <span class="c"># 中文名直接访问</span>
 curl <span class="s">"BASE/抒情/爱情.json"</span>
 
-<span class="c"># 只要连续两句，全库随机</span>
-curl <span class="s">"BASE/line.txt"</span>
+<span class="c"># 连续两句，全库随机（默认 JSON）</span>
+curl <span class="s">"BASE/line"</span>
 
 <span class="c"># 在指定分类中随机摘两句</span>
 curl <span class="s">"BASE/t/songbie.json?mode=line"</span>
@@ -237,7 +237,7 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pr
       <table>
         <tr><th style="width:130px">格式</th><th>说明</th></tr>
         <tr><td><code>.json</code><span class="badge g">默认</span></td><td>结构化返回，含全文与标签</td></tr>
-        <tr><td><code>.txt</code></td><td>普通模式仅返回正文；摘句模式附带作者与诗题，适合做一言/签名</td></tr>
+        <tr><td><code>.txt</code></td><td>普通模式仅返回正文；摘句模式统一返回 JSON，<code>.txt</code> 后缀也被忽略</td></tr>
         <tr><td><code>.svg</code></td><td>图片，可直接 <code>&lt;img src&gt;</code></td></tr>
       </table>
       <table>
@@ -253,9 +253,9 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng&amp;n=3"</span></pr
         再在该分类内选作品和句对，因此不会因为某个分类语料更多而挤占其他分类。
         例：<code>/line.txt?cats=t/songbie,t/jizeng</code>、
         <code>/line.json?cats=shanshui/lushan,zhiwu/meihua&amp;n=5</code>。</p>
-      <p>摘句的纯文本会附朝代、作者、诗题、体裁与分类，多条之间空一行：</p>
-      <pre>举头望明月，低头思故乡。
-—— 唐·李白《静夜思》｜唐诗·五言绝句｜题材：羁旅思乡｜古诗文-抒情-思乡</pre>
+      <p>摘句统一返回 JSON，正文、句对位置和 <code>poem</code> 基本信息都在同一个对象中。
+        为了保证结构不丢失，摘句模式下即使 URL 写成 <code>.txt</code> 也返回 <code>application/json</code>；
+        普通分类的 <code>.txt</code> 仍只返回正文。</p>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;

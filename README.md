@@ -70,13 +70,8 @@ npx wrangler deploy
 
 多个分类先等概率选一个，再在该分类内选作品与句对。
 
-摘句 JSON 额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块；
-摘句 `.txt` 会附朝代、作者、诗题、体裁与分类：
-
-```text
-举头望明月，低头思故乡。
-—— 唐·李白《静夜思》｜唐诗·五言绝句｜题材：羁旅思乡｜古诗文-抒情-思乡
-```
+摘句额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块。
+摘句模式统一返回 JSON，即使 URL 写成 `.txt` 也返回 JSON；普通分类的 `.txt` 仍只返回正文。
 
 ### 返回体
 

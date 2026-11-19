@@ -126,19 +126,6 @@ function applyLine(item, r) {
   return true;
 }
 
-/** 摘句纯文本：正文下一行附朝代、作者、诗题、体裁与分类；多条之间空一行。 */
-function lineText(items) {
-  return items.map((x) => {
-    const p = x.poem || x;
-    const author = `${p.dynasty ? p.dynasty + "·" : ""}${p.author || ""}`;
-    const title = p.title ? `《${p.title}》` : "";
-    const meta = [p.section, p.form].filter(Boolean).join("·");
-    const theme = p.tags && p.tags.theme ? `题材：${p.tags.theme}` : "";
-    const detail = [meta, theme, p.category].filter(Boolean).join("｜");
-    const credit = `—— ${author}${title}` + (detail ? `｜${detail}` : "");
-    return x.content + "\n" + credit;
-  }).join("\n\n");
-}
 
 function svgOf(content, author, title) {
   const lines = [];
@@ -319,6 +306,9 @@ export default {
     const rawMode = String(q.get("mode") || "").toLowerCase();
     const lineMode = lineRoute ||
       ["line", "pair", "two", "couplet"].includes(rawMode);
+    // 摘句需要携带结构化出处信息，因此 .txt 在摘句模式下也返回 JSON。
+    // 普通分类的 .txt 仍是纯文本；.svg 仍返回图片。
+    if (lineMode && fmt === "txt") fmt = "json";
     let multiNodes = null;
     if (lineRoute && q.has("cats")) {
       const tokens = String(q.get("cats") || "").split(",")
@@ -409,7 +399,6 @@ export default {
           return json({ status: "error", errCode: 1001,
             errMessage: "No readable lines in selected categories" }, 500);
         }
-        if (fmt === "txt") return text(lineText(items));
         if (fmt === "svg") return svg(items[0]);
         return json(n > 1 ? items : items[0]);
       }
@@ -436,9 +425,7 @@ export default {
           return json({ status: "error", errCode: 1001,
             errMessage: "No readable lines in corpus" }, 500);
         }
-        if (fmt === "txt") return text(lineMode
-          ? lineText(items)
-          : items.map((x) => x.content).join("\n"));
+        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
         if (fmt === "svg") return svg(items[0]);
         return json(n > 1 ? items : items[0]);
       }
@@ -458,9 +445,7 @@ export default {
         items.push(it);
       }
 
-      if (fmt === "txt") return text(lineMode
-        ? lineText(items)
-        : items.map((x) => x.content).join("\n"));
+      if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
       if (fmt === "svg") return svg(items[0]);
       return json(n > 1 ? items : items[0]);
     } catch (e) {
