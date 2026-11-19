@@ -261,8 +261,9 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
         <code>/data/*</code> 静态分片仍使用长缓存。
       </p>
       <p style="color:var(--ink-3);font-size:12.5px">
-        接口按客户端 IP 限流：同一 IP 每秒最多 1 次请求。超限返回 <code>429</code>，
-        可用 <code>Retry-After: 1</code> 秒后重试；CORS 预检请求不计数。
+        接口按客户端 IP 限流：同一 IP 每 10 秒最多 10 次请求，平均约每秒 1 次，允许短时突发。
+        这是 Cloudflare 原生近似限流，按机房分别计数。超限返回 <code>429</code>，
+        <code>Retry-After: 10</code> 秒；CORS 预检请求不计数。
       </p>
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
@@ -340,7 +341,7 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
         <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
         <tr><td>400</td><td>1003</td><td>分类请求的 <code>n</code> 超过 20</td></tr>
         <tr><td>400</td><td>2002</td><td><code>cats</code> 为空、超过 20 个或包含未知分类</td></tr>
-        <tr><td>429</td><td>1004</td><td>同一 IP 1 秒内重复请求；按 <code>Retry-After</code> 等待</td></tr>
+        <tr><td>429</td><td>1004</td><td>同一 IP 10 秒内超过 10 次；按 <code>Retry-After</code> 等待</td></tr>
         <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
         <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
         <tr><td>500</td><td>1001</td><td>读取语料失败</td></tr>

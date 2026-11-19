@@ -31,7 +31,7 @@ Worker 打包上限看着宽松（64 MiB），但**启动必须在 1 秒内完�
 | 路由、随机抽取、SVG 渲染 | Worker（约 **27 KiB**） | 体积极小，冷启动几十毫秒 |
 | 76,179 首语料 | Static Assets（34 MB / 644 个文件） | 文件数上限 20,000、单文件 25 MiB，都不触碰 |
 | 文档页、浏览页 | Static Assets | 由静态层直接返回，不消耗 Worker CPU |
-| IP 限流状态 | Durable Object（SQLite） | 严格 1 秒窗口，无需 KV 或手工建库 |
+| IP 限流 | 原生 Rate Limiting（10 次 / 10 秒） | 无状态、按机房近似计数，允许突发 |
 
 单条分类请求通常读 **2 次子请求**（分类下标 + 诗库分片）；`n>1` 会按条数增加。
 单次最多取 50 条的是全库路径，分类/题材/`cats` 限制为 20 条，避免触碰 50 子请求上限。
@@ -62,8 +62,7 @@ npx wrangler deploy
 https://chinese-poetry-api.<你的子域>.workers.dev
 ```
 
-首次部署即生效。IP 限流使用 Durable Object，`wrangler.jsonc` 中的 migration 会自动创建，
-无需手工建库或配置 KV。
+首次部署即生效。IP 限流使用 Cloudflare 原生 Rate Limiting，无需数据库、KV 或 Durable Object。
 
 ### 本地预览（不需要登录）
 
@@ -120,8 +119,9 @@ cloudflare/
 v1 的 `/` 返回分类总表 JSON，本服务把 `/` 让给文档页，总表移到 `/api`；
 核心分类路径、slug、返回体前四个字段保持兼容，`/line`、`/t/` 为扩展路由。
 
-同一 IP 每秒最多 1 次 API 请求，超限返回 `429 / 1004` 与 `Retry-After: 1`；
-`OPTIONS` 预检不计数。
+同一 IP 每 10 秒最多 10 次 API 请求（平均约 1 次/秒，允许短时突发），
+超限返回 `429 / 1004` 与 `Retry-After: 10`；`OPTIONS` 预检不计数。
+原生限流按 Cloudflare 机房分别近似计数，不保证跨机房的严格全局限额。
 
 任意分类加 `?mode=line` 返回随机连续两句；长诗长词按自然句序切成多个句对，
 先等概率选整首、再等概率选句对。分类、全文与标签保持不变。
