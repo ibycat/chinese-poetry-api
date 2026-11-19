@@ -11,7 +11,7 @@ import { CATS, THEMES, POEM_CHUNKS, TOTAL, IDX_SHARD, BUILT_AT } from "./manifes
 
 const ASSET_ORIGIN = "https://assets.local";
 
-/** 原生 Rate Limiting：10 次 / 10 秒 / IP，按 Cloudflare 机房近似计数并允许突发。 */
+/** 原生 Rate Limiting：60 次 / 60 秒 / IP，按 Cloudflare 机房近似计数并允许突发。 */
 async function allowRequest(request, env) {
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
   try {
@@ -303,8 +303,8 @@ export default {
     }
     if (!(await allowRequest(request, env))) {
       return json({ status: "error", errCode: 1004,
-        errMessage: "Too many requests; max 10 requests per 10 seconds per IP" }, 429,
-        { "Retry-After": "10", "X-RateLimit-Limit": "10/10s" });
+        errMessage: "Too many requests; max 60 requests per 60 seconds per IP" }, 429,
+        { "Retry-After": "60", "X-RateLimit-Limit": "60/60s" });
     }
 
     let path;
