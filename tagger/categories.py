@@ -145,7 +145,7 @@ CATS = {
         "subs": {
             "乡村": {"kw": {"村": 1.0, "农家": 1.2, "桑麻": 1.0, "鸡犬": 1.0,
                      "炊烟": 1.2, "柴门": 0.8, "篱": 0.8}, "min": 1.2},
-            "田园": {"theme_w": 0.35, "theme": ["山水田园"],
+            "田野": {"theme_w": 0.35, "theme": ["山水田园"],
                      "kw": {"田园": 1.5, "躬耕": 1.2, "耦耕": 1.5, "田家": 1.0,
                             "桑麻": 1.0, "稻": 0.8, "锄": 0.9, "犁": 1.0}, "min": 1.2},
             "边塞": {"theme": ["边塞征战"], "kw": {"塞": 1.0, "大漠": 1.2, "玉门": 1.2,
@@ -233,7 +233,7 @@ SLUG = {
     "女子": "nvzi", "父亲": "fuqin", "母亲": "muqin", "老师": "laoshi", "儿童": "ertong",
     "励志": "lizhi", "哲理": "zheli", "青春": "qingchun", "时光": "shiguang",
     "梦想": "mengxiang", "读书": "dushu", "战争": "zhanzheng",
-    "乡村": "xiangcun", "田园": "tianyuan", "边塞": "biansai", "写桥": "xieqiao",
+    "乡村": "xiangcun", "田野": "tianye", "边塞": "biansai", "写桥": "xieqiao",
     "春节": "chunjie", "元宵节": "yuanxiaojie", "寒食节": "hanshijie",
     "清明节": "qingmingjie", "端午节": "duanwujie", "七夕节": "qixijie",
     "中秋节": "zhongqiujie", "重阳节": "chongyangjie",

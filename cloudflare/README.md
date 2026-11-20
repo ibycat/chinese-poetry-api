@@ -126,7 +126,7 @@ cloudflare/
 
 多个分类先等概率选分类，再在分类内选作品和句对；一次最多 20 个，未知分类返回 400 / 2002。
 101 个 slug 全局唯一，路径全 ASCII。题材用全拼或核心词避开与意象分类重名：
-山水田园 `/shanshuituanyuan`、爱情相思 `/xiangsi`、悼亡挽歌 `/wange`、哲理悟道 `/wudao`；
+山水田园 `/tianyuan`、爱情相思 `/xiangsi`、悼亡挽歌 `/wange`、哲理悟道 `/wudao`；
 荔枝因与「励志」的 `lizhi` 重名，改用 `/lychee`。
 摘句额外返回 `title` 和 `poem` 基本信息块（ID、诗题、作者、朝代、分部、体裁、分类、标签）。
 摘句模式统一返回 JSON：即使写成 `.txt` 也返回 `application/json`；普通分类的 `.txt` 不受影响。
@@ -232,7 +232,7 @@ cd cloudflare && npx wrangler deploy
 
 | 题材 | 路径 | 条数 |
 |---|---|---|
-| 山水田园 | `/shanshuituanyuan` | 13,714 |
+| 山水田园 | `/tianyuan` | 13,714 |
 | 送别 | `/songbie` | 10,797 |
 | 寄赠酬答 | `/jizeng` | 6,490 |
 | 羁旅思乡 | `/jilv` | 6,474 |
