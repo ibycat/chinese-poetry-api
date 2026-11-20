@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """全量语料下载：走 jsDelivr 的 GitHub 镜像（raw.githubusercontent 与 codeload 在此环境不可用）。
 
-用法：python tools/fetch_full.py [tang|ci|all]
-输出：raw/full/tang/*.json  raw/full/ci/*.json
+源仓库是上游 chinese-poetry/chinese-poetry：本项目的 fork 已清掉这些语料目录，
+只保留构建产物所需的 raw/full。宋诗、明诗不在这里，见 tools/fetch_classics.py。
+
+用法：python tools/fetch_full.py [tang|ci|shijing|chuci|wudai|nalan|yuanqu|all]
+输出：raw/full/<dest>/*.json（已存在的文件会跳过，可用于断点续传）
 """
 
 import os
@@ -13,7 +16,8 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = "https://cdn.jsdelivr.net/gh/ibycat/chinese-poetry-api@master/"
+UPSTREAM = os.environ.get("CP_UPSTREAM_REPO", "chinese-poetry/chinese-poetry")
+BASE = f"https://cdn.jsdelivr.net/gh/{UPSTREAM}@master/"
 OUT = os.path.join(ROOT, "raw", "full")
 
 TASKS = {
@@ -29,7 +33,6 @@ TASKS = {
     },
     "shijing": {"dir": "诗经", "files": ["shijing.json"], "dest": "shijing"},
     "chuci": {"dir": "楚辞", "files": ["chuci.json"], "dest": "chuci"},
-    "caocao": {"dir": "曹操诗集", "files": ["caocao.json"], "dest": "caocao"},
     "wudai": {
         "dir": "五代诗词",
         "files": [("nantang/poetrys.json", "poetrys.json")] +

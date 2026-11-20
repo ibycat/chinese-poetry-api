@@ -21,7 +21,8 @@
 | 楚辞 | 65 | 屈原及后学 |
 
 宋诗、明诗、汉魏六朝与隋诗来自 [wujinpai/chinese-classics](https://github.com/wujinpai/chinese-classics)（MIT），
-其余分部来自 `ibycat/chinese-poetry-api` 仓库。重复篇目已在构建时按首句去重。
+唐诗、宋词、元曲、五代、诗经、楚辞、清词来自
+[chinese-poetry/chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)。重复篇目已在构建时按首句去重。
 
 ---
 
