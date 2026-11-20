@@ -32,8 +32,7 @@ python -m tagger.build          # 构建语料（约 35 秒）
 cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码）
 ```
 
-生产部署见下方「部署到 Cloudflare」。`server.py` 是早期的本地参考实现，
-只覆盖意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
+生产部署见下方「部署到 Cloudflare」。本地调试统一用 `wrangler dev`，与线上同一份代码。
 
 ```bash
 curl https://yiyan.952762.xyz/lushan.json
@@ -251,7 +250,6 @@ slug 全部 ASCII 且彼此唯一，路径在根下：
 
 ```
 cp-tags/
-├─ server.py            接口服务（零第三方依赖，Python 3.8+）
 ├─ tagger/
 │  ├─ categories.py     69 个意象小类的规则表 + slug 对照
 │  ├─ themes21.py       21 题材定义与 19→21 映射
@@ -266,9 +264,10 @@ cp-tags/
 ├─ cloudflare/          Workers 部署（生产环境）
 │  ├─ src/index.js      路由与随机抽取
 │  ├─ template/doc.html 调用文档页模板
-│  └─ public/           生成的静态资源（31 MB / 626 文件）
+│  └─ public/           生成的静态资源（220 MB / 4091 文件）
 ├─ tools/
-│  ├─ fetch_full.py     全量语料下载（走 jsDelivr 镜像）
+│  ├─ fetch_full.py     唐/宋/元曲等语料下载（走 jsDelivr 镜像）
+│  ├─ fetch_classics.py 宋诗/明诗/汉魏六朝语料下载
 │  ├─ build_cf.py       生成 Cloudflare 分片与文档页
 │  ├─ llm_tag.py        题材语义标注与分歧终审（支持断点续跑）
 │  ├─ eval_theme.py     题材精度基准
@@ -312,7 +311,7 @@ python -m tagger.build --sample 100     # 调整浏览页每类抽样条数
 5. **词牌不是标题**：宋词的"标题"是曲调名，早期版本让《水调歌头》《临江仙》因「水」「仙」
    被判成山水、游仙，影响 37.6% 的宋词（7,789 首）。现已对词一律停用标题规则，词牌只经
    `RHYTHMIC_PRIOR` 影响声情。
-6. 五维标签中「排律」判定不精确：五古十六句与五排十六句字数句数相同，差别在对仗，需平仄数据（仓库 `strains/` 有）。
+6. 五维标签中「排律」判定不精确：五古十六句与五排十六句字数句数相同，差别在对仗，需平仄数据（上游仓库 `strains/` 有，本项目未纳入）。
 
 ---
 
