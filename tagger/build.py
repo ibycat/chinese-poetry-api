@@ -41,8 +41,14 @@ DATASETS = [
      "name": "诗经", "section": "诗经", "dynasty": "先秦", "author": "佚名"},
     {"key": "chuci", "kind": "dir", "path": "raw/full/chuci",
      "name": "楚辞", "section": "楚辞", "dynasty": "先秦", "author": "佚名"},
-    {"key": "caocao", "kind": "dir", "path": "raw/full/caocao",
-     "name": "曹操诗集", "section": "汉魏", "dynasty": "汉", "author": "曹操"},
+    # 汉魏六朝与隋：来自 wujinpai/chinese-classics（见 tools/fetch_classics.py）
+    # 曹操已含在秦汉诗里，不再单独挂一份 caocao，避免同一首诗分属两个分部
+    {"key": "qinhan", "kind": "dir", "path": "raw/full/qinhan",
+     "name": "秦汉诗", "section": "秦汉", "dynasty": "汉"},
+    {"key": "weijin", "kind": "dir", "path": "raw/full/weijin",
+     "name": "魏晋南北朝诗", "section": "魏晋南北朝", "dynasty": "魏晋南北朝"},
+    {"key": "sui", "kind": "dir", "path": "raw/full/sui",
+     "name": "隋诗", "section": "隋", "dynasty": "隋"},
     {"key": "wudai", "kind": "dir", "path": "raw/full/wudai",
      "name": "五代词", "section": "五代", "dynasty": "五代"},
     {"key": "yuanqu", "kind": "dir", "path": "raw/full/yuanqu",
