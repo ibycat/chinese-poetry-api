@@ -32,3 +32,9 @@ data/theme_labels_review_bench*.jsonl
 data/theme_labels_audit*.jsonl
 data/theme_labels_kimi_partial.jsonl
 data/theme_labels_deepseek_pro_partial.jsonl
+
+# 夜间任务日志
+logs/
+
+# 本地环境变量
+.env

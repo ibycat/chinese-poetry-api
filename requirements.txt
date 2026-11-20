@@ -1,1 +1,5 @@
-pytest==5.3.2
+# 构建期依赖：繁简词级转换。缺失时自动退回内置 3751 字单字表（精度略低）。
+opencc-python-reimplemented>=0.1.7
+
+# 测试
+pytest>=7.0

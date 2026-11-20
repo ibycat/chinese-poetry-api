@@ -107,9 +107,13 @@ def main():
     ap.add_argument("--model", action="append")
     args = ap.parse_args()
 
-    cfg = json.load(open(os.path.join(os.path.expanduser("~"), ".workbuddy",
-                                      "models.json"), encoding="utf-8"))[0]
-    base, key = cfg["url"].rstrip("/"), cfg["apiKey"]
+    base = os.environ.get("LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL")
+    key = os.environ.get("LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+    if not (base and key):
+        cfg = json.load(open(os.path.join(os.path.expanduser("~"), ".workbuddy",
+                                          "models.json"), encoding="utf-8"))[0]
+        base, key = cfg["url"], cfg["apiKey"]
+    base = base.rstrip("/")
 
     raw = []
     for k in ("tang300", "song300"):

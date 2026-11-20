@@ -21,16 +21,6 @@
 汉魏六朝与隋诗来自 [wujinpai/chinese-classics](https://github.com/wujinpai/chinese-classics)（MIT），
 其余分部来自 `ibycat/chinese-poetry-api` 仓库。两边的重复篇目（曹操、部分隋诗）已在构建时按首句去重。
 
----|---:|---|
-| 唐诗 | 55,261 | 全唐诗 + 唐诗三百首 |
-| 宋词 | 20,742 | 全宋词 + 宋词三百首 |
-| 元曲 | 10,873 | 散曲、小令、套数 |
-| 诗经 | 305 | 风雅颂全篇 |
-| 清词 | 256 | 纳兰性德 |
-| 五代 | 242 | 花间集、南唐二主词（与全唐诗重出的已去重） |
-| 楚辞 | 65 | 屈原及后学 |
-| 汉魏 | 26 | 曹操诗集 |
-
 ---
 
 ## 一、快速开始
@@ -64,6 +54,26 @@ python ../tools/build_cf.py     # 生成分片与文档页
 npx wrangler login
 npx wrangler deploy
 ```
+
+### 无头运行（NAS / 服务器）
+
+整条流水线不依赖编辑器，装好依赖、配好 `.env` 即可夜间跑：
+
+```bash
+git clone https://github.com/ibycat/chinese-poetry-api.git && cd chinese-poetry-api
+pip install -r requirements.txt        # OpenCC；没有也能跑，会退回内置字表
+cp .env.example .env                   # 填 LLM_BASE_URL / LLM_API_KEY / CLOUDFLARE_API_TOKEN
+bash scripts/nightly.sh --fetch        # 抓语料 -> 构建 -> 生成产物 -> 部署 -> 自检
+```
+
+- 只构建不部署：`bash scripts/nightly.sh --no-deploy`（NAS 上没有 Node 时用，产物留在 `cloudflare/public`）
+- 日志写在 `logs/nightly-<时间>.log`，退出码非 0 表示有步骤失败
+- 部署只需 `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`，不需要交互式 `wrangler login`
+- 模型标注默认读 `LLM_BASE_URL` / `LLM_API_KEY` / `LLM_MODEL`，没有才回退到 `~/.workbuddy/models.json`
+- 定时示例：`30 2 * * * cd /vol1/chinese-poetry-api && bash scripts/nightly.sh --fetch >> logs/cron.log 2>&1`
+
+服务器需要能访问 `api.github.com`、`cdn.jsdelivr.net`、`api.cloudflare.com` 和模型网关；
+需要代理时在 `.env` 里设 `HTTPS_PROXY`。
 
 部署后：`/` 是调用文档，`/api` 是分类总表，`/lushan.json`、`/shanshui,lushan.json` 等一级路径可直接调用。
 详见 [cloudflare/README.md](cloudflare/README.md)。

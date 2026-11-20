@@ -96,9 +96,19 @@ REVIEW_TMPL = """你是题材终审员。下列作品的规则初判与模型初
 
 
 def load_cfg(model=None):
+    """优先读环境变量，便于在无头服务器上跑；没有配置才退回本机 models.json。"""
+    model = (model or os.environ.get("CP_THEME_MODEL")
+             or os.environ.get("LLM_MODEL") or DEFAULT_MODEL)
+    base = os.environ.get("LLM_BASE_URL") or os.environ.get("OPENAI_BASE_URL")
+    key = os.environ.get("LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+    if base and key:
+        return base.rstrip("/") + "/chat/completions", key, model
+
     path = os.path.join(os.path.expanduser("~"), ".workbuddy", "models.json")
+    if not os.path.exists(path):
+        raise SystemExit("未配置模型：请设置 LLM_BASE_URL / LLM_API_KEY，"
+                         "或提供 ~/.workbuddy/models.json")
     configs = json.load(open(path, encoding="utf-8"))
-    model = model or os.environ.get("CP_THEME_MODEL") or DEFAULT_MODEL
     matches = [c for c in configs if c.get("id") == model]
     if matches:
         cfg = matches[0]
