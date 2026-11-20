@@ -111,19 +111,19 @@
   "抒情": {
    "slug": "shuqing",
    "desc": "情感与人际",
-   "count": 271340,
+   "count": 271751,
    "subs": {
     "爱情": {
      "slug": "aiqing",
-     "count": 4686
+     "count": 4696
     },
     "友情": {
      "slug": "youqing",
-     "count": 17560
+     "count": 17553
     },
     "离别": {
      "slug": "libie",
-     "count": 23454
+     "count": 23450
     },
     "思念": {
      "slug": "sinian",
@@ -131,7 +131,7 @@
     },
     "思乡": {
      "slug": "sixiang",
-     "count": 68533
+     "count": 68600
     },
     "伤感": {
      "slug": "shanggan",
@@ -143,15 +143,15 @@
     },
     "闺怨": {
      "slug": "guiyuan",
-     "count": 18808
+     "count": 19212
     },
     "悼亡": {
      "slug": "daowang",
-     "count": 24409
+     "count": 24057
     },
     "怀古": {
      "slug": "huaigu",
-     "count": 39053
+     "count": 39418
     },
     "爱国": {
      "slug": "aiguo",
@@ -290,7 +290,7 @@
   "人生": {
    "slug": "rensheng",
    "desc": "人生境遇与志趣",
-   "count": 43900,
+   "count": 43877,
    "subs": {
     "励志": {
      "slug": "lizhi",
@@ -298,7 +298,7 @@
     },
     "哲理": {
      "slug": "zheli",
-     "count": 13249
+     "count": 13226
     },
     "青春": {
      "slug": "qingchun",
@@ -318,14 +318,14 @@
     },
     "战争": {
      "slug": "zhanzheng",
-     "count": 8933
+     "count": 8934
     }
    }
   },
   "生活": {
    "slug": "shenghuo",
    "desc": "日常与境域",
-   "count": 34506,
+   "count": 34503,
    "subs": {
     "乡村": {
      "slug": "xiangcun",
@@ -333,11 +333,11 @@
     },
     "田野": {
      "slug": "tianye",
-     "count": 6252
+     "count": 6250
     },
     "边塞": {
      "slug": "biansai",
-     "count": 8567
+     "count": 8562
     },
     "写桥": {
      "slug": "xieqiao",
