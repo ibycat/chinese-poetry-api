@@ -178,7 +178,18 @@ function nodeForToken(raw) {
   }
   if (parts.length > 2) return null;
   const base = BY_SLUG[parts[0]] || BY_NAME[parts[0]];
-  if (!base) return null;
+  if (!base) {
+    // 允许直接写题材：?cats=送别 或 ?cats=songbie，不必带 t/ 前缀
+    if (parts.length === 1) {
+      const key = THEME_BY_NAME[parts[0]] || parts[0];
+      const theme = BY_THEME[key];
+      if (theme) {
+        return { type: "theme", top: null, sub: null, slug: key,
+                 count: theme.count, themeName: theme.name };
+      }
+    }
+    return null;
+  }
   if (!parts[1]) return base;
   const cfg = CATS[base.top];
   const hit = Object.entries(cfg.subs)
@@ -274,6 +285,8 @@ function catalog(url) {
     welcome: "欢迎使用诗词分类接口（分类体系兼容今日诗词 v1）",
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
     "line-mode": `${base}/line　随机连续两句；?cats=t/songbie,t/jizeng 可合并多个分类`,
+    "multi-category": `${base}/all?cats=shanshui,zhiwu,送别　任意接口都支持多分类：` +
+      "逗号或 & 分隔，可写大类、大类/小类或题材",
     help: "数据源 ibycat/chinese-poetry，全文简体；分类体系与 v1.jinrishici.com 一致",
     count: TOTAL,
     built_at: BUILT_AT,
@@ -351,30 +364,44 @@ export default {
     // 摘句需要携带结构化出处信息，因此 .txt 在摘句模式下也返回 JSON。
     // 普通分类的 .txt 仍是纯文本；.svg 仍返回图片。
     if (lineMode && fmt === "txt") fmt = "json";
+    // 多分类：任意接口通用。三种写法等价：
+    //   ?cats=shanshui,zhiwu   ?cats=shanshui&cats=zhiwu   ?cats=shanshui&zhiwu
+    // 支持大类（山水）、大类/小类（山水/庐山）、题材（送别 或 t/songbie）。
+    // 一旦给了 cats，路径里的分类就不再参与，避免两种写法互相打架。
     let multiNodes = null;
-    if (lineRoute && q.has("cats")) {
-      const tokens = String(q.get("cats") || "").split(",")
+    {
+      const rawValues = [...q.getAll("cats"), ...q.getAll("cat")];
+      const tokens = rawValues
+        .flatMap((v) => String(v).split(/[,，、\s]+/))
         .map((s) => s.trim()).filter(Boolean);
-      if (!tokens.length) {
-        return json({ status: "error", errCode: 2002,
-          errMessage: "cats is empty. Use e.g. cats=t/songbie,t/jizeng" }, 400);
-      }
-      const unique = new Map();
+      const nodes = new Map();
       for (const token of tokens) {
         const item = nodeForToken(token);
         if (!item) {
           return json({ status: "error", errCode: 2002,
-            errMessage: `Unknown category in cats: ${token}` }, 400);
+            errMessage: `Unknown category: ${token}. ` +
+              "Use e.g. cats=shanshui,zhiwu or cats=送别,t/songbie" }, 400);
         }
-        unique.set(`${item.type}:${item.slug}`, item);
+        nodes.set(`${item.type}:${item.slug}`, item);
       }
-      if (unique.size > 20) {
+      // 兼容 ?cats=shanshui&zhiwu：值是空的参数名本身当作分类，认不出就忽略
+      for (const [k, v] of q) {
+        if (v) continue;
+        if (k === "cats" || k === "cat") continue;
+        const item = nodeForToken(k);
+        if (item) nodes.set(`${item.type}:${item.slug}`, item);
+      }
+      if (rawValues.length && !nodes.size) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "cats is empty. Use e.g. cats=shanshui,zhiwu" }, 400);
+      }
+      if (nodes.size > 20) {
         return json({ status: "error", errCode: 2002,
           errMessage: "At most 20 unique categories are allowed" }, 400);
       }
-      multiNodes = [...unique.values()];
+      if (nodes.size) multiNodes = [...nodes.values()];
     }
-    if (lineRoute) path = "all";
+    if (lineRoute || multiNodes) path = "all";
 
     // 解析分类
     let node = null;
@@ -440,7 +467,7 @@ export default {
             chosen.type === "theme" ? null : chosen.top,
             chosen.type === "sub" ? chosen.sub : null);
           if (chosen.type === "theme") one.category = `古诗文-${chosen.themeName}`;
-          if (!applyLine(one, r)) continue;
+          if (lineMode && !applyLine(one, r)) continue;
           seen.add(r[0]);
           items.push(one);
         }
@@ -448,6 +475,7 @@ export default {
           return json({ status: "error", errCode: 1001,
             errMessage: "No readable lines in selected categories" }, 500);
         }
+        if (fmt === "txt") return text(items.map((x) => x.content).join("\n"));
         if (fmt === "svg") return svg(items[0]);
         return json(n > 1 ? items : items[0]);
       }
@@ -485,8 +513,8 @@ export default {
       for (let i = 0; i < picks * 3 && items.length < picks; i++) {
         const r = await pickOne(env, node, cache);
         if (seen.has(r[0])) continue;
-        const it = expand(r, node.type === "sub" ? node.top : null,
-          node.type === "sub" ? node.sub : null);
+        // 按大类请求时也让 category 优先回该大类，避免出现「点了山水却标抒情」
+        const it = expand(r, node.top, node.type === "sub" ? node.sub : null);
         // 按题材请求时，category 直接回题材名，不再用意象分类
         if (node.type === "theme") it.category = `古诗文-${node.themeName}`;
         if (lineMode && !applyLine(it, r)) continue;

@@ -50,7 +50,7 @@ npx wrangler deploy
 |---|---|
 | `/` `/doc` | 调用文档页（纯静态，不经过 Worker，不计调用额度） |
 | `/api` | 分类总表，含每一类的调用地址 |
-| `/all` | 全部分类随机一首 |
+| `/all` | 全部分类随机一首；`?cats=山水,植物,送别` 可跨分类随机 |
 | `/line` | 全库随机返回连续两句 |
 | `/shanshui` | 一级分类随机一首 |
 | `/shanshui/lushan` | 二级分类随机一首 |
@@ -66,13 +66,18 @@ npx wrangler deploy
 长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。
 例如 `/t/songbie.json?mode=line`、`/shanshui/lushan.txt?mode=line`。
 
-`/line` 可用 `cats` 合并多个分类，逗号分隔，支持题材、大类、小类及中文名，最多 20 个：
+`cats` 可在**任意接口**上跨分类随机，不必拼二级路径。逗号、`&` 或重复参数都行，
+支持大类、大类/小类、题材及中文名，最多 20 个：
 
 ```text
-/line.txt?cats=t/songbie,t/jizeng,shanshui/lushan
+/all.json?cats=shanshui,zhiwu,guiqing&n=3
+/all.json?cats=shanshui&zhiwu
+/all.json?cats=送别,山水,游仙梦幻
+/line?cats=t/songbie,t/jizeng
 ```
 
-多个分类先等概率选一个，再在该分类内选作品与句对。
+给了 `cats` 后路径里的分类不再参与，因此统一用 `/all?cats=...` 或 `/line?cats=...` 即可。
+多个分类先等概率选一个，再在该分类内选作品与句对，语料多的分类不会挤占语料少的分类。
 
 摘句额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块。
 摘句模式统一返回 JSON，即使 URL 写成 `.txt` 也返回 JSON；普通分类的 `.txt` 仍只返回正文。
