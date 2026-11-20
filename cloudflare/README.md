@@ -7,11 +7,8 @@
 | 地址 | **https://yiyan.952762.xyz**（自定义域名，国内可直连） |
 | 备用 | https://chinese-poetry-api.bycat.workers.dev（workers.dev 在部分网络被污染） |
 | 文档页 | https://yiyan.952762.xyz/doc |
-| 账号 | kai（[redacted]） |
-| 部署时间 | 2026-11-18 |
-| 版本 ID | f2e638e2-e1d8-4b78-ac00-9210838da394 |
-| 静态资源 | 524 个文件 / 30 MB |
-| Worker 启动耗时 | 3 ms |
+| 静态资源 | 4,091 个文件 / 220 MB |
+| Worker 启动耗时 | 4 ms |
 
 > 注意：`workers.dev` 在部分网络环境会被 DNS 污染（本机解析到 31.13.95.35，Facebook 的 IP），
 > 表现为连接被重置或代理返回 502。这是域名级封锁，与部署无关。
@@ -21,7 +18,7 @@
 
 ## 为什么不是"把数据打进 Worker"
 
-Worker 打包上限看着宽松（64 MiB），但**启动必须在 1 秒内完成**。7.6 万首诗的 JSON 有 40 MB，
+Worker 打包上限看着宽松（64 MiB），但**启动必须在 1 秒内完成**。57 万首诗的 JSON 有 290 MB，
 顶层 `import` 或 `JSON.parse` 必然突破这个上限，部署会被拒（错误码 10021）。
 
 因此本方案：
@@ -161,7 +158,7 @@ cd cloudflare && npx wrangler deploy
    每次调用 2 个子请求（免费版上限 50），CPU 约 2–4 ms（免费版上限 10 ms）。
    静态页与分片不计次；随机接口无法被缓存缩短（请求必然先运行函数），
    真要把额度压下去，只能让客户端一次取多条（`?n=20`）或改为读取静态池。
-4. **不要提交 `public/data`**。30 MB 的生成物不应进版本库，`.gitignore` 已排除；
+4. **不要提交 `public/data`**。200 MB 以上的生成物不应进版本库，`.gitignore` 已排除；
    CI 部署时先跑 `build_cf.py`。
 5. 全宋诗（26 万首）未纳入。若要开启，先在 `tagger/build.py` 的 `DATASETS` 加一条，
    重新构建后分片数会涨到约 900 个，仍在 20,000 文件限制内。
