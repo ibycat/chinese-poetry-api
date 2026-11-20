@@ -42,7 +42,7 @@ logs/
 # 构建产物：由 python -m tagger.build 生成，体积 290 MB+，不入库
 data/poems.jsonl
 
-# 大语料：由 tools/fetch_classics.py 重新下载（宋诗 75 MB / 明诗 67 MB）
-raw/full/songshi/
-raw/full/mingshi/
+# 下载中间产物（宋诗、明诗已按 2 万首切成分片入库，不再忽略）
 raw/_tmp/
+raw/full/_classics.tar.gz
+raw/full/_tmp_tar/

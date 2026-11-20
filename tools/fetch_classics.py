@@ -121,12 +121,37 @@ def _flatten(data, cfg, poems):
                       "dynasty": data.get("dynasty") or cfg["dynasty"]})
 
 
+SHARD = 20000  # 每个分片的首数；6 MB 左右，远低于 GitHub 的 50 MB 警告线
+
+
+def _has_shards(key):
+    d = os.path.join(OUT, key)
+    return os.path.isdir(d) and any(
+        f.endswith(".json") and not f.startswith("_") for f in os.listdir(d))
+
+
+def _write_shards(key, poems):
+    """写成 {key}.0.json / {key}.1.json ...，先清空目录避免旧文件被重复累加。"""
+    d = os.path.join(OUT, key)
+    os.makedirs(d, exist_ok=True)
+    for old in os.listdir(d):
+        if old.endswith(".json"):
+            os.remove(os.path.join(d, old))
+    n = 0
+    for i in range(0, len(poems), SHARD):
+        p = os.path.join(d, f"{key}.{n}.json")
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(poems[i:i + SHARD], f, ensure_ascii=False)
+        n += 1
+    return n
+
+
 def fetch_bulk(keys):
     """宋诗 / 明诗：整仓 tarball 解压后拍平，比逐个作者抓快一个数量级。"""
     import shutil
     import tarfile
 
-    keys = [k for k in keys if not os.path.exists(os.path.join(OUT, k, f"{k}.json"))]
+    keys = [k for k in keys if not _has_shards(k)]
     if not keys:
         return
     tgz = os.path.join(OUT, "_classics.tar.gz")
@@ -155,10 +180,8 @@ def fetch_bulk(keys):
             except Exception:
                 continue
             _flatten(data, cfg, poems)
-        dst = os.path.join(OUT, key, f"{key}.json")
-        os.makedirs(os.path.dirname(dst), exist_ok=True)
-        json.dump(poems, open(dst, "w", encoding="utf-8"), ensure_ascii=False)
-        print(f"[{key}] {len(poems)} 首 -> {os.path.relpath(dst, ROOT)}")
+        n = _write_shards(key, poems)
+        print(f"[{key}] {len(poems)} 首 -> {n} 个分片（{os.path.relpath(os.path.join(OUT, key), ROOT)}）")
     shutil.rmtree(tmp, ignore_errors=True)
 
 
