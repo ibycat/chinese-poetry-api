@@ -38,3 +38,11 @@ logs/
 
 # 本地环境变量
 .env
+
+# 构建产物：由 python -m tagger.build 生成，体积 290 MB+，不入库
+data/poems.jsonl
+
+# 大语料：由 tools/fetch_classics.py 重新下载（宋诗 75 MB / 明诗 67 MB）
+raw/full/songshi/
+raw/full/mingshi/
+raw/_tmp/

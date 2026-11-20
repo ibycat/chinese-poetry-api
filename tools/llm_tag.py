@@ -257,6 +257,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--set", default="all", choices=["all", "bench"])
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--section", action="append",
+                    help="只标注指定分部，如 --section 魏晋南北朝 --section 元曲")
     ap.add_argument("--theme", action="append", choices=LABELS,
                     help="只处理指定规则题材，可重复传入")
     ap.add_argument("--random-seed", type=int, default=None,
@@ -280,6 +282,10 @@ def main():
     if args.set == "bench":
         poems = select_bench(poems)
         print(f"基准集 {len(poems)} 首")
+    if args.section:
+        want = set(args.section)
+        poems = [p for p in poems if p.get("section") in want]
+        print(f"限定分部 {sorted(want)}：{len(poems)} 首")
     if args.theme:
         poems = [p for p in poems if p["theme"] in args.theme]
     if args.max_rule_conf is not None:

@@ -3,13 +3,15 @@
 把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：11 大类 / 69 小类 / 21 题材，
 全部平铺成一级路径（`/shanshui`、`/lushan`、`/meihua`），全文转为简体。
 
-**当前规模：96,129 首**，69 个小类无一为空。分部如下：
+**当前规模：571,189 首**，69 个小类无一为空。分部如下：
 
 | 分部 | 首数 | 说明 |
 |---|---:|---|
+| 宋诗 | 250,826 | 全宋诗 |
+| 明诗 | 224,235 | 明诗 |
 | 唐诗 | 55,261 | 全唐诗 + 唐诗三百首 |
 | 宋词 | 20,742 | 全宋词 + 宋词三百首 |
-| 元曲 | 10,873 | 散曲、小令、套数 |
+| 元曲 | 10,872 | 散曲、小令、套数 |
 | 魏晋南北朝 | 7,008 | 建安以后至陈、北朝 |
 | 隋 | 1,046 | 隋代诗 |
 | 秦汉 | 331 | 汉诗，含曹操 |
@@ -18,8 +20,8 @@
 | 五代 | 242 | 花间集、南唐二主词（与全唐诗重出的已去重） |
 | 楚辞 | 65 | 屈原及后学 |
 
-汉魏六朝与隋诗来自 [wujinpai/chinese-classics](https://github.com/wujinpai/chinese-classics)（MIT），
-其余分部来自 `ibycat/chinese-poetry-api` 仓库。两边的重复篇目（曹操、部分隋诗）已在构建时按首句去重。
+宋诗、明诗、汉魏六朝与隋诗来自 [wujinpai/chinese-classics](https://github.com/wujinpai/chinese-classics)（MIT），
+其余分部来自 `ibycat/chinese-poetry-api` 仓库。重复篇目已在构建时按首句去重。
 
 ---
 
@@ -44,7 +46,7 @@ curl https://yiyan.952762.xyz/shanshui,lushan.json
 
 ### 部署到 Cloudflare
 
-接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（43 MB / 777 文件），
+接口层已适配 Cloudflare Workers，自带调用文档页：语料走 Static Assets（220 MB / 4086 文件），
 Worker 只做路由、限流与随机抽取（约 27 KiB，gzip 9 KiB），因此不受 1 秒冷启动限制。
 
 ```bash
@@ -153,17 +155,17 @@ bash scripts/nightly.sh --fetch        # 抓语料 -> 构建 -> 生成产物 -> 
 
 | 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
 |---|---|---|---|---|---|
-| 山水田园 | `/tianyuan` | 16,269 | 爱情相思 | `/xiangsi` | 2,904 |
-| 送别 | `/songbie` | 12,855 | 佛道禅颂 | `/fodao` | 2,420 |
-| 羁旅思乡 | `/jilv` | 7,866 | 哲理悟道 | `/wudao` | 2,443 |
-| 寄赠酬答 | `/jizeng` | 7,291 | 咏怀抒感 | `/yonghuai` | 4,971 |
-| 边塞征战 | `/bianzai` | 5,889 | 闲适隐逸 | `/xianshi` | 2,886 |
-| 咏物 | `/yongwu` | 5,876 | 节令风俗 | `/jieling` | 1,426 |
-| 闺情宫怨 | `/guiqing` | 5,247 | 悼亡挽歌 | `/wange` | 1,543 |
-| 咏史怀古 | `/yongshi` | 4,369 | 题画咏艺 | `/tihua` | 1,347 |
-| 游仙梦幻 | `/youxian` | 3,724 | 讽喻刺世 | `/fengyu` | 954 |
-| 应制干谒 | `/yingzhi` | 3,367 | 民生疾苦 | `/minsheng` | 1,293 |
-| | | | 亲情 | `/qinqing` | 1,189 |
+| 山水田园 | `/tianyuan` | 109,143 | 节令风俗 | `/jieling` | 16,655 |
+| 送别 | `/songbie` | 70,872 | 题画咏艺 | `/tihua` | 16,237 |
+| 寄赠酬答 | `/jizeng` | 53,249 | 佛道禅颂 | `/fodao` | 16,143 |
+| 咏怀抒感 | `/yonghuai` | 47,774 | 闺情宫怨 | `/guiqing` | 13,597 |
+| 羁旅思乡 | `/jilv` | 40,695 | 游仙梦幻 | `/youxian` | 12,238 |
+| 咏物 | `/yongwu` | 29,732 | 应制干谒 | `/yingzhi` | 10,055 |
+| 闲适隐逸 | `/xianshi` | 26,638 | 民生疾苦 | `/minsheng` | 7,878 |
+| 咏史怀古 | `/yongshi` | 24,995 | 亲情 | `/qinqing` | 5,191 |
+| 边塞征战 | `/bianzai` | 23,888 | 爱情相思 | `/xiangsi` | 4,925 |
+| 悼亡挽歌 | `/wange` | 19,964 | 讽喻刺世 | `/fengyu` | 2,292 |
+| 哲理悟道 | `/wudao` | 19,028 | | | |
 
 这四个题材改过 slug，是为了与意象分类不重复、路径全 ASCII：
 山水田园→`tianyuan`、爱情相思→`xiangsi`（相思）、悼亡挽歌→`wange`（挽歌）、哲理悟道→`wudao`（悟道）。

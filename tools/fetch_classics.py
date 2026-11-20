@@ -26,6 +26,13 @@ SECTIONS = {
     "sui": {"dir": "隋诗", "dynasty": "隋", "section": "隋"},
 }
 
+# 宋诗、明诗体量太大（13,141 个作者文件），走整仓 tarball 一次性解压，快得多。
+TARBALL = "https://codeload.github.com/wujinpai/chinese-classics/tar.gz/refs/heads/main"
+BULK = {
+    "songshi": {"dir": "宋诗", "dynasty": "宋", "section": "宋诗"},
+    "mingshi": {"dir": "明诗", "dynasty": "明", "section": "明诗"},
+}
+
 # 作者目录需要先知道文件名，用仓库的文件树换取
 TREE_API = ("https://api.github.com/repos/wujinpai/chinese-classics/git/trees/main"
             "?recursive=1")
@@ -102,8 +109,66 @@ def fetch_one(path):
     return path, {"__error__": "no-token"}
 
 
+def _flatten(data, cfg, poems):
+    author = (data.get("author") or "").strip()
+    for w in data.get("works") or []:
+        paras = [str(x).strip() for x in (w.get("paragraphs") or []) if str(x).strip()]
+        title = (w.get("title") or "").strip()
+        if not paras or not title:
+            continue
+        poems.append({"title": title, "author": author or "佚名",
+                      "paragraphs": paras,
+                      "dynasty": data.get("dynasty") or cfg["dynasty"]})
+
+
+def fetch_bulk(keys):
+    """宋诗 / 明诗：整仓 tarball 解压后拍平，比逐个作者抓快一个数量级。"""
+    import shutil
+    import tarfile
+
+    keys = [k for k in keys if not os.path.exists(os.path.join(OUT, k, f"{k}.json"))]
+    if not keys:
+        return
+    tgz = os.path.join(OUT, "_classics.tar.gz")
+    if not os.path.exists(tgz):
+        print("下载整仓 tarball（约 110 MB）...")
+        req = urllib.request.Request(TARBALL, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=900) as r, open(tgz, "wb") as f:
+            shutil.copyfileobj(r, f)
+    tmp = os.path.join(OUT, "_tmp_tar")
+    for key in keys:
+        cfg = BULK[key]
+        print(f"[{key}] 解压 {cfg['dir']} ...")
+        with tarfile.open(tgz) as tf:
+            root = tf.getmembers()[0].name.split("/")[0]
+            prefix = f"{root}/{cfg['dir']}/"
+            members = [m for m in tf.getmembers()
+                       if m.isfile() and m.name.startswith(prefix)]
+            tf.extractall(tmp, members=members, filter="data")
+        poems = []
+        src = os.path.join(tmp, root, cfg["dir"])
+        for name in sorted(os.listdir(src)):
+            if not name.endswith(".json"):
+                continue
+            try:
+                data = json.load(open(os.path.join(src, name), encoding="utf-8"))
+            except Exception:
+                continue
+            _flatten(data, cfg, poems)
+        dst = os.path.join(OUT, key, f"{key}.json")
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        json.dump(poems, open(dst, "w", encoding="utf-8"), ensure_ascii=False)
+        print(f"[{key}] {len(poems)} 首 -> {os.path.relpath(dst, ROOT)}")
+    shutil.rmtree(tmp, ignore_errors=True)
+
+
 def main():
     want = sys.argv[1] if len(sys.argv) > 1 else "all"
+    if want in ("all", "songshi", "mingshi"):
+        keys = list(BULK) if want == "all" else [want]
+        fetch_bulk(keys)
+        if want != "all":
+            return
     files = list_files()
     if not files:
         return
