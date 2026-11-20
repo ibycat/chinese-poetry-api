@@ -49,9 +49,9 @@ DATASETS = [
      "name": "魏晋南北朝诗", "section": "魏晋南北朝", "dynasty": "魏晋南北朝"},
     {"key": "sui", "kind": "dir", "path": "raw/full/sui",
      "name": "隋诗", "section": "隋", "dynasty": "隋"},
-    {"key": "songshi", "kind": "dir", "path": "raw/full/songshi",
+    {"key": "songshi", "kind": "dir", "path": "raw/full/songshi", "optional": True,
      "name": "全宋诗", "section": "宋诗", "dynasty": "宋"},
-    {"key": "mingshi", "kind": "dir", "path": "raw/full/mingshi",
+    {"key": "mingshi", "kind": "dir", "path": "raw/full/mingshi", "optional": True,
      "name": "明诗", "section": "明诗", "dynasty": "明"},
     {"key": "wudai", "kind": "dir", "path": "raw/full/wudai",
      "name": "五代词", "section": "五代", "dynasty": "五代"},
@@ -116,6 +116,15 @@ def normalize_poem(p, ds):
 
 def load_dataset(ds):
     p = os.path.join(ROOT, ds["path"])
+    if not os.path.exists(p):
+        # 宋诗、明诗体积大（142 MB）不入库，靠 tools/fetch_classics.py 补；
+        # 缺失时跳过，保证全新 clone 也能构建出其余 10 个分部。
+        if ds.get("optional"):
+            print(f"[跳过] {ds['name']}：{ds['path']} 不存在；"
+                  f"需要时运行 python tools/fetch_classics.py {ds['key']}", flush=True)
+            return []
+        raise SystemExit(f"[缺失] 必需语料 {ds['path']}（{ds['name']}）不存在，"
+                         f"请先运行 python tools/fetch_full.py all")
     if ds["kind"] == "file":
         with open(p, encoding="utf-8") as f:
             raw = json.load(f)
