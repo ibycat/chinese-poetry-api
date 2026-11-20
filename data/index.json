@@ -111,353 +111,353 @@
   "抒情": {
    "slug": "shuqing",
    "desc": "情感与人际",
-   "count": 40267,
+   "count": 46215,
    "subs": {
     "爱情": {
      "slug": "aiqing",
-     "count": 1618
+     "count": 2121
     },
     "友情": {
      "slug": "youqing",
-     "count": 2595
+     "count": 2781
     },
     "离别": {
      "slug": "libie",
-     "count": 3916
+     "count": 4548
     },
     "思念": {
      "slug": "sinian",
-     "count": 5168
+     "count": 5708
     },
     "思乡": {
      "slug": "sixiang",
-     "count": 10345
+     "count": 11661
     },
     "伤感": {
      "slug": "shanggan",
-     "count": 13072
+     "count": 15003
     },
     "孤独": {
      "slug": "gudu",
-     "count": 10641
+     "count": 11691
     },
     "闺怨": {
      "slug": "guiyuan",
-     "count": 5348
+     "count": 6582
     },
     "悼亡": {
      "slug": "daowang",
-     "count": 1440
+     "count": 1870
     },
     "怀古": {
      "slug": "huaigu",
-     "count": 5254
+     "count": 5890
     },
     "爱国": {
      "slug": "aiguo",
-     "count": 153
+     "count": 183
     },
     "感恩": {
      "slug": "ganen",
-     "count": 582
+     "count": 762
     }
    }
   },
   "四季": {
    "slug": "siji",
    "desc": "时令季节",
-   "count": 26218,
+   "count": 28668,
    "subs": {
     "春天": {
      "slug": "chuntian",
-     "count": 15490
+     "count": 17001
     },
     "夏天": {
      "slug": "xiatian",
-     "count": 1994
+     "count": 2163
     },
     "秋天": {
      "slug": "qiutian",
-     "count": 9676
+     "count": 10548
     },
     "冬天": {
      "slug": "dongtian",
-     "count": 1174
+     "count": 1350
     }
    }
   },
   "山水": {
    "slug": "shanshui",
    "desc": "山水景观与名胜",
-   "count": 4105,
+   "count": 4433,
    "subs": {
     "庐山": {
      "slug": "lushan",
-     "count": 534
+     "count": 546
     },
     "泰山": {
      "slug": "taishan",
-     "count": 97
+     "count": 114
     },
     "江河": {
      "slug": "jianghe",
-     "count": 2113
+     "count": 2243
     },
     "长江": {
      "slug": "changjiang",
-     "count": 445
+     "count": 522
     },
     "黄河": {
      "slug": "huanghe",
-     "count": 356
+     "count": 395
     },
     "西湖": {
      "slug": "xihu",
-     "count": 602
+     "count": 678
     },
     "瀑布": {
      "slug": "pubu",
-     "count": 213
+     "count": 218
     }
    }
   },
   "天气": {
    "slug": "tianqi",
    "desc": "天象与气象",
-   "count": 8344,
+   "count": 10405,
    "subs": {
     "写风": {
      "slug": "xiefeng",
-     "count": 714
+     "count": 1295
     },
     "写云": {
      "slug": "xieyun",
-     "count": 766
+     "count": 1047
     },
     "写雨": {
      "slug": "xieyu",
-     "count": 943
+     "count": 1065
     },
     "写雪": {
      "slug": "xiexue",
-     "count": 882
+     "count": 1156
     },
     "彩虹": {
      "slug": "caihong",
-     "count": 104
+     "count": 126
     },
     "太阳": {
      "slug": "taiyang",
-     "count": 1142
+     "count": 1196
     },
     "月亮": {
      "slug": "yueliang",
-     "count": 3896
+     "count": 4960
     },
     "星星": {
      "slug": "xingxing",
-     "count": 411
+     "count": 487
     }
    }
   },
   "人物": {
    "slug": "renwu",
    "desc": "人物群像",
-   "count": 2615,
+   "count": 3099,
    "subs": {
     "女子": {
      "slug": "nvzi",
-     "count": 1442
+     "count": 1668
     },
     "父亲": {
      "slug": "fuqin",
-     "count": 277
+     "count": 345
     },
     "母亲": {
      "slug": "muqin",
-     "count": 178
+     "count": 234
     },
     "老师": {
      "slug": "laoshi",
-     "count": 162
+     "count": 174
     },
     "儿童": {
      "slug": "ertong",
-     "count": 589
+     "count": 723
     }
    }
   },
   "人生": {
    "slug": "rensheng",
    "desc": "人生境遇与志趣",
-   "count": 6242,
+   "count": 7353,
    "subs": {
     "励志": {
      "slug": "lizhi",
-     "count": 119
+     "count": 151
     },
     "哲理": {
      "slug": "zheli",
-     "count": 1473
+     "count": 1690
     },
     "青春": {
      "slug": "qingchun",
-     "count": 813
+     "count": 925
     },
     "时光": {
      "slug": "shiguang",
-     "count": 623
+     "count": 753
     },
     "梦想": {
      "slug": "mengxiang",
-     "count": 624
+     "count": 749
     },
     "读书": {
      "slug": "dushu",
-     "count": 905
+     "count": 1113
     },
     "战争": {
      "slug": "zhanzheng",
-     "count": 1987
+     "count": 2350
     }
    }
   },
   "生活": {
    "slug": "shenghuo",
    "desc": "日常与境域",
-   "count": 4910,
+   "count": 5660,
    "subs": {
     "乡村": {
      "slug": "xiangcun",
-     "count": 344
+     "count": 496
     },
     "田野": {
      "slug": "tianye",
-     "count": 512
+     "count": 592
     },
     "边塞": {
      "slug": "biansai",
-     "count": 1610
+     "count": 1779
     },
     "写桥": {
      "slug": "xieqiao",
-     "count": 2564
+     "count": 2956
     }
    }
   },
   "节日": {
    "slug": "jieri",
    "desc": "节令风俗",
-   "count": 4176,
+   "count": 4595,
    "subs": {
     "春节": {
      "slug": "chunjie",
-     "count": 377
+     "count": 387
     },
     "元宵节": {
      "slug": "yuanxiaojie",
-     "count": 436
+     "count": 520
     },
     "寒食节": {
      "slug": "hanshijie",
-     "count": 565
+     "count": 592
     },
     "清明节": {
      "slug": "qingmingjie",
-     "count": 1017
+     "count": 1114
     },
     "端午节": {
      "slug": "duanwujie",
-     "count": 165
+     "count": 193
     },
     "七夕节": {
      "slug": "qixijie",
-     "count": 519
+     "count": 559
     },
     "中秋节": {
      "slug": "zhongqiujie",
-     "count": 761
+     "count": 840
     },
     "重阳节": {
      "slug": "chongyangjie",
-     "count": 950
+     "count": 1041
     }
    }
   },
   "动物": {
    "slug": "dongwu",
    "desc": "飞禽走兽",
-   "count": 1851,
+   "count": 3013,
    "subs": {
     "写鸟": {
      "slug": "xieniao",
-     "count": 1158
+     "count": 1926
     },
     "写马": {
      "slug": "xiema",
-     "count": 695
+     "count": 1105
     },
     "写猫": {
      "slug": "xiemao",
-     "count": 5
+     "count": 9
     }
    }
   },
   "植物": {
    "slug": "zhiwu",
    "desc": "花木",
-   "count": 2549,
+   "count": 3869,
    "subs": {
     "梅花": {
      "slug": "meihua",
-     "count": 384
+     "count": 585
     },
     "梨花": {
      "slug": "lihua",
-     "count": 31
+     "count": 85
     },
     "桃花": {
      "slug": "taohua",
-     "count": 404
+     "count": 686
     },
     "荷花": {
      "slug": "hehua",
-     "count": 329
+     "count": 522
     },
     "菊花": {
      "slug": "juhua",
-     "count": 137
+     "count": 228
     },
     "柳树": {
      "slug": "liushu",
-     "count": 792
+     "count": 1151
     },
     "叶子": {
      "slug": "yezi",
-     "count": 163
+     "count": 451
     },
     "竹子": {
      "slug": "zhuzi",
-     "count": 367
+     "count": 488
     }
    }
   },
   "食物": {
    "slug": "shiwu",
    "desc": "饮馔",
-   "count": 1601,
+   "count": 2826,
    "subs": {
     "写酒": {
      "slug": "xiejiu",
-     "count": 1363
+     "count": 2501
     },
     "写茶": {
      "slug": "xiecha",
-     "count": 139
+     "count": 231
     },
     "荔枝": {
      "slug": "lychee",
-     "count": 108
+     "count": 125
     }
    }
   }
@@ -481,7 +481,7 @@
    {
     "key": "tang",
     "name": "全唐诗",
-    "read": 57607,
+    "read": 57603,
     "kept": 55071,
     "dup": 2532
    },
@@ -491,11 +491,53 @@
     "read": 21050,
     "kept": 20463,
     "dup": 587
+   },
+   {
+    "key": "shijing",
+    "name": "诗经",
+    "read": 305,
+    "kept": 305,
+    "dup": 0
+   },
+   {
+    "key": "chuci",
+    "name": "楚辞",
+    "read": 65,
+    "kept": 65,
+    "dup": 0
+   },
+   {
+    "key": "caocao",
+    "name": "曹操诗集",
+    "read": 26,
+    "kept": 26,
+    "dup": 0
+   },
+   {
+    "key": "wudai",
+    "name": "五代词",
+    "read": 542,
+    "kept": 242,
+    "dup": 300
+   },
+   {
+    "key": "yuanqu",
+    "name": "元曲",
+    "read": 10914,
+    "kept": 10874,
+    "dup": 40
+   },
+   {
+    "key": "nalan",
+    "name": "纳兰性德",
+    "read": 258,
+    "kept": 256,
+    "dup": 2
    }
   ],
-  "total": 76003,
+  "total": 87770,
   "api_dedup": 1,
-  "api_invalid": 176,
+  "api_invalid": 177,
   "simplified_by": "opencc"
  }
 }

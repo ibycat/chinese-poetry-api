@@ -27,6 +27,19 @@ TASKS = {
         "files": [f"ci.song.{i}.json" for i in range(0, 22000, 1000)],
         "dest": "ci",
     },
+    "shijing": {"dir": "诗经", "files": ["shijing.json"], "dest": "shijing"},
+    "chuci": {"dir": "楚辞", "files": ["chuci.json"], "dest": "chuci"},
+    "caocao": {"dir": "曹操诗集", "files": ["caocao.json"], "dest": "caocao"},
+    "wudai": {
+        "dir": "五代诗词",
+        "files": [("nantang/poetrys.json", "poetrys.json")] +
+                 [(f"huajianji/huajianji-{i}-juan.json", f"hj-{i}-juan.json")
+                  for i in list(range(1, 10)) + ["x"]],
+        "dest": "wudai",
+    },
+    "nalan": {"dir": "纳兰性德",
+              "files": [("纳兰性德诗集.json", "nalan.json")], "dest": "nalan"},
+    "yuanqu": {"dir": "元曲", "files": ["yuanqu.json"], "dest": "yuanqu"},
 }
 
 
@@ -35,11 +48,11 @@ def url_of(path):
 
 
 def fetch_one(args):
-    sub, name, dest = args
+    sub, remote, name, dest = args
     dst = os.path.join(OUT, dest, name)
     if os.path.exists(dst) and os.path.getsize(dst) > 1000:
         return name, "skip", os.path.getsize(dst)
-    url = url_of(f"{sub}/{name}")
+    url = url_of(f"{sub}/{remote}")
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -62,7 +75,9 @@ def main():
     for key, cfg in TASKS.items():
         if want not in ("all", key):
             continue
-        jobs += [(cfg["dir"], f, cfg["dest"]) for f in cfg["files"]]
+        for f in cfg["files"]:
+            remote, local = f if isinstance(f, tuple) else (f, f)
+            jobs.append((cfg["dir"], remote, local, cfg["dest"]))
     print(f"待下载 {len(jobs)} 个文件 -> {OUT}")
     ok = skip = 0
     fails = []

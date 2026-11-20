@@ -36,6 +36,19 @@ DATASETS = [
      "name": "全唐诗", "section": "唐诗", "dynasty": "唐"},
     {"key": "ci", "kind": "dir", "path": "raw/full/ci",
      "name": "全宋词", "section": "宋词", "dynasty": "宋"},
+    # 唐诗宋词之外的补充语料：先秦、汉魏、五代、元、清
+    {"key": "shijing", "kind": "dir", "path": "raw/full/shijing",
+     "name": "诗经", "section": "诗经", "dynasty": "先秦", "author": "佚名"},
+    {"key": "chuci", "kind": "dir", "path": "raw/full/chuci",
+     "name": "楚辞", "section": "楚辞", "dynasty": "先秦", "author": "佚名"},
+    {"key": "caocao", "kind": "dir", "path": "raw/full/caocao",
+     "name": "曹操诗集", "section": "汉魏", "dynasty": "汉", "author": "曹操"},
+    {"key": "wudai", "kind": "dir", "path": "raw/full/wudai",
+     "name": "五代词", "section": "五代", "dynasty": "五代"},
+    {"key": "yuanqu", "kind": "dir", "path": "raw/full/yuanqu",
+     "name": "元曲", "section": "元曲", "dynasty": "元"},
+    {"key": "nalan", "kind": "dir", "path": "raw/full/nalan",
+     "name": "纳兰性德", "section": "清词", "dynasty": "清"},
 ]
 
 DIMS = ["theme", "style", "mood", "scene"]
@@ -74,17 +87,38 @@ def choose_theme(uid, rule_theme, rule_conf, initial, reviews):
     return rule_theme, rule_conf, "rules"
 
 
+def normalize_poem(p, ds):
+    """不同语料的字段名不同（content / para / paragraphs），这里统一成 paragraphs。"""
+    if not p.get("paragraphs"):
+        for key in ("content", "para"):
+            v = p.get(key)
+            if v:
+                p["paragraphs"] = v if isinstance(v, list) else [v]
+                break
+    paras = [str(x).strip() for x in (p.get("paragraphs") or []) if str(x).strip()]
+    p["paragraphs"] = paras
+    if not p.get("title") and p.get("rhythmic"):
+        p["title"] = p["rhythmic"]
+    if not p.get("author"):
+        p["author"] = ds.get("author", "佚名")
+    return p if paras else None
+
+
 def load_dataset(ds):
     p = os.path.join(ROOT, ds["path"])
     if ds["kind"] == "file":
         with open(p, encoding="utf-8") as f:
-            return json.load(f)
-    out = []
-    for name in sorted(os.listdir(p)):
-        if name.endswith(".json"):
+            raw = json.load(f)
+    else:
+        raw = []
+        for name in sorted(os.listdir(p)):
+            if not name.endswith(".json"):
+                continue
             with open(os.path.join(p, name), encoding="utf-8") as f:
-                out += json.load(f)
-    return out
+                part = json.load(f)
+            if isinstance(part, list):
+                raw += part
+    return [x for x in (normalize_poem(dict(poem), ds) for poem in raw) if x]
 
 
 def dump(obj, path, indent=1):
