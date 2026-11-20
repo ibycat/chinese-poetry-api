@@ -1,6 +1,7 @@
 # 诗词分类与接口（chinese-poetry 扩展）
 
-把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：分类体系完整复刻 [jinrishici v1](https://v1.jinrishici.com)（11 大类 / 69 小类），全文转为简体，路径与 v1 一致，换掉域名即可直接调用。
+把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：11 大类 / 69 小类 / 21 题材，
+全部平铺成一级路径（`/shanshui`、`/lushan`、`/梅花`），全文转为简体。
 
 **当前规模：76,003 首**（原始 76,180，API 层按 UID 去重 1 首、剔除无有效正文 176 首），69 个小类无一为空。
 
@@ -17,9 +18,10 @@ cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码
 只覆盖 v1 意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
 
 ```bash
-curl https://yiyan.952762.xyz/shanshui/lushan.json
-curl https://yiyan.952762.xyz/shuqing/aiqing.txt
-curl https://yiyan.952762.xyz/zhiwu/meihua.json?n=3
+curl https://yiyan.952762.xyz/lushan.json
+curl https://yiyan.952762.xyz/爱情.txt
+curl https://yiyan.952762.xyz/meihua.json?n=3
+curl https://yiyan.952762.xyz/shanshui,lushan.json
 ```
 
 浏览器打开 `web/index.html` 可按分类浏览（本页为分层抽样，全库走接口）。
@@ -37,54 +39,53 @@ npx wrangler login
 npx wrangler deploy
 ```
 
-部署后：`/` 是调用文档，`/api` 是分类总表，`/shanshui/lushan.json` 等路径照常可用。
+部署后：`/` 是调用文档，`/api` 是分类总表，`/lushan.json`、`/shanshui,lushan.json` 等一级路径可直接调用。
 详见 [cloudflare/README.md](cloudflare/README.md)。
 
 ---
 
 ## 二、接口
 
-### 路由（兼容 v1.jinrishici.com）
+### 路由（扁平，无层级）
 
 | 路由 | 说明 |
 |---|---|
 | `/` `/doc` | 调用文档页（纯静态，不经过 Worker，不计调用额度） |
-| `/api` | 分类总表，含每一类的调用地址 |
-| `/all` | 全部分类随机一首；`?cats=山水,植物,送别` 可跨分类随机 |
+| `/api` | 分类总表，含每个分类的调用地址 |
+| `/all` | 全部随机一首 |
+| `/shanshui` | 大类：山水随机一首 |
+| `/lushan` | 小类：庐山，不必带父级 |
+| `/梅花` | 中文名与大写 slug 等价 |
+| `/shanshui,lushan` | 多选，逗号分隔，等概率各占一份 |
 | `/line` | 全库随机返回连续两句 |
-| `/shanshui` | 一级分类随机一首 |
-| `/shanshui/lushan` | 二级分类随机一首 |
-| `/t/{题材}` | 21 个题材随机一首，如 `/t/songbie`、`/t/fodao` |
-| `/抒情/爱情` | 也可直接用中文名访问 |
+| `/line/送别,寄赠酬答` | 在指定分类内摘句 |
 
-后缀 `.json`（默认）/ `.txt` / `.svg`。扩展参数 `?n=5` 一次取多条：
-全库最多 50，分类、题材和多分类摘句最多 20。动态响应使用 `Cache-Control: no-store`。
+后缀 `.json`（默认）/ `.txt` / `.svg`。唯一参数 `?n=5` 一次取多条：
+全库最多 50，分类与多选最多 20。动态响应使用 `Cache-Control: no-store`。
 接口按客户端 IP 限流：同一 IP 每 60 秒最多 60 次，平均约每秒 1 次，允许短时突发；
 使用 Cloudflare 原生近似限流，按机房分别计数。超限返回 `429 / 1004` 和 `Retry-After: 60`。
 
-任意分类路径加 `?mode=line` 即进入摘句模式：`content` 改为随机连续两句，分类和其他字段不变。
+摘句：`/line` 或 `/line/{分类}`，`content` 改为随机连续两句，分类和其他字段不变。
 长诗、长词会按自然句序切成多个句对，因此每一句都有机会出现，不再只显示开头两句。
-例如 `/t/songbie.json?mode=line`、`/shanshui/lushan.txt?mode=line`。
-
-`cats` 可在**任意接口**上跨分类随机，不必拼二级路径。逗号、`&` 或重复参数都行，
-支持大类、大类/小类、题材及中文名，最多 20 个：
 
 ```text
-/all.json?cats=shanshui,zhiwu,guiqing&n=3
-/all.json?cats=shanshui&zhiwu
-/all.json?cats=送别,山水,游仙梦幻
-/line?cats=t/songbie,t/jizeng
+/shanshui,lushan.json?n=3
+/送别,山水,游仙梦幻.json
+/line/送别,寄赠酬答.json
 ```
 
-给了 `cats` 后路径里的分类不再参与，因此统一用 `/all?cats=...` 或 `/line?cats=...` 即可。
-多个分类先等概率选一个，再在该分类内选作品与句对，语料多的分类不会挤占语料少的分类。
+多选先等概率选一个分类，再在该分类内选作品与句对，语料多的分类不会挤占语料少的分类。
+少数 slug 与题材重名，按「大类 > 小类 > 题材」优先，落选者用中文名（`/lizhi` 是励志，荔枝写 `/荔枝`）。
+
+旧的 `/shanshui/lushan`、`/t/songbie`、`?cats=`、`?mode=line` 已取消，
+调用返回 `400 / 2003` 并提示应改用的一级路径。
 
 摘句额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块。
 摘句模式统一返回 JSON，即使 URL 写成 `.txt` 也返回 JSON；普通分类的 `.txt` 仍只返回正文。
 
 ### 返回体
 
-v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只读前四个，因此可直接替换：
+返回体沿用 v1 的字段名（`content` / `origin` / `author` / `category`），其后为扩展字段：
 
 ```json
 {
@@ -111,7 +112,7 @@ v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只�
 
 两套并存，回答不同问题：**意象分类**（诗里写到什么）与**题材分类**（这首诗在写什么事）。
 
-### 3.1 题材（21 类，`/t/` 命名空间）
+### 3.1 题材（21 类，与意象分类同级）
 
 按语料实际构成重定的主旨分类，不迁就 v1。相对原 19 类做了三处调整：
 送别赠答拆成「送别」与「寄赠酬答」（前者场景是离别，后者是往还唱和）、
@@ -119,19 +120,21 @@ v1 的四个字段原样保留，后面追加扩展字段，v1 的解析器只�
 
 | 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
 |---|---|---|---|---|---|
-| 山水田园 | `/t/shanshui` | 13,714 | 爱情相思 | `/t/aiqing` | 2,428 |
-| 送别 | `/t/songbie` | 10,797 | 佛道禅颂 | `/t/fodao` | 2,195 |
-| 寄赠酬答 | `/t/jizeng` | 6,490 | 哲理悟道 | `/t/zheli` | 2,114 |
-| 羁旅思乡 | `/t/jilv` | 6,474 | 咏怀抒感 | `/t/yonghuai` | 1,715 |
-| 咏物 | `/t/yongwu` | 5,140 | 闲适隐逸 | `/t/xianshi` | 1,770 |
-| 边塞征战 | `/t/bianzai` | 4,221 | 节令风俗 | `/t/jieling` | 1,234 |
-| 闺情宫怨 | `/t/guiqing` | 4,096 | 悼亡挽歌 | `/t/daowang` | 968 |
-| 咏史怀古 | `/t/yongshi` | 3,712 | 题画咏艺 | `/t/tihua` | 964 |
-| 应制干谒 | `/t/yingzhi` | 2,853 | 讽喻刺世 | `/t/fengyu` | 852 |
-| 游仙梦幻 | `/t/youxian` | 2,821 | 民生疾苦 | `/t/minsheng` | 802 |
-| | | | 亲情 | `/t/qinqing` | 643 |
+| 山水田园 | `/山水田园` | 13,714 | 爱情相思 | `/爱情相思` | 2,428 |
+| 送别 | `/songbie` | 10,797 | 佛道禅颂 | `/fodao` | 2,195 |
+| 寄赠酬答 | `/jizeng` | 6,490 | 哲理悟道 | `/哲理悟道` | 2,114 |
+| 羁旅思乡 | `/jilv` | 6,474 | 咏怀抒感 | `/yonghuai` | 1,715 |
+| 咏物 | `/yongwu` | 5,140 | 闲适隐逸 | `/xianshi` | 1,770 |
+| 边塞征战 | `/bianzai` | 4,221 | 节令风俗 | `/jieling` | 1,234 |
+| 闺情宫怨 | `/guiqing` | 4,096 | 悼亡挽歌 | `/悼亡挽歌` | 968 |
+| 咏史怀古 | `/yongshi` | 3,712 | 题画咏艺 | `/tihua` | 964 |
+| 应制干谒 | `/yingzhi` | 2,853 | 讽喻刺世 | `/fengyu` | 852 |
+| 游仙梦幻 | `/youxian` | 2,821 | 民生疾苦 | `/minsheng` | 802 |
+| | | | 亲情 | `/qinqing` | 643 |
 
-用 `/t/` 前缀是因为 `aiqing` 既是意象小类又是题材 slug，扁平命名会撞车。
+四个题材的 slug 与意象分类撞车（`shanshui`/`aiqing`/`daowang`/`zheli`），
+按「大类 > 小类 > 题材」优先，落选者改用中文名，即上表里的 `/山水田园`、`/爱情相思`、
+`/悼亡挽歌`、`/哲理悟道`。
 
 ### 3.2 意象分类（11 大类 / 69 小类）
 

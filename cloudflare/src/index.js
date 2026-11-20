@@ -24,33 +24,45 @@ async function allowRequest(request, env) {
   }
 }
 
-/* ---------------- 索引：slug / 中文名 -> 节点 ---------------- */
-const BY_SLUG = Object.create(null);
-const BY_NAME = Object.create(null);
-const SUB_NAMES = Object.create(null);
+/* ---------------- 扁平命名空间 ----------------
+   大类、小类、题材平级，一个词就是一个分类：
+     /shanshui  /lushan  /梅花  /送别
+   slug 与中文名都能用。同一个词撞车时按「大类 > 小类 > 题材」先到先得，
+   落选的那个改用中文名（例：lizhi 是「励志」，荔枝写 /荔枝）。 */
+const FLAT = new Map();
+const PATH_OF = new Map();
+
+const nodeKey = (n) => `${n.type}|${n.top || ""}|${n.sub || ""}|${n.slug}`;
+
+function register(token, node) {
+  const key = token.toLowerCase();
+  if (!FLAT.has(key)) FLAT.set(key, node);
+  if (FLAT.get(key) === node && !PATH_OF.has(nodeKey(node))) {
+    PATH_OF.set(nodeKey(node), token);
+  }
+}
 
 for (const [top, cfg] of Object.entries(CATS)) {
   const node = { type: "top", top, sub: null, slug: cfg.slug, count: cfg.count };
-  BY_SLUG[cfg.slug] = node;
-  BY_NAME[top] = node;
+  register(cfg.slug, node);
+  register(top, node);
+}
+for (const [top, cfg] of Object.entries(CATS)) {
   for (const [sub, sc] of Object.entries(cfg.subs)) {
-    const sn = { type: "sub", top, sub, slug: sc.slug, count: sc.count };
-    BY_SLUG[sc.slug] = sn;
-    SUB_NAMES[sub] = SUB_NAMES[sub] || [];
-    SUB_NAMES[sub].push(sn);
+    const node = { type: "sub", top, sub, slug: sc.slug, count: sc.count };
+    register(sc.slug, node);
+    register(sub, node);
   }
 }
-const BY_THEME = Object.create(null);
-const THEME_BY_NAME = Object.create(null);
 for (const [slug, t] of Object.entries(THEMES)) {
-  BY_THEME[slug] = t;
-  THEME_BY_NAME[t.name] = slug;
+  const node = { type: "theme", top: null, sub: null, slug,
+                 count: t.count, themeName: t.name };
+  register(slug, node);
+  register(t.name, node);
 }
 
-// 二级中文名唯一时可直接用 /爱情 访问，重名则必须带大类
-for (const [sub, list] of Object.entries(SUB_NAMES)) {
-  if (list.length === 1) BY_NAME[sub] = list[0];
-}
+/** 某个节点对外推荐的关键词：slug 没被占用就用 slug，否则用中文名。 */
+const pathOf = (node) => PATH_OF.get(nodeKey(node)) || node.slug;
 
 /* ---------------- 工具 ---------------- */
 function json(obj, status = 200, extra = {}) {
@@ -163,42 +175,6 @@ function idxBase(node) {
   return node.type === "top" ? `${topSlug}/_all` : `${topSlug}/${node.slug}`;
 }
 
-/** 解析 cats 中的一个分类：t/{题材}、{大类}、{大类}/{小类}，支持 slug 与中文名。 */
-function nodeForToken(raw) {
-  const parts = String(raw || "").trim().split("/").filter(Boolean);
-  if (!parts.length) return null;
-  if (parts[0] === "t") {
-    if (parts.length !== 2) return null;
-    const key = THEME_BY_NAME[parts[1]] || parts[1];
-    const theme = BY_THEME[key];
-    return theme
-      ? { type: "theme", top: null, sub: null, slug: key,
-          count: theme.count, themeName: theme.name }
-      : null;
-  }
-  if (parts.length > 2) return null;
-  const base = BY_SLUG[parts[0]] || BY_NAME[parts[0]];
-  if (!base) {
-    // 允许直接写题材：?cats=送别 或 ?cats=songbie，不必带 t/ 前缀
-    if (parts.length === 1) {
-      const key = THEME_BY_NAME[parts[0]] || parts[0];
-      const theme = BY_THEME[key];
-      if (theme) {
-        return { type: "theme", top: null, sub: null, slug: key,
-                 count: theme.count, themeName: theme.name };
-      }
-    }
-    return null;
-  }
-  if (!parts[1]) return base;
-  const cfg = CATS[base.top];
-  const hit = Object.entries(cfg.subs)
-    .find(([name, sc]) => sc.slug === parts[1] || name === parts[1]);
-  if (!hit) return null;
-  return { type: "sub", top: base.top, sub: hit[0],
-           slug: hit[1].slug, count: hit[1].count };
-}
-
 function chunkOf(g) {
   let lo = 0, hi = POEM_CHUNKS.length - 1;
   while (lo < hi) {
@@ -272,22 +248,28 @@ function expand(r, preferTop, preferSub) {
 function catalog(url) {
   const base = `${url.protocol}//${url.host}`;
   const list = [{ 全部: `${base}/all` }];
-  for (const [top, cfg] of Object.entries(CATS)) list.push({ [top]: `${base}/${cfg.slug}` });
+  for (const [top, cfg] of Object.entries(CATS)) {
+    const node = { type: "top", top, sub: null, slug: cfg.slug, count: cfg.count };
+    list.push({ [top]: `${base}/${pathOf(node)}` });
+  }
   for (const [top, cfg] of Object.entries(CATS)) {
     for (const [sub, sc] of Object.entries(cfg.subs)) {
-      list.push({ [`${top}-${sub}`]: `${base}/${cfg.slug}/${sc.slug}` });
+      const node = { type: "sub", top, sub, slug: sc.slug, count: sc.count };
+      list.push({ [`${top}-${sub}`]: `${base}/${pathOf(node)}` });
     }
   }
   for (const [slug, t] of Object.entries(THEMES)) {
-    list.push({ [`题材-${t.name}`]: `${base}/t/${slug}` });
+    const node = { type: "theme", top: null, sub: null, slug,
+                   count: t.count, themeName: t.name };
+    list.push({ [`题材-${t.name}`]: `${base}/${pathOf(node)}` });
   }
   return {
-    welcome: "欢迎使用诗词分类接口（分类体系兼容今日诗词 v1）",
+    welcome: "欢迎使用诗词分类接口",
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
-    "line-mode": `${base}/line　随机连续两句；?cats=t/songbie,t/jizeng 可合并多个分类`,
-    "multi-category": `${base}/all?cats=shanshui,zhiwu,送别　任意接口都支持多分类：` +
-      "逗号或 & 分隔，可写大类、大类/小类或题材",
-    help: "数据源 ibycat/chinese-poetry，全文简体；分类体系与 v1.jinrishici.com 一致",
+    "line-mode": `${base}/line　随机连续两句，可接分类：/line/shanshui,lushan`,
+    "multi-category": `${base}/shanshui,lushan,梅花　一个词就是一个分类，逗号分隔即多选，` +
+      "slug 与中文名等价",
+    help: "数据源 ibycat/chinese-poetry，全文简体；分类层级已扁平化，/shanshui/lushan 这类旧路径不再支持",
     count: TOTAL,
     built_at: BUILT_AT,
     list,
@@ -345,7 +327,6 @@ export default {
 
     // 分类总表
     if (path === "api") return json(catalog(url));
-    if (path.startsWith("api/")) path = path.slice(4);
 
     // 扩展名
     let fmt = "json";
@@ -353,94 +334,78 @@ export default {
       if (path.endsWith("." + f)) { fmt = f; path = path.slice(0, -f.length - 1); break; }
     }
 
+    // /line/{分类} 是摘句 + 分类，先把它拆掉，剩下再按分类校验
+    let lineMode = false;
+    if (path.toLowerCase().startsWith("line/")) {
+      lineMode = true;
+      path = path.slice(5);
+    }
+
+    // 旧写法已全部取消：/shanshui/lushan、/t/songbie、?cats=、?mode=line
+    // 与其静默返回别的结果，不如直接告诉调用方该改成什么。
+    if (path.includes("/")) {
+      const tail = path.split("/").filter(Boolean).pop() || "";
+      const hit = FLAT.get(tail.toLowerCase());
+      return json({ status: "error", errCode: 2003,
+        errMessage: `层级路径已取消，请改用 /${hit ? pathOf(hit) : tail}` }, 400);
+    }
+
     const q = url.searchParams;
+    if (q.has("cats") || q.has("cat")) {
+      return json({ status: "error", errCode: 2003,
+        errMessage: "cats 参数已取消，多选直接写进路径：/shanshui,lushan" }, 400);
+    }
+    if (q.has("mode")) {
+      return json({ status: "error", errCode: 2003,
+        errMessage: "mode 参数已取消，摘句请用 /line 或 /line/shanshui,lushan" }, 400);
+    }
+
     let n = parseInt(q.get("n") || "1", 10);
     if (!Number.isFinite(n)) n = 1;
     n = Math.max(1, Math.min(n, 50));
-    const lineRoute = path === "line";
-    const rawMode = String(q.get("mode") || "").toLowerCase();
-    const lineMode = lineRoute ||
-      ["line", "pair", "two", "couplet"].includes(rawMode);
     // 摘句需要携带结构化出处信息，因此 .txt 在摘句模式下也返回 JSON。
     // 普通分类的 .txt 仍是纯文本；.svg 仍返回图片。
-    if (lineMode && fmt === "txt") fmt = "json";
-    // 多分类：任意接口通用。三种写法等价：
-    //   ?cats=shanshui,zhiwu   ?cats=shanshui&cats=zhiwu   ?cats=shanshui&zhiwu
-    // 支持大类（山水）、大类/小类（山水/庐山）、题材（送别 或 t/songbie）。
-    // 一旦给了 cats，路径里的分类就不再参与，避免两种写法互相打架。
-    let multiNodes = null;
-    {
-      const rawValues = [...q.getAll("cats"), ...q.getAll("cat")];
-      const tokens = rawValues
-        .flatMap((v) => String(v).split(/[,，、\s]+/))
-        .map((s) => s.trim()).filter(Boolean);
-      const nodes = new Map();
-      for (const token of tokens) {
-        const item = nodeForToken(token);
-        if (!item) {
-          return json({ status: "error", errCode: 2002,
-            errMessage: `Unknown category: ${token}. ` +
-              "Use e.g. cats=shanshui,zhiwu or cats=送别,t/songbie" }, 400);
-        }
-        nodes.set(`${item.type}:${item.slug}`, item);
-      }
-      // 兼容 ?cats=shanshui&zhiwu：值是空的参数名本身当作分类，认不出就忽略
-      for (const [k, v] of q) {
-        if (v) continue;
-        if (k === "cats" || k === "cat") continue;
-        const item = nodeForToken(k);
-        if (item) nodes.set(`${item.type}:${item.slug}`, item);
-      }
-      if (rawValues.length && !nodes.size) {
-        return json({ status: "error", errCode: 2002,
-          errMessage: "cats is empty. Use e.g. cats=shanshui,zhiwu" }, 400);
-      }
-      if (nodes.size > 20) {
-        return json({ status: "error", errCode: 2002,
-          errMessage: "At most 20 unique categories are allowed" }, 400);
-      }
-      if (nodes.size) multiNodes = [...nodes.values()];
-    }
-    if (lineRoute || multiNodes) path = "all";
 
-    // 解析分类
-    let node = null;
-    if (multiNodes) {
-      node = { type: "multi", top: null, sub: null, slug: null,
-               count: multiNodes.reduce((sum, n) => sum + n.count, 0),
-               nodes: multiNodes };
-    } else if (path === "" || path === "all") {
+    /* 关键词：第一个词决定动作，剩下的都是分类
+         /all            全库
+         /line[/a,b]     摘句
+         /a,b            多分类随机
+         /a              单分类                                                    */
+    let tokens = path.split(",").map((s) => s.trim()).filter(Boolean);
+    if (tokens.length && tokens[0].toLowerCase() === "line") {
+      lineMode = true;
+      tokens = tokens.slice(1);
+    } else if (tokens.length && tokens[0].toLowerCase() === "all") {
+      if (tokens.length > 1) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "all 不能和分类一起写；多选直接用 /shanshui,lushan" }, 400);
+      }
+      tokens = [];
+    }
+    if (lineMode && fmt === "txt") fmt = "json";
+    // 解析关键词：查不到就是写错了，不做模糊猜测
+    let node;
+    if (!tokens.length) {
       node = { type: "all", top: null, sub: null, slug: null, count: TOTAL };
     } else {
-      const segs = path.split("/").filter(Boolean);
-      if (segs[0] === "t" && segs[1]) {
-        const key = THEME_BY_NAME[segs[1]] || segs[1];
-        const th = BY_THEME[key];
-        if (!th) {
-          return json({ status: "error", errCode: 2001,
-            errMessage: `Unknown theme: ${segs[1]}. See /doc` }, 404);
-        }
-        node = { type: "theme", top: null, sub: null, slug: key,
-                 count: th.count, themeName: th.name };
-      }
-      node = node || BY_SLUG[segs[0]] || BY_NAME[segs[0]] || null;
-      // 题材只有一级，不能再走"大类/小类"的解析
-      if (node && node.type !== "theme" && segs.length > 1) {
-        const cfg = CATS[node.top];
-        if (!cfg) return json({ status: "error", errCode: 2001, errMessage: "Unknown category" }, 404);
-        const hit = Object.entries(cfg.subs)
-          .find(([s, sc]) => sc.slug === segs[1] || s === segs[1]);
+      const picked = new Map();
+      for (const token of tokens) {
+        const hit = FLAT.get(token.toLowerCase());
         if (!hit) {
-          return json({ status: "error", errCode: 2001,
-            errMessage: `Unknown subcategory: ${segs[1]}` }, 404);
+          return json({ status: "error", errCode: 2002,
+            errMessage: `未知分类：${token}；可用名字见 /api` }, 400);
         }
-        node = { type: "sub", top: node.top, sub: hit[0], slug: hit[1].slug, count: hit[1].count };
+        picked.set(nodeKey(hit), hit);
       }
-    }
-
-    if (!node) {
-      return json({ status: "error", errCode: 2001,
-        errMessage: "No matching category. See /doc for the full list." }, 404);
+      if (picked.size > 20) {
+        return json({ status: "error", errCode: 2002,
+          errMessage: "一次最多 20 个分类" }, 400);
+      }
+      const list = [...picked.values()];
+      node = list.length === 1 ? list[0] : {
+        type: "multi", top: null, sub: null, slug: null,
+        count: list.reduce((sum, x) => sum + x.count, 0), nodes: list,
+      };
     }
     if (!node.count) {
       return json({ status: "error", errCode: 2001, errMessage: "Category is empty" }, 404);

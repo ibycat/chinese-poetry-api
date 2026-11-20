@@ -137,8 +137,9 @@
   <div class="wrap hero">
     <h1>诗词<em>分类</em>接口 · 调用文档</h1>
     <p class="lead">
-      按分类随机返回古诗词，分类体系与 <a href="https://v1.jinrishici.com" target="_blank" rel="noopener">今日诗词 v1</a>
-      完全一致（11 大类 / 69 小类），路径与 slug 也保持一致，换掉域名即可迁移。全文为简体。
+      按分类随机返回古诗词：11 大类 / 69 小类 / 21 题材，全部平铺成一级路径，
+      一个词就是一次调用。<code>/shanshui</code>、<code>/lushan</code>、<code>/梅花</code> 等价，多选写 <code>/shanshui,lushan</code>。
+      全文为简体。
     </p>
     <div class="urlbar">
       <span class="tag">BASE</span>
@@ -178,63 +179,52 @@
     <section id="quick">
       <h2><span class="no">01</span>快速开始</h2>
       <p class="h2sub">无需注册、无需 Token，直接 GET。</p>
-      <pre><span class="c"># 一次在多个分类里随机：不用写二级路径，逗号分隔</span>
-curl <span class="s">"BASE/all.json?cats=shanshui,zhiwu,guiqing&amp;n=3"</span>
+      <pre><span class="c"># 一个词就是一个分类</span>
+curl <span class="s">"BASE/shanshui.json"</span>
+curl <span class="s">"BASE/lushan.json"</span>
+curl <span class="s">"BASE/梅花.json"</span>
 
-<span class="c"># 用 &amp; 分隔，效果相同</span>
-curl <span class="s">"BASE/all.json?cats=shanshui&amp;zhiwu&amp;n=3"</span>
+<span class="c"># 多个分类：逗号分隔，等概率各占一份</span>
+curl <span class="s">"BASE/shanshui,lushan.json"</span>
+curl <span class="s">"BASE/送别,山水,游仙梦幻.json?n=3"</span>
 
-<span class="c"># 题材也能直接写，不必加 t/ 前缀</span>
-curl <span class="s">"BASE/all.json?cats=送别,山水,游仙梦幻"</span>
+<span class="c"># 全库随机</span>
+curl <span class="s">"BASE/all.json"</span>
 
-<span class="c"># 山水 · 庐山（兼容 v1 的二级路径，仍可用）</span>
-curl <span class="s">"BASE/shanshui/lushan.json"</span>
-
-<span class="c"># 抒情 · 爱情，纯文本</span>
-curl <span class="s">"BASE/shuqing/aiqing.txt"</span>
-
-<span class="c"># 植物 · 梅花，一次取 3 条</span>
-curl <span class="s">"BASE/zhiwu/meihua.json?n=3"</span>
-
-<span class="c"># 中文名直接访问</span>
-curl <span class="s">"BASE/抒情/爱情.json"</span>
-
-<span class="c"># 连续两句，全库随机（默认 JSON）</span>
+<span class="c"># 连续两句：全库 / 指定多个分类</span>
 curl <span class="s">"BASE/line"</span>
+curl <span class="s">"BASE/line.json?n=3"</span>
+curl <span class="s">"BASE/line/送别,寄赠酬答.json"</span>
 
-<span class="c"># 在指定多个分类中随机摘两句</span>
-curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng"</span>
-
-<span class="c"># 多个分类随机摘句</span>
-curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp;n=3"</span></pre>
+<span class="c"># 纯文本 / 图片</span>
+curl <span class="s">"BASE/爱情.txt"</span>
+curl <span class="s">"BASE/meihua.svg"</span></pre>
       <p>把 <code>BASE</code> 替换为上方地址即可。浏览器直接打开同样可用。</p>
     </section>
 
     <section id="route">
       <h2><span class="no">02</span>路由规则</h2>
-      <p class="h2sub">路径为 <code>/{大类 slug}[/{小类 slug}]</code>，省略小类时在该大类下随机；
-        想跨分类随机时不必拼二级路径，用 <code>?cats=</code> 即可。</p>
+      <p class="h2sub">没有层级：路径里第一个词是动作或分类，逗号分隔即为多选。</p>
       <table>
         <tr><th style="width:34%">路由</th><th>说明</th></tr>
-        <tr><td><code>/all</code><span class="badge g">推荐</span></td><td>全部 {{TOTAL}} 首随机一首；配 <code>?cats=大类,大类,题材</code> 即可跨分类随机</td></tr>
-        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong>；同样支持 <code>?cats=</code></td></tr>
-        <tr><td><code>/{大类}</code></td><td>如 <code>/shanshui</code>，在该大类全部诗词中随机</td></tr>
-        <tr><td><code>/{大类}/{小类}</code></td><td>如 <code>/shanshui/lushan</code>，为兼容 v1 保留</td></tr>
-        <tr><td><code>/t/{题材}</code></td><td>按主旨取诗，如 <code>/t/songbie</code>、<code>/t/bianzai</code>，见第 03 节</td></tr>
-        <tr><td><code>/api</code></td><td>分类总表 JSON（含每类的调用地址）</td></tr>
+        <tr><td><code>/all</code></td><td>全部 {{TOTAL}} 首随机一首</td></tr>
+        <tr><td><code>/{分类}</code></td><td>如 <code>/shanshui</code>、<code>/lushan</code>、<code>/梅花</code>，大类小类题材同级</td></tr>
+        <tr><td><code>/{分类},{分类}</code></td><td>如 <code>/shanshui,lushan</code>，最多 20 个，等概率各占一份</td></tr>
+        <tr><td><code>/line</code></td><td>全库随机返回<strong>连续两句</strong></td></tr>
+        <tr><td><code>/line/{分类}</code></td><td>如 <code>/line/送别,寄赠酬答</code>，在指定分类内摘句</td></tr>
+        <tr><td><code>/api</code></td><td>分类总表 JSON（含每个分类的调用地址）</td></tr>
         <tr><td><code>/doc</code></td><td>本页</td></tr>
         <tr><td><code>/browse/</code></td><td>可视化分类浏览页（抽样数据）</td></tr>
       </table>
       <p style="color:var(--ink-3);font-size:12.5px">
-        注：今日诗词 v1 的 <code>/</code> 返回分类总表 JSON，本服务把 <code>/</code> 让给文档页，总表移到 <code>/api</code>，
-        其余路径完全兼容。
+        旧的层级写法（<code>/shanshui/lushan</code>、<code>/t/songbie</code>）以及 <code>?cats=</code>、<code>?mode=line</code>
+        均已取消，调用会返回 <code>400 / 2003</code> 并提示应改用的地址，不会静默给出错误结果。
       </p>
     </section>
 
     <section id="themes">
       <h2><span class="no">03</span>题材分类 · {{NT}} 类</h2>
-      <p class="h2sub">按诗的<strong>主旨</strong>划分，路径为 <code>/t/{slug}</code>。题材回答"这首诗在写什么事"，
-        与第 08 节的意象分类（写雨、梅花、庐山）互补：后者回答"诗里写到什么"。</p>
+      <p class="h2sub">按诗的<strong>主旨</strong>划分，与意象分类同级，直接用 <code>/{题材}</code>。</p>
       <table>
         <tr><th style="width:110px">题材</th><th>接口路径</th>
           <th style="width:82px;text-align:right;padding-right:14px">条数</th><th style="width:72px"></th></tr>
@@ -252,24 +242,23 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
       </table>
       <table>
         <tr><th style="width:130px">参数</th><th>说明</th></tr>
-        <tr><td><code>cats</code><span class="badge g">推荐</span></td><td>多分类随机，<strong>任意接口都可用</strong>。逗号或 <code>&amp;</code> 分隔，最多 20 个：
-          大类 <code>shanshui</code>、小类 <code>shanshui/lushan</code>、题材 <code>送别</code> / <code>t/songbie</code>、中文名 <code>山水</code> 均可</td></tr>
-        <tr><td><code>n</code></td><td>返回条数，大于 1 时返回数组。全库 1–50；分类、题材、<code>cats</code> 最多 20</td></tr>
-        <tr><td><code>mode=line</code></td><td>摘句模式：<code>content</code> 改为随机连续两句；可与任意分类路径组合</td></tr>
+        <tr><td><code>n</code></td><td>返回条数，大于 1 时返回数组。全库 1–50；分类与多选最多 20</td></tr>
       </table>
-      <p><code>cats</code> 的三种写法等价，按喜好挑一种：</p>
-      <pre><span class="s">"BASE/all.json?cats=shanshui,zhiwu"</span>
-<span class="s">"BASE/all.json?cats=shanshui&amp;cats=zhiwu"</span>
-<span class="s">"BASE/all.json?cats=shanshui&amp;zhiwu"</span></pre>
-      <p>给了 <code>cats</code> 后，路径里的分类就不再参与，方便把地址统一写成
-        <code>/all?cats=...</code>，不必记二级路径。多个分类先<strong>等概率选一个分类</strong>，
-        再在该分类内选作品和句对，因此语料多的分类不会挤占语料少的分类
-        （实测 <code>cats=shanshui,zhiwu</code> 各约 50%）。</p>
-      <p><code>mode=line</code> 不会改变分类、全文和标签。每首先按标点切成小句，再顺序两两成组；
+      <p>分类全部写在路径里，不再有二级路径，也不再有 <code>cats</code> 参数：</p>
+      <pre><span class="s">"BASE/shanshui.json"</span>          <span class="c"># 一个大类</span>
+<span class="s">"BASE/lushan.json"</span>            <span class="c"># 一个小类，不用带父级</span>
+<span class="s">"BASE/shanshui,lushan.json"</span>  <span class="c"># 两个分类</span>
+<span class="s">"BASE/送别,山水.json"</span>         <span class="c"># 中文名同样可以直接写</span></pre>
+      <p>多选时先<strong>等概率选一个分类</strong>，再在该分类内选作品，所以语料多的分类不会挤占语料少的分类
+        （实测 <code>/shanshui,zhiwu</code> 各约 50%）。选中的分类可在返回体的
+        <code>category</code> / <code>categories</code> 里核对。</p>
+      <p>少数 slug 与题材重名，约定按「大类 &gt; 小类 &gt; 题材」优先，落选的那个用中文名：
+        <code>/lizhi</code> 是励志，荔枝写 <code>/荔枝</code>；<code>/shanshui</code> 是山水，山水田园写 <code>/山水田园</code>。
+        拿不准时直接看 <code>/api</code> 里给出的地址。</p>
+      <p>摘句不会改变分类、全文和标签。每首先按标点切成小句，再顺序两两成组；
         长诗、长词因此有多个句对参与随机，不会永远只看开头两句。整首作品先被等概率选中，
         再从句对中等概率取一联，长诗不会挤占短诗的出现机会。</p>
-      <p>摘句同样吃 <code>cats</code>：<code>/line?cats=shanshui,zhiwu</code>、
-        <code>/line?cats=shanshui/lushan,zhiwu/meihua&amp;n=5</code>。</p>
+      <p>摘句多选写成 <code>/line/shanshui,zhiwu</code>，同样支持 <code>n</code>。</p>
       <p>摘句统一返回 JSON，正文、句对位置和 <code>poem</code> 基本信息都在同一个对象中。
         为了保证结构不丢失，摘句模式下即使 URL 写成 <code>.txt</code> 也返回 <code>application/json</code>；
         普通分类的 <code>.txt</code> 仍只返回正文。</p>
@@ -286,7 +275,7 @@ curl <span class="s">"BASE/line.json?cats=t/songbie,t/jizeng,shanshui/lushan&amp
       <h3>示例：直接嵌入网页</h3>
       <pre>&lt;div id=<span class="s">"poem"</span>&gt;&lt;/div&gt;
 &lt;script&gt;
-fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
+fetch(<span class="s">"BASE/shanshui,lushan.json"</span>)
   .then(r =&gt; r.json())
   .then(d =&gt; {
     document.getElementById(<span class="s">"poem"</span>).textContent =
@@ -358,9 +347,10 @@ fetch(<span class="s">"BASE/shanshui/lushan.json"</span>)
       <table>
         <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
         <tr><td>400</td><td>1003</td><td>分类请求的 <code>n</code> 超过 20</td></tr>
-        <tr><td>400</td><td>2002</td><td><code>cats</code> 为空、超过 20 个或包含未知分类</td></tr>
+        <tr><td>400</td><td>2002</td><td>未知分类，或一次超过 20 个分类</td></tr>
+        <tr><td>400</td><td>2003</td><td>使用了已取消的旧写法（层级路径、<code>?cats=</code>、<code>?mode=line</code>），<code>errMessage</code> 会给出新地址</td></tr>
         <tr><td>429</td><td>1004</td><td>同一 IP 60 秒内超过 60 次；按 <code>Retry-After</code> 等待</td></tr>
-        <tr><td>404</td><td>2001</td><td>分类不存在或该分类为空，返回体带 <code>errMessage</code></td></tr>
+        <tr><td>404</td><td>2001</td><td>分类为空，返回体带 <code>errMessage</code></td></tr>
         <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
         <tr><td>500</td><td>1001</td><td>读取语料失败</td></tr>
       </table>
