@@ -28,15 +28,17 @@
 
 | 内容 | 是否在仓库 | 缺失时的影响 |
 |---|---|---|
-| `raw/full/` 除宋诗明诗外的 10 个分部（98 文件 / 40 MB） | ✅ 已入库 | — |
-| 宋诗、明诗原始数据（142 MB） | ❌ 按需下载 | 构建照常完成，只是少 47.5 万首 |
+| `raw/full/` 全部 12 个分部（123 文件 / 181 MB） | ✅ 已入库 | — |
 | `data/poems.jsonl`、`cloudflare/public/` | ❌ 构建生成 | 一条命令重建 |
 | 线上 Worker 与静态资源 | — | 已部署，与仓库无关 |
 
-因此**全新 clone 不依赖任何外部仓库也能构建并部署**（96,129 首，`optional` 数据集缺失时只打印一行提示）。
-只有两种情况需要联网取数：
+**全部 571,189 首的源数据都在仓库里**，全新 clone 即可离线构建与部署，不依赖任何外部仓库。
+宋诗、明诗按每 2 万首切成 25 个分片（13 + 12），单文件约 6 MB，既避开 GitHub 的 50 MB 警告线，
+也方便日后增量更新。
 
-- `tools/fetch_classics.py` —— 补宋诗、明诗，依赖 `wujinpai/chinese-classics`
+只有想**重新抓取**（比如上游更新了版本）时才需要联网：
+
+- `tools/fetch_classics.py` —— 重下宋诗、明诗，依赖 `wujinpai/chinese-classics`
 - `tools/fetch_full.py` —— 重下唐宋等基础语料，依赖 `chinese-poetry/chinese-poetry`
 
 Workers 运行时只读自身 Static Assets，不向 GitHub 或任何第三方发起请求；前端页面也没有外部 CDN 依赖。
