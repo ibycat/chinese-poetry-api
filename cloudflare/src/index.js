@@ -245,7 +245,7 @@ function catalog(url) {
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
     "line-mode": `${base}/line　随机连续两句，可接分类：/line/shanshui,lushan`,
     "multi-category": `${base}/shanshui,lushan,meihua　一个 slug 就是一个分类，逗号分隔即多选`,
-    help: "数据源 ibycat/chinese-poetry，全文简体；80 个意象分类 + 21 个题材，全部一级路径",
+    help: "数据源 ibycat/chinese-poetry-api，全文简体；80 个意象分类 + 21 个题材，全部一级路径",
     count: TOTAL,
     built_at: BUILT_AT,
     list,

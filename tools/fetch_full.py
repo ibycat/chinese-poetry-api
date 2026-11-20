@@ -13,7 +13,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = "https://cdn.jsdelivr.net/gh/ibycat/chinese-poetry@master/"
+BASE = "https://cdn.jsdelivr.net/gh/ibycat/chinese-poetry-api@master/"
 OUT = os.path.join(ROOT, "raw", "full")
 
 TASKS = {

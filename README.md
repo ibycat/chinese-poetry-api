@@ -15,7 +15,7 @@ cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码
 ```
 
 生产部署见下方「部署到 Cloudflare」。`server.py` 是早期的本地参考实现，
-只覆盖 v1 意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
+只覆盖意象分类、不含 21 题材，已不再维护——本地调试请用 `wrangler dev`。
 
 ```bash
 curl https://yiyan.952762.xyz/lushan.json
@@ -82,7 +82,7 @@ npx wrangler deploy
 
 ### 返回体
 
-返回体沿用 v1 的字段名（`content` / `origin` / `author` / `category`），其后为扩展字段：
+返回体前四个字段是 `content` / `origin` / `author` / `category`，其后为扩展字段：
 
 ```json
 {
@@ -100,7 +100,7 @@ npx wrangler deploy
 }
 ```
 
-`content` 默认为首句（对齐 v1 的“一句”语义），全文在 `paragraphs`。
+`content` 默认为首句，全文在 `paragraphs`。
 摘句模式另返回 `mode: "line"`、`lines`（组成该联的两句）、`line_index`、`line_total`。
 
 ---
@@ -111,13 +111,13 @@ npx wrangler deploy
 
 ### 3.1 题材（21 类，与意象分类同级）
 
-按语料实际构成重定的主旨分类，不迁就 v1。相对原 19 类做了三处调整：
+按语料实际构成重定的主旨分类。相对原 19 类做了三处调整：
 送别赠答拆成「送别」与「寄赠酬答」（前者场景是离别，后者是往还唱和）、
 哲理悟道拆出「佛道禅颂」（全唐诗佛偈量大且判法不同）、应制酬和更名「应制干谒」（收进贺官与干谒求荐）。
 
 | 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
 |---|---|---|---|---|---|
-| 山水田园 | `/linquan` | 13,714 | 爱情相思 | `/xiangsi` | 2,428 |
+| 山水田园 | `/shanshuituanyuan` | 13,714 | 爱情相思 | `/xiangsi` | 2,428 |
 | 送别 | `/songbie` | 10,797 | 佛道禅颂 | `/fodao` | 2,195 |
 | 寄赠酬答 | `/jizeng` | 6,490 | 哲理悟道 | `/wudao` | 2,114 |
 | 羁旅思乡 | `/jilv` | 6,474 | 咏怀抒感 | `/yonghuai` | 1,715 |
@@ -129,13 +129,13 @@ npx wrangler deploy
 | 游仙梦幻 | `/youxian` | 2,821 | 民生疾苦 | `/minsheng` | 802 |
 | | | | 亲情 | `/qinqing` | 643 |
 
-这四个题材改用近义词，是为了让 slug 与意象分类不重复、路径全 ASCII：
-山水田园→`linquan`（林泉）、爱情相思→`xiangsi`、悼亡挽歌→`wange`、哲理悟道→`wudao`。
+这四个题材改过 slug，是为了与意象分类不重复、路径全 ASCII：
+山水田园→`shanshuituanyuan`、爱情相思→`xiangsi`（相思）、悼亡挽歌→`wange`（挽歌）、哲理悟道→`wudao`（悟道）。
 荔枝的 slug 也调整为 `lychee`，避免与「励志」的 `lizhi` 重名。
 
 ### 3.2 意象分类（11 大类 / 69 小类）
 
-完整复用 v1 的层级与 slug，路径在根下：
+slug 全部 ASCII 且彼此唯一，路径在根下：
 
 | 大类 | 小类 |
 |---|---|
@@ -159,7 +159,7 @@ npx wrangler deploy
 
 分类体系之外，另有一套按内容属性划分的五维标签（21 题材 / 10 风格 / 8 情绪 / 24 场景 / 13 体裁），两者用途不同：
 
-| | 分类体系（v1） | 五维标签 |
+| | 分类体系 | 五维标签 |
 |---|---|---|
 | 回答的问题 | 用户**想找什么**（写雨、庐山、荔枝） | 这首诗**是什么**（边塞、豪放、慷慨） |
 | 颗粒度 | 检索维度，可重叠 | 题材/风格/情绪单归属，一主多副 |
@@ -171,7 +171,7 @@ npx wrangler deploy
 
 ## 五、判定口径
 
-v1 意象分类采用规则 + 阈值的可解释判定，全部代码在 `tagger/categories.py`；21 题材则采用
+意象分类采用规则 + 阈值的可解释判定，全部代码在 `tagger/categories.py`；21 题材则采用
 「高置信规则 + DeepSeek 弱类重判 + 低置信终审」的混合策略。意象规则形如：
 
 ```python
@@ -215,7 +215,7 @@ v1 意象分类采用规则 + 阈值的可解释判定，全部代码在 `tagger
 cp-tags/
 ├─ server.py            接口服务（零第三方依赖，Python 3.8+）
 ├─ tagger/
-│  ├─ categories.py     69 个意象小类的规则表 + v1 slug 对照
+│  ├─ categories.py     69 个意象小类的规则表 + slug 对照
 │  ├─ themes21.py       21 题材定义与 19→21 映射
 │  ├─ classify.py       分类匹配（关键词分桶扫描 + 阈值判定）
 │  ├─ taxonomy.py       五维受控词表

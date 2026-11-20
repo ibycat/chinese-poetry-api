@@ -268,7 +268,7 @@ def main():
         "api_invalid": api_invalid,
         "simplified_by": simp.BACKEND,
     }
-    dump({"source": "ibycat/chinese-poetry",
+    dump({"source": "ibycat/chinese-poetry-api",
           "taxonomy": {d: {"name": taxonomy.DIMENSIONS[d]["name"],
                            "desc": taxonomy.DIMENSIONS[d]["desc"],
                            "tags": taxonomy.DIMENSIONS[d]["tags"]}
