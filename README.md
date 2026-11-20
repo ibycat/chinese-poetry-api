@@ -77,9 +77,6 @@ npx wrangler deploy
 多选先等概率选一个分类，再在该分类内选作品与句对，语料多的分类不会挤占语料少的分类。
 少数 slug 与题材重名，按「大类 > 小类 > 题材」优先，落选者用中文名（`/lizhi` 是励志，荔枝写 `/荔枝`）。
 
-旧的 `/shanshui/lushan`、`/t/songbie`、`?cats=`、`?mode=line` 已取消，
-调用返回 `400 / 2003` 并提示应改用的一级路径。
-
 摘句额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块。
 摘句模式统一返回 JSON，即使 URL 写成 `.txt` 也返回 JSON；普通分类的 `.txt` 仍只返回正文。
 

@@ -309,7 +309,7 @@ export default {
       return json({ status: "error", errCode: 1002, errMessage: "Bad path" }, 400);
     }
 
-    // 文档页由静态资源直接命中（public/index.html、public/doc/index.html），
+    // 文档页由静态资源直接命中（public/index.html、public/doc.html），
     // 请求不会进入 Worker，也就不占免费版每日请求额度。
     // 下面这支分支只作为静态层异常时的兜底，返回时打标记便于排查。
     if (path === "" || path === "doc" || path === "index.html") {
@@ -318,10 +318,6 @@ export default {
       const h = new Headers(r.headers);
       h.set("x-doc-fallback", "worker");
       return new Response(r.body, { status: r.status, headers: h });
-    }
-    // 旧文档链接
-    if (path === "docs" || path === "document") {
-      return Response.redirect(`${url.origin}/doc`, 301);
     }
     if (path === "favicon.ico") return new Response(null, { status: 204 });
 
@@ -334,48 +330,26 @@ export default {
       if (path.endsWith("." + f)) { fmt = f; path = path.slice(0, -f.length - 1); break; }
     }
 
-    // /line/{分类} 是摘句 + 分类，先把它拆掉，剩下再按分类校验
+    // /line 或 /line/{分类}：摘句动作词
     let lineMode = false;
-    if (path.toLowerCase().startsWith("line/")) {
+    if (path.toLowerCase() === "line" || path.toLowerCase().startsWith("line/")) {
       lineMode = true;
-      path = path.slice(5);
-    }
-
-    // 旧写法已全部取消：/shanshui/lushan、/t/songbie、?cats=、?mode=line
-    // 与其静默返回别的结果，不如直接告诉调用方该改成什么。
-    if (path.includes("/")) {
-      const tail = path.split("/").filter(Boolean).pop() || "";
-      const hit = FLAT.get(tail.toLowerCase());
-      return json({ status: "error", errCode: 2003,
-        errMessage: `层级路径已取消，请改用 /${hit ? pathOf(hit) : tail}` }, 400);
+      path = path.slice(4).replace(/^\/+/, "");
     }
 
     const q = url.searchParams;
-    if (q.has("cats") || q.has("cat")) {
-      return json({ status: "error", errCode: 2003,
-        errMessage: "cats 参数已取消，多选直接写进路径：/shanshui,lushan" }, 400);
-    }
-    if (q.has("mode")) {
-      return json({ status: "error", errCode: 2003,
-        errMessage: "mode 参数已取消，摘句请用 /line 或 /line/shanshui,lushan" }, 400);
-    }
-
     let n = parseInt(q.get("n") || "1", 10);
     if (!Number.isFinite(n)) n = 1;
     n = Math.max(1, Math.min(n, 50));
     // 摘句需要携带结构化出处信息，因此 .txt 在摘句模式下也返回 JSON。
     // 普通分类的 .txt 仍是纯文本；.svg 仍返回图片。
 
-    /* 关键词：第一个词决定动作，剩下的都是分类
+    /* 路径关键词：逗号分隔的分类；all 表示全库
          /all            全库
-         /line[/a,b]     摘句
-         /a,b            多分类随机
-         /a              单分类                                                    */
+         /a              单分类
+         /a,b            多分类                                                        */
     let tokens = path.split(",").map((s) => s.trim()).filter(Boolean);
-    if (tokens.length && tokens[0].toLowerCase() === "line") {
-      lineMode = true;
-      tokens = tokens.slice(1);
-    } else if (tokens.length && tokens[0].toLowerCase() === "all") {
+    if (tokens.length && tokens[0].toLowerCase() === "all") {
       if (tokens.length > 1) {
         return json({ status: "error", errCode: 2002,
           errMessage: "all 不能和分类一起写；多选直接用 /shanshui,lushan" }, 400);

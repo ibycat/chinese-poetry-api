@@ -217,8 +217,7 @@ curl <span class="s">"BASE/meihua.svg"</span></pre>
         <tr><td><code>/browse/</code></td><td>可视化分类浏览页（抽样数据）</td></tr>
       </table>
       <p style="color:var(--ink-3);font-size:12.5px">
-        旧的层级写法（<code>/shanshui/lushan</code>、<code>/t/songbie</code>）以及 <code>?cats=</code>、<code>?mode=line</code>
-        均已取消，调用会返回 <code>400 / 2003</code> 并提示应改用的地址，不会静默给出错误结果。
+        分类没有层级，路径里只有关键词；逗号分隔即多选，写错的词按「未知分类」返回 <code>400 / 2002</code>。
       </p>
     </section>
 
@@ -244,7 +243,7 @@ curl <span class="s">"BASE/meihua.svg"</span></pre>
         <tr><th style="width:130px">参数</th><th>说明</th></tr>
         <tr><td><code>n</code></td><td>返回条数，大于 1 时返回数组。全库 1–50；分类与多选最多 20</td></tr>
       </table>
-      <p>分类全部写在路径里，不再有二级路径，也不再有 <code>cats</code> 参数：</p>
+      <p>分类全部写在路径里：</p>
       <pre><span class="s">"BASE/shanshui.json"</span>          <span class="c"># 一个大类</span>
 <span class="s">"BASE/lushan.json"</span>            <span class="c"># 一个小类，不用带父级</span>
 <span class="s">"BASE/shanshui,lushan.json"</span>  <span class="c"># 两个分类</span>
@@ -348,7 +347,6 @@ fetch(<span class="s">"BASE/shanshui,lushan.json"</span>)
         <tr><th style="width:100px">HTTP</th><th style="width:110px">errCode</th><th>含义</th></tr>
         <tr><td>400</td><td>1003</td><td>分类请求的 <code>n</code> 超过 20</td></tr>
         <tr><td>400</td><td>2002</td><td>未知分类，或一次超过 20 个分类</td></tr>
-        <tr><td>400</td><td>2003</td><td>使用了已取消的旧写法（层级路径、<code>?cats=</code>、<code>?mode=line</code>），<code>errMessage</code> 会给出新地址</td></tr>
         <tr><td>429</td><td>1004</td><td>同一 IP 60 秒内超过 60 次；按 <code>Retry-After</code> 等待</td></tr>
         <tr><td>404</td><td>2001</td><td>分类为空，返回体带 <code>errMessage</code></td></tr>
         <tr><td>405</td><td>1001</td><td>使用了 GET / HEAD 以外的方法</td></tr>
