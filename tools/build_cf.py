@@ -179,58 +179,23 @@ def main():
     print(f"manifest.js {len(manifest) / 1024:.1f} KB")
 
     # ---------- 4. 文档页 ----------
-    # 扁平关键词：与 Worker 里的 FLAT 表同序注册（大类 > 小类 > 题材），
-    # slug 被占用时退回中文名，保证文档里的链接都能直接点开。
-    flat, path_of = {}, {}
-
-    def node_key(kind, top, sub, slug):
-        return f"{kind}|{top or ''}|{sub or ''}|{slug}"
-
-    def reg(token, key):
-        k = token.lower()
-        flat.setdefault(k, key)
-        if flat[k] == key and key not in path_of:
-            path_of[key] = token
-
-    for top, cfg in cats.items():
-        key = node_key("top", top, None, cfg["slug"])
-        reg(cfg["slug"], key)
-        reg(top, key)
-    for top, cfg in cats.items():
-        for sub, sc in cfg["subs"].items():
-            key = node_key("sub", top, sub, sc["slug"])
-            reg(sc["slug"], key)
-            reg(sub, key)
-    for slug, d in theme_meta.items():
-        key = node_key("theme", None, None, slug)
-        reg(slug, key)
-        reg(d["name"], key)
-
-    def kw(key, fallback):
-        return path_of.get(key, fallback)
-
     tpl = open(os.path.join(CF, "template", "doc.html"), encoding="utf-8").read()
     trows = "".join(
-        f'<tr><td>{d["name"]}</td>'
-        f'<td><code>/{kw(node_key("theme", None, None, slug), slug)}</code></td>'
+        f'<tr><td>{d["name"]}</td><td><code>/{slug}</code></td>'
         f'<td class="num">{d["count"]:,}</td>'
-        f'<td><button class="try" data-p="/{kw(node_key("theme", None, None, slug), slug)}.json">'
-        f'试一下</button></td></tr>'
+        f'<td><button class="try" data-p="/{slug}.json">试一下</button></td></tr>'
         for slug, d in sorted(theme_meta.items(), key=lambda x: -x[1]["count"]))
     rows = []
     for top, cfg in cats.items():
-        top_kw = kw(node_key("top", top, None, cfg["slug"]), cfg["slug"])
         sub_rows = "".join(
-            f'<tr><td class="l2">{s}</td>'
-            f'<td><code>/{kw(node_key("sub", top, s, sc["slug"]), sc["slug"])}</code></td>'
+            f'<tr><td class="l2">{s}</td><td><code>/{sc["slug"]}</code></td>'
             f'<td class="num">{sc["count"]:,}</td>'
-            f'<td><button class="try" data-p="/{kw(node_key("sub", top, s, sc["slug"]), sc["slug"])}.json">'
-            f'试一下</button></td></tr>'
+            f'<td><button class="try" data-p="/{sc["slug"]}.json">试一下</button></td></tr>'
             for s, sc in cfg["subs"].items())
         rows.append(
             f'<tr class="grp"><td colspan="4"><span class="gt">{top}</span>'
             f'<span class="gc">{cfg["count"]:,} 首</span>'
-            f'<code>/{top_kw}</code></td></tr>{sub_rows}')
+            f'<code>/{cfg["slug"]}</code></td></tr>{sub_rows}')
     html = (tpl.replace("{{THEMEROWS}}", trows)
                .replace("{{NT}}", str(len(theme_meta)))
                .replace("{{ROUTES}}", "".join(rows))

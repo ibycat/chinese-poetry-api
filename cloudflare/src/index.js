@@ -25,44 +25,25 @@ async function allowRequest(request, env) {
 }
 
 /* ---------------- 扁平命名空间 ----------------
-   大类、小类、题材平级，一个词就是一个分类：
-     /shanshui  /lushan  /梅花  /送别
-   slug 与中文名都能用。同一个词撞车时按「大类 > 小类 > 题材」先到先得，
-   落选的那个改用中文名（例：lizhi 是「励志」，荔枝写 /荔枝）。 */
+   每个分类一个 ASCII slug，大类、小类、题材平级：
+     /shanshui  /lushan  /meihua  /songbie
+   slug 全局唯一（题材名取不与意象冲突的近义词），因此不需要任何前缀或中文别名。 */
 const FLAT = new Map();
-const PATH_OF = new Map();
 
 const nodeKey = (n) => `${n.type}|${n.top || ""}|${n.sub || ""}|${n.slug}`;
 
-function register(token, node) {
-  const key = token.toLowerCase();
-  if (!FLAT.has(key)) FLAT.set(key, node);
-  if (FLAT.get(key) === node && !PATH_OF.has(nodeKey(node))) {
-    PATH_OF.set(nodeKey(node), token);
-  }
-}
-
 for (const [top, cfg] of Object.entries(CATS)) {
-  const node = { type: "top", top, sub: null, slug: cfg.slug, count: cfg.count };
-  register(cfg.slug, node);
-  register(top, node);
+  FLAT.set(cfg.slug, { type: "top", top, sub: null, slug: cfg.slug, count: cfg.count });
 }
 for (const [top, cfg] of Object.entries(CATS)) {
   for (const [sub, sc] of Object.entries(cfg.subs)) {
-    const node = { type: "sub", top, sub, slug: sc.slug, count: sc.count };
-    register(sc.slug, node);
-    register(sub, node);
+    FLAT.set(sc.slug, { type: "sub", top, sub, slug: sc.slug, count: sc.count });
   }
 }
 for (const [slug, t] of Object.entries(THEMES)) {
-  const node = { type: "theme", top: null, sub: null, slug,
-                 count: t.count, themeName: t.name };
-  register(slug, node);
-  register(t.name, node);
+  FLAT.set(slug, { type: "theme", top: null, sub: null, slug,
+                   count: t.count, themeName: t.name });
 }
-
-/** 某个节点对外推荐的关键词：slug 没被占用就用 slug，否则用中文名。 */
-const pathOf = (node) => PATH_OF.get(nodeKey(node)) || node.slug;
 
 /* ---------------- 工具 ---------------- */
 function json(obj, status = 200, extra = {}) {
@@ -249,27 +230,22 @@ function catalog(url) {
   const base = `${url.protocol}//${url.host}`;
   const list = [{ 全部: `${base}/all` }];
   for (const [top, cfg] of Object.entries(CATS)) {
-    const node = { type: "top", top, sub: null, slug: cfg.slug, count: cfg.count };
-    list.push({ [top]: `${base}/${pathOf(node)}` });
+    list.push({ [top]: `${base}/${cfg.slug}` });
   }
   for (const [top, cfg] of Object.entries(CATS)) {
     for (const [sub, sc] of Object.entries(cfg.subs)) {
-      const node = { type: "sub", top, sub, slug: sc.slug, count: sc.count };
-      list.push({ [`${top}-${sub}`]: `${base}/${pathOf(node)}` });
+      list.push({ [`${top}-${sub}`]: `${base}/${sc.slug}` });
     }
   }
   for (const [slug, t] of Object.entries(THEMES)) {
-    const node = { type: "theme", top: null, sub: null, slug,
-                   count: t.count, themeName: t.name };
-    list.push({ [`题材-${t.name}`]: `${base}/${pathOf(node)}` });
+    list.push({ [`题材-${t.name}`]: `${base}/${slug}` });
   }
   return {
     welcome: "欢迎使用诗词分类接口",
     "api-document": `${base}/doc　在链接后加 .json / .txt / .svg 得到不同格式；可加 ?n=5 取多条`,
     "line-mode": `${base}/line　随机连续两句，可接分类：/line/shanshui,lushan`,
-    "multi-category": `${base}/shanshui,lushan,梅花　一个词就是一个分类，逗号分隔即多选，` +
-      "slug 与中文名等价",
-    help: "数据源 ibycat/chinese-poetry，全文简体；分类层级已扁平化，/shanshui/lushan 这类旧路径不再支持",
+    "multi-category": `${base}/shanshui,lushan,meihua　一个 slug 就是一个分类，逗号分隔即多选`,
+    help: "数据源 ibycat/chinese-poetry，全文简体；80 个意象分类 + 21 个题材，全部一级路径",
     count: TOTAL,
     built_at: BUILT_AT,
     list,

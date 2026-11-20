@@ -1,7 +1,7 @@
 # 诗词分类与接口（chinese-poetry 扩展）
 
 把 `chinese-poetry` 的全量语料做成**可分类调用的 API**：11 大类 / 69 小类 / 21 题材，
-全部平铺成一级路径（`/shanshui`、`/lushan`、`/梅花`），全文转为简体。
+全部平铺成一级路径（`/shanshui`、`/lushan`、`/meihua`），全文转为简体。
 
 **当前规模：76,003 首**（原始 76,180，API 层按 UID 去重 1 首、剔除无有效正文 176 首），69 个小类无一为空。
 
@@ -19,7 +19,7 @@ cd cloudflare && npx wrangler dev   # 本地跑接口（与线上同一份代码
 
 ```bash
 curl https://yiyan.952762.xyz/lushan.json
-curl https://yiyan.952762.xyz/爱情.txt
+curl https://yiyan.952762.xyz/aiqing.txt
 curl https://yiyan.952762.xyz/meihua.json?n=3
 curl https://yiyan.952762.xyz/shanshui,lushan.json
 ```
@@ -55,10 +55,10 @@ npx wrangler deploy
 | `/all` | 全部随机一首 |
 | `/shanshui` | 大类：山水随机一首 |
 | `/lushan` | 小类：庐山，不必带父级 |
-| `/梅花` | 中文名与大写 slug 等价 |
+| `/meihua` | 小类 slug，全局唯一 |
 | `/shanshui,lushan` | 多选，逗号分隔，等概率各占一份 |
 | `/line` | 全库随机返回连续两句 |
-| `/line/送别,寄赠酬答` | 在指定分类内摘句 |
+| `/line/songbie,jizeng` | 在指定分类内摘句 |
 
 后缀 `.json`（默认）/ `.txt` / `.svg`。唯一参数 `?n=5` 一次取多条：
 全库最多 50，分类与多选最多 20。动态响应使用 `Cache-Control: no-store`。
@@ -70,12 +70,12 @@ npx wrangler deploy
 
 ```text
 /shanshui,lushan.json?n=3
-/送别,山水,游仙梦幻.json
-/line/送别,寄赠酬答.json
+/songbie,shanshui,youxian.json
+/line/songbie,jizeng.json
 ```
 
 多选先等概率选一个分类，再在该分类内选作品与句对，语料多的分类不会挤占语料少的分类。
-少数 slug 与题材重名，按「大类 > 小类 > 题材」优先，落选者用中文名（`/lizhi` 是励志，荔枝写 `/荔枝`）。
+全部 101 个 slug 全局唯一，路径只用 ASCII；题材为避开重名取了近义词，见 3.1。
 
 摘句额外返回 `title`、`lines`、`line_index`、`line_total` 和 `poem` 基本信息块。
 摘句模式统一返回 JSON，即使 URL 写成 `.txt` 也返回 JSON；普通分类的 `.txt` 仍只返回正文。
@@ -117,21 +117,21 @@ npx wrangler deploy
 
 | 题材 | 路径 | 条数 | 题材 | 路径 | 条数 |
 |---|---|---|---|---|---|
-| 山水田园 | `/山水田园` | 13,714 | 爱情相思 | `/爱情相思` | 2,428 |
+| 山水田园 | `/linquan` | 13,714 | 爱情相思 | `/xiangsi` | 2,428 |
 | 送别 | `/songbie` | 10,797 | 佛道禅颂 | `/fodao` | 2,195 |
-| 寄赠酬答 | `/jizeng` | 6,490 | 哲理悟道 | `/哲理悟道` | 2,114 |
+| 寄赠酬答 | `/jizeng` | 6,490 | 哲理悟道 | `/wudao` | 2,114 |
 | 羁旅思乡 | `/jilv` | 6,474 | 咏怀抒感 | `/yonghuai` | 1,715 |
 | 咏物 | `/yongwu` | 5,140 | 闲适隐逸 | `/xianshi` | 1,770 |
 | 边塞征战 | `/bianzai` | 4,221 | 节令风俗 | `/jieling` | 1,234 |
-| 闺情宫怨 | `/guiqing` | 4,096 | 悼亡挽歌 | `/悼亡挽歌` | 968 |
+| 闺情宫怨 | `/guiqing` | 4,096 | 悼亡挽歌 | `/wange` | 968 |
 | 咏史怀古 | `/yongshi` | 3,712 | 题画咏艺 | `/tihua` | 964 |
 | 应制干谒 | `/yingzhi` | 2,853 | 讽喻刺世 | `/fengyu` | 852 |
 | 游仙梦幻 | `/youxian` | 2,821 | 民生疾苦 | `/minsheng` | 802 |
 | | | | 亲情 | `/qinqing` | 643 |
 
-四个题材的 slug 与意象分类撞车（`shanshui`/`aiqing`/`daowang`/`zheli`），
-按「大类 > 小类 > 题材」优先，落选者改用中文名，即上表里的 `/山水田园`、`/爱情相思`、
-`/悼亡挽歌`、`/哲理悟道`。
+这四个题材改用近义词，是为了让 slug 与意象分类不重复、路径全 ASCII：
+山水田园→`linquan`（林泉）、爱情相思→`xiangsi`、悼亡挽歌→`wange`、哲理悟道→`wudao`。
+荔枝的 slug 也调整为 `lychee`，避免与「励志」的 `lizhi` 重名。
 
 ### 3.2 意象分类（11 大类 / 69 小类）
 

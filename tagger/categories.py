@@ -240,7 +240,7 @@ SLUG = {
     "写鸟": "xieniao", "写马": "xiema", "写猫": "xiemao",
     "梅花": "meihua", "梨花": "lihua", "桃花": "taohua", "荷花": "hehua",
     "菊花": "juhua", "柳树": "liushu", "叶子": "yezi", "竹子": "zhuzi",
-    "写酒": "xiejiu", "写茶": "xiecha", "荔枝": "lizhi",
+    "写酒": "xiejiu", "写茶": "xiecha", "荔枝": "lychee",
 }
 
 SLUG2CAT = {v: k for k, v in SLUG.items()}
